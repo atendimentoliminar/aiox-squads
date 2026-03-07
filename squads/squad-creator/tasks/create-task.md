@@ -1,7 +1,6 @@
 # Task: Create Squad Task
 
 **Task ID:** create-task
-**Version:** 2.0
 **Execution Type:** Hybrid
 **Purpose:** Create a single workflow task following Task Anatomy standard (8 fields)
 **Orchestrator:** @squad-chief
@@ -630,7 +629,7 @@ elicit_outputs:
     primary:
       name: "sales-page-draft"
       format: "markdown"
-      location: "outputs/{project}/sales-page-v1.md"
+      location: "{runtime_output_dir}/sales-page-v1.md"
       structure:
         - "Headline"
         - "Subheadline"
@@ -644,7 +643,7 @@ elicit_outputs:
     secondary:
       name: "headline-options"
       format: "yaml"
-      location: "outputs/{project}/headlines.yaml"
+      location: "{runtime_output_dir}/headlines.yaml"
 ```
 
 ### Step 1.7: Define Field 8 (Validation)
