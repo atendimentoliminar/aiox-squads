@@ -19,7 +19,7 @@ Entrada:
     obrigatorio: false
     descricao: "CHANGELOG.md para rastrear mudanças aplicadas"
 Saida:
-  - nome: improvement_plan
+  - nome: improvement_report
     tipo: markdown
     obrigatorio: true
   - nome: updated_baseline
@@ -61,7 +61,7 @@ task:
     - id: "1"
       name: "Rastrear recomendações anteriores"
       action: |
-        1. Ler todos os relatórios em data/reports/ (relativo ao squad dir)
+        1. Ler todos os relatórios em squads/kaizen-v2/data/reports/
         2. Extrair recomendações de cada relatório
         3. Para cada: buscar evidência de implementação (git log, novos arquivos)
         4. Classificar: IMPLEMENTADA / IGNORADA / PARCIAL / PENDENTE
@@ -70,8 +70,8 @@ task:
       name: "Analisar utilização dos agentes"
       action: |
         Fontes primárias:
-        1. Verificar .aios/logs/ para ativações de cada agente
-        2. Verificar data/intelligence/daily/ para comandos usados por sessão
+        1. Verificar <project_root>/.aios/logs/ para ativações de cada agente
+        2. Verificar squads/kaizen-v2/data/intelligence/daily/ para comandos usados por sessão
         Corroboração secundária:
         3. Verificar git log para confirmar atividade detectada nas fontes primárias
         4. Identificar agentes nunca ativados → candidatos a remoção ou ajuste
@@ -103,12 +103,12 @@ task:
       name: "Atualizar baseline"
       action: |
         Regenerar ecosystem-baseline.yaml com dados atuais, preservando o schema completo:
-        - Preservar todas as seções obrigatórias: metadata, squads, agents, tasks, workflows, integrations
+        - Preservar estrutura do wrapper `baseline`: date, version, updated_by, squads
         - Contar squads, agentes, tasks, workflows
-        - Atualizar status de cada squad
+        - Atualizar status de cada squad dentro de `baseline.squads`
         - Manter campos existentes que não mudaram (não sobrescrever com vazios)
         - Validar que o output mantém a mesma estrutura YAML do input
-        - Salvar com data atualizada em metadata.last_updated
+        - Atualizar `baseline.date` com data corrente e `baseline.updated_by` com identificação do ciclo
 
   output:
     - artifact: improvement_report
@@ -123,4 +123,4 @@ task:
     - "Utilização de cada agente verificada"
     - "Baseline atualizado com dados correntes"
     - "Max 3 melhorias propostas"
-    - "Melhorias triviais auto-aplicadas com registro no CHANGELOG"
+    - "Melhorias triviais autoaplicadas com registro no CHANGELOG"

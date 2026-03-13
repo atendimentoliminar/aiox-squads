@@ -30,7 +30,7 @@ HE_DC_001:
     fresh: 1.0                   # recém-observado ou reinforced
     active: 0.8                  # uso regular (>= 0.8)
     fading: 0.5                  # ainda no briefing com warning (>= 0.5)
-    archive: 0.05                # movido para archive/ [0.05, 0.1)
+    archive: 0.1                 # movido para archive/ [0.05, 0.1)
     delete: 0.05                 # removido permanentemente [0, 0.05)
 
   decay_rates:
@@ -48,7 +48,8 @@ HE_DC_001:
   decision_tree:
     - IF score >= 0.8 THEN active_pattern_keep_in_briefing
     - IF score >= 0.5 AND score < 0.8 THEN fading_pattern_include_with_warning
-    - IF score >= 0.05 AND score < 0.5 THEN archive_pattern_move_to_archive
+    - IF score >= 0.1 AND score < 0.5 THEN intermediate_pattern_exclude_from_briefing
+    - IF score >= 0.05 AND score < 0.1 THEN archive_pattern_move_to_archive
     - IF score < 0.05 THEN delete_pattern_remove_permanently
     - TERMINATION: all_patterns_assessed_and_actioned
 ```
@@ -67,8 +68,9 @@ PASSO 2: Calcular Score
 PASSO 3: Classificar
   - Fresh (1.0): recém-reforçado
   - Active (>=0.8): uso regular, incluir no briefing
-  - Fading (>=0.5): ainda no briefing com warning
-  - Archive (>=0.05 e <0.5): mover para archive/
+  - Fading (>=0.5 e <0.8): ainda no briefing com warning
+  - Intermediate (>=0.1 e <0.5): fora do briefing, ainda acessível
+  - Archive (>=0.05 e <0.1): mover para archive/
   - Delete (<0.05): remover permanentemente
 
 PASSO 4: Agir
@@ -87,15 +89,15 @@ PASSO 4: Agir
 - **Observado:** 30 dias atrás, 0 usos desde então
 - **Rate:** general (0.05)
 - **Cálculo:** e^(-0.05 × 30) = 0.22
-- **Classificação:** Archive (>= 0.05 e < 0.5)
-- **Ação:** Mover para archive/. Abaixo do threshold fading (0.5).
+- **Classificação:** Intermediate (>= 0.1 e < 0.5)
+- **Ação:** Excluir do briefing, manter acessível. Abaixo do threshold fading (0.5) mas acima do archive (0.1).
 
 ### Pattern Verified em Decay Lento (score 0.47)
 - **Observado:** 30 dias atrás, verified
 - **Rate:** verified (0.025)
 - **Cálculo:** e^(-0.025 × 30) = 0.47
-- **Classificação:** Archive (>= 0.05 e < 0.5)
-- **Ação:** Mover para archive/. Mesmo verificado, score abaixo de fading (0.5). Decay 2x mais lento por ser verificado.
+- **Classificação:** Intermediate (>= 0.1 e < 0.5)
+- **Ação:** Excluir do briefing, manter acessível. Mesmo verificado, score abaixo de fading (0.5) mas acima do archive (0.1). Decay 2x mais lento por ser verificado.
 
 ---
 

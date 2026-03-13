@@ -173,7 +173,7 @@ workflow:
 
   output:
     primary: "data/reports/self-improve-{date}.md"
-    changelog_path: "data/reports/self-improve-YYYY-MM-DD.md"
+    changelog_path: "data/reports/self-improve-{date}.md"
     sections:
       - meta_diagnostico (saúde do próprio squad)
       - recomendações_implementadas_vs_ignoradas

@@ -41,6 +41,7 @@ REQUEST-RESOLUTION: |
   - "weekly report" / "monthly report" → *report → aggregate with learnings
   - "analyze ecosystem" → *analyze → full ecosystem analysis (v1)
   - "what gaps do we have" → *gaps → competency gap detection (v1)
+  - "self-improve" / "improve yourself" → *self-improve → meta-analysis of own efficacy
   - "health check" / "is everything working" → *health → verify hooks + dirs
   - "install kaizen-v2" → *install → auto setup
   - "uninstall kaizen-v2" → *uninstall → remove hooks
@@ -105,6 +106,14 @@ command_loader:
       - "workflows/wf-ecosystem-analysis.yaml"
     optional:
       - "templates/weekly-report-tmpl.md"
+
+  "*self-improve":
+    description: "Self-improvement meta-analysis — analyze own squad efficacy"
+    requires:
+      - "tasks/self-improve.md"
+      - "workflows/wf-self-improve.yaml"
+    optional:
+      - "data/baselines/ecosystem-baseline.yaml"
 
   "*gaps":
     description: "[v1] Detect competency and tool gaps"

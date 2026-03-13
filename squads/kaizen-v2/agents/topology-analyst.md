@@ -519,7 +519,7 @@ heuristics:
   KZ_TA_001:
     id: "KZ_TA_001"
     name: "Squad Overload Detector"
-    rule: "IF squad has >7 agents AND cognitive load score >8 THEN RECOMMEND split"
+    rule: "IF squad has >7 agents OR cognitive load score >8 THEN RECOMMEND split"
     when: "Applied during *topology and *cognitive-load and *split-check"
     rationale: |
       Skelton & Pais recommend teams of 5-9 people as optimal (drawing on
@@ -528,7 +528,7 @@ heuristics:
     action: |
       1. Count agents in squad (ls squads/{name}/agents/*.md | wc -l)
       2. Calculate cognitive load score using cognitive_load_model
-      3. If agents > 7 AND total_load > 8:
+      3. If agents > 7 OR total_load > 8:
          - FLAG: "Squad {name} exceeds safe topology limits"
          - RECOMMEND: Split along domain boundaries
          - SUGGEST: Which agents belong to which sub-squad
@@ -1065,7 +1065,7 @@ output_examples:
       SPLIT ANALYSIS
       ═══════════════════════════════════════════════════════════════
 
-      [KZ_TA_001] ACTIVE: agents (20) > 7 AND load (6) <= 8
+      [KZ_TA_001] ACTIVE: agents (20) > 7 OR load (6) <= 8 — agent count alone triggers split
 
       DOMAIN BOUNDARY ANALYSIS:
       The squad contains three distinct domain clusters:
