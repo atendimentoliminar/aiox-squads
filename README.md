@@ -151,19 +151,21 @@ cp -r aiox-squads/squads/copy ./squads/copy
 
 Squads publicados pela comunidade neste repositório.
 
+<!-- AUTO-GENERATED-SQUAD-CATALOG:START -->
 | Squad | O que faz | Origem | Enviado por |
 |-------|-----------|--------|-------------|
-| [Apex](squads/apex/) | Frontend ultra-premium para web, mobile e spatial, com foco em design system, motion, acessibilidade e performance. | [PR #7](https://github.com/SynkraAI/aiox-squads/pull/7) | [@gamagab-code](https://github.com/gamagab-code) |
-| [Brand](squads/brand/) | Estratégia de marca, posicionamento, naming, identidade visual e arquitetura de movimento. | [PR #8](https://github.com/SynkraAI/aiox-squads/pull/8) | [@pulsifyai-dev](https://github.com/pulsifyai-dev) |
-| [Curator](squads/curator/) | Curadoria de conteúdo em vídeo com mineração de transcrições, timestamps exatos e roteiros de corte. | [PR #1](https://github.com/SynkraAI/aiox-squads/pull/1) | [@diegodiniz1](https://github.com/diegodiniz1) |
-| [Deep Research](squads/deep-research/) | Pesquisa profunda baseada em evidências com pipeline de diagnóstico, execução e QA. | [PR #6](https://github.com/SynkraAI/aiox-squads/pull/6) | [@oalanicolas](https://github.com/oalanicolas) |
-| [Dispatch](squads/dispatch/) | Execução paralela de PRDs, stories e tarefas com decomposição em DAG, roteamento e subagentes. | [PR #1](https://github.com/SynkraAI/aiox-squads/pull/1) | [@diegodiniz1](https://github.com/diegodiniz1) |
-| [Education](squads/education/) | Engenharia instrucional para transformar expertise em cursos online com ciência cognitiva e compliance. | [PR #1](https://github.com/SynkraAI/aiox-squads/pull/1) | [@diegodiniz1](https://github.com/diegodiniz1) |
-| [Kaizen](squads/kaizen/) | Melhoria contínua do ecossistema de squads, com análise de gaps, métricas e recomendações. | [PR #4](https://github.com/SynkraAI/aiox-squads/pull/4) | [@Tiag8](https://github.com/Tiag8) |
-| [Legal Analyst](squads/legal-analyst/) | Análise processual com jurisprudência, precedentes, diretrizes do CNJ e estrutura alinhada ao DATAJUD. | [PR #9](https://github.com/SynkraAI/aiox-squads/pull/9) | [@felippepestana](https://github.com/felippepestana) |
-| [SEO](squads/seo/) | Auditoria, otimização e relatório SEO pós-design com score 0-100 e comparação antes/depois. | [PR #3](https://github.com/SynkraAI/aiox-squads/pull/3) | [@rodrigofaerman](https://github.com/rodrigofaerman) |
-| [Squad Creator](squads/squad-creator/) | Criação e governança de squads com extração de Voice DNA, Thinking DNA e quality gates. | [commit 3c90431](https://github.com/SynkraAI/aiox-squads/commit/3c90431a18fc2c42d8fadf1da2e596c390e9a850) | [@oalanicolas](https://github.com/oalanicolas) |
-| [Squad Creator Pro](squads/squad-creator-pro/) | Upgrade pack do Squad Creator com mind cloning, model routing, workflows avançados e axioma assessment. | [commit 921a002](https://github.com/SynkraAI/aiox-squads/commit/921a002c9c689ac131a8c4dc75de4a3f6f249c4e) | [@oalanicolas](https://github.com/oalanicolas) |
+| [Apex](squads/apex/) | Squad 100% frontend ultra-premium para Web, Mobile e Spatial. | [PR #7](https://github.com/SynkraAI/aiox-squads/pull/7) | [@gamagab-code](https://github.com/gamagab-code) |
+| [Brand](squads/brand/) | Elite brand building squad powered by documented frameworks from the world's greatest branding minds. | [PR #8](https://github.com/SynkraAI/aiox-squads/pull/8) | [@pulsifyai-dev](https://github.com/pulsifyai-dev) |
+| [Curator](squads/curator/) | Squad especializado em curadoria de conteúdo existente. | [PR #1](https://github.com/SynkraAI/aiox-squads/pull/1) | [@diegodiniz1](https://github.com/diegodiniz1) |
+| [Deep Research](squads/deep-research/) | Squad de pesquisa profunda com pipeline 3-tier: Diagnostic (Tier 0), Execution (Tier 1), e Quality Assurance. | [PR #6](https://github.com/SynkraAI/aiox-squads/pull/6) | [@oalanicolas](https://github.com/oalanicolas) |
+| [Dispatch](squads/dispatch/) | Parallel execution engine for AIOS. | [PR #1](https://github.com/SynkraAI/aiox-squads/pull/1) | [@diegodiniz1](https://github.com/diegodiniz1) |
+| [Education](squads/education/) | Replicable system for transforming complex knowledge into mastery journeys using cognitive science + legal compliance | [PR #1](https://github.com/SynkraAI/aiox-squads/pull/1) | [@diegodiniz1](https://github.com/diegodiniz1) |
+| [Kaizen](squads/kaizen/) | O squad que vigia e melhora todos os outros. | [PR #4](https://github.com/SynkraAI/aiox-squads/pull/4) | [@Tiag8](https://github.com/Tiag8) |
+| [Legal Analyst](squads/legal-analyst/) | Sistema de analise juridica processual com 15 agentes especializados. | [PR #9](https://github.com/SynkraAI/aiox-squads/pull/9) | [@felippepestana](https://github.com/felippepestana) |
+| [SEO](squads/seo/) | Post-design SEO optimization squad. | [PR #3](https://github.com/SynkraAI/aiox-squads/pull/3) | [@rodrigofaerman](https://github.com/rodrigofaerman) |
+| [Squad Creator](squads/squad-creator/) | Base meta-squad para criar squads de agentes via templates e validacao estrutural. | [commit 3c90431](https://github.com/SynkraAI/aiox-squads/commit/3c90431a18fc2c42d8fadf1da2e596c390e9a850) | [@oalanicolas](https://github.com/oalanicolas) |
+| [Squad Creator Pro](squads/squad-creator-pro/) | **O upgrade pack que transforma o Squad Creator base em uma fábrica de squads de elite.** | [commit 921a002](https://github.com/SynkraAI/aiox-squads/commit/921a002c9c689ac131a8c4dc75de4a3f6f249c4e) | [@oalanicolas](https://github.com/oalanicolas) |
+<!-- AUTO-GENERATED-SQUAD-CATALOG:END -->
 
 > Tem um squad pronto? [Abra um PR](#contribuindo) e compartilhe com a comunidade.
 
