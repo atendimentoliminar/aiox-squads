@@ -1,0 +1,112 @@
+pack:
+  name: youtube-scriptwriters
+  version: 1.0.0
+  short-title: YouTube Scriptwriters Squad
+  description: >-
+    Squad de roteiristas para YouTube baseado em elite minds reais com
+    frameworks documentados. Cobre diagnóstico de copy, estrutura de roteiro,
+    storytelling e retenção, perspectiva brasileira e sistematização rápida.
+  author: Squad Architect (AIOS)
+  icon: "🎬"
+  slashPrefix: ytScript
+
+# Pattern Library
+pattern_library:
+  prefix: YS
+  naming_convention:
+    format: "{PREFIX}-{CATEGORY}-{NUMBER}"
+    example: "YS-TP-001"
+  categories:
+    - id: TP
+      name: "Task Patterns"
+      description: "Patterns for scriptwriting task structure"
+    - id: EP
+      name: "Executor Patterns"
+      description: "Patterns for executor types and selection"
+    - id: PP
+      name: "Process Patterns"
+      description: "Patterns for scriptwriting workflows"
+    - id: SP
+      name: "Story Patterns"
+      description: "Patterns for narrative structures"
+    - id: RP
+      name: "Retention Patterns"
+      description: "Patterns for audience retention optimization"
+  patterns: []
+
+# Task Standards
+task_standards:
+  enforce_anatomy: true
+  validator: "YS-TP-001"
+  required_fields:
+    - task_name
+    - status
+    - responsible_executor
+    - execution_type
+    - input
+    - output
+    - action_items
+    - acceptance_criteria
+  optional_fields:
+    - estimated_time
+    - dependencies
+    - templates
+    - quality_gate
+
+# Executor Types
+executor_types:
+  human:
+    id: "YS-EP-001"
+    use_for: ["Final creative decisions", "Brand voice approval", "Topic selection"]
+  agent:
+    id: "YS-EP-002"
+    use_for: ["Script drafting", "Hook generation", "Structure analysis", "Retention diagnosis"]
+  hybrid:
+    id: "YS-EP-003"
+    use_for: ["Script review", "A/B hook testing", "Retention optimization"]
+  worker:
+    id: "YS-EP-004"
+    use_for: ["Template generation", "Word count tracking", "Format conversion"]
+
+# Workflow Configuration
+workflow_config:
+  checkpoint_policy: always_active
+  fail_fast: true
+  allow_manual_override: false
+
+# Agents
+agents:
+  - id: yt-chief
+    name: "Script Director"
+    tier: orchestrator
+    role: "Orchestrates the scriptwriting workflow and delegates to specialists"
+
+  - id: george-blackman
+    name: "George Blackman"
+    tier: 1
+    role: "Master scriptwriter — Setup-Tension-Payoff structure"
+    based_on: "George Blackman (YouTube Scriptwriting Playbook)"
+
+  - id: dabi
+    name: "Dabi (David Liu)"
+    tier: 1
+    role: "Storytelling & retention — 21 Commandments, Hook-Event-Payoff"
+    based_on: "David Liu / CreatorSide.io"
+
+  - id: joba
+    name: "Joba"
+    tier: 1
+    role: "Roteiro Supremo — perspectiva BR, primeiros 30s, algoritmo YT"
+    based_on: "Joba / Roteiro Supremo"
+
+  - id: ali-abdaal
+    name: "Ali Abdaal"
+    tier: 2
+    role: "HIVE Framework — sistematização rápida de scripts"
+    based_on: "Ali Abdaal (Part-Time YouTuber Academy)"
+
+  - id: neville-medhora
+    name: "Neville Medhora"
+    tier: 0
+    role: "Diagnóstico de copy/script — analisa ANTES de escrever"
+    based_on: "Neville Medhora (Kopywriting Kourse)"

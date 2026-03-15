@@ -1,0 +1,240 @@
+# n8n Node → AIOS Pattern Mapping
+# Reference: Enterprise Integration Patterns (Hohpe/Woolf) + Workflow Patterns (van der Aalst)
+# Version: 1.0.0
+
+mappings:
+
+  # ============================================================================
+  # TRIGGERS
+  # ============================================================================
+  triggers:
+    webhook:
+      n8n_type: "n8n-nodes-base.webhook"
+      aios_pattern: "HTTP handler / API endpoint"
+      executor: worker
+      eip_pattern: "Message Endpoint"
+      code_template: |
+        // Worker: HTTP endpoint
+        app.post('/webhook/{path}', async (req, res) => {
+          const payload = req.body;
+          await pipeline.start(payload);
+          res.json({ status: 'accepted' });
+        });
+
+    schedule:
+      n8n_type: "n8n-nodes-base.scheduleTrigger"
+      aios_pattern: "Cron job / Scheduled task"
+      executor: worker
+      eip_pattern: "Polling Consumer"
+      code_template: |
+        // Worker: Cron trigger
+        cron.schedule('{expression}', async () => {
+          await pipeline.start({ trigger: 'schedule' });
+        });
+
+    manual:
+      n8n_type: "n8n-nodes-base.manualTrigger"
+      aios_pattern: "CLI command / Human trigger"
+      executor: human
+      eip_pattern: "Event-Driven Consumer"
+
+    email_trigger:
+      n8n_type: "n8n-nodes-base.emailReadImap"
+      aios_pattern: "Email poller / IMAP listener"
+      executor: worker
+      eip_pattern: "Polling Consumer"
+
+  # ============================================================================
+  # DATA TRANSFORMATION
+  # ============================================================================
+  transformation:
+    set:
+      n8n_type: "n8n-nodes-base.set"
+      aios_pattern: "Pure mapping function / DTO transform"
+      executor: worker
+      eip_pattern: "Message Translator"
+
+    function:
+      n8n_type: "n8n-nodes-base.function"
+      aios_pattern: "Custom function / Business logic"
+      executor: agent  # May need interpretation
+      eip_pattern: "Message Translator"
+
+    code:
+      n8n_type: "n8n-nodes-base.code"
+      aios_pattern: "Inline code block"
+      executor: worker
+      eip_pattern: "Message Translator"
+
+    split_in_batches:
+      n8n_type: "n8n-nodes-base.splitInBatches"
+      aios_pattern: "Batch processor / Chunked iteration"
+      executor: worker
+      eip_pattern: "Splitter"
+      wcp_pattern: "WCP-21 (Structured Loop)"
+
+    aggregate:
+      n8n_type: "n8n-nodes-base.aggregate"
+      aios_pattern: "Aggregator / Collector"
+      executor: worker
+      eip_pattern: "Aggregator"
+
+    item_lists:
+      n8n_type: "n8n-nodes-base.itemLists"
+      aios_pattern: "Array operations (sort, filter, merge)"
+      executor: worker
+      eip_pattern: "Message Filter"
+
+  # ============================================================================
+  # CONTROL FLOW
+  # ============================================================================
+  control_flow:
+    if:
+      n8n_type: "n8n-nodes-base.if"
+      aios_pattern: "if/else conditional"
+      executor: worker
+      eip_pattern: "Content-Based Router"
+      wcp_pattern: "WCP-4 (Exclusive Choice)"
+
+    switch:
+      n8n_type: "n8n-nodes-base.switch"
+      aios_pattern: "switch/case or strategy pattern"
+      executor: worker
+      eip_pattern: "Message Router"
+      wcp_pattern: "WCP-6 (Multi-Choice)"
+
+    merge:
+      n8n_type: "n8n-nodes-base.merge"
+      aios_pattern: "Promise.all() / join"
+      executor: worker
+      eip_pattern: "Aggregator"
+      wcp_pattern: "WCP-3 (Synchronization)"
+
+    wait:
+      n8n_type: "n8n-nodes-base.wait"
+      aios_pattern: "Timer / sleep / delay"
+      executor: worker
+      eip_pattern: "Delay Channel"
+      note: "Requires state externalization for durable waits"
+
+    error_trigger:
+      n8n_type: "n8n-nodes-base.errorTrigger"
+      aios_pattern: "try/catch + error handler"
+      executor: worker
+      eip_pattern: "Dead Letter Channel"
+
+    execute_workflow:
+      n8n_type: "n8n-nodes-base.executeWorkflow"
+      aios_pattern: "Child workflow / function call"
+      executor: agent
+      eip_pattern: "Composed Message Processor"
+
+    no_op:
+      n8n_type: "n8n-nodes-base.noOp"
+      aios_pattern: "Pass-through / no action"
+      executor: worker
+      eip_pattern: "Wire Tap (monitoring only)"
+
+  # ============================================================================
+  # EXTERNAL SERVICES (HTTP/API)
+  # ============================================================================
+  external:
+    http_request:
+      n8n_type: "n8n-nodes-base.httpRequest"
+      aios_pattern: "HTTP client with retry + timeout"
+      executor: worker
+      eip_pattern: "Service Activator"
+      requires:
+        - retry_policy
+        - timeout
+        - error_classification
+
+    # Common integrations
+    slack:
+      n8n_type: "n8n-nodes-base.slack"
+      aios_pattern: "Slack API client"
+      executor: worker
+
+    gmail:
+      n8n_type: "n8n-nodes-base.gmail"
+      aios_pattern: "Gmail API client"
+      executor: worker
+
+    google_sheets:
+      n8n_type: "n8n-nodes-base.googleSheets"
+      aios_pattern: "Google Sheets API client"
+      executor: worker
+
+    notion:
+      n8n_type: "n8n-nodes-base.notion"
+      aios_pattern: "Notion API client (MCP available)"
+      executor: worker
+      mcp_available: true
+
+    supabase:
+      n8n_type: "n8n-nodes-base.supabase"
+      aios_pattern: "Supabase client (MCP available)"
+      executor: worker
+      mcp_available: true
+
+    openai:
+      n8n_type: "n8n-nodes-base.openAi"
+      aios_pattern: "LLM call (agent or worker)"
+      executor: agent
+      note: "If prompt is static → worker. If dynamic/creative → agent."
+
+    postgres:
+      n8n_type: "n8n-nodes-base.postgres"
+      aios_pattern: "Database query"
+      executor: worker
+
+    airtable:
+      n8n_type: "n8n-nodes-base.airtable"
+      aios_pattern: "Airtable API client"
+      executor: worker
+
+  # ============================================================================
+  # AI / LLM NODES
+  # ============================================================================
+  ai:
+    ai_agent:
+      n8n_type: "@n8n/n8n-nodes-langchain.agent"
+      aios_pattern: "AIOS Agent with persona"
+      executor: agent
+      note: "Map to AIOS agent with specific instructions"
+
+    ai_chain:
+      n8n_type: "@n8n/n8n-nodes-langchain.chainLlm"
+      aios_pattern: "LLM chain / prompt pipeline"
+      executor: agent
+
+    ai_text_classifier:
+      n8n_type: "@n8n/n8n-nodes-langchain.textClassifier"
+      aios_pattern: "Classification function"
+      executor: agent
+      note: "If rules are fixed → worker with regex. If semantic → agent."
+
+# ============================================================================
+# EXECUTOR DECISION RULES (for generated apps)
+# ============================================================================
+executor_rules:
+  default_mapping:
+    triggers: worker
+    transformations: worker
+    control_flow: worker
+    external_apis: worker
+    ai_nodes: agent
+    approval_steps: human
+    persona_responses: clone
+
+  override_rules:
+    - condition: "Node has dynamic prompt or creative output"
+      executor: agent
+    - condition: "Node requires human approval or decision"
+      executor: human
+    - condition: "Node calls LLM with persona instructions"
+      executor: clone
+    - condition: "Node is pure data transformation with fixed rules"
+      executor: worker
+    - condition: "Node has error impact > HIGH"
+      executor: hybrid  # agent + human review

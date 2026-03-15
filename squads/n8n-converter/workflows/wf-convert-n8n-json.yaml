@@ -1,0 +1,227 @@
+# WF-1: Convert n8n JSON to AIOS App
+# Duration: 10-30 min
+# Best for: Converting exported n8n workflow JSON to native AIOS application
+# Key Agents: converter-chief, flow-analyzer, architecture-translator, executor-mapper, app-builder
+
+workflow:
+  id: wf-convert-n8n-json
+  name: "Convert n8n JSON to AIOS App"
+  duration: "10-30 min"
+  description: |
+    Pipeline completo para converter um JSON exportado do n8n em uma
+    aplicação AIOS nativa com tasks, workflows, config e README.
+
+    5 fases sequenciais com checkpoint entre cada uma.
+    Coverage 100% garantido ou gaps reportados.
+
+  best_for:
+    - "Converter automação n8n existente para app AIOS"
+    - "Migrar de n8n para AIOS com executores otimizados"
+    - "Obter app nativa com versionamento, testes e observabilidade"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# PHASES
+# ═══════════════════════════════════════════════════════════════════════════════
+
+phases:
+  - id: PHASE-1
+    name: "Parse & Analyze"
+    tier: 0
+    description: |
+      Parsear JSON n8n, extrair nós e conexões, classificar patterns,
+      calcular complexidade, detectar anti-patterns.
+    tasks:
+      - task_file: tasks/analyze-n8n-flow.md
+        agent: flow-analyzer
+        required: true
+        description: "Parse completo do JSON n8n"
+        output: "Relatório de análise"
+    checkpoint:
+      criteria:
+        - "100% dos nós parseados"
+        - "Patterns classificados"
+        - "Complexity score calculado"
+        - "Anti-patterns listados"
+      human_review: true
+      message: "Análise do fluxo completa. Revisar antes de prosseguir."
+
+  - id: PHASE-2
+    name: "Translate Architecture"
+    tier: 1
+    description: |
+      Converter grafo n8n analisado em arquitetura AIOS:
+      tasks, workflows, entry points, error handling, state management.
+    tasks:
+      - task_file: tasks/translate-architecture.md
+        agent: architecture-translator
+        required: true
+        description: "Tradução do grafo para arquitetura AIOS"
+        output: "Spec de arquitetura"
+    checkpoint:
+      criteria:
+        - "Todas as tasks definidas com escopo claro"
+        - "Workflows definidos (se 3+ tasks)"
+        - "Error handling especificado"
+        - "State management definido (se Wait nodes)"
+      human_review: true
+      message: "Arquitetura definida. Revisar antes de mapear executores."
+
+  - id: PHASE-3
+    name: "Map Executors"
+    tier: 1
+    description: |
+      Atribuir executor ótimo (worker/agent/clone/human) para cada task.
+      Calcular custo estimado e documentar evolution paths.
+    tasks:
+      - task_file: tasks/map-executors.md
+        agent: executor-mapper
+        required: true
+        description: "Mapeamento de executores via decision tree"
+        output: "Tabela executor por task"
+    checkpoint:
+      criteria:
+        - "Toda task tem executor com rationale"
+        - "Worker-first principle aplicado"
+        - "Custo estimado calculado"
+      human_review: true
+      message: "Executores mapeados. Revisar antes de gerar código."
+
+  - id: PHASE-4
+    name: "Generate App"
+    tier: 2
+    description: |
+      Gerar todos os artefatos da app AIOS: config, tasks, workflows, README.
+    tasks:
+      - task_file: tasks/build-aios-app.md
+        agent: app-builder
+        required: true
+        description: "Geração de código AIOS"
+        output: "App completa em pasta"
+    checkpoint:
+      criteria:
+        - "Todos os arquivos gerados"
+        - "Tasks com 8 campos obrigatórios"
+        - "Workflows com checkpoints"
+        - "Zero credenciais hardcoded"
+      human_review: false
+      message: "App gerada. Validando coverage..."
+
+  - id: PHASE-5
+    name: "Validate Coverage"
+    tier: 2
+    description: |
+      Validar que a app AIOS cobre 100% do fluxo n8n original.
+      Listar gaps e propor soluções se coverage < 100%.
+    tasks:
+      - task_file: checklists/conversion-validation.md
+        agent: converter-chief
+        required: true
+        description: "Validação de coverage"
+        output: "Relatório de coverage"
+    checkpoint:
+      criteria:
+        - "Coverage >= 100%"
+        - "Zero nós n8n sem equivalente AIOS"
+      human_review: true
+      message: "Validação completa. App pronta para uso."
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# ERROR HANDLING
+# ═══════════════════════════════════════════════════════════════════════════════
+
+error_handling:
+  on_phase_failure:
+    - log_error: true
+    - notify_stakeholders: true
+    - create_remediation_task: false
+    - halt_workflow: true
+  on_checkpoint_failure:
+    - log_failure_reason: true
+    - return_to_previous_phase: true
+    - max_retries: 2
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# COMPLETION SIGNALS
+# ═══════════════════════════════════════════════════════════════════════════════
+
+completion_signal: "<promise>COMPLETE</promise>"
+checkpoint_signal: "<promise>CHECKPOINT:PHASE-X</promise>"
+blocked_signal: "<promise>BLOCKED:PHASE-X</promise>"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# OUTPUT ARTIFACTS
+# ═══════════════════════════════════════════════════════════════════════════════
+
+outputs:
+  analysis:
+    - "Relatório de análise do fluxo n8n"
+    - "Pattern mapping table"
+    - "Complexity score"
+  architecture:
+    - "Architecture spec"
+    - "Directory structure"
+    - "Error handling spec"
+  app:
+    - "config.yaml"
+    - "tasks/*.md"
+    - "workflows/wf-*.yaml"
+    - "README.md"
+  validation:
+    - "Coverage report"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# AGENT ASSIGNMENTS
+# ═══════════════════════════════════════════════════════════════════════════════
+
+agents_by_phase:
+  PHASE-1:
+    primary: ["flow-analyzer"]
+    secondary: ["converter-chief"]
+  PHASE-2:
+    primary: ["architecture-translator"]
+    secondary: ["converter-chief"]
+  PHASE-3:
+    primary: ["executor-mapper"]
+    secondary: ["converter-chief"]
+  PHASE-4:
+    primary: ["app-builder"]
+    secondary: ["converter-chief"]
+  PHASE-5:
+    primary: ["converter-chief"]
+    secondary: []
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# QUALITY CHECKLIST
+# ═══════════════════════════════════════════════════════════════════════════════
+
+quality_checklist:
+  Parse & Analyze:
+    - "[ ] Todos os nós extraídos"
+    - "[ ] Conexões mapeadas"
+    - "[ ] Patterns classificados"
+    - "[ ] Anti-patterns detectados"
+  Translate Architecture:
+    - "[ ] Tasks com escopo único"
+    - "[ ] Workflows definidos"
+    - "[ ] Error handling projetado"
+  Map Executors:
+    - "[ ] Worker-first aplicado"
+    - "[ ] Rationale documentado"
+    - "[ ] Custo calculado"
+  Generate App:
+    - "[ ] Task anatomy completa"
+    - "[ ] Workflows com checkpoints"
+    - "[ ] Zero credenciais hardcoded"
+  Validate Coverage:
+    - "[ ] Coverage 100%"
+    - "[ ] Zero gaps"
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# METADATA
+# ═══════════════════════════════════════════════════════════════════════════════
+
+metadata:
+  version: "1.0.0"
+  framework: "EIP + Workflow Patterns + AIOS Executor Matrix"
+  created: "2026-03-02"
+  primary_use_case: "Converting n8n automations to AIOS native apps"

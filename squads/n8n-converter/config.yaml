@@ -1,0 +1,111 @@
+pack:
+  name: n8n-converter
+  version: 1.0.0
+  short-title: n8n to AIOS Converter
+  description: >-
+    Squad para converter automações n8n (JSON ou descrição textual) em
+    aplicações nativas AIOS. Mapeia nós n8n para patterns de integração,
+    atribui executores (humano, agente, worker, clone) e gera tasks,
+    workflows e config prontos para uso.
+  author: AIOS Community
+  icon: "🔄"
+  slashPrefix: n8nConverter
+
+# Pattern Library
+pattern_library:
+  prefix: NC
+  naming_convention:
+    format: "{PREFIX}-{CATEGORY}-{NUMBER}"
+    example: "NC-TP-001"
+  categories:
+    - id: TP
+      name: "Task Patterns"
+      description: "Patterns for conversion task structure"
+    - id: EP
+      name: "Executor Patterns"
+      description: "Patterns for executor selection in generated apps"
+    - id: CP
+      name: "Conversion Patterns"
+      description: "Patterns for n8n node → AIOS mapping"
+    - id: IP
+      name: "Integration Patterns"
+      description: "Patterns for external service integration"
+    - id: VP
+      name: "Validation Patterns"
+      description: "Patterns for conversion validation"
+  patterns: []
+
+# Task Standards (HO-TP-001)
+task_standards:
+  enforce_anatomy: true
+  validator: "NC-TP-001"
+  required_fields:
+    - task_name
+    - status
+    - responsible_executor
+    - execution_type
+    - input
+    - output
+    - action_items
+    - acceptance_criteria
+  optional_fields:
+    - estimated_time
+    - dependencies
+    - templates
+    - quality_gate
+    - handoff
+
+# Executor Types
+executor_types:
+  human:
+    id: "NC-EP-001"
+    name: "Human Executor"
+    cost: "$$$"
+    speed: slow
+    use_for:
+      - "Validação de conversão crítica"
+      - "Decisão sobre arquitetura ambígua"
+      - "Aprovação de apps geradas"
+  agent:
+    id: "NC-EP-002"
+    name: "Agent Executor (AI)"
+    cost: "$$$$"
+    speed: fast
+    use_for:
+      - "Análise de fluxo n8n"
+      - "Tradução de arquitetura"
+      - "Geração de código AIOS"
+  worker:
+    id: "NC-EP-004"
+    name: "Worker Executor"
+    cost: "$"
+    speed: very_fast
+    use_for:
+      - "Parse de JSON n8n"
+      - "Validação de schema"
+      - "File operations"
+  clone:
+    id: "NC-EP-005"
+    name: "Clone Executor"
+    cost: "$$$"
+    speed: fast
+    use_for:
+      - "Execução com persona específica"
+      - "Respostas especializadas"
+
+  executor_selection:
+    requires_creativity: human
+    requires_judgment: [human, agent]
+    requires_speed: [agent, worker]
+    requires_consistency: worker
+    requires_persona: clone
+
+# Workflow Configuration
+workflow_config:
+  checkpoint_policy: always_active
+  fail_fast: true
+  allow_manual_override: false
+
+# Dependencies
+dependencies:
+  - squad-creator-pro  # Para executor-matrix-framework e decision-tree
