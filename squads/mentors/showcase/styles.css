@@ -55,6 +55,10 @@
   --voss-glow:     rgba(225, 29, 72, 0.18);
   --voss-dim:      rgba(225, 29, 72, 0.08);
 
+  --alan:          #38bdf8;
+  --alan-glow:     rgba(56, 189, 248, 0.18);
+  --alan-dim:      rgba(56, 189, 248, 0.08);
+
   --radius:        16px;
   --radius-sm:     10px;
   --transition:    0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -291,6 +295,7 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 .mentor-card.peterson { --accent: var(--peterson); --glow: var(--peterson-glow); }
 .mentor-card.dhh      { --accent: var(--dhh);      --glow: var(--dhh-glow);      }
 .mentor-card.mckeown  { --accent: var(--mckeown);  --glow: var(--mckeown-glow);  }
+.mentor-card.alan     { --accent: var(--alan);     --glow: var(--alan-glow);     }
 
 .card-avatar {
   width: 68px; height: 68px;
@@ -614,6 +619,7 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 .btn-accent-jobs  { background: var(--jobs);  color: #000; }
 .btn-accent-naval { background: var(--naval); color: #000; }
 .btn-accent-rohr  { background: var(--rohr);  color: #fff; }
+.btn-accent-alan  { background: var(--alan);  color: #000; }
 .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 40px var(--btn-glow, rgba(255,255,255,0.1)); }
 
 /* ── Infographic: Focus Map ── */

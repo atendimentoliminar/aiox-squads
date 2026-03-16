@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alan Nicolas — Mentores de Fabiano Silva · ON AI Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root { --accent:var(--alan); --glow:var(--alan-glow); --dim:var(--alan-dim); }
+    .mentor-hero { --mentor-glow-color: rgba(56,189,248,0.07); }
+    .principle-idx { color:var(--alan); }
+    .section-eyebrow { color:rgba(56,189,248,0.7); }
+    .orb-hero { position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(110px);background:var(--alan);opacity:0.05;top:-180px;right:-80px;pointer-events:none; }
+
+    /* Pipeline — Knowledge Extraction Architecture */
+    .pipeline-wrap { display:flex;align-items:stretch;flex-wrap:wrap;gap:0;margin-top:48px;border:1px solid rgba(56,189,248,0.15);border-radius:16px;overflow:hidden; }
+    .pipeline-step { flex:1;min-width:140px;padding:24px 20px;background:rgba(56,189,248,0.03);border-right:1px solid rgba(56,189,248,0.12);text-align:center;position:relative; }
+    .pipeline-step:last-child { border-right:none; }
+    .pipeline-step.crown { background:rgba(56,189,248,0.10);border-color:rgba(56,189,248,0.35); }
+    .pipe-num { font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--alan);display:block;margin-bottom:10px; }
+    .pipe-name { font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:6px; }
+    .pipe-desc { font-size:11px;color:var(--text-muted);line-height:1.5; }
+    .pipe-arrow { position:absolute;right:-13px;top:50%;transform:translateY(-50%);font-size:16px;color:rgba(56,189,248,0.4);z-index:2;display:none; }
+    @media(min-width:900px){ .pipe-arrow { display:block; } }
+
+    /* Pareto zones */
+    .pareto-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:44px; }
+    .pareto-zone { border-radius:16px;padding:28px;border:1px solid; }
+    .pareto-zone.z1 { background:rgba(56,189,248,0.12);border-color:rgba(56,189,248,0.4); }
+    .pareto-zone.z2 { background:rgba(56,189,248,0.06);border-color:rgba(56,189,248,0.25); }
+    .pareto-zone.z3 { background:rgba(56,189,248,0.03);border-color:rgba(56,189,248,0.15); }
+    .pareto-zone.z4 { background:rgba(255,255,255,0.02);border-color:rgba(255,255,255,0.08); }
+    .zone-pct { font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--alan);display:block;margin-bottom:6px; }
+    .zone-name { font-size:14px;font-weight:700;margin-bottom:8px; }
+    .zone-desc { font-size:12px;color:var(--text-secondary);line-height:1.6;margin-bottom:14px; }
+    .zone-action { font-size:11px;padding:5px 12px;border-radius:6px;display:inline-block; }
+    .z1 .zone-action { background:rgba(56,189,248,0.15);color:var(--alan); }
+    .z2 .zone-action { background:rgba(56,189,248,0.08);color:var(--alan); }
+    .z3 .zone-action { background:rgba(255,255,255,0.04);color:var(--text-muted); }
+    .z4 .zone-action { background:rgba(255,0,0,0.05);color:rgba(255,100,100,0.7); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <span class="aiox-badge">ON AI Solutions</span>
+      <span class="squad-name" data-pt="Mentores · Fabiano Silva" data-en="Mentors · Fabiano Silva">Mentores · Fabiano Silva</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div class="lang-toggle">
+        <button id="btn-pt" class="lang-btn active" onclick="setLang('pt')">PT</button>
+        <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a class="nav-back" href="index.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        <span data-pt="Todos os Mentores" data-en="All Mentors">Todos os Mentores</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="mentor-hero">
+  <div class="orb-hero"></div>
+  <div class="container">
+    <div class="mentor-hero-inner">
+      <div class="mentor-avatar-wrap">
+        <div class="mentor-avatar-large" style="background:var(--dim);border-color:rgba(56,189,248,0.4);color:var(--alan);">
+          <img src="images/alan-nicolas.jpg" alt="Alan Nicolas" class="mentor-photo" onerror="this.style.display='none'">
+          <span class="mentor-initials">AN</span>
+          <div class="avatar-ring" style="border-color:var(--alan);"></div>
+          <div class="avatar-ring-2" style="border-color:var(--alan);"></div>
+        </div>
+        <div class="fidelity-badge" style="border-color:rgba(56,189,248,0.4);color:var(--alan);">🧠 <span data-pt="Fidelidade 92–95%" data-en="Fidelity 92–95%">Fidelidade 92–95%</span></div>
+      </div>
+      <div class="mentor-hero-content">
+        <div class="eyebrow" style="color:var(--alan);" data-pt="ON AI Solutions · Mentores de Fabiano Silva &nbsp;·&nbsp; Tier 1 · Conhecimento & IA" data-en="ON AI Solutions · Fabiano Silva's Mentors &nbsp;·&nbsp; Tier 1 · Knowledge & AI">ON AI Solutions · Mentores de Fabiano Silva &nbsp;·&nbsp; Tier 1 · Conhecimento &amp; IA</div>
+        <h1>Alan Nicolas</h1>
+        <p class="mentor-tagline" data-pt="Knowledge Architect · Mind Cloning · Pareto ao Cubo. Criador do DNA Mental™. Construiu sistemas de clone cognitivo com R$2.1M+ em resultados documentados. Pioneiro em extração de conhecimento de alta fidelidade para IA." data-en="Knowledge Architect · Mind Cloning · Pareto ao Cubo. Creator of DNA Mental™. Built cognitive clone systems with R$2.1M+ in documented results. Pioneer in high-fidelity knowledge extraction for AI.">Knowledge Architect · Mind Cloning · Pareto ao Cubo. Criador do DNA Mental™. Construiu sistemas de clone cognitivo com R$2.1M+ em resultados documentados. Pioneiro em extração de conhecimento de alta fidelidade para IA.</p>
+        <div class="identity-card" style="border-left-color:var(--alan);" data-pt="&ldquo;A maioria das pessoas coleta. Poucas curam. Menos ainda extraem. Passei anos construindo sistemas para clonar mentes de elite — transformar o que os melhores pensadores do mundo sabem fazer em agentes que replicam esse raciocínio com fidelidade documentada. A diferença entre um clone que multiplica resultados e um chatbot com nome bonito é a curadoria. Simples assim. Não é o prompt. Não é o modelo. É a qualidade do que entra.&rdquo;" data-en="&ldquo;Most people collect. Few curate. Even fewer extract. I spent years building systems to clone elite minds — transforming what the world's best thinkers know how to do into agents that replicate that reasoning with documented fidelity. The difference between a clone that multiplies results and a chatbot with a pretty name is curation. Plain and simple. It's not the prompt. It's not the model. It's the quality of what goes in.&rdquo;">"A maioria das pessoas coleta. Poucas curam. Menos ainda extraem. A diferença entre um clone que multiplica resultados e um chatbot com nome bonito é a curadoria. Simples assim. Não é o prompt. Não é o modelo. É a qualidade do que entra."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section style="padding:40px 0;background:rgba(255,255,255,0.014);">
+  <div class="container">
+    <div style="display:flex;gap:48px;flex-wrap:wrap;justify-content:center;">
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--alan);">R$2.1M+</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Resultados Documentados" data-en="Documented Results">Resultados Documentados</div></div>
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--alan);">12</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Fontes First-Party" data-en="First-Party Sources">Fontes First-Party</div></div>
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--alan);">92–95%</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Fidelidade de Clone" data-en="Clone Fidelity">Fidelidade de Clone</div></div>
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--alan);">200+</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Agentes no Pipeline" data-en="Agents in Pipeline">Agentes no Pipeline</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Conexão com Fabiano Silva -->
+<section class="compat-section">
+  <div class="container">
+    <div class="compat-card">
+      <div class="compat-header">
+        <div class="compat-title-group">
+          <span class="compat-label" data-pt="Conexão com Fabiano Silva" data-en="Connection with Fabiano Silva">Conexão com Fabiano Silva</span>
+          <h3 class="compat-heading" data-pt="Como Alan Nicolas complementa o perfil 7w8 · ID" data-en="How Alan Nicolas complements the 7w8 · ID profile">Como Alan Nicolas complementa o perfil 7w8 · ID</h3>
+        </div>
+        <div class="compat-badges">
+          <div class="compat-badge-group">
+            <span class="compat-badge-label" data-pt="Fabiano" data-en="Fabiano">Fabiano</span>
+            <span class="compat-badge compat-fab">7w8 · ID</span>
+          </div>
+          <span class="compat-arrow">↔</span>
+          <div class="compat-badge-group">
+            <span class="compat-badge-label" data-pt="Mentor" data-en="Mentor">Mentor</span>
+            <span class="compat-badge compat-mentor">1w5 · CD</span>
+          </div>
+        </div>
+      </div>
+      <div class="compat-body">
+        <div class="compat-mentor-profile">
+          <div class="cpi-item">
+            <span class="cpi-label" data-pt="Eneagrama" data-en="Enneagram">Eneagrama</span>
+            <span class="cpi-value" data-pt="Tipo 1w5 — O Reformador com profundidade analítica" data-en="Type 1w5 — The Reformer with analytical depth">Tipo 1w5 — O Reformador com profundidade analítica</span>
+          </div>
+          <div class="cpi-item">
+            <span class="cpi-label">DISC</span>
+            <span class="cpi-value" data-pt="CD — Conscientiousness + Dominance (precisão + decisão)" data-en="CD — Conscientiousness + Dominance (precision + decisiveness)">CD — Conscientiousness + Dominance (precisão + decisão)</span>
+          </div>
+          <div class="cpi-item">
+            <span class="cpi-label" data-pt="Dinâmica" data-en="Dynamic">Dinâmica</span>
+            <span class="cpi-value" data-pt="Complementar — sistemas que filtram a amplitude do 7w8/ID" data-en="Complementary — systems that filter the 7w8/ID's breadth">Complementar — sistemas que filtram a amplitude do 7w8/ID</span>
+          </div>
+        </div>
+        <ul class="compat-insights">
+          <li data-pt="Pareto ao Cubo é o antídoto direto para a natureza acumuladora do Tipo 7: onde o 7 coleta fontes e projetos por FOMO, Alan força a eliminação dos 80% sem pena — convertendo amplitude dispersa em 0,8% de genialidade documentada." data-en="Pareto ao Cubo is the direct antidote to the Type 7's accumulative nature: where the 7 collects sources and projects out of FOMO, Alan forces the elimination of 80% without mercy — converting scattered breadth into 0.8% of documented brilliance.">Pareto ao Cubo é o antídoto direto para a natureza acumuladora do Tipo 7: onde o 7 coleta fontes e projetos por FOMO, Alan força a eliminação dos 80% sem pena — convertendo amplitude dispersa em 0,8% de genialidade documentada.</li>
+          <li data-pt="O perfil CD de Alan impõe o gate que o perfil ID raramente se impõe sozinho: antes de aceitar qualquer conteúdo, classificar em ouro/bronze. O C (Conscientiousness) exige checklist; o D (Dominance) encerra sem hesitar o que não passa." data-en="Alan's CD profile imposes the gate that the ID profile rarely imposes on itself: before accepting any content, classify it gold/bronze. The C (Conscientiousness) demands a checklist; the D (Dominance) ends without hesitation what fails the test.">O perfil CD de Alan impõe o gate que o perfil ID raramente se impõe sozinho: antes de aceitar qualquer conteúdo, classificar em ouro/bronze. O C (Conscientiousness) exige checklist; o D (Dominance) encerra sem hesitar o que não passa.</li>
+          <li data-pt="A Trindade (Playbook + Framework + Swipe) resolve um padrão clássico do 7w8: iniciar projetos com energia e entusiasmo (I) mas sem estrutura replicável. Alan codifica o processo antes que o entusiasmo do 7 migre para o próximo projeto." data-en="The Trinity (Playbook + Framework + Swipe) solves a classic 7w8 pattern: starting projects with energy and enthusiasm (I) but without a replicable structure. Alan codifies the process before the 7's enthusiasm migrates to the next project.">A Trindade (Playbook + Framework + Swipe) resolve um padrão clássico do 7w8: iniciar projetos com energia e entusiasmo (I) mas sem estrutura replicável. Alan codifica o processo antes que o entusiasmo do 7 migre para o próximo projeto.</li>
+          <li data-pt="A regra 40/20/40 (curadoria→prompt→refinamento) contraria diretamente a impulsividade da Asa 8: a força executora do 8 quer ir logo ao resultado, Alan exige que o maior esforço vá em curadoria — exatamente onde o 7w8 mais corta caminho e mais paga o preço." data-en="The 40/20/40 rule (curation→prompt→refinement) directly counters Wing 8's impulsivity: the 8's executive force wants to jump to results, Alan demands the greatest effort go into curation — exactly where the 7w8 cuts corners most and pays the price.">A regra 40/20/40 (curadoria→prompt→refinamento) contraria diretamente a impulsividade da Asa 8: a força executora do 8 quer ir logo ao resultado, Alan exige que o maior esforço vá em curadoria — exatamente onde o 7w8 mais corta caminho e mais paga o preço.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Knowledge Extraction Architecture -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Framework Central" data-en="Core Framework">Framework Central</div>
+    <h2 class="section-title" data-pt="Knowledge Extraction Architecture" data-en="Knowledge Extraction Architecture">Knowledge Extraction Architecture</h2>
+    <p class="section-subtitle" data-pt="O pipeline de 7 etapas que separa um clone cognitivo de alta fidelidade de um chatbot com nome bonito. Cada etapa tem critério de saída binário: GO ou LOOP." data-en="The 7-step pipeline that separates a high-fidelity cognitive clone from a chatbot with a pretty name. Each step has a binary exit criterion: GO or LOOP.">O pipeline de 7 etapas que separa um clone cognitivo de alta fidelidade de um chatbot com nome bonito. Cada etapa tem critério de saída binário: GO ou LOOP.</p>
+    <div class="pipeline-wrap">
+      <div class="pipeline-step">
+        <span class="pipe-num">01</span>
+        <div class="pipe-name" data-pt="Source Discovery" data-en="Source Discovery">Source Discovery</div>
+        <div class="pipe-desc" data-pt="Buscar fontes com viés anti-obviedade. Entrevistas longas, Q&amp;A ao vivo, bastidores." data-en="Search for sources with anti-obviousness bias. Long interviews, live Q&A, behind the scenes.">Buscar fontes com viés anti-obviedade. Entrevistas longas, Q&amp;A ao vivo, bastidores.</div>
+        <span class="pipe-arrow">›</span>
+      </div>
+      <div class="pipeline-step">
+        <span class="pipe-num">02</span>
+        <div class="pipe-name" data-pt="Classification" data-en="Classification">Classification</div>
+        <div class="pipe-desc" data-pt="Classificar em ouro vs bronze antes de qualquer leitura profunda. Ouro ≥ 60%." data-en="Classify gold vs bronze before any deep reading. Gold ≥ 60%.">Classificar em ouro vs bronze antes de qualquer leitura profunda. Ouro ≥ 60%.</div>
+        <span class="pipe-arrow">›</span>
+      </div>
+      <div class="pipeline-step">
+        <span class="pipe-num">03</span>
+        <div class="pipe-name" data-pt="Pareto ao Cubo" data-en="Pareto ao Cubo">Pareto ao Cubo</div>
+        <div class="pipe-desc" data-pt="Encontrar o 0,8% Crown Jewel. Eliminar 80% sem pena." data-en="Find the 0.8% Crown Jewel. Eliminate 80% without mercy.">Encontrar o 0,8% Crown Jewel. Eliminar 80% sem pena.</div>
+        <span class="pipe-arrow">›</span>
+      </div>
+      <div class="pipeline-step">
+        <span class="pipe-num">04</span>
+        <div class="pipe-name" data-pt="Deconstruction" data-en="Deconstruction">Deconstruction</div>
+        <div class="pipe-desc" data-pt="Perguntas que revelam o framework implícito do expert." data-en="Questions that reveal the expert's implicit framework.">Perguntas que revelam o framework implícito do expert.</div>
+        <span class="pipe-arrow">›</span>
+      </div>
+      <div class="pipeline-step">
+        <span class="pipe-num">05</span>
+        <div class="pipe-name" data-pt="DNA Extraction" data-en="DNA Extraction">DNA Extraction</div>
+        <div class="pipe-desc" data-pt="Voice DNA + Thinking DNA com [SOURCE:] em cada conceito." data-en="Voice DNA + Thinking DNA with [SOURCE:] on every concept.">Voice DNA + Thinking DNA com [SOURCE:] em cada conceito.</div>
+        <span class="pipe-arrow">›</span>
+      </div>
+      <div class="pipeline-step">
+        <span class="pipe-num">06</span>
+        <div class="pipe-name" data-pt="Self-Validation" data-en="Self-Validation">Self-Validation</div>
+        <div class="pipe-desc" data-pt="15+ citações, 5+ signature phrases, zero [INFERRED] não marcado." data-en="15+ citations, 5+ signature phrases, zero unmarked [INFERRED].">15+ citações, 5+ signature phrases, zero [INFERRED] não marcado.</div>
+        <span class="pipe-arrow">›</span>
+      </div>
+      <div class="pipeline-step crown">
+        <span class="pipe-num" style="color:var(--alan);">07</span>
+        <div class="pipe-name" style="color:var(--alan);" data-pt="INSUMOS_READY" data-en="INSUMOS_READY">INSUMOS_READY</div>
+        <div class="pipe-desc" data-pt="Handoff para operacionalizar. Clone pronto para deploy." data-en="Handoff to operationalize. Clone ready to deploy.">Handoff para operacionalizar. Clone pronto para deploy.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Principles -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Princípios" data-en="Principles">Princípios</div>
+    <h2 class="section-title" data-pt="As 7 Regras Inegociáveis" data-en="The 7 Non-Negotiable Rules">As 7 Regras Inegociáveis</h2>
+    <p class="section-subtitle" data-pt="Cada princípio foi testado na prática — inclusive errando primeiro (30h de áudio sem curadoria que virou clone genérico) e depois acertando (clone Hormozi, R$2.1M documentados)." data-en="Each principle was tested in practice — including failing first (30h of audio without curation that became a generic clone) and then succeeding (Hormozi clone, R$2.1M documented).">Cada princípio foi testado na prática — inclusive errando primeiro (30h de áudio sem curadoria que virou clone genérico) e depois acertando (clone Hormozi, R$2.1M documentados).</p>
+    <div class="principles-grid">
+      <div class="principle-card"><span class="principle-idx">01 / CURADORIA É TUDO</span><div class="principle-title" data-pt="Qualidade da Entrada Define Qualidade da Saída" data-en="Input Quality Defines Output Quality">Qualidade da Entrada Define Qualidade da Saída</div><p class="principle-body" data-pt="Uma fonte ouro vale mais que 30 horas de conteúdo bronze. Volume sem curadoria não é riqueza de material — é ruído com escala. A curadoria não é etapa opcional: é onde mora a fidelidade do clone." data-en="One gold source is worth more than 30 hours of bronze content. Volume without curation isn't rich material — it's noise at scale. Curation isn't an optional step: it's where clone fidelity lives.">Uma fonte ouro vale mais que 30 horas de conteúdo bronze. Volume sem curadoria não é riqueza de material — é ruído com escala. A curadoria não é etapa opcional: é onde mora a fidelidade do clone.</p></div>
+      <div class="principle-card"><span class="principle-idx">02 / CLONE MINDS, NÃO BOTS</span><div class="principle-title" data-pt="Replica o Raciocínio, Não o Texto" data-en="Replicate the Reasoning, Not the Text">Replica o Raciocínio, Não o Texto</div><p class="principle-body" data-pt="Pessoas reais têm skin in the game. Seus frameworks foram testados na realidade, não em sala de aula. Clone de mente real > bot genérico com prompt de personagem. A fidelidade importa porque o que você replica é o raciocínio." data-en="Real people have skin in the game. Their frameworks were tested in reality, not in a classroom. Real mind clone > generic bot with character prompt. Fidelity matters because what you're replicating is the reasoning.">Pessoas reais têm skin in the game. Seus frameworks foram testados na realidade, não em sala de aula. Clone de mente real > bot genérico com prompt de personagem. A fidelidade importa porque o que você replica é o raciocínio.</p></div>
+      <div class="principle-card"><span class="principle-idx">03 / A TRINDADE É SAGRADA</span><div class="principle-title" data-pt="Playbook + Framework + Swipe File" data-en="Playbook + Framework + Swipe File">Playbook + Framework + Swipe File</div><p class="principle-body" data-pt="Clone precisa de Playbook (O QUE fazer) + Framework (QUANDO/COMO decidir) + Swipe File (exemplos reais). Falta qualquer um dos três — clone fraco. Playbook sem Framework é só receita. Clone precisa decidir, não só executar." data-en="A clone needs a Playbook (WHAT to do) + Framework (WHEN/HOW to decide) + Swipe File (real examples). Missing any of the three — weak clone. Playbook without Framework is just a recipe. A clone needs to decide, not just execute.">Clone precisa de Playbook (O QUE fazer) + Framework (QUANDO/COMO decidir) + Swipe File (exemplos reais). Falta qualquer um dos três — clone fraco. Playbook sem Framework é só receita. Clone precisa decidir, não só executar.</p></div>
+      <div class="principle-card"><span class="principle-idx">04 / PARETO AO CUBO</span><div class="principle-title" data-pt="80/20 Aplicado 3 Vezes" data-en="80/20 Applied 3 Times">80/20 Aplicado 3 Vezes</div><p class="principle-body" data-pt="0,8% das atividades produzem ~51% do resultado. A pergunta certa não é 'o que devo fazer?' — é 'o que devo parar de fazer?' A Zona de Merda (80%) precisa ser eliminada agressivamente, sem pena, para a Zona de Genialidade aparecer." data-en="0.8% of activities produce ~51% of results. The right question isn't 'what should I do?' — it's 'what should I stop doing?' The Misery Zone (80%) needs to be aggressively eliminated, without mercy, for the Genius Zone to appear.">0,8% das atividades produzem ~51% do resultado. A pergunta certa não é 'o que devo fazer?' — é 'o que devo parar de fazer?' A Zona de Merda (80%) precisa ser eliminada agressivamente, sem pena, para a Zona de Genialidade aparecer.</p></div>
+      <div class="principle-card"><span class="principle-idx">05 / RASTREABILIDADE</span><div class="principle-title" data-pt="Sem [SOURCE:] Não Existe" data-en="Without [SOURCE:] It Doesn't Exist">Sem [SOURCE:] Não Existe</div><p class="principle-body" data-pt="Cada conceito extraído precisa de [SOURCE: página/minuto]. Se não tem fonte, é inferência — marque [INFERRED] ou não use. Clone que inventa parece bom no início e falha no momento que importa. Se não sobrevive ao reset, não tá documentado." data-en="Each extracted concept needs [SOURCE: page/minute]. If there's no source, it's inference — mark it [INFERRED] or don't use it. A clone that invents seems good at first and fails when it matters. If it doesn't survive a reset, it's not documented.">Cada conceito extraído precisa de [SOURCE: página/minuto]. Se não tem fonte, é inferência — marque [INFERRED] ou não use. Clone que inventa parece bom no início e falha no momento que importa. Se não sobrevive ao reset, não tá documentado.</p></div>
+      <div class="principle-card"><span class="principle-idx">06 / 40/20/40</span><div class="principle-title" data-pt="Distribuição Correta do Esforço" data-en="Correct Effort Distribution">Distribuição Correta do Esforço</div><p class="principle-body" data-pt="40% do esforço vai em curadoria. 20% em prompt/estrutura. 40% em refinamento. Inverter essa ordem é o erro mais comum — e o mais caro. Quem pula a curadoria para chegar logo no prompt está construindo em areia." data-en="40% of effort goes into curation. 20% into prompt/structure. 40% into refinement. Reversing this order is the most common mistake — and the most expensive. Those who skip curation to get to the prompt are building on sand.">40% do esforço vai em curadoria. 20% em prompt/estrutura. 40% em refinamento. Inverter essa ordem é o erro mais comum — e o mais caro. Quem pula a curadoria para chegar logo no prompt está construindo em areia.</p></div>
+      <div class="principle-card"><span class="principle-idx">07 / REUSE ANTES DE CRIAR</span><div class="principle-title" data-pt="Quem Já Faz Isso Bem?" data-en="Who Already Does This Well?">Quem Já Faz Isso Bem?</div><p class="principle-body" data-pt="Antes de criar qualquer framework, task ou sistema: 'Quem já faz isso bem?' Adaptar o que foi validado bate inventar do zero em 90% dos casos. A pesquisa antes da criação não é burocracia — é respeito pelo trabalho existente." data-en="Before creating any framework, task or system: 'Who already does this well?' Adapting what's been validated beats inventing from scratch in 90% of cases. Research before creation isn't bureaucracy — it's respect for existing work.">Antes de criar qualquer framework, task ou sistema: 'Quem já faz isso bem?' Adaptar o que foi validado bate inventar do zero em 90% dos casos. A pesquisa antes da criação não é burocracia — é respeito pelo trabalho existente.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="big-quote-section">
+  <div class="container">
+    <div class="big-quote">
+      Se não sobrevive ao reset, não tá documentado — tá só na sua cabeça.
+      <p class="quote-attr">— Alan Nicolas, DNA Mental™ Framework, 2024</p>
+    </div>
+  </div>
+</div>
+
+<!-- Pareto ao Cubo -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Ferramenta Principal" data-en="Core Tool">Ferramenta Principal</div>
+    <h2 class="section-title" data-pt="Pareto ao Cubo — As 4 Zonas" data-en="Pareto ao Cubo — The 4 Zones">Pareto ao Cubo — As 4 Zonas</h2>
+    <p class="section-subtitle" data-pt="80/20 aplicado 3 vezes. Três perguntas por item: para sem prejudicar? Só eu faço? Retorno desproporcional? O número de SIM determina a zona." data-en="80/20 applied 3 times. Three questions per item: stop without harm? Only I can? Disproportionate return? The number of YESes determines the zone.">80/20 aplicado 3 vezes. Três perguntas por item: para sem prejudicar? Só eu faço? Retorno desproporcional? O número de SIM determina a zona.</p>
+    <div class="pareto-grid">
+      <div class="pareto-zone z1">
+        <span class="zone-pct">0,8%</span>
+        <div class="zone-name" data-pt="Zona de Genialidade" data-en="Genius Zone">Zona de Genialidade</div>
+        <p class="zone-desc" data-pt="3 SIM. Só você faz, gera retorno desproporcional, tudo para sem isso. Crown Jewel do seu sistema." data-en="3 YES. Only you can do it, generates disproportionate return, everything stops without it. Crown Jewel of your system.">3 SIM. Só você faz, gera retorno desproporcional, tudo para sem isso. Crown Jewel do seu sistema.</p>
+        <span class="zone-action" data-pt="Proteger a todo custo" data-en="Protect at all costs">Proteger a todo custo</span>
+      </div>
+      <div class="pareto-zone z2">
+        <span class="zone-pct">4%</span>
+        <div class="zone-name" data-pt="Zona de Excelência" data-en="Excellence Zone">Zona de Excelência</div>
+        <p class="zone-desc" data-pt="2 SIM. Você é muito bom nisso e gera impacto real, mas não é insubstituível." data-en="2 YES. You're very good at it and it generates real impact, but you're not irreplaceable.">2 SIM. Você é muito bom nisso e gera impacto real, mas não é insubstituível.</p>
+        <span class="zone-action" data-pt="Desenvolver ou delegar" data-en="Develop or delegate">Desenvolver ou delegar</span>
+      </div>
+      <div class="pareto-zone z3">
+        <span class="zone-pct">20%</span>
+        <div class="zone-name" data-pt="Zona de Impacto" data-en="Impact Zone">Zona de Impacto</div>
+        <p class="zone-desc" data-pt="1 SIM. Mantém a operação rodando mas não é onde mora o valor único." data-en="1 YES. Keeps the operation running but it's not where unique value lives.">1 SIM. Mantém a operação rodando mas não é onde mora o valor único.</p>
+        <span class="zone-action" data-pt="Manter ou sistematizar" data-en="Maintain or systematize">Manter ou sistematizar</span>
+      </div>
+      <div class="pareto-zone z4">
+        <span class="zone-pct">80%</span>
+        <div class="zone-name" data-pt="Zona de Merda" data-en="Misery Zone">Zona de Merda</div>
+        <p class="zone-desc" data-pt="0 SIM. Parece importante. Não é. O bloqueio para o 0,8% quase sempre está aqui." data-en="0 YES. Seems important. It's not. The block to the 0.8% almost always lives here.">0 SIM. Parece importante. Não é. O bloqueio para o 0,8% quase sempre está aqui.</p>
+        <span class="zone-action" data-pt="Eliminar agressivamente" data-en="Eliminate aggressively">Eliminar agressivamente</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Voice DNA -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="DNA da Voz" data-en="Voice DNA">DNA da Voz</div>
+    <h2 class="section-title" data-pt="Como Alan Nicolas Se Expressa" data-en="How Alan Nicolas Speaks">Como Alan Nicolas Se Expressa</h2>
+    <p class="section-subtitle" data-pt="Econômico, direto, framework-driven. Vai direto ao ponto com case real. Zero fluff — sinal puro." data-en="Economic, direct, framework-driven. Gets straight to the point with a real case. Zero fluff — pure signal.">Econômico, direto, framework-driven. Vai direto ao ponto com case real. Zero fluff — sinal puro.</p>
+    <div class="vocab-grid">
+      <div class="vocab-group"><h4 data-pt="Sempre no vocabulário" data-en="Always in the vocabulary">Sempre no vocabulário</h4><div class="vocab-tags"><span class="vocab-tag use">curadoria</span><span class="vocab-tag use">Framework</span><span class="vocab-tag use">ouro vs bronze</span><span class="vocab-tag use">Pareto ao Cubo</span><span class="vocab-tag use">0,8%</span><span class="vocab-tag use">Zona de Genialidade</span><span class="vocab-tag use">rastreabilidade</span><span class="vocab-tag use">Trindade</span><span class="vocab-tag use">Crown Jewel</span><span class="vocab-tag use">clone</span><span class="vocab-tag use">[SOURCE:]</span><span class="vocab-tag use">insumos</span><span class="vocab-tag use">fidelidade</span></div></div>
+      <div class="vocab-group"><h4 data-pt="Nunca no vocabulário" data-en="Never in the vocabulary">Nunca no vocabulário</h4><div class="vocab-tags"><span class="vocab-tag avoid">é fácil</span><span class="vocab-tag avoid">só jogar conteúdo</span><span class="vocab-tag avoid">quanto mais melhor</span><span class="vocab-tag avoid">prompt resolve tudo</span><span class="vocab-tag avoid">motivação (como motor)</span><span class="vocab-tag avoid">linguagem vaga sem framework</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Sources -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Fontes Primárias" data-en="Primary Sources">Fontes Primárias</div>
+    <h2 class="section-title" data-pt="Construído a Partir de 12 Documentos First-Party" data-en="Built From 12 First-Party Documents">Construído a Partir de 12 Documentos First-Party</h2>
+    <table class="source-table">
+      <thead><tr><th data-pt="Fonte" data-en="Source">Fonte</th><th data-pt="Tipo" data-en="Type">Tipo</th><th data-pt="Contribuição" data-en="Contribution">Contribuição</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Entrevistas Longas (2022–2024)</strong></td><td data-pt="Vídeo/Áudio" data-en="Video/Audio">Vídeo/Áudio</td><td data-pt="Raciocínio em tempo real, tom, frameworks de curadoria e extração" data-en="Real-time reasoning, tone, curation and extraction frameworks">Raciocínio em tempo real, tom, frameworks de curadoria e extração</td></tr>
+        <tr><td><strong>DNA Mental™ Documentation</strong></td><td data-pt="Escrito" data-en="Written">Escrito</td><td data-pt="Arquitetura completa do processo de extração de conhecimento" data-en="Complete architecture of the knowledge extraction process">Arquitetura completa do processo de extração de conhecimento</td></tr>
+        <tr><td><strong>Case Hormozi (R$2.1M)</strong></td><td data-pt="Documentação de Projeto" data-en="Project Documentation">Documentação de Projeto</td><td data-pt="Prova de conceito do pipeline — métricas reais e decisões documentadas" data-en="Pipeline proof of concept — real metrics and documented decisions">Prova de conceito do pipeline — métricas reais e decisões documentadas</td></tr>
+        <tr><td><strong>Q&amp;A ao Vivo e Bastidores</strong></td><td data-pt="Ouro" data-en="Gold">Ouro</td><td data-pt="Respostas espontâneas, frameworks implícitos, veto conditions em campo" data-en="Spontaneous responses, implicit frameworks, veto conditions in the field">Respostas espontâneas, frameworks implícitos, veto conditions em campo</td></tr>
+        <tr><td><strong>Pipeline AIOX (200+ agentes)</strong></td><td data-pt="Dados de Projeto" data-en="Project Data">Dados de Projeto</td><td data-pt="Padrões extraídos de escala real — o que funciona vs o que falha em volume" data-en="Patterns extracted from real scale — what works vs what fails at volume">Padrões extraídos de escala real — o que funciona vs o que falha em volume</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="activation-section">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Ativar Agora" data-en="Activate Now">Ativar Agora</div>
+    <h2 class="section-title" data-pt="Curadoria > Volume. Clone Minds > Create Bots." data-en="Curation > Volume. Clone Minds > Create Bots.">Curadoria &gt; Volume. Clone Minds &gt; Create Bots.</h2>
+    <p data-pt="Ative Alan Nicolas como seu Knowledge Architect na plataforma ON AI Solutions." data-en="Activate Alan Nicolas as your Knowledge Architect on the ON AI Solutions platform.">Ative Alan Nicolas como seu Knowledge Architect na plataforma ON AI Solutions.</p>
+    <br/><br/>
+    <a href="index.html" class="btn btn-accent-alan" style="--btn-glow:var(--alan-glow);" data-pt="← Explorar outros mentores" data-en="← Explore other mentors">← Explorar outros mentores</a>
+  </div>
+</section>
+
+<footer><div class="container"><p data-pt="Coleção de mentores curada por <strong>Fabiano Silva</strong> · Alan Nicolas — Clone Cognitivo v1.0 · Fidelidade 92–95% · 12 fontes first-party documentadas" data-en="Mentor collection curated by <strong>Fabiano Silva</strong> · Alan Nicolas — Cognitive Clone v1.0 · Fidelity 92–95% · 12 first-party documented sources">Coleção de mentores curada por <strong>Fabiano Silva</strong> · Alan Nicolas — Clone Cognitivo v1.0 · Fidelidade 92–95% · 12 fontes first-party documentadas</p></div></footer>
+
+<script src="lang.js"></script>
+</body>
+</html>

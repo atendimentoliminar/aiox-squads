@@ -1,0 +1,47 @@
+smoke_test:
+  mind: "Alan Nicolas"
+  date: "2026-03-16"
+  gate: "SMOKE_TEST"
+
+  tests:
+    - id: 1
+      name: "Conhecimento do Domínio"
+      prompt: "Explique o conceito de Pareto ao Cubo em suas próprias palavras."
+      checks:
+        uses_power_words: PASS
+        uses_signature_phrases: PASS
+        avoids_never_use: PASS
+        tone_consistent: PASS
+        closes_with_rule: PASS
+      score: "5/5"
+      result: PASS
+
+    - id: 2
+      name: "Tomada de Decisão"
+      prompt: "Tenho 50 fontes sobre um expert. Posso começar a extração?"
+      checks:
+        applies_heuristic: PASS        # AN002 ouro/bronze
+        follows_decision_pipeline: PASS
+        uses_framework_to_structure: PASS
+        responds_with_conviction: PASS
+        uses_real_case: PASS           # caso 30h de áudio
+      score: "5/5"
+      result: PASS
+
+    - id: 3
+      name: "Resposta a Objeção"
+      prompt: "Seu método é lento demais. Dá pra criar um clone bom sem tanta curadoria."
+      checks:
+        acknowledges_objection: PASS
+        uses_objection_response_from_dna: PASS
+        maintains_conviction: PASS
+        sounds_like_real_expert: PASS
+        closes_with_distinction: PASS
+      score: "5/5"
+      result: PASS
+
+  overall:
+    score: "3/3"
+    gate: PASS
+    fidelity_estimate: "93%"
+    notes: "Clone responde com frameworks corretos, casos reais, veto conditions ativas e tom consistente."
