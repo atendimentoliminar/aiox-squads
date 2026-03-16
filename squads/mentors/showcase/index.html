@@ -1,56 +1,204 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mentores de Fabiano Silva — ON AI Solutions</title>
-  <meta name="description" content="Clones cognitivos das mentes mais influentes da história, curados por Fabiano Silva. Construídos a partir de fontes primárias documentadas." />
+  <meta name="description"
+    content="Clones cognitivos das mentes mais influentes da história, curados por Fabiano Silva. Construídos a partir de fontes primárias documentadas." />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .orb { position:absolute; border-radius:50%; filter:blur(90px); pointer-events:none; opacity:0.1; }
-    .orb-1 { width:500px;height:500px; background:var(--jobs);  top:-100px; left:-80px; }
-    .orb-2 { width:400px;height:400px; background:var(--naval); bottom:-60px; right:8%; }
-    .orb-3 { width:300px;height:300px; background:var(--rohr);  top:45%; left:55%; }
-    .value-section { background:rgba(255,255,255,0.012); border-top:1px solid var(--glass-border); border-bottom:1px solid var(--glass-border); }
-    .value-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); }
-    .value-item { padding:44px 32px; border-right:1px solid var(--glass-border); }
-    .value-item:last-child { border-right:none; }
-    .value-icon { font-size:1.6rem; margin-bottom:14px; display:block; }
-    .value-title { font-size:15px; font-weight:600; margin-bottom:8px; }
-    .value-desc { font-size:13px; color:var(--text-secondary); line-height:1.6; }
-    .hero-profile-row { display:flex; align-items:center; gap:16px; margin:28px 0; flex-wrap:wrap; }
-    .profile-chip { display:inline-flex; align-items:center; gap:12px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:100px; padding:10px 22px; transition:border-color 0.3s; }
-    .profile-chip:hover { border-color:rgba(255,255,255,0.2); }
-    .chip-label { font-size:10px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); }
-    .chip-type { font-size:1.15rem; font-weight:800; font-family:'Playfair Display',serif; background:linear-gradient(135deg,var(--jobs),var(--naval)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-    .chip-desc { font-size:12px; font-weight:500; color:var(--text-secondary); }
-    .profile-sep { font-size:1.3rem; color:var(--text-muted); font-weight:200; padding:0 4px; }
-    @media(max-width:700px){ .value-item{border-right:none;border-bottom:1px solid var(--glass-border);} .value-item:last-child{border-bottom:none;} }
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      pointer-events: none;
+      opacity: 0.1;
+    }
 
-    /* ── Mentor Categories ── */
-    .mentor-category { margin-bottom: 72px; }
-    .mentor-category:last-child { margin-bottom: 0; }
-    .category-header {
-      display: flex; align-items: center; gap: 16px;
-      margin-bottom: 32px; padding-bottom: 20px;
+    .orb-1 {
+      width: 500px;
+      height: 500px;
+      background: var(--jobs);
+      top: -100px;
+      left: -80px;
+    }
+
+    .orb-2 {
+      width: 400px;
+      height: 400px;
+      background: var(--naval);
+      bottom: -60px;
+      right: 8%;
+    }
+
+    .orb-3 {
+      width: 300px;
+      height: 300px;
+      background: var(--rohr);
+      top: 45%;
+      left: 55%;
+    }
+
+    .value-section {
+      background: rgba(255, 255, 255, 0.012);
+      border-top: 1px solid var(--glass-border);
       border-bottom: 1px solid var(--glass-border);
     }
-    .category-icon { font-size: 1.5rem; flex-shrink: 0; line-height: 1; }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .value-item {
+      padding: 44px 32px;
+      border-right: 1px solid var(--glass-border);
+    }
+
+    .value-item:last-child {
+      border-right: none;
+    }
+
+    .value-icon {
+      font-size: 1.6rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .value-title {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .value-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .hero-profile-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 28px 0;
+      flex-wrap: wrap;
+    }
+
+    .profile-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 100px;
+      padding: 10px 22px;
+      transition: border-color 0.3s;
+    }
+
+    .profile-chip:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .chip-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .chip-type {
+      font-size: 1.15rem;
+      font-weight: 800;
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(135deg, var(--jobs), var(--naval));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .chip-desc {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .profile-sep {
+      font-size: 1.3rem;
+      color: var(--text-muted);
+      font-weight: 200;
+      padding: 0 4px;
+    }
+
+    @media(max-width:700px) {
+      .value-item {
+        border-right: none;
+        border-bottom: 1px solid var(--glass-border);
+      }
+
+      .value-item:last-child {
+        border-bottom: none;
+      }
+    }
+
+    /* ── Mentor Categories ── */
+    .mentor-category {
+      margin-bottom: 72px;
+    }
+
+    .mentor-category:last-child {
+      margin-bottom: 0;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .category-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
     .category-name {
       font-family: 'Playfair Display', serif;
-      font-size: 1.25rem; font-weight: 700;
-      margin: 0 0 4px; color: var(--text-primary);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 0 4px;
+      color: var(--text-primary);
     }
-    .category-desc { font-size: 12px; color: var(--text-muted); letter-spacing: 0.04em; margin: 0; }
+
+    .category-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      margin: 0;
+    }
+
     .category-count {
-      margin-left: auto; flex-shrink: 0;
-      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--text-muted);
-      background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border);
-      border-radius: 100px; padding: 4px 14px;
+      margin-left: auto;
+      flex-shrink: 0;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--glass-border);
+      border-radius: 100px;
+      padding: 4px 14px;
     }
   </style>
 </head>
+
 <body>
 
   <!-- Navigation -->
@@ -58,7 +206,8 @@
     <div class="nav-inner">
       <a class="nav-logo" href="#">
         <span class="aiox-badge">ON AI Solutions</span>
-        <span class="squad-name" data-pt="Mentores · Fabiano Silva" data-en="Mentors · Fabiano Silva">Mentores · Fabiano Silva</span>
+        <span class="squad-name" data-pt="Mentores · Fabiano Silva" data-en="Mentors · Fabiano Silva">Mentores · Fabiano
+          Silva</span>
       </a>
       <div class="lang-toggle">
         <button id="btn-pt" class="lang-btn active" onclick="setLang('pt')">PT</button>
@@ -76,35 +225,45 @@
       <div class="hero-content">
         <div class="hero-eyebrow">
           <span class="status-dot"></span>
-          <span data-pt="ON AI Solutions · Mentores de Fabiano Silva" data-en="ON AI Solutions · Fabiano Silva's Mentors">ON AI Solutions · Mentores de Fabiano Silva</span>
+          <span data-pt="ON AI Solutions · Mentores de Fabiano Silva"
+            data-en="ON AI Solutions · Fabiano Silva's Mentors">ON AI Solutions · Mentores de Fabiano Silva</span>
         </div>
 
         <h1 data-pt="Os mentores de<br/><em>Fabiano Silva</em>" data-en="The mentors of<br/><em>Fabiano Silva</em>">
-          Os mentores de<br/><em>Fabiano Silva</em>
+          Os mentores de<br /><em>Fabiano Silva</em>
         </h1>
 
         <div class="hero-profile-row">
           <div class="profile-chip">
             <span class="chip-label">Eneagrama</span>
             <span class="chip-type">7w8</span>
-            <span class="chip-desc" data-pt="Entusiasta · Força Executora" data-en="Enthusiast · Executive Force">Entusiasta · Força Executora</span>
+            <span class="chip-desc" data-pt="Entusiasta · Força Executora"
+              data-en="Enthusiast · Executive Force">Entusiasta · Força Executora</span>
           </div>
           <span class="profile-sep">+</span>
           <div class="profile-chip">
             <span class="chip-label">DISC</span>
             <span class="chip-type">ID</span>
-            <span class="chip-desc" data-pt="Influência · Dominância" data-en="Influence · Dominance">Influência · Dominância</span>
+            <span class="chip-desc" data-pt="Influência · Dominância" data-en="Influence · Dominance">Influência ·
+              Dominância</span>
           </div>
         </div>
 
-        <p class="hero-subtitle" data-pt="10 mentes extraordinárias curadas com critério preciso: complementar e amplificar o perfil Eneagrama 7w8 · DISC ID. Cada mentor foi escolhido para trabalhar pontos cegos, desafiar padrões e potencializar as forças únicas do Entusiasta com força executora." data-en="10 extraordinary minds curated with a precise criterion: to complement and amplify the Enneagram 7w8 · DISC ID profile. Each mentor was chosen to address blind spots, challenge patterns, and amplify the unique strengths of the Enthusiast with executive force.">
-          10 mentes extraordinárias curadas com critério preciso: complementar e amplificar o perfil Eneagrama 7w8 · DISC ID. Cada mentor foi escolhido para trabalhar pontos cegos, desafiar padrões e potencializar as forças únicas do Entusiasta com força executora.
+        <p class="hero-subtitle"
+          data-pt="10 mentes extraordinárias curadas com critério preciso: complementar e amplificar o perfil Eneagrama 7w8 · DISC ID. Cada mentor foi escolhido para trabalhar pontos cegos, desafiar padrões e potencializar as forças únicas do Entusiasta com força executora."
+          data-en="10 extraordinary minds curated with a precise criterion: to complement and amplify the Enneagram 7w8 · DISC ID profile. Each mentor was chosen to address blind spots, challenge patterns, and amplify the unique strengths of the Enthusiast with executive force.">
+          10 mentes extraordinárias curadas com critério preciso: complementar e amplificar o perfil Eneagrama 7w8 ·
+          DISC ID. Cada mentor foi escolhido para trabalhar pontos cegos, desafiar padrões e potencializar as forças
+          únicas do Entusiasta com força executora.
         </p>
 
         <div class="hero-badges">
-          <span class="badge" data-pt="🧠 Curados por Personalidade" data-en="🧠 Curated by Personality">🧠 Curados por Personalidade</span>
-          <span class="badge" data-pt="📚 Alta Fidelidade de Fonte" data-en="📚 Primary Source Fidelity">📚 Alta Fidelidade de Fonte</span>
-          <span class="badge" data-pt="⚡ 10 Perspectivas Complementares" data-en="⚡ 10 Complementary Perspectives">⚡ 10 Perspectivas Complementares</span>
+          <span class="badge" data-pt="🧠 Curados por Personalidade" data-en="🧠 Curated by Personality">🧠 Curados por
+            Personalidade</span>
+          <span class="badge" data-pt="📚 Alta Fidelidade de Fonte" data-en="📚 Primary Source Fidelity">📚 Alta
+            Fidelidade de Fonte</span>
+          <span class="badge" data-pt="⚡ 10 Perspectivas Complementares" data-en="⚡ 10 Complementary Perspectives">⚡ 10
+            Perspectivas Complementares</span>
           <span class="badge" data-pt="🔗 ON AI Solutions" data-en="🔗 ON AI Solutions">🔗 ON AI Solutions</span>
         </div>
 
@@ -114,7 +273,9 @@
             <div class="label" data-pt="Mentores Curados" data-en="Curated Mentors">Mentores Curados</div>
           </div>
           <div class="hero-stat">
-            <div class="num" style="background:linear-gradient(120deg,var(--jobs),var(--naval));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">85–93%</div>
+            <div class="num"
+              style="background:linear-gradient(120deg,var(--jobs),var(--naval));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
+              85–93%</div>
             <div class="label" data-pt="Fidelidade de Clone" data-en="Clone Fidelity">Fidelidade de Clone</div>
           </div>
           <div class="hero-stat">
@@ -122,8 +283,11 @@
             <div class="label" data-pt="Fontes por Mentor" data-en="Sources per Mentor">Fontes por Mentor</div>
           </div>
           <div class="hero-stat">
-            <div class="num" style="background:linear-gradient(120deg,var(--rohr),var(--levels));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">7w8 · ID</div>
-            <div class="label" data-pt="Perfil Base de Curação" data-en="Base Curation Profile">Perfil Base de Curação</div>
+            <div class="num"
+              style="background:linear-gradient(120deg,var(--rohr),var(--levels));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">
+              7w8 · ID</div>
+            <div class="label" data-pt="Perfil Base de Curação" data-en="Base Curation Profile">Perfil Base de Curação
+            </div>
           </div>
         </div>
       </div>
@@ -135,8 +299,11 @@
     <div class="container">
       <div class="section-eyebrow" data-pt="O Time" data-en="The Squad">O Time</div>
       <h2 class="section-title" data-pt="Conheça os Mentores" data-en="Meet the Mentors">Conheça os Mentores</h2>
-      <p class="section-subtitle" data-pt="Cada mentor é um clone cognitivo de precisão — não um chatbot. Construído a partir de livros, entrevistas, discursos e decisões documentadas de cada figura." data-en="Each mentor is a precision-engineered cognitive clone — not a chatbot. Built from books, interviews, speeches, and documented decisions.">
-        Cada mentor é um clone cognitivo de precisão — não um chatbot. Construído a partir de livros, entrevistas, discursos e decisões documentadas de cada figura.
+      <p class="section-subtitle"
+        data-pt="Cada mentor é um clone cognitivo de precisão — não um chatbot. Construído a partir de livros, entrevistas, discursos e decisões documentadas de cada figura."
+        data-en="Each mentor is a precision-engineered cognitive clone — not a chatbot. Built from books, interviews, speeches, and documented decisions.">
+        Cada mentor é um clone cognitivo de precisão — não um chatbot. Construído a partir de livros, entrevistas,
+        discursos e decisões documentadas de cada figura.
       </p>
 
       <!-- ── Categoria: Produto & Tecnologia ── -->
@@ -144,8 +311,10 @@
         <div class="category-header">
           <span class="category-icon">⚙️</span>
           <div>
-            <h3 class="category-name" data-pt="Produto & Tecnologia" data-en="Product & Technology">Produto & Tecnologia</h3>
-            <p class="category-desc" data-pt="Craft, criação e visão de produto" data-en="Craft, creation and product vision">Craft, criação e visão de produto</p>
+            <h3 class="category-name" data-pt="Produto & Tecnologia" data-en="Product & Technology">Produto & Tecnologia
+            </h3>
+            <p class="category-desc" data-pt="Craft, criação e visão de produto"
+              data-en="Craft, creation and product vision">Craft, criação e visão de produto</p>
           </div>
           <span class="category-count" data-pt="2 mentores" data-en="2 mentors">2 mentores</span>
         </div>
@@ -160,9 +329,14 @@
             </div>
             <span class="card-tier-badge" data-pt="Tecnologia" data-en="Technology">Tecnologia</span>
             <h3 class="card-name">Steve Jobs</h3>
-            <p class="card-role" data-pt="Visionário de Produto · Absolutista do Design · Distorcedor da Realidade" data-en="Product Visionary · Design Absolutist · Reality Distorter">Visionário de Produto · Absolutista do Design · Distorcedor da Realidade</p>
-            <blockquote class="card-quote" data-pt="&ldquo;Vivo na intersecção da tecnologia com as artes liberais — e acredito que é o lugar mais poderoso para criar.&rdquo;" data-en="&ldquo;I live at the intersection of technology and the liberal arts — and I believe that's the most powerful place to create from.&rdquo;">
-              "Vivo na intersecção da tecnologia com as artes liberais — e acredito que é o lugar mais poderoso para criar."
+            <p class="card-role" data-pt="Visionário de Produto · Absolutista do Design · Distorcedor da Realidade"
+              data-en="Product Visionary · Design Absolutist · Reality Distorter">Visionário de Produto · Absolutista do
+              Design · Distorcedor da Realidade</p>
+            <blockquote class="card-quote"
+              data-pt="&ldquo;Vivo na intersecção da tecnologia com as artes liberais — e acredito que é o lugar mais poderoso para criar.&rdquo;"
+              data-en="&ldquo;I live at the intersection of technology and the liberal arts — and I believe that's the most powerful place to create from.&rdquo;">
+              "Vivo na intersecção da tecnologia com as artes liberais — e acredito que é o lugar mais poderoso para
+              criar."
             </blockquote>
             <div class="card-domains">
               <span class="domain-tag" data-pt="Design de Produto" data-en="Product Design">Design de Produto</span>
@@ -177,13 +351,19 @@
           <a class="mentor-card dhh" href="dhh.html">
             <span class="card-fidelity">Fidelidade 88–93%</span>
             <div class="card-avatar">
-              <img src="images/dhh.jpg" alt="David Heinemeier Hansson" class="card-photo" onerror="this.style.display='none'">
+              <img src="images/dhh.jpg" alt="David Heinemeier Hansson" class="card-photo"
+                onerror="this.style.display='none'">
               DHH
             </div>
-            <span class="card-tier-badge" data-pt="Software &amp; Empresa Calma" data-en="Software &amp; Calm Company">Software &amp; Empresa Calma</span>
+            <span class="card-tier-badge" data-pt="Software &amp; Empresa Calma"
+              data-en="Software &amp; Calm Company">Software &amp; Empresa Calma</span>
             <h3 class="card-name">David Heinemeier Hansson</h3>
-            <p class="card-role" data-pt="Criador Ruby on Rails · Co-fundador 37signals · Autor Rework &amp; Shape Up" data-en="Ruby on Rails Creator · Co-founder 37signals · Author Rework &amp; Shape Up">Criador Ruby on Rails · Co-fundador 37signals · Autor Rework &amp; Shape Up</p>
-            <blockquote class="card-quote" data-pt="&ldquo;Não precisa ser louco no trabalho. 25 anos lucrativo sem um único investidor externo é prova suficiente de que o consenso do Silicon Valley está errado.&rdquo;" data-en="&ldquo;It doesn't have to be crazy at work. 25 years profitable without a single outside investor is proof enough that the Silicon Valley consensus is wrong.&rdquo;">
+            <p class="card-role" data-pt="Criador Ruby on Rails · Co-fundador 37signals · Autor Rework &amp; Shape Up"
+              data-en="Ruby on Rails Creator · Co-founder 37signals · Author Rework &amp; Shape Up">Criador Ruby on
+              Rails · Co-fundador 37signals · Autor Rework &amp; Shape Up</p>
+            <blockquote class="card-quote"
+              data-pt="&ldquo;Não precisa ser louco no trabalho. 25 anos lucrativo sem um único investidor externo é prova suficiente de que o consenso do Silicon Valley está errado.&rdquo;"
+              data-en="&ldquo;It doesn't have to be crazy at work. 25 years profitable without a single outside investor is proof enough that the Silicon Valley consensus is wrong.&rdquo;">
               "Não precisa ser louco no trabalho. 25 anos lucrativo sem um único investidor externo."
             </blockquote>
             <div class="card-domains">
@@ -203,8 +383,9 @@
         <div class="category-header">
           <span class="category-icon">💰</span>
           <div>
-            <h3 class="category-name" data-pt="Riqueza & Negócios" data-en="Wealth & Business">Riqueza & Negócios</h3>
-            <p class="category-desc" data-pt="Crescimento, escala e criação de valor" data-en="Growth, scale and value creation">Crescimento, escala e criação de valor</p>
+            <h3 class="category-name" data-pt="Negócios" data-en="Wealth & Business">Negócios</h3>
+            <p class="category-desc" data-pt="Crescimento, escala e criação de valor"
+              data-en="Growth, scale and value creation">Crescimento, escala e criação de valor</p>
           </div>
           <span class="category-count" data-pt="3 mentores" data-en="3 mentors">3 mentores</span>
         </div>
@@ -214,19 +395,26 @@
           <a class="mentor-card naval" href="naval-ravikant.html">
             <span class="card-fidelity">Fidelidade 85–90%</span>
             <div class="card-avatar">
-              <img src="images/naval-ravikant.jpg" alt="Naval Ravikant" class="card-photo" onerror="this.style.display='none'">
+              <img src="images/naval-ravikant.jpg" alt="Naval Ravikant" class="card-photo"
+                onerror="this.style.display='none'">
               NR
             </div>
-            <span class="card-tier-badge" data-pt="Riqueza e Filosofia" data-en="Wealth & Philosophy">Riqueza e Filosofia</span>
+            <span class="card-tier-badge" data-pt="Riqueza e Filosofia" data-en="Wealth & Philosophy">Riqueza e
+              Filosofia</span>
             <h3 class="card-name">Naval Ravikant</h3>
-            <p class="card-role" data-pt="Empreendedor · Investidor · Filósofo Racional" data-en="Entrepreneur · Investor · Rational Philosopher">Empreendedor · Investidor · Filósofo Racional</p>
-            <blockquote class="card-quote" data-pt="&ldquo;O propósito da vida é ser feliz. A maioria das pessoas está sistematicamente confusa sobre como chegar lá — otimizam para status em vez de riqueza.&rdquo;" data-en="&ldquo;The purpose of life is to be happy. Most people are systematically confused about how to get there — they optimize for status instead of wealth.&rdquo;">
-              "O propósito da vida é ser feliz. A maioria das pessoas está sistematicamente confusa sobre como chegar lá — otimizam para status em vez de riqueza."
+            <p class="card-role" data-pt="Empreendedor · Investidor · Filósofo Racional"
+              data-en="Entrepreneur · Investor · Rational Philosopher">Empreendedor · Investidor · Filósofo Racional</p>
+            <blockquote class="card-quote"
+              data-pt="&ldquo;O propósito da vida é ser feliz. A maioria das pessoas está sistematicamente confusa sobre como chegar lá — otimizam para status em vez de riqueza.&rdquo;"
+              data-en="&ldquo;The purpose of life is to be happy. Most people are systematically confused about how to get there — they optimize for status instead of wealth.&rdquo;">
+              "O propósito da vida é ser feliz. A maioria das pessoas está sistematicamente confusa sobre como chegar lá
+              — otimizam para status em vez de riqueza."
             </blockquote>
             <div class="card-domains">
               <span class="domain-tag" data-pt="Criação de Riqueza" data-en="Wealth Creation">Criação de Riqueza</span>
               <span class="domain-tag" data-pt="Alavancagem" data-en="Leverage">Alavancagem</span>
-              <span class="domain-tag" data-pt="Primeiros Princípios" data-en="First Principles">Primeiros Princípios</span>
+              <span class="domain-tag" data-pt="Primeiros Princípios" data-en="First Principles">Primeiros
+                Princípios</span>
               <span class="domain-tag" data-pt="Felicidade" data-en="Happiness">Felicidade</span>
             </div>
             <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
@@ -236,14 +424,19 @@
           <a class="mentor-card hormozi" href="alex-hormozi.html">
             <span class="card-fidelity">Fidelidade 88–93%</span>
             <div class="card-avatar">
-              <img src="images/alex-hormozi.jpg" alt="Alex Hormozi" class="card-photo" onerror="this.style.display='none'">
+              <img src="images/alex-hormozi.jpg" alt="Alex Hormozi" class="card-photo"
+                onerror="this.style.display='none'">
               AH
             </div>
             <span class="card-tier-badge" data-pt="Negócios" data-en="Business">Negócios</span>
             <h3 class="card-name">Alex Hormozi</h3>
-            <p class="card-role" data-pt="Empreendedor · Investidor · Arquiteto de Ofertas" data-en="Entrepreneur · Investor · Offer Architect">Empreendedor · Investidor · Arquiteto de Ofertas</p>
-            <blockquote class="card-quote" data-pt="&ldquo;A oferta certa, para a pessoa certa, no momento certo — isso é o negócio inteiro. Tudo o mais é operação.&rdquo;" data-en="&ldquo;The right offer, for the right person, at the right time — that's the entire business. Everything else is operations.&rdquo;">
-              "A oferta certa, para a pessoa certa, no momento certo — isso é o negócio inteiro. Tudo o mais é operação."
+            <p class="card-role" data-pt="Empreendedor · Investidor · Arquiteto de Ofertas"
+              data-en="Entrepreneur · Investor · Offer Architect">Empreendedor · Investidor · Arquiteto de Ofertas</p>
+            <blockquote class="card-quote"
+              data-pt="&ldquo;A oferta certa, para a pessoa certa, no momento certo — isso é o negócio inteiro. Tudo o mais é operação.&rdquo;"
+              data-en="&ldquo;The right offer, for the right person, at the right time — that's the entire business. Everything else is operations.&rdquo;">
+              "A oferta certa, para a pessoa certa, no momento certo — isso é o negócio inteiro. Tudo o mais é
+              operação."
             </blockquote>
             <div class="card-domains">
               <span class="domain-tag" data-pt="Design de Oferta" data-en="Offer Design">Design de Oferta</span>
@@ -258,14 +451,19 @@
           <a class="mentor-card levels" href="pieter-levels.html">
             <span class="card-fidelity">Fidelidade 85–90%</span>
             <div class="card-avatar">
-              <img src="images/pieter-levels.jpg" alt="Pieter Levels" class="card-photo" onerror="this.style.display='none'">
+              <img src="images/pieter-levels.jpg" alt="Pieter Levels" class="card-photo"
+                onerror="this.style.display='none'">
               PL
             </div>
             <span class="card-tier-badge" data-pt="Empreendedorismo" data-en="Entrepreneurship">Empreendedorismo</span>
             <h3 class="card-name">Pieter Levels</h3>
-            <p class="card-role" data-pt="Fundador Solo · Builder · Libertário Digital" data-en="Solo Founder · Builder · Digital Libertarian">Fundador Solo · Builder · Libertário Digital</p>
-            <blockquote class="card-quote" data-pt="&ldquo;Seu produto nunca vai estar pronto. Lance assim mesmo. Usuários reais dão feedback melhor do que a sua imaginação.&rdquo;" data-en="&ldquo;Your product will never be ready. Ship it anyway. Real users give better feedback than your imagination.&rdquo;">
-              "Seu produto nunca vai estar pronto. Lance assim mesmo. Usuários reais dão feedback melhor do que a sua imaginação."
+            <p class="card-role" data-pt="Fundador Solo · Builder · Libertário Digital"
+              data-en="Solo Founder · Builder · Digital Libertarian">Fundador Solo · Builder · Libertário Digital</p>
+            <blockquote class="card-quote"
+              data-pt="&ldquo;Seu produto nunca vai estar pronto. Lance assim mesmo. Usuários reais dão feedback melhor do que a sua imaginação.&rdquo;"
+              data-en="&ldquo;Your product will never be ready. Ship it anyway. Real users give better feedback than your imagination.&rdquo;">
+              "Seu produto nunca vai estar pronto. Lance assim mesmo. Usuários reais dão feedback melhor do que a sua
+              imaginação."
             </blockquote>
             <div class="card-domains">
               <span class="domain-tag" data-pt="Fundação Solo" data-en="Solo Founding">Fundação Solo</span>
@@ -284,8 +482,11 @@
         <div class="category-header">
           <span class="category-icon">🎭</span>
           <div>
-            <h3 class="category-name" data-pt="Influência & Negociação" data-en="Influence & Negotiation">Influência & Negociação</h3>
-            <p class="category-desc" data-pt="Comunicação, persuasão e resolução de conflitos" data-en="Communication, persuasion and conflict resolution">Comunicação, persuasão e resolução de conflitos</p>
+            <h3 class="category-name" data-pt="Influência & Negociação" data-en="Influence & Negotiation">Influência &
+              Negociação</h3>
+            <p class="category-desc" data-pt="Comunicação, persuasão e resolução de conflitos"
+              data-en="Communication, persuasion and conflict resolution">Comunicação, persuasão e resolução de
+              conflitos</p>
           </div>
           <span class="category-count" data-pt="1 mentor" data-en="1 mentor">1 mentor</span>
         </div>
@@ -300,9 +501,14 @@
             </div>
             <span class="card-tier-badge" data-pt="Negociação" data-en="Negotiation">Negociação</span>
             <h3 class="card-name">Chris Voss</h3>
-            <p class="card-role" data-pt="Ex-Negociador FBI · Fundador Black Swan Group · Autor" data-en="Former FBI Negotiator · Black Swan Group Founder · Author">Ex-Negociador FBI · Fundador Black Swan Group · Autor</p>
-            <blockquote class="card-quote" data-pt="&ldquo;Nunca divida a diferença. O não não é o fim de uma negociação — é o começo. E toda negociação humana corre no mesmo sistema operacional: o cérebro emocional.&rdquo;" data-en="&ldquo;Never split the difference. No is not the end of a negotiation — it's the beginning. And every human negotiation runs on the same operating system: the emotional brain.&rdquo;">
-              "Nunca divida a diferença. O não não é o fim de uma negociação — é o começo. E toda negociação humana corre no mesmo sistema operacional: o cérebro emocional."
+            <p class="card-role" data-pt="Ex-Negociador FBI · Fundador Black Swan Group · Autor"
+              data-en="Former FBI Negotiator · Black Swan Group Founder · Author">Ex-Negociador FBI · Fundador Black
+              Swan Group · Autor</p>
+            <blockquote class="card-quote"
+              data-pt="&ldquo;Nunca divida a diferença. O não não é o fim de uma negociação — é o começo. E toda negociação humana corre no mesmo sistema operacional: o cérebro emocional.&rdquo;"
+              data-en="&ldquo;Never split the difference. No is not the end of a negotiation — it's the beginning. And every human negotiation runs on the same operating system: the emotional brain.&rdquo;">
+              "Nunca divida a diferença. O não não é o fim de uma negociação — é o começo. E toda negociação humana
+              corre no mesmo sistema operacional: o cérebro emocional."
             </blockquote>
             <div class="card-domains">
               <span class="domain-tag" data-pt="Empatia Tática" data-en="Tactical Empathy">Empatia Tática</span>
@@ -321,8 +527,11 @@
         <div class="category-header">
           <span class="category-icon">🧠</span>
           <div>
-            <h3 class="category-name" data-pt="Psicologia & Clareza Mental" data-en="Psychology & Mental Clarity">Psicologia & Clareza Mental</h3>
-            <p class="category-desc" data-pt="Desenvolvimento pessoal, responsabilidade e foco no essencial" data-en="Personal development, responsibility and focus on the essential">Desenvolvimento pessoal, responsabilidade e foco no essencial</p>
+            <h3 class="category-name" data-pt="Psicologia & Clareza Mental" data-en="Psychology & Mental Clarity">
+              Psicologia & Clareza Mental</h3>
+            <p class="category-desc" data-pt="Desenvolvimento pessoal, responsabilidade e foco no essencial"
+              data-en="Personal development, responsibility and focus on the essential">Desenvolvimento pessoal,
+              responsabilidade e foco no essencial</p>
           </div>
           <span class="category-count" data-pt="2 mentores" data-en="2 mentors">2 mentores</span>
         </div>
@@ -332,14 +541,21 @@
           <a class="mentor-card peterson" href="jordan-peterson.html">
             <span class="card-fidelity">Fidelidade 88–93%</span>
             <div class="card-avatar">
-              <img src="images/jordan-peterson.jpg" alt="Jordan Peterson" class="card-photo" onerror="this.style.display='none'">
+              <img src="images/jordan-peterson.jpg" alt="Jordan Peterson" class="card-photo"
+                onerror="this.style.display='none'">
               JP
             </div>
-            <span class="card-tier-badge" data-pt="Psicologia &amp; Mitologia" data-en="Psychology &amp; Mythology">Psicologia &amp; Mitologia</span>
+            <span class="card-tier-badge" data-pt="Psicologia &amp; Mitologia"
+              data-en="Psychology &amp; Mythology">Psicologia &amp; Mitologia</span>
             <h3 class="card-name">Jordan Peterson</h3>
-            <p class="card-role" data-pt="Psicólogo Clínico · Autor 12 Regras para a Vida · Professor Emérito UofT" data-en="Clinical Psychologist · Author 12 Rules for Life · Professor Emeritus UofT">Psicólogo Clínico · Autor 12 Regras para a Vida · Professor Emérito UofT</p>
-            <blockquote class="card-quote" data-pt="&ldquo;Busque o que é significativo, não o que é expediente. A coisa que você mais quer evitar é, quase certamente, onde o ouro está. E quero dizer isso com bastante precisão.&rdquo;" data-en="&ldquo;Pursue what is meaningful, not what is expedient. The thing you most want to avoid is almost certainly where the gold is. And I mean that quite precisely.&rdquo;">
-              "Busque o que é significativo, não o que é expediente. A coisa que você mais quer evitar é, quase certamente, onde o ouro está."
+            <p class="card-role" data-pt="Psicólogo Clínico · Autor 12 Regras para a Vida · Professor Emérito UofT"
+              data-en="Clinical Psychologist · Author 12 Rules for Life · Professor Emeritus UofT">Psicólogo Clínico ·
+              Autor 12 Regras para a Vida · Professor Emérito UofT</p>
+            <blockquote class="card-quote"
+              data-pt="&ldquo;Busque o que é significativo, não o que é expediente. A coisa que você mais quer evitar é, quase certamente, onde o ouro está. E quero dizer isso com bastante precisão.&rdquo;"
+              data-en="&ldquo;Pursue what is meaningful, not what is expedient. The thing you most want to avoid is almost certainly where the gold is. And I mean that quite precisely.&rdquo;">
+              "Busque o que é significativo, não o que é expediente. A coisa que você mais quer evitar é, quase
+              certamente, onde o ouro está."
             </blockquote>
             <div class="card-domains">
               <span class="domain-tag" data-pt="Significado" data-en="Meaning">Significado</span>
@@ -354,14 +570,22 @@
           <a class="mentor-card mckeown" href="greg-mckeown.html">
             <span class="card-fidelity">Fidelidade 88–93%</span>
             <div class="card-avatar">
-              <img src="images/greg-mckeown.jpg" alt="Greg McKeown" class="card-photo" onerror="this.style.display='none'">
+              <img src="images/greg-mckeown.jpg" alt="Greg McKeown" class="card-photo"
+                onerror="this.style.display='none'">
               GM
             </div>
-            <span class="card-tier-badge" data-pt="Essentialism &amp; Effortless" data-en="Essentialism &amp; Effortless">Essentialism &amp; Effortless</span>
+            <span class="card-tier-badge" data-pt="Essentialism &amp; Effortless"
+              data-en="Essentialism &amp; Effortless">Essentialism &amp; Effortless</span>
             <h3 class="card-name">Greg McKeown</h3>
-            <p class="card-role" data-pt="Autor Essentialism · Fundador This Is Effortless · Consultor Apple, Google, Microsoft" data-en="Author Essentialism · Founder This Is Effortless · Consultant Apple, Google, Microsoft">Autor Essentialism · Consultor Apple, Google, Microsoft · Stanford d.school</p>
-            <blockquote class="card-quote" data-pt="&ldquo;Se não for um SIM claro, é um NÃO. O mais alto ponto de contribuição não está em fazer mais — está em fazer apenas o essencial, excepcionalmente bem.&rdquo;" data-en="&ldquo;If it isn't a clear yes, it's a no. The highest point of contribution doesn't lie in doing more — it lies in doing only the essential, exceptionally well.&rdquo;">
-              "Se não for um SIM claro, é um NÃO. O mais alto ponto de contribuição não está em fazer mais — está em fazer apenas o essencial."
+            <p class="card-role"
+              data-pt="Autor Essentialism · Fundador This Is Effortless · Consultor Apple, Google, Microsoft"
+              data-en="Author Essentialism · Founder This Is Effortless · Consultant Apple, Google, Microsoft">Autor
+              Essentialism · Consultor Apple, Google, Microsoft · Stanford d.school</p>
+            <blockquote class="card-quote"
+              data-pt="&ldquo;Se não for um SIM claro, é um NÃO. O mais alto ponto de contribuição não está em fazer mais — está em fazer apenas o essencial, excepcionalmente bem.&rdquo;"
+              data-en="&ldquo;If it isn't a clear yes, it's a no. The highest point of contribution doesn't lie in doing more — it lies in doing only the essential, exceptionally well.&rdquo;">
+              "Se não for um SIM claro, é um NÃO. O mais alto ponto de contribuição não está em fazer mais — está em
+              fazer apenas o essencial."
             </blockquote>
             <div class="card-domains">
               <span class="domain-tag" data-pt="Essentialism" data-en="Essentialism">Essentialism</span>
@@ -380,8 +604,11 @@
         <div class="category-header">
           <span class="category-icon">✨</span>
           <div>
-            <h3 class="category-name" data-pt="Espiritualidade & Fé" data-en="Spirituality & Faith">Espiritualidade & Fé</h3>
-            <p class="category-desc" data-pt="Transformação interior, sentido e transcendência" data-en="Inner transformation, meaning and transcendence">Transformação interior, sentido e transcendência</p>
+            <h3 class="category-name" data-pt="Espiritualidade & Fé" data-en="Spirituality & Faith">Espiritualidade & Fé
+            </h3>
+            <p class="category-desc" data-pt="Transformação interior, sentido e transcendência"
+              data-en="Inner transformation, meaning and transcendence">Transformação interior, sentido e transcendência
+            </p>
           </div>
           <span class="category-count" data-pt="2 mentores" data-en="2 mentors">2 mentores</span>
         </div>
@@ -391,14 +618,20 @@
           <a class="mentor-card rohr" href="richard-rohr.html">
             <span class="card-fidelity">Fidelidade 85–90%</span>
             <div class="card-avatar">
-              <img src="images/richard-rohr.jpg" alt="Richard Rohr" class="card-photo" onerror="this.style.display='none'">
+              <img src="images/richard-rohr.jpg" alt="Richard Rohr" class="card-photo"
+                onerror="this.style.display='none'">
               RR
             </div>
             <span class="card-tier-badge" data-pt="Espiritualidade" data-en="Spirituality">Espiritualidade</span>
             <h3 class="card-name">Richard Rohr</h3>
-            <p class="card-role" data-pt="Frade Franciscano · Místico · Guia Contemplativo" data-en="Franciscan Friar · Mystic · Contemplative Guide">Frade Franciscano · Místico · Guia Contemplativo</p>
-            <blockquote class="card-quote" data-pt="&ldquo;Não quero te dar mais informação. Quero te ajudar a transformar. E a transformação sempre vem pela ferida, pela queda.&rdquo;" data-en="&ldquo;I don't want to give you more information. I want to help you transform. And transformation always comes through the wound, through the falling.&rdquo;">
-              "Não quero te dar mais informação. Quero te ajudar a transformar. E a transformação sempre vem pela ferida, pela queda."
+            <p class="card-role" data-pt="Frade Franciscano · Místico · Guia Contemplativo"
+              data-en="Franciscan Friar · Mystic · Contemplative Guide">Frade Franciscano · Místico · Guia Contemplativo
+            </p>
+            <blockquote class="card-quote"
+              data-pt="&ldquo;Não quero te dar mais informação. Quero te ajudar a transformar. E a transformação sempre vem pela ferida, pela queda.&rdquo;"
+              data-en="&ldquo;I don't want to give you more information. I want to help you transform. And transformation always comes through the wound, through the falling.&rdquo;">
+              "Não quero te dar mais informação. Quero te ajudar a transformar. E a transformação sempre vem pela
+              ferida, pela queda."
             </blockquote>
             <div class="card-domains">
               <span class="domain-tag" data-pt="Contemplação" data-en="Contemplation">Contemplação</span>
@@ -418,9 +651,14 @@
             </div>
             <span class="card-tier-badge" data-pt="Fé e Razão" data-en="Faith & Reason">Fé e Razão</span>
             <h3 class="card-name">C.S. Lewis</h3>
-            <p class="card-role" data-pt="Acadêmico Oxford · Apologista · Escritor Cristão" data-en="Oxford Scholar · Apologist · Christian Writer">Acadêmico Oxford · Apologista · Escritor Cristão</p>
-            <blockquote class="card-quote" data-pt="&ldquo;A razão limpa o terreno. A imaginação planta a semente. Você precisa das duas — e seria um erro dividir o que Deus uniu.&rdquo;" data-en="&ldquo;Reason clears the ground. Imagination plants the seed. You need both — and it would be a mistake to divide what God has joined.&rdquo;">
-              "A razão limpa o terreno. A imaginação planta a semente. Você precisa das duas — e seria um erro dividir o que Deus uniu."
+            <p class="card-role" data-pt="Acadêmico Oxford · Apologista · Escritor Cristão"
+              data-en="Oxford Scholar · Apologist · Christian Writer">Acadêmico Oxford · Apologista · Escritor Cristão
+            </p>
+            <blockquote class="card-quote"
+              data-pt="&ldquo;A razão limpa o terreno. A imaginação planta a semente. Você precisa das duas — e seria um erro dividir o que Deus uniu.&rdquo;"
+              data-en="&ldquo;Reason clears the ground. Imagination plants the seed. You need both — and it would be a mistake to divide what God has joined.&rdquo;">
+              "A razão limpa o terreno. A imaginação planta a semente. Você precisa das duas — e seria um erro dividir o
+              que Deus uniu."
             </blockquote>
             <div class="card-domains">
               <span class="domain-tag" data-pt="Apologética" data-en="Apologetics">Apologética</span>
@@ -442,23 +680,39 @@
     <div class="value-grid">
       <div class="value-item">
         <span class="value-icon">🎯</span>
-        <div class="value-title" data-pt="Alta Fidelidade de Fonte" data-en="Primary Source Fidelity">Alta Fidelidade de Fonte</div>
-        <p class="value-desc" data-pt="Construído a partir de 40+ entrevistas documentadas, livros, discursos e decisões — não comportamento genérico de IA." data-en="Built from 40+ documented interviews, books, speeches, and decisions — not generic AI behavior.">Construído a partir de 40+ entrevistas documentadas, livros, discursos e decisões — não comportamento genérico de IA.</p>
+        <div class="value-title" data-pt="Alta Fidelidade de Fonte" data-en="Primary Source Fidelity">Alta Fidelidade de
+          Fonte</div>
+        <p class="value-desc"
+          data-pt="Construído a partir de 40+ entrevistas documentadas, livros, discursos e decisões — não comportamento genérico de IA."
+          data-en="Built from 40+ documented interviews, books, speeches, and decisions — not generic AI behavior.">
+          Construído a partir de 40+ entrevistas documentadas, livros, discursos e decisões — não comportamento genérico
+          de IA.</p>
       </div>
       <div class="value-item">
         <span class="value-icon">⚡</span>
         <div class="value-title" data-pt="Ativação Instantânea" data-en="Instant Activation">Ativação Instantânea</div>
-        <p class="value-desc" data-pt="Cada mentor ativa imediatamente via um único comando na plataforma ON AI Solutions. Sem configuração." data-en="Each mentor activates immediately via a single command on the ON AI Solutions platform. No setup needed.">Cada mentor ativa imediatamente via um único comando na plataforma ON AI Solutions. Sem configuração.</p>
+        <p class="value-desc"
+          data-pt="Cada mentor ativa imediatamente via um único comando na plataforma ON AI Solutions. Sem configuração."
+          data-en="Each mentor activates immediately via a single command on the ON AI Solutions platform. No setup needed.">
+          Cada mentor ativa imediatamente via um único comando na plataforma ON AI Solutions. Sem configuração.</p>
       </div>
       <div class="value-item">
         <span class="value-icon">🔄</span>
         <div class="value-title" data-pt="Coleção Extensível" data-en="Extensible Collection">Coleção Extensível</div>
-        <p class="value-desc" data-pt="Novos mentores podem ser clonados e adicionados a qualquer momento. A coleção cresce conforme as necessidades evoluem." data-en="New mentors can be cloned and added at any time. The collection grows as needs evolve.">Novos mentores podem ser clonados e adicionados a qualquer momento. A coleção cresce conforme as necessidades evoluem.</p>
+        <p class="value-desc"
+          data-pt="Novos mentores podem ser clonados e adicionados a qualquer momento. A coleção cresce conforme as necessidades evoluem."
+          data-en="New mentors can be cloned and added at any time. The collection grows as needs evolve.">Novos
+          mentores podem ser clonados e adicionados a qualquer momento. A coleção cresce conforme as necessidades
+          evoluem.</p>
       </div>
       <div class="value-item">
         <span class="value-icon">🧩</span>
         <div class="value-title" data-pt="Curado Pessoalmente" data-en="Personally Curated">Curado Pessoalmente</div>
-        <p class="value-desc" data-pt="Cada mentor foi escolhido por Fabiano Silva como referência intelectual, espiritual e de negócios para sua jornada." data-en="Each mentor was chosen by Fabiano Silva as an intellectual, spiritual, and business reference for his journey.">Cada mentor foi escolhido por Fabiano Silva como referência intelectual, espiritual e de negócios para sua jornada.</p>
+        <p class="value-desc"
+          data-pt="Cada mentor foi escolhido por Fabiano Silva como referência intelectual, espiritual e de negócios para sua jornada."
+          data-en="Each mentor was chosen by Fabiano Silva as an intellectual, spiritual, and business reference for his journey.">
+          Cada mentor foi escolhido por Fabiano Silva como referência intelectual, espiritual e de negócios para sua
+          jornada.</p>
       </div>
     </div>
   </section>
@@ -468,28 +722,46 @@
     <div class="container">
       <div class="section-eyebrow" data-pt="Como Funciona" data-en="How It Works">Como Funciona</div>
       <h2 class="section-title" data-pt="Mentoria em segundos" data-en="Mentorship in seconds">Mentoria em segundos</h2>
-      <p class="section-subtitle" data-pt="Cada mentor é um agente totalmente autônomo. Descreva seu desafio — eles respondem como seu eu histórico." data-en="Each mentor is a fully autonomous agent. Describe your challenge — they respond as their historical self.">Cada mentor é um agente totalmente autônomo. Descreva seu desafio — eles respondem como seu eu histórico.</p>
+      <p class="section-subtitle"
+        data-pt="Cada mentor é um agente totalmente autônomo. Descreva seu desafio — eles respondem como seu eu histórico."
+        data-en="Each mentor is a fully autonomous agent. Describe your challenge — they respond as their historical self.">
+        Cada mentor é um agente totalmente autônomo. Descreva seu desafio — eles respondem como seu eu histórico.</p>
 
       <div class="how-grid">
         <div class="how-step">
           <span class="step-num">01</span>
           <div class="step-title" data-pt="Escolha o Mentor" data-en="Choose Your Mentor">Escolha o Mentor</div>
-          <p class="step-desc" data-pt="Selecione o especialista cujo domínio corresponde ao seu desafio — produto, riqueza, fé, espiritualidade ou empreendedorismo." data-en="Select the expert whose domain matches your challenge — product, wealth, faith, spirituality, or entrepreneurship.">Selecione o especialista cujo domínio corresponde ao seu desafio — produto, riqueza, fé, espiritualidade ou empreendedorismo.</p>
+          <p class="step-desc"
+            data-pt="Selecione o especialista cujo domínio corresponde ao seu desafio — produto, riqueza, fé, espiritualidade ou empreendedorismo."
+            data-en="Select the expert whose domain matches your challenge — product, wealth, faith, spirituality, or entrepreneurship.">
+            Selecione o especialista cujo domínio corresponde ao seu desafio — produto, riqueza, fé, espiritualidade ou
+            empreendedorismo.</p>
         </div>
         <div class="how-step">
           <span class="step-num">02</span>
           <div class="step-title" data-pt="Ative na Plataforma" data-en="Activate on Platform">Ative na Plataforma</div>
-          <p class="step-desc" data-pt="Ative qualquer mentor diretamente na plataforma ON AI Solutions com um único comando." data-en="Activate any mentor directly on the ON AI Solutions platform with a single command.">Ative qualquer mentor diretamente na plataforma ON AI Solutions com um único comando.</p>
+          <p class="step-desc"
+            data-pt="Ative qualquer mentor diretamente na plataforma ON AI Solutions com um único comando."
+            data-en="Activate any mentor directly on the ON AI Solutions platform with a single command.">Ative qualquer
+            mentor diretamente na plataforma ON AI Solutions com um único comando.</p>
         </div>
         <div class="how-step">
           <span class="step-num">03</span>
           <div class="step-title" data-pt="Descreva o Desafio" data-en="Describe the Challenge">Descreva o Desafio</div>
-          <p class="step-desc" data-pt="Apresente seu problema, decisão ou questão. O mentor responde com seus frameworks autênticos e documentados." data-en="Present your problem, decision, or question. The mentor responds with their authentic documented frameworks.">Apresente seu problema, decisão ou questão. O mentor responde com seus frameworks autênticos e documentados.</p>
+          <p class="step-desc"
+            data-pt="Apresente seu problema, decisão ou questão. O mentor responde com seus frameworks autênticos e documentados."
+            data-en="Present your problem, decision, or question. The mentor responds with their authentic documented frameworks.">
+            Apresente seu problema, decisão ou questão. O mentor responde com seus frameworks autênticos e documentados.
+          </p>
         </div>
         <div class="how-step">
           <span class="step-num">04</span>
           <div class="step-title" data-pt="Receba a Mentoria" data-en="Receive Mentorship">Receba a Mentoria</div>
-          <p class="step-desc" data-pt="Obtenha insights densos, diretos e baseados nos princípios documentados de cada figura. Sem respostas genéricas." data-en="Get dense, direct insights based on each figure's documented principles. No generic answers.">Obtenha insights densos, diretos e baseados nos princípios documentados de cada figura. Sem respostas genéricas.</p>
+          <p class="step-desc"
+            data-pt="Obtenha insights densos, diretos e baseados nos princípios documentados de cada figura. Sem respostas genéricas."
+            data-en="Get dense, direct insights based on each figure's documented principles. No generic answers.">
+            Obtenha insights densos, diretos e baseados nos princípios documentados de cada figura. Sem respostas
+            genéricas.</p>
         </div>
       </div>
     </div>
@@ -499,19 +771,30 @@
   <section style="text-align:center; padding-bottom:120px;">
     <div class="container">
       <div class="section-eyebrow" data-pt="Comece Agora" data-en="Get Started">Comece Agora</div>
-      <h2 class="section-title" data-pt="Pronto para ativar uma mente?" data-en="Ready to activate a mind?">Pronto para ativar uma mente?</h2>
-      <p style="color:var(--text-secondary);margin-bottom:48px;font-size:1.05rem;" data-pt="Escolha qualquer mentor acima para explorar seu perfil completo, frameworks e capacidades." data-en="Choose any mentor above to explore their full profile, frameworks, and capabilities.">Escolha qualquer mentor acima para explorar seu perfil completo, frameworks e capacidades.</p>
+      <h2 class="section-title" data-pt="Pronto para ativar uma mente?" data-en="Ready to activate a mind?">Pronto para
+        ativar uma mente?</h2>
+      <p style="color:var(--text-secondary);margin-bottom:48px;font-size:1.05rem;"
+        data-pt="Escolha qualquer mentor acima para explorar seu perfil completo, frameworks e capacidades."
+        data-en="Choose any mentor above to explore their full profile, frameworks, and capabilities.">Escolha qualquer
+        mentor acima para explorar seu perfil completo, frameworks e capacidades.</p>
       <div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;">
         <a href="steve-jobs.html" class="btn btn-accent-jobs" style="--btn-glow:var(--jobs-glow);">Steve Jobs</a>
-        <a href="naval-ravikant.html" class="btn btn-accent-naval" style="--btn-glow:var(--naval-glow);">Naval Ravikant</a>
+        <a href="naval-ravikant.html" class="btn btn-accent-naval" style="--btn-glow:var(--naval-glow);">Naval
+          Ravikant</a>
         <a href="richard-rohr.html" class="btn btn-accent-rohr" style="--btn-glow:var(--rohr-glow);">Richard Rohr</a>
         <a href="cs-lewis.html" class="btn btn-accent-lewis" style="--btn-glow:var(--lewis-glow);">C.S. Lewis</a>
-        <a href="pieter-levels.html" class="btn btn-accent-levels" style="--btn-glow:var(--levels-glow);">Pieter Levels</a>
-        <a href="chris-voss.html" class="btn" style="background:var(--voss-dim);border-color:var(--voss);color:var(--voss);">Chris Voss</a>
-        <a href="alex-hormozi.html" class="btn" style="background:var(--hormozi-dim);border-color:var(--hormozi);color:var(--hormozi);">Alex Hormozi</a>
-        <a href="jordan-peterson.html" class="btn" style="background:var(--peterson-dim);border-color:var(--peterson);color:var(--peterson);">Jordan Peterson</a>
-        <a href="dhh.html" class="btn" style="background:var(--dhh-dim);border-color:var(--dhh);color:var(--dhh);">DHH</a>
-        <a href="greg-mckeown.html" class="btn" style="background:var(--mckeown-dim);border-color:var(--mckeown);color:var(--mckeown);">Greg McKeown</a>
+        <a href="pieter-levels.html" class="btn btn-accent-levels" style="--btn-glow:var(--levels-glow);">Pieter
+          Levels</a>
+        <a href="chris-voss.html" class="btn"
+          style="background:var(--voss-dim);border-color:var(--voss);color:var(--voss);">Chris Voss</a>
+        <a href="alex-hormozi.html" class="btn"
+          style="background:var(--hormozi-dim);border-color:var(--hormozi);color:var(--hormozi);">Alex Hormozi</a>
+        <a href="jordan-peterson.html" class="btn"
+          style="background:var(--peterson-dim);border-color:var(--peterson);color:var(--peterson);">Jordan Peterson</a>
+        <a href="dhh.html" class="btn"
+          style="background:var(--dhh-dim);border-color:var(--dhh);color:var(--dhh);">DHH</a>
+        <a href="greg-mckeown.html" class="btn"
+          style="background:var(--mckeown-dim);border-color:var(--mckeown);color:var(--mckeown);">Greg McKeown</a>
       </div>
     </div>
   </section>
@@ -519,12 +802,15 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p data-pt="Coleção de mentores curada por <strong>Fabiano Silva</strong> · Construído com <strong>ON AI Solutions</strong> · Mais mentores em breve" data-en="Mentor collection curated by <strong>Fabiano Silva</strong> · Built with <strong>ON AI Solutions</strong> · More mentors coming soon">
-        Coleção de mentores curada por <strong>Fabiano Silva</strong> · Construído com <strong>ON AI Solutions</strong> · Mais mentores em breve
+      <p data-pt="Coleção de mentores curada por <strong>Fabiano Silva</strong> · Construído com <strong>ON AI Solutions</strong> · Mais mentores em breve"
+        data-en="Mentor collection curated by <strong>Fabiano Silva</strong> · Built with <strong>ON AI Solutions</strong> · More mentors coming soon">
+        Coleção de mentores curada por <strong>Fabiano Silva</strong> · Construído com <strong>ON AI Solutions</strong>
+        · Mais mentores em breve
       </p>
     </div>
   </footer>
 
   <script src="lang.js"></script>
 </body>
+
 </html>
