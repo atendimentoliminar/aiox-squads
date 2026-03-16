@@ -1,0 +1,25 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "mentors.onassessoriamkt.com.br" }],
+      "destination": "/squads/mentors/showcase/index.html"
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "mentors.onassessoriamkt.com.br" }],
+      "destination": "/squads/mentors/showcase/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+      ]
+    }
+  ]
+}
