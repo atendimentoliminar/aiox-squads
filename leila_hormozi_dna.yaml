@@ -1,0 +1,379 @@
+mind_name: "Leila Hormozi"
+mind_slug: "leila_hormozi"
+domain: "business operations, team building, leadership, company scaling, culture, hiring, decision-making frameworks"
+biography:
+  summary: "Leila Hormozi is a CEO and co-founder of Acquisition.com alongside her husband Alex Hormozi. She founded and scaled three companies to $120M+ in cumulative sales across software, service, e-commerce, and brick & mortar industries without outside capital. Reached $100M net worth by age 28."
+  key_achievements:
+    - "Co-founder and CEO of Gym Launch (scaled to $100M+)"
+    - "Co-founder of Prestige Labs"
+    - "Co-founder of ALAN (acquired)"
+    - "Co-founder of Acquisition.com ($200M portfolio company)"
+  background: "From 6 arrests at 18, sobriety at 19, college graduate at 21, first business founder at 23, $100M net worth by 28"
+
+sources:
+  tier_1:
+    # Own Podcast - PRIMARY CONTENT
+    - type: podcast
+      title: "Build with Leila Hormozi"
+      author: "Leila Hormozi"
+      platform: "Apple Podcasts, Spotify, Audible, iHeart"
+      url: "https://podcasts.apple.com/us/podcast/build-with-leila-hormozi/id1663834553"
+      description: "Weekly podcast (Monday & Wednesday) where Leila shares lessons learned in scaling businesses. Covers leadership, team building, culture, decision-making frameworks, and operational excellence. 330+ episodes averaging 24 minutes each."
+      estimated_content: "330+ episodes, ~24 min average = ~132+ hours of content"
+      launch_date: "January 9, 2023"
+      hosts: ["Leila Hormozi"]
+      notable_episodes:
+        - "I Brainwashed Myself to be Rich | Ep 157"
+        - "What Pain Taught Me About Leadership | Ep 282"
+        - "The 5-Step Framework for Better Leadership Choices | Ep 276"
+        - "How to Change Your Life in 17 Minutes | Ep 330"
+        - "Mastering the Art of Talent Acquisition and Building Culture | Ep 107"
+
+    - type: podcast
+      title: "The Game with Alex Hormozi"
+      author: "Alex Hormozi (co-featuring Leila Hormozi)"
+      platform: "Apple Podcasts, Spotify, and others"
+      url: "https://podcasts.apple.com/us/podcast/the-game-with-alex-hormozi/id1254720112"
+      description: "Joint podcast with husband Alex Hormozi discussing entrepreneurship, business growth, and operational excellence. Episodes drop every other day. Features regular segments with Leila discussing strategy and leadership insights."
+      estimated_content: "100+ episodes featuring Leila, varying from quick bites (15 min) to deep dives (60+ min)"
+      notable_episodes:
+        - "What Leila Hormozi And I Accomplished In Q1 And HOW We Did It | Ep 860"
+        - "we made 106M in 72 hours | Ep 987"
+        - "Why You Need a Goal Big Enough to Scare You | Ep 949"
+        - "How To Raise Your Standards TODAY w/ Leila Hormozi | Ep 795"
+        - "Meet the Team Behind Alex and Leila Hormozi (FULL BEHIND THE SCENES)"
+
+    - type: video_channel
+      title: "Leila Hormozi YouTube Channel"
+      author: "Leila Hormozi"
+      url: "https://www.youtube.com/@LeilaHormozi"
+      platform: "YouTube"
+      description: "Primary video channel with 1.11M subscribers and 164.52M total views. Content focuses on business ownership, scaling, systems building, financial success, and personal development. No paywall education philosophy."
+      estimated_content: "100+ videos covering business, leadership, productivity, relationships"
+      channel_stats:
+        subscribers: "1.11M"
+        total_views: "164.52M"
+        launch_date: "June 26, 2021"
+      notable_video_themes:
+        - "How to STOP Sabotaging Yourself In Relationships"
+        - "The Rest Routine That Will Transform Your Life"
+        - "You're not LAZY: My 3 Step System to ACTUALLY Get Sh*t Done"
+
+  tier_2:
+    # Guest Podcast Appearances
+    - type: podcast_appearance
+      title: "Young and Profiting with Hala Taha"
+      guest_name: "Leila Hormozi"
+      host: "Hala Taha"
+      url: "https://youngandprofiting.com/leila-hormozi-100000000-leadership-how-to-build-high-performance-teams-people-never-want-to-leave-e203/"
+      episode: "E203"
+      episode_title: "$100,000,000 Leadership, How to Build High-Performance Teams People Never Want to Leave"
+      description: "Deep conversation about building high-performance teams, leadership at scale, culture, and her journey from six arrests to $100M net worth."
+      estimated_content: "60-90 minutes"
+      related_episode: "E202 - From Six Arrests to $100M Net Worth, How Leila Changed Her Mind and Built an Empire by Age 28"
+
+    - type: podcast_appearance
+      title: "The School of Greatness with Lewis Howes"
+      guest_name: "Leila Hormozi"
+      host: "Lewis Howes"
+      url: "https://lewishowes.com/business-2/how-ceo-leila-hormozi-went-from-broke-anxious-arrested-6-times-to-100m-net-worth/"
+      episode_title: "How CEO Leila Hormozi Went From Broke, Anxious & Arrested 6 Times To $100M Net Worth"
+      description: "Career and personal development discussion focusing on her transformation, mindset shifts, and path to building a $100M net worth."
+      estimated_content: "60-90 minutes"
+
+    - type: podcast_appearance
+      title: "The Life Coach School Podcast with Brooke Castillo"
+      guest_name: "Leila Hormozi"
+      host: "Brooke Castillo"
+      url: "https://www.thelifecoachschool.com/podcasts/the-life-coach-school-podcast-2/episodes/2148779712"
+      episode: "Ep #430"
+      episode_title: "Wealthy Women with Leila Hormozi"
+      description: "Discussion about wealth building, hiring strategy, mindset management, and secrets to success as a successful female entrepreneur."
+      estimated_content: "45-60 minutes"
+
+    - type: podcast_appearance
+      title: "Leveling Up with Eric Siu"
+      guest_name: "Leila Hormozi"
+      host: "Eric Siu"
+      episode_title: "Mastering the Art of Talent Acquisition and Building Culture (Part 1)"
+      description: "Deep dive into hiring strategies, culture building, and operational excellence. Two-part series."
+      estimated_content: "90+ minutes (2 parts)"
+
+    - type: podcast_appearance
+      title: "Building a Growth-Oriented Team with Leila Hormozi"
+      guest_name: "Leila Hormozi"
+      host: "Jasmine Star"
+      url: "https://jasminestar.com/podcast/episode422/"
+      episode: "Episode 422"
+      description: "Podcast focused on building effective teams and creating growth-oriented culture."
+      estimated_content: "45-60 minutes"
+
+    - type: podcast_appearance
+      title: "Building a Wildly Successful Business (and how to show up when it's hard) with Leila Hormozi"
+      guest_name: "Leila Hormozi"
+      host: "Jasmine Star"
+      url: "https://jasminestar.com/podcast/episode337/"
+      episode: "Episode 337"
+      description: "Personal and business strategy discussion covering resilience, operations, and showing up during challenges."
+      estimated_content: "45-60 minutes"
+
+    - type: podcast_appearance
+      title: "Misfit Entrepreneur"
+      guest_name: "Alex and Leila Hormozi"
+      host: "Misfit Entrepreneur"
+      url: "https://www.misfitentrepreneur.com/misfit-entrepreneur-august-2021---263-merging-the-hard-and-soft-sciences-of-business-with-entrepreneur-power-couple-alex-and-leila-hormozi.html"
+      episode: "August 2021 - 263"
+      episode_title: "Merging the Hard and Soft Sciences of Business with Entrepreneur Power Couple, Alex and Leila Hormozi"
+      description: "Joint appearance discussing how they merge hard business metrics with soft leadership and culture principles."
+      estimated_content: "60-90 minutes"
+
+    - type: interview
+      title: "Female Startup Club - The Untold Rise of Leila Hormozi"
+      guest_name: "Leila Hormozi"
+      url: "https://www.femalestartupclub.com/blogs/podcasts/leila-hormozi-prestige-labs"
+      description: "Interview covering her story of building Gym Launch, Prestige Labs, ALAN, and Acquisition.com."
+      estimated_content: "45-60 minutes"
+
+    - type: article
+      title: "How To Master Business with Leila Hormozi"
+      author: "The Futur"
+      url: "https://www.thefutur.com/content/how-to-master-business-with-leila-hormozi"
+      description: "Tutorial/course content from The Futur featuring Leila's business mastery principles."
+      estimated_content: "Video course/tutorial"
+
+    - type: documentary_article
+      title: "The Untold Rise of Leila Hormozi"
+      author: "David vs Goliath"
+      url: "https://davidtogoliath.com/p/untold-rise-leila-hormozi"
+      description: "Detailed long-form article documenting her rise from arrested teenager to $100M entrepreneur."
+      estimated_content: "5000+ words"
+
+  tier_3:
+    # LinkedIn Content
+    - type: social_content
+      platform: "LinkedIn"
+      author: "Leila Hormozi"
+      url: "https://www.linkedin.com/in/leilahormozi/"
+      title: "Leila Hormozi's LinkedIn Profile"
+      description: "Active LinkedIn presence with 100+ posts about leadership, hiring, culture, business decisions, and personal growth. Main distribution channel for insights and lessons."
+      content_types:
+        - "Leadership insights"
+        - "Culture building frameworks"
+        - "Decision-making principles"
+        - "Personal development reflections"
+      notable_posts:
+        - "Your business's culture is simply an amplification of yourself"
+        - "In a matter of 18 months, I got arrested about six times"
+        - "When I was 23, Alex & I started our first business"
+        - "12 life lessons my husband taught me"
+        - "When I'm having a tough time, I ask myself..."
+        - "Get around people who talk about future you. Get away from people who talk about past you."
+
+    - type: social_content
+      platform: "Instagram"
+      author: "Leila Hormozi"
+      url: "https://www.instagram.com/leilahormozi/"
+      title: "Leila Hormozi's Instagram"
+      description: "Instagram account with behind-the-scenes content, lifestyle, and motivational posts."
+      estimated_followers: "100k+"
+
+    - type: social_content
+      platform: "X (Twitter)"
+      author: "Leila Hormozi"
+      url: "https://x.com/LeilaHormozi"
+      title: "Leila Hormozi's Twitter/X"
+      description: "Regular posts about business, leadership, discipline, and personal philosophy."
+      notable_quotes:
+        - "The only way to become excellent is by doing the same thing over and over again without losing enthusiasm. Boredom precedes greatness."
+
+    - type: quotes_compilation
+      title: "30 Best Leila Hormozi Quotes"
+      url: "https://thecitesite.com/authors/leila-hormozi/"
+      source: "The Cite Site"
+      description: "Curated collection of 30+ famous quotes from Leila Hormozi covering success, leadership, business, and life."
+      estimated_content: "30+ quotes with context"
+
+    - type: quotes_compilation
+      title: "18 Leila Hormozi Quotes on Success, Leadership, Business & Life"
+      url: "https://artofpoets.com/leila-hormozi-quotes/"
+      source: "Art of Poets"
+      description: "Collection of her most impactful quotes organized by theme."
+      estimated_content: "18 quotes"
+
+    - type: quotes_compilation
+      title: "100+ Best Leila Hormozi Quotes of All Time"
+      url: "https://navid.me/leila-hormozi-quotes/"
+      source: "Navid.me"
+      description: "Comprehensive quote database with 100+ quotes."
+      estimated_content: "100+ quotes"
+
+    - type: reference
+      title: "Leila Hormozi - Hustler's Library"
+      url: "https://hustlerslibrary.com/everything-about-leila-hormozi/"
+      description: "Comprehensive resource page covering everything about Leila Hormozi's teachings and frameworks."
+      estimated_content: "Summary + reference links"
+
+    - type: framework_document
+      title: "Leila Scaling Framework Book v3"
+      url: "https://www.scribd.com/document/819276447/Leila-Scaling-Framework-Book-v3"
+      source: "Scribd (user-shared)"
+      description: "Document detailing Leila's scaling framework methodologies."
+      estimated_content: "50-100 pages"
+
+    - type: reference
+      title: "$100M Business Playbooks - Alex & Leila Hormozi Strategies"
+      url: "https://www.webelix.dev/"
+      description: "Third-party compilation of business strategies and playbooks from Alex and Leila Hormozi."
+      estimated_content: "Reference guide"
+
+    - type: article
+      title: "Leila Hormozi: Emotional Intelligence Drives CEO Success"
+      url: "https://www.ceotodaymagazine.com/2026/01/leila-hormozi-emotional-intelligence-drives-ceo-success/"
+      source: "CEO Today Magazine"
+      publication_date: "January 2026"
+      description: "Analysis of how emotional intelligence is critical for CEO success based on Leila's approach."
+      estimated_content: "2000-3000 words"
+
+    - type: reference
+      title: "Leila Hormozi - Freelancipedia"
+      url: "https://www.freelancipedia.com/wiki/Leila_Hormozi"
+      source: "Freelancipedia"
+      description: "Wiki-style reference page about Leila Hormozi."
+      estimated_content: "Summary biography"
+
+    - type: reference
+      title: "Leila Hormozi - Favikon"
+      url: "https://www.favikon.com/blog/who-is-leila-hormozi"
+      source: "Favikon"
+      description: "Profile and analysis of Leila Hormozi."
+      estimated_content: "Article"
+
+    - type: training_resource
+      title: "Leila Hormozi's Must-Read Book List"
+      url: "https://www.skool.com/acceleratoruniversity/leila-hormozi-must-read-book-list"
+      source: "Accelerator University (Skool)"
+      description: "Curated reading list recommended by Leila for entrepreneurs. While not her books, shows her influences and learning resources."
+      estimated_content: "15-20 book recommendations"
+
+    - type: training_resource
+      title: "How can you build a strong culture in your business?"
+      url: "https://www.skool.com/acceleratoruniversity/how-can-you-build-a-strong-culture-in-your-business"
+      source: "Accelerator University (Skool)"
+      description: "Community discussion and guidance on culture building based on Leila's principles."
+      estimated_content: "Community Q&A and insights"
+
+    - type: podcast_database
+      title: "Leila Hormozi's Podcast Credits & Interviews"
+      url: "https://www.podchaser.com/creators/leila-hormozi-107tVQwj9c/appearances"
+      source: "Podchaser"
+      description: "Comprehensive database of Leila's podcast guest appearances across all shows."
+      estimated_content: "20+ podcast appearances tracked"
+
+frameworks_documented:
+  core_frameworks:
+    - name: "5-Step Framework for Better Leadership Choices"
+      description: "Decision-making framework for leaders: space, pre-made decisions, consistent frameworks, reflection, aligned environments"
+      documented_in: ["Build with Leila Hormozi Ep 276", "YouTube videos", "LinkedIn posts"]
+
+    - name: "Culture Building Framework"
+      description: "Culture as amplification of self; thermostat (not thermometer) leadership; consistent culture cultivation through newsletters, meetings, Q&A sessions"
+      documented_in: ["Build with Leila Hormozi (multiple episodes)", "LinkedIn posts", "Podcast interviews"]
+
+    - name: "Talent Acquisition & Hiring Framework"
+      description: "Candidate experience approach; treating candidates like leads; confirmation bias and halo effect awareness"
+      documented_in: ["Build with Leila Hormozi Ep 107", "Young and Profiting E202-E203", "LinkedIn content"]
+
+    - name: "Scaling Framework"
+      description: "Methodology for scaling companies across different industries (software, service, e-commerce, brick & mortar)"
+      documented_in: ["Leila Scaling Framework Book v3", "Acquisition.com training", "Podcast interviews"]
+
+    - name: "Team Building & High-Performance Culture"
+      description: "Creating teams people never want to leave; discipline-based systems; transparent communication"
+      documented_in: ["Young and Profiting E203", "Build with Leila Hormozi (multiple)", "YouTube channel"]
+
+  operational_frameworks:
+    - name: "Five Star Service Framework"
+      source: "Business Operations"
+    - name: "Gametape Review Framework"
+      source: "Performance Management"
+    - name: "High Performance Communication Framework"
+      source: "Team Communication"
+    - name: "Monday Hour One Framework"
+      source: "Time Management / Weekly Planning"
+    - name: "Pay Increase Framework"
+      source: "Compensation Strategy"
+
+famous_quotes:
+  collection_1:
+    - quote: "Get around people who talk about future you. Get away from people who talk about past you."
+      category: "Relationships & Mindset"
+
+    - quote: "Is it someone else's fault? Maybe. Is it your problem? Yes. Taking ownership will open up more solutions than blame ever will."
+      category: "Responsibility & Leadership"
+
+    - quote: "Aim for discipline, not motivation. Motivation is just a feeling. Discipline is a habit."
+      category: "Personal Development"
+
+    - quote: "The only way to become excellent is by doing the same thing over and over again without losing enthusiasm. Boredom precedes greatness."
+      category: "Excellence & Consistency"
+
+    - quote: "Your business's culture is simply an amplification of yourself."
+      category: "Culture & Leadership"
+
+    - quote: "Your ability to make consistent decisions is what determines your ceiling in every area of life."
+      category: "Decision-Making"
+
+  business_quotes:
+    - quote: "5 Ways to break your biz (and how to avoid them): 1. Make emotion based decisions 2. Add more complexity 3. Ignore what your customers want 4. Neglect your data 5. Let unexperienced leaders hire"
+      category: "Business Mistakes"
+
+    - quote: "7 Money habits that are keeping you poor: 1. Sacrificing tomorrow for today 2. Not keeping track of spending 3. Pretending like debt isn't there 4. Buying things, not time/knowledge 5. Not saving 6. Trying to look rich 7. Getting complacent"
+      category: "Financial Habits"
+
+    - quote: "Don't let anybody kill your dreams"
+      category: "Mindset"
+
+    - quote: "The most important quality in a leader is not how much they know, but how much they care and how consistently they act on their word."
+      category: "Leadership"
+
+summary:
+  total_sources: 40+
+  tier_1_count: 3
+  tier_2_count: 8
+  tier_3_count: 30+
+
+  content_breakdown:
+    primary_podcasts: "Build with Leila Hormozi (330+ episodes, ~132 hours) + The Game with Alex Hormozi (100+ episodes featuring Leila)"
+    guest_appearances: "8+ major podcast appearances on platforms like Young and Profiting, School of Greatness, Life Coach School"
+    video_content: "YouTube channel with 1.11M subscribers, 100+ videos, 164.52M total views"
+    written_content: "100+ LinkedIn posts, Twitter/X posts, frameworks documentation, quotes compilations"
+
+  estimated_total_content: "250+ hours of audio/video content + 200+ written pieces"
+
+  framework_coverage:
+    - "Decision-making frameworks (5-Step Framework)"
+    - "Culture building and development"
+    - "Talent acquisition and hiring strategies"
+    - "Team building for high performance"
+    - "Company scaling across industries"
+    - "Operational excellence (5 frameworks documented)"
+    - "Leadership principles (emotional intelligence, accountability)"
+    - "Discipline and habit formation"
+
+  key_themes:
+    - "Leadership from personal responsibility and accountability"
+    - "Culture as reflection of CEO values"
+    - "Operational excellence and systematization"
+    - "High-performance team building"
+    - "Decision-making frameworks and discipline"
+    - "Building for scale (without outside capital)"
+    - "Emotional intelligence in leadership"
+
+dna_extraction_notes:
+  important_distinction: "Unlike her husband Alex Hormozi (who authored bestselling books like '100M Offers'), Leila Hormozi's primary content distribution channels are podcasts, YouTube videos, and social media rather than published books. Her 'DNA' is most accessible through her podcast 'Build with Leila Hormozi' (330+ episodes) and YouTube channel (1.11M subscribers)."
+
+  content_philosophy: "Leila emphasizes making real business education accessible to anyone with no paywalls and no holding back, making her content freely available across multiple platforms."
+
+  research_transparency: "No published books found under Leila Hormozi's sole authorship. All references to '100 Million Dollar Business' appear to relate to her business achievements, not a published work. Most frameworks are documented through podcast episodes, interviews, and third-party compilations rather than formal publications."
+
+  primary_dna_sources: ["Build with Leila Hormozi podcast", "YouTube channel", "LinkedIn profile", "Guest podcast appearances"]

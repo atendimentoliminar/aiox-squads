@@ -26,6 +26,29 @@
     .chip-desc { font-size:12px; font-weight:500; color:var(--text-secondary); }
     .profile-sep { font-size:1.3rem; color:var(--text-muted); font-weight:200; padding:0 4px; }
     @media(max-width:700px){ .value-item{border-right:none;border-bottom:1px solid var(--glass-border);} .value-item:last-child{border-bottom:none;} }
+
+    /* ── Mentor Categories ── */
+    .mentor-category { margin-bottom: 72px; }
+    .mentor-category:last-child { margin-bottom: 0; }
+    .category-header {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 32px; padding-bottom: 20px;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .category-icon { font-size: 1.5rem; flex-shrink: 0; line-height: 1; }
+    .category-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 700;
+      margin: 0 0 4px; color: var(--text-primary);
+    }
+    .category-desc { font-size: 12px; color: var(--text-muted); letter-spacing: 0.04em; margin: 0; }
+    .category-count {
+      margin-left: auto; flex-shrink: 0;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-muted);
+      background: rgba(255,255,255,0.04); border: 1px solid var(--glass-border);
+      border-radius: 100px; padding: 4px 14px;
+    }
   </style>
 </head>
 <body>
@@ -107,7 +130,7 @@
     </div>
   </section>
 
-  <!-- Mentor Cards -->
+  <!-- Mentor Cards by Category -->
   <section>
     <div class="container">
       <div class="section-eyebrow" data-pt="O Time" data-en="The Squad">O Time</div>
@@ -116,229 +139,301 @@
         Cada mentor é um clone cognitivo de precisão — não um chatbot. Construído a partir de livros, entrevistas, discursos e decisões documentadas de cada figura.
       </p>
 
-      <div class="mentors-grid">
+      <!-- ── Categoria: Produto & Tecnologia ── -->
+      <div class="mentor-category">
+        <div class="category-header">
+          <span class="category-icon">⚙️</span>
+          <div>
+            <h3 class="category-name" data-pt="Produto & Tecnologia" data-en="Product & Technology">Produto & Tecnologia</h3>
+            <p class="category-desc" data-pt="Craft, criação e visão de produto" data-en="Craft, creation and product vision">Craft, criação e visão de produto</p>
+          </div>
+          <span class="category-count" data-pt="2 mentores" data-en="2 mentors">2 mentores</span>
+        </div>
+        <div class="mentors-grid">
 
-        <!-- Steve Jobs -->
-        <a class="mentor-card jobs" href="steve-jobs.html">
-          <span class="card-fidelity">Fidelidade 88–93%</span>
-          <div class="card-avatar">
-            <img src="images/steve-jobs.jpg" alt="Steve Jobs" class="card-photo" onerror="this.style.display='none'">
-            SJ
-          </div>
-          <span class="card-tier-badge" data-pt="Tier 1 · Tecnologia" data-en="Tier 1 · Technology">Tier 1 · Tecnologia</span>
-          <h3 class="card-name">Steve Jobs</h3>
-          <p class="card-role" data-pt="Visionário de Produto · Absolutista do Design · Distorcedor da Realidade" data-en="Product Visionary · Design Absolutist · Reality Distorter">Visionário de Produto · Absolutista do Design · Distorcedor da Realidade</p>
-          <blockquote class="card-quote" data-pt="&ldquo;Vivo na intersecção da tecnologia com as artes liberais — e acredito que é o lugar mais poderoso para criar.&rdquo;" data-en="&ldquo;I live at the intersection of technology and the liberal arts — and I believe that's the most powerful place to create from.&rdquo;">
-            "Vivo na intersecção da tecnologia com as artes liberais — e acredito que é o lugar mais poderoso para criar."
-          </blockquote>
-          <div class="card-domains">
-            <span class="domain-tag" data-pt="Design de Produto" data-en="Product Design">Design de Produto</span>
-            <span class="domain-tag" data-pt="Liderança" data-en="Leadership">Liderança</span>
-            <span class="domain-tag" data-pt="Visão" data-en="Vision">Visão</span>
-            <span class="domain-tag" data-pt="Artesanato" data-en="Craft">Artesanato</span>
-          </div>
-          <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
-        </a>
+          <!-- Steve Jobs -->
+          <a class="mentor-card jobs" href="steve-jobs.html">
+            <span class="card-fidelity">Fidelidade 88–93%</span>
+            <div class="card-avatar">
+              <img src="images/steve-jobs.jpg" alt="Steve Jobs" class="card-photo" onerror="this.style.display='none'">
+              SJ
+            </div>
+            <span class="card-tier-badge" data-pt="Tecnologia" data-en="Technology">Tecnologia</span>
+            <h3 class="card-name">Steve Jobs</h3>
+            <p class="card-role" data-pt="Visionário de Produto · Absolutista do Design · Distorcedor da Realidade" data-en="Product Visionary · Design Absolutist · Reality Distorter">Visionário de Produto · Absolutista do Design · Distorcedor da Realidade</p>
+            <blockquote class="card-quote" data-pt="&ldquo;Vivo na intersecção da tecnologia com as artes liberais — e acredito que é o lugar mais poderoso para criar.&rdquo;" data-en="&ldquo;I live at the intersection of technology and the liberal arts — and I believe that's the most powerful place to create from.&rdquo;">
+              "Vivo na intersecção da tecnologia com as artes liberais — e acredito que é o lugar mais poderoso para criar."
+            </blockquote>
+            <div class="card-domains">
+              <span class="domain-tag" data-pt="Design de Produto" data-en="Product Design">Design de Produto</span>
+              <span class="domain-tag" data-pt="Liderança" data-en="Leadership">Liderança</span>
+              <span class="domain-tag" data-pt="Visão" data-en="Vision">Visão</span>
+              <span class="domain-tag" data-pt="Artesanato" data-en="Craft">Artesanato</span>
+            </div>
+            <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
+          </a>
 
-        <!-- Naval Ravikant -->
-        <a class="mentor-card naval" href="naval-ravikant.html">
-          <span class="card-fidelity">Fidelidade 85–90%</span>
-          <div class="card-avatar">
-            <img src="images/naval-ravikant.jpg" alt="Naval Ravikant" class="card-photo" onerror="this.style.display='none'">
-            NR
-          </div>
-          <span class="card-tier-badge" data-pt="Tier 1 · Riqueza e Filosofia" data-en="Tier 1 · Wealth & Philosophy">Tier 1 · Riqueza e Filosofia</span>
-          <h3 class="card-name">Naval Ravikant</h3>
-          <p class="card-role" data-pt="Empreendedor · Investidor · Filósofo Racional" data-en="Entrepreneur · Investor · Rational Philosopher">Empreendedor · Investidor · Filósofo Racional</p>
-          <blockquote class="card-quote" data-pt="&ldquo;O propósito da vida é ser feliz. A maioria das pessoas está sistematicamente confusa sobre como chegar lá — otimizam para status em vez de riqueza.&rdquo;" data-en="&ldquo;The purpose of life is to be happy. Most people are systematically confused about how to get there — they optimize for status instead of wealth.&rdquo;">
-            "O propósito da vida é ser feliz. A maioria das pessoas está sistematicamente confusa sobre como chegar lá — otimizam para status em vez de riqueza."
-          </blockquote>
-          <div class="card-domains">
-            <span class="domain-tag" data-pt="Criação de Riqueza" data-en="Wealth Creation">Criação de Riqueza</span>
-            <span class="domain-tag" data-pt="Alavancagem" data-en="Leverage">Alavancagem</span>
-            <span class="domain-tag" data-pt="Primeiros Princípios" data-en="First Principles">Primeiros Princípios</span>
-            <span class="domain-tag" data-pt="Felicidade" data-en="Happiness">Felicidade</span>
-          </div>
-          <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
-        </a>
+          <!-- DHH -->
+          <a class="mentor-card dhh" href="dhh.html">
+            <span class="card-fidelity">Fidelidade 88–93%</span>
+            <div class="card-avatar">
+              <img src="images/dhh.jpg" alt="David Heinemeier Hansson" class="card-photo" onerror="this.style.display='none'">
+              DHH
+            </div>
+            <span class="card-tier-badge" data-pt="Software &amp; Empresa Calma" data-en="Software &amp; Calm Company">Software &amp; Empresa Calma</span>
+            <h3 class="card-name">David Heinemeier Hansson</h3>
+            <p class="card-role" data-pt="Criador Ruby on Rails · Co-fundador 37signals · Autor Rework &amp; Shape Up" data-en="Ruby on Rails Creator · Co-founder 37signals · Author Rework &amp; Shape Up">Criador Ruby on Rails · Co-fundador 37signals · Autor Rework &amp; Shape Up</p>
+            <blockquote class="card-quote" data-pt="&ldquo;Não precisa ser louco no trabalho. 25 anos lucrativo sem um único investidor externo é prova suficiente de que o consenso do Silicon Valley está errado.&rdquo;" data-en="&ldquo;It doesn't have to be crazy at work. 25 years profitable without a single outside investor is proof enough that the Silicon Valley consensus is wrong.&rdquo;">
+              "Não precisa ser louco no trabalho. 25 anos lucrativo sem um único investidor externo."
+            </blockquote>
+            <div class="card-domains">
+              <span class="domain-tag" data-pt="Shape Up" data-en="Shape Up">Shape Up</span>
+              <span class="domain-tag" data-pt="Bootstrapping" data-en="Bootstrapping">Bootstrapping</span>
+              <span class="domain-tag" data-pt="Software Craft" data-en="Software Craft">Software Craft</span>
+              <span class="domain-tag" data-pt="Empresa Calma" data-en="Calm Company">Empresa Calma</span>
+            </div>
+            <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
+          </a>
 
-        <!-- Richard Rohr -->
-        <a class="mentor-card rohr" href="richard-rohr.html">
-          <span class="card-fidelity">Fidelidade 85–90%</span>
-          <div class="card-avatar">
-            <img src="images/richard-rohr.jpg" alt="Richard Rohr" class="card-photo" onerror="this.style.display='none'">
-            RR
-          </div>
-          <span class="card-tier-badge" data-pt="Tier 1 · Espiritualidade" data-en="Tier 1 · Spirituality">Tier 1 · Espiritualidade</span>
-          <h3 class="card-name">Richard Rohr</h3>
-          <p class="card-role" data-pt="Frade Franciscano · Místico · Guia Contemplativo" data-en="Franciscan Friar · Mystic · Contemplative Guide">Frade Franciscano · Místico · Guia Contemplativo</p>
-          <blockquote class="card-quote" data-pt="&ldquo;Não quero te dar mais informação. Quero te ajudar a transformar. E a transformação sempre vem pela ferida, pela queda.&rdquo;" data-en="&ldquo;I don't want to give you more information. I want to help you transform. And transformation always comes through the wound, through the falling.&rdquo;">
-            "Não quero te dar mais informação. Quero te ajudar a transformar. E a transformação sempre vem pela ferida, pela queda."
-          </blockquote>
-          <div class="card-domains">
-            <span class="domain-tag" data-pt="Contemplação" data-en="Contemplation">Contemplação</span>
-            <span class="domain-tag" data-pt="Verdadeiro Eu" data-en="True Self">Verdadeiro Eu</span>
-            <span class="domain-tag" data-pt="Mente Não-Dual" data-en="Non-dual Mind">Mente Não-Dual</span>
-            <span class="domain-tag" data-pt="Transformação" data-en="Transformation">Transformação</span>
-          </div>
-          <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
-        </a>
-
-        <!-- C.S. Lewis -->
-        <a class="mentor-card lewis" href="cs-lewis.html">
-          <span class="card-fidelity">Fidelidade 85–90%</span>
-          <div class="card-avatar">
-            <img src="images/cs-lewis.jpg" alt="C.S. Lewis" class="card-photo" onerror="this.style.display='none'">
-            CL
-          </div>
-          <span class="card-tier-badge" data-pt="Tier 1 · Fé e Razão" data-en="Tier 1 · Faith & Reason">Tier 1 · Fé e Razão</span>
-          <h3 class="card-name">C.S. Lewis</h3>
-          <p class="card-role" data-pt="Acadêmico Oxford · Apologista · Escritor Cristão" data-en="Oxford Scholar · Apologist · Christian Writer">Acadêmico Oxford · Apologista · Escritor Cristão</p>
-          <blockquote class="card-quote" data-pt="&ldquo;A razão limpa o terreno. A imaginação planta a semente. Você precisa das duas — e seria um erro dividir o que Deus uniu.&rdquo;" data-en="&ldquo;Reason clears the ground. Imagination plants the seed. You need both — and it would be a mistake to divide what God has joined.&rdquo;">
-            "A razão limpa o terreno. A imaginação planta a semente. Você precisa das duas — e seria um erro dividir o que Deus uniu."
-          </blockquote>
-          <div class="card-domains">
-            <span class="domain-tag" data-pt="Apologética" data-en="Apologetics">Apologética</span>
-            <span class="domain-tag" data-pt="Sofrimento" data-en="Suffering">Sofrimento</span>
-            <span class="domain-tag" data-pt="Moralidade" data-en="Morality">Moralidade</span>
-            <span class="domain-tag" data-pt="Imaginação" data-en="Imagination">Imaginação</span>
-          </div>
-          <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
-        </a>
-
-        <!-- Pieter Levels -->
-        <a class="mentor-card levels" href="pieter-levels.html">
-          <span class="card-fidelity">Fidelidade 85–90%</span>
-          <div class="card-avatar">
-            <img src="images/pieter-levels.jpg" alt="Pieter Levels" class="card-photo" onerror="this.style.display='none'">
-            PL
-          </div>
-          <span class="card-tier-badge" data-pt="Tier 1 · Empreendedorismo" data-en="Tier 1 · Entrepreneurship">Tier 1 · Empreendedorismo</span>
-          <h3 class="card-name">Pieter Levels</h3>
-          <p class="card-role" data-pt="Fundador Solo · Builder · Libertário Digital" data-en="Solo Founder · Builder · Digital Libertarian">Fundador Solo · Builder · Libertário Digital</p>
-          <blockquote class="card-quote" data-pt="&ldquo;Seu produto nunca vai estar pronto. Lance assim mesmo. Usuários reais dão feedback melhor do que a sua imaginação.&rdquo;" data-en="&ldquo;Your product will never be ready. Ship it anyway. Real users give better feedback than your imagination.&rdquo;">
-            "Seu produto nunca vai estar pronto. Lance assim mesmo. Usuários reais dão feedback melhor do que a sua imaginação."
-          </blockquote>
-          <div class="card-domains">
-            <span class="domain-tag" data-pt="Fundação Solo" data-en="Solo Founding">Fundação Solo</span>
-            <span class="domain-tag" data-pt="Validação" data-en="Validation">Validação</span>
-            <span class="domain-tag" data-pt="Automação" data-en="Automation">Automação</span>
-            <span class="domain-tag" data-pt="Liberdade" data-en="Freedom">Liberdade</span>
-          </div>
-          <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
-        </a>
-
-        <!-- Chris Voss -->
-        <a class="mentor-card voss" href="chris-voss.html">
-          <span class="card-fidelity">Fidelidade 88–93%</span>
-          <div class="card-avatar">
-            <img src="images/chris-voss.jpg" alt="Chris Voss" class="card-photo" onerror="this.style.display='none'">
-            CV
-          </div>
-          <span class="card-tier-badge" data-pt="Tier 1 · Negociação" data-en="Tier 1 · Negotiation">Tier 1 · Negociação</span>
-          <h3 class="card-name">Chris Voss</h3>
-          <p class="card-role" data-pt="Ex-Negociador FBI · Fundador Black Swan Group · Autor" data-en="Former FBI Negotiator · Black Swan Group Founder · Author">Ex-Negociador FBI · Fundador Black Swan Group · Autor</p>
-          <blockquote class="card-quote" data-pt="&ldquo;Nunca divida a diferença. O não não é o fim de uma negociação — é o começo. E toda negociação humana corre no mesmo sistema operacional: o cérebro emocional.&rdquo;" data-en="&ldquo;Never split the difference. No is not the end of a negotiation — it's the beginning. And every human negotiation runs on the same operating system: the emotional brain.&rdquo;">
-            "Nunca divida a diferença. O não não é o fim de uma negociação — é o começo. E toda negociação humana corre no mesmo sistema operacional: o cérebro emocional."
-          </blockquote>
-          <div class="card-domains">
-            <span class="domain-tag" data-pt="Empatia Tática" data-en="Tactical Empathy">Empatia Tática</span>
-            <span class="domain-tag" data-pt="Negociação" data-en="Negotiation">Negociação</span>
-            <span class="domain-tag" data-pt="Influência" data-en="Influence">Influência</span>
-            <span class="domain-tag" data-pt="Conflito" data-en="Conflict">Conflito</span>
-          </div>
-          <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
-        </a>
-
-        <!-- DHH -->
-        <a class="mentor-card dhh" href="dhh.html">
-          <span class="card-fidelity">Fidelidade 88–93%</span>
-          <div class="card-avatar">
-            <img src="images/dhh.jpg" alt="DHH" class="card-photo" onerror="this.style.display='none'">
-            DHH
-          </div>
-          <span class="card-tier-badge" data-pt="Tier 1 · Software &amp; Empresa Calma" data-en="Tier 1 · Software &amp; Calm Company">Tier 1 · Software &amp; Empresa Calma</span>
-          <h3 class="card-name">DHH</h3>
-          <p class="card-role" data-pt="Criador Ruby on Rails · Co-fundador 37signals · Autor Rework &amp; Shape Up" data-en="Ruby on Rails Creator · Co-founder 37signals · Author Rework &amp; Shape Up">Criador Ruby on Rails · Co-fundador 37signals · Autor Rework &amp; Shape Up</p>
-          <blockquote class="card-quote" data-pt="&ldquo;Não precisa ser louco no trabalho. 25 anos lucrativo sem um único investidor externo é prova suficiente de que o consenso do Silicon Valley está errado.&rdquo;" data-en="&ldquo;It doesn't have to be crazy at work. 25 years profitable without a single outside investor is proof enough that the Silicon Valley consensus is wrong.&rdquo;">
-            "Não precisa ser louco no trabalho. 25 anos lucrativo sem um único investidor externo."
-          </blockquote>
-          <div class="card-domains">
-            <span class="domain-tag" data-pt="Shape Up" data-en="Shape Up">Shape Up</span>
-            <span class="domain-tag" data-pt="Bootstrapping" data-en="Bootstrapping">Bootstrapping</span>
-            <span class="domain-tag" data-pt="Software Craft" data-en="Software Craft">Software Craft</span>
-            <span class="domain-tag" data-pt="Empresa Calma" data-en="Calm Company">Empresa Calma</span>
-          </div>
-          <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
-        </a>
-
-        <!-- Jordan Peterson -->
-        <a class="mentor-card peterson" href="jordan-peterson.html">
-          <span class="card-fidelity">Fidelidade 88–93%</span>
-          <div class="card-avatar">
-            <img src="images/jordan-peterson.jpg" alt="Jordan Peterson" class="card-photo" onerror="this.style.display='none'">
-            JP
-          </div>
-          <span class="card-tier-badge" data-pt="Tier 1 · Psicologia &amp; Mitologia" data-en="Tier 1 · Psychology &amp; Mythology">Tier 1 · Psicologia &amp; Mitologia</span>
-          <h3 class="card-name">Jordan Peterson</h3>
-          <p class="card-role" data-pt="Psicólogo Clínico · Autor 12 Regras para a Vida · Professor Emérito UofT" data-en="Clinical Psychologist · Author 12 Rules for Life · Professor Emeritus UofT">Psicólogo Clínico · Autor 12 Regras para a Vida · Professor Emérito UofT</p>
-          <blockquote class="card-quote" data-pt="&ldquo;Busque o que é significativo, não o que é expediente. A coisa que você mais quer evitar é, quase certamente, onde o ouro está. E quero dizer isso com bastante precisão.&rdquo;" data-en="&ldquo;Pursue what is meaningful, not what is expedient. The thing you most want to avoid is almost certainly where the gold is. And I mean that quite precisely.&rdquo;">
-            "Busque o que é significativo, não o que é expediente. A coisa que você mais quer evitar é, quase certamente, onde o ouro está."
-          </blockquote>
-          <div class="card-domains">
-            <span class="domain-tag" data-pt="Significado" data-en="Meaning">Significado</span>
-            <span class="domain-tag" data-pt="Responsabilidade" data-en="Responsibility">Responsabilidade</span>
-            <span class="domain-tag" data-pt="Mitologia" data-en="Mythology">Mitologia</span>
-            <span class="domain-tag" data-pt="Sombra" data-en="Shadow">Sombra</span>
-          </div>
-          <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
-        </a>
-
-        <!-- Greg McKeown -->
-        <a class="mentor-card mckeown" href="greg-mckeown.html">
-          <span class="card-fidelity">Fidelidade 88–93%</span>
-          <div class="card-avatar">
-            <img src="images/greg-mckeown.jpg" alt="Greg McKeown" class="card-photo" onerror="this.style.display='none'">
-            GM
-          </div>
-          <span class="card-tier-badge" data-pt="Tier 1 · Essentialism &amp; Effortless" data-en="Tier 1 · Essentialism &amp; Effortless">Tier 1 · Essentialism &amp; Effortless</span>
-          <h3 class="card-name">Greg McKeown</h3>
-          <p class="card-role" data-pt="Autor Essentialism · Fundador This Is Effortless · Consultor Apple, Google, Microsoft" data-en="Author Essentialism · Founder This Is Effortless · Consultant Apple, Google, Microsoft">Autor Essentialism · Consultor Apple, Google, Microsoft · Stanford d.school</p>
-          <blockquote class="card-quote" data-pt="&ldquo;Se não for um SIM claro, é um NÃO. O mais alto ponto de contribuição não está em fazer mais — está em fazer apenas o essencial, excepcionalmente bem.&rdquo;" data-en="&ldquo;If it isn't a clear yes, it's a no. The highest point of contribution doesn't lie in doing more — it lies in doing only the essential, exceptionally well.&rdquo;">
-            "Se não for um SIM claro, é um NÃO. O mais alto ponto de contribuição não está em fazer mais — está em fazer apenas o essencial."
-          </blockquote>
-          <div class="card-domains">
-            <span class="domain-tag" data-pt="Essentialism" data-en="Essentialism">Essentialism</span>
-            <span class="domain-tag" data-pt="Foco" data-en="Focus">Foco</span>
-            <span class="domain-tag" data-pt="Decisão" data-en="Decision">Decisão</span>
-            <span class="domain-tag" data-pt="Clareza" data-en="Clarity">Clareza</span>
-          </div>
-          <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
-        </a>
-
-        <!-- Alex Hormozi -->
-        <a class="mentor-card hormozi" href="alex-hormozi.html">
-          <span class="card-fidelity">Fidelidade 88–93%</span>
-          <div class="card-avatar">
-            <img src="images/alex-hormozi.jpg" alt="Alex Hormozi" class="card-photo" onerror="this.style.display='none'">
-            AH
-          </div>
-          <span class="card-tier-badge" data-pt="Tier 1 · Negócios" data-en="Tier 1 · Business">Tier 1 · Negócios</span>
-          <h3 class="card-name">Alex Hormozi</h3>
-          <p class="card-role" data-pt="Empreendedor · Investidor · Arquiteto de Ofertas" data-en="Entrepreneur · Investor · Offer Architect">Empreendedor · Investidor · Arquiteto de Ofertas</p>
-          <blockquote class="card-quote" data-pt="&ldquo;A oferta certa, para a pessoa certa, no momento certo — isso é o negócio inteiro. Tudo o mais é operação.&rdquo;" data-en="&ldquo;The right offer, for the right person, at the right time — that's the entire business. Everything else is operations.&rdquo;">
-            "A oferta certa, para a pessoa certa, no momento certo — isso é o negócio inteiro. Tudo o mais é operação."
-          </blockquote>
-          <div class="card-domains">
-            <span class="domain-tag" data-pt="Design de Oferta" data-en="Offer Design">Design de Oferta</span>
-            <span class="domain-tag" data-pt="Aquisição" data-en="Acquisition">Aquisição</span>
-            <span class="domain-tag" data-pt="Escala" data-en="Scale">Escala</span>
-            <span class="domain-tag" data-pt="Vendas" data-en="Sales">Vendas</span>
-          </div>
-          <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
-        </a>
-
+        </div>
       </div>
+
+      <!-- ── Categoria: Riqueza & Negócios ── -->
+      <div class="mentor-category">
+        <div class="category-header">
+          <span class="category-icon">💰</span>
+          <div>
+            <h3 class="category-name" data-pt="Riqueza & Negócios" data-en="Wealth & Business">Riqueza & Negócios</h3>
+            <p class="category-desc" data-pt="Crescimento, escala e criação de valor" data-en="Growth, scale and value creation">Crescimento, escala e criação de valor</p>
+          </div>
+          <span class="category-count" data-pt="3 mentores" data-en="3 mentors">3 mentores</span>
+        </div>
+        <div class="mentors-grid">
+
+          <!-- Naval Ravikant -->
+          <a class="mentor-card naval" href="naval-ravikant.html">
+            <span class="card-fidelity">Fidelidade 85–90%</span>
+            <div class="card-avatar">
+              <img src="images/naval-ravikant.jpg" alt="Naval Ravikant" class="card-photo" onerror="this.style.display='none'">
+              NR
+            </div>
+            <span class="card-tier-badge" data-pt="Riqueza e Filosofia" data-en="Wealth & Philosophy">Riqueza e Filosofia</span>
+            <h3 class="card-name">Naval Ravikant</h3>
+            <p class="card-role" data-pt="Empreendedor · Investidor · Filósofo Racional" data-en="Entrepreneur · Investor · Rational Philosopher">Empreendedor · Investidor · Filósofo Racional</p>
+            <blockquote class="card-quote" data-pt="&ldquo;O propósito da vida é ser feliz. A maioria das pessoas está sistematicamente confusa sobre como chegar lá — otimizam para status em vez de riqueza.&rdquo;" data-en="&ldquo;The purpose of life is to be happy. Most people are systematically confused about how to get there — they optimize for status instead of wealth.&rdquo;">
+              "O propósito da vida é ser feliz. A maioria das pessoas está sistematicamente confusa sobre como chegar lá — otimizam para status em vez de riqueza."
+            </blockquote>
+            <div class="card-domains">
+              <span class="domain-tag" data-pt="Criação de Riqueza" data-en="Wealth Creation">Criação de Riqueza</span>
+              <span class="domain-tag" data-pt="Alavancagem" data-en="Leverage">Alavancagem</span>
+              <span class="domain-tag" data-pt="Primeiros Princípios" data-en="First Principles">Primeiros Princípios</span>
+              <span class="domain-tag" data-pt="Felicidade" data-en="Happiness">Felicidade</span>
+            </div>
+            <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
+          </a>
+
+          <!-- Alex Hormozi -->
+          <a class="mentor-card hormozi" href="alex-hormozi.html">
+            <span class="card-fidelity">Fidelidade 88–93%</span>
+            <div class="card-avatar">
+              <img src="images/alex-hormozi.jpg" alt="Alex Hormozi" class="card-photo" onerror="this.style.display='none'">
+              AH
+            </div>
+            <span class="card-tier-badge" data-pt="Negócios" data-en="Business">Negócios</span>
+            <h3 class="card-name">Alex Hormozi</h3>
+            <p class="card-role" data-pt="Empreendedor · Investidor · Arquiteto de Ofertas" data-en="Entrepreneur · Investor · Offer Architect">Empreendedor · Investidor · Arquiteto de Ofertas</p>
+            <blockquote class="card-quote" data-pt="&ldquo;A oferta certa, para a pessoa certa, no momento certo — isso é o negócio inteiro. Tudo o mais é operação.&rdquo;" data-en="&ldquo;The right offer, for the right person, at the right time — that's the entire business. Everything else is operations.&rdquo;">
+              "A oferta certa, para a pessoa certa, no momento certo — isso é o negócio inteiro. Tudo o mais é operação."
+            </blockquote>
+            <div class="card-domains">
+              <span class="domain-tag" data-pt="Design de Oferta" data-en="Offer Design">Design de Oferta</span>
+              <span class="domain-tag" data-pt="Aquisição" data-en="Acquisition">Aquisição</span>
+              <span class="domain-tag" data-pt="Escala" data-en="Scale">Escala</span>
+              <span class="domain-tag" data-pt="Vendas" data-en="Sales">Vendas</span>
+            </div>
+            <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
+          </a>
+
+          <!-- Pieter Levels -->
+          <a class="mentor-card levels" href="pieter-levels.html">
+            <span class="card-fidelity">Fidelidade 85–90%</span>
+            <div class="card-avatar">
+              <img src="images/pieter-levels.jpg" alt="Pieter Levels" class="card-photo" onerror="this.style.display='none'">
+              PL
+            </div>
+            <span class="card-tier-badge" data-pt="Empreendedorismo" data-en="Entrepreneurship">Empreendedorismo</span>
+            <h3 class="card-name">Pieter Levels</h3>
+            <p class="card-role" data-pt="Fundador Solo · Builder · Libertário Digital" data-en="Solo Founder · Builder · Digital Libertarian">Fundador Solo · Builder · Libertário Digital</p>
+            <blockquote class="card-quote" data-pt="&ldquo;Seu produto nunca vai estar pronto. Lance assim mesmo. Usuários reais dão feedback melhor do que a sua imaginação.&rdquo;" data-en="&ldquo;Your product will never be ready. Ship it anyway. Real users give better feedback than your imagination.&rdquo;">
+              "Seu produto nunca vai estar pronto. Lance assim mesmo. Usuários reais dão feedback melhor do que a sua imaginação."
+            </blockquote>
+            <div class="card-domains">
+              <span class="domain-tag" data-pt="Fundação Solo" data-en="Solo Founding">Fundação Solo</span>
+              <span class="domain-tag" data-pt="Validação" data-en="Validation">Validação</span>
+              <span class="domain-tag" data-pt="Automação" data-en="Automation">Automação</span>
+              <span class="domain-tag" data-pt="Liberdade" data-en="Freedom">Liberdade</span>
+            </div>
+            <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ── Categoria: Influência & Negociação ── -->
+      <div class="mentor-category">
+        <div class="category-header">
+          <span class="category-icon">🎭</span>
+          <div>
+            <h3 class="category-name" data-pt="Influência & Negociação" data-en="Influence & Negotiation">Influência & Negociação</h3>
+            <p class="category-desc" data-pt="Comunicação, persuasão e resolução de conflitos" data-en="Communication, persuasion and conflict resolution">Comunicação, persuasão e resolução de conflitos</p>
+          </div>
+          <span class="category-count" data-pt="1 mentor" data-en="1 mentor">1 mentor</span>
+        </div>
+        <div class="mentors-grid">
+
+          <!-- Chris Voss -->
+          <a class="mentor-card voss" href="chris-voss.html">
+            <span class="card-fidelity">Fidelidade 88–93%</span>
+            <div class="card-avatar">
+              <img src="images/chris-voss.jpg" alt="Chris Voss" class="card-photo" onerror="this.style.display='none'">
+              CV
+            </div>
+            <span class="card-tier-badge" data-pt="Negociação" data-en="Negotiation">Negociação</span>
+            <h3 class="card-name">Chris Voss</h3>
+            <p class="card-role" data-pt="Ex-Negociador FBI · Fundador Black Swan Group · Autor" data-en="Former FBI Negotiator · Black Swan Group Founder · Author">Ex-Negociador FBI · Fundador Black Swan Group · Autor</p>
+            <blockquote class="card-quote" data-pt="&ldquo;Nunca divida a diferença. O não não é o fim de uma negociação — é o começo. E toda negociação humana corre no mesmo sistema operacional: o cérebro emocional.&rdquo;" data-en="&ldquo;Never split the difference. No is not the end of a negotiation — it's the beginning. And every human negotiation runs on the same operating system: the emotional brain.&rdquo;">
+              "Nunca divida a diferença. O não não é o fim de uma negociação — é o começo. E toda negociação humana corre no mesmo sistema operacional: o cérebro emocional."
+            </blockquote>
+            <div class="card-domains">
+              <span class="domain-tag" data-pt="Empatia Tática" data-en="Tactical Empathy">Empatia Tática</span>
+              <span class="domain-tag" data-pt="Negociação" data-en="Negotiation">Negociação</span>
+              <span class="domain-tag" data-pt="Influência" data-en="Influence">Influência</span>
+              <span class="domain-tag" data-pt="Conflito" data-en="Conflict">Conflito</span>
+            </div>
+            <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ── Categoria: Psicologia & Clareza Mental ── -->
+      <div class="mentor-category">
+        <div class="category-header">
+          <span class="category-icon">🧠</span>
+          <div>
+            <h3 class="category-name" data-pt="Psicologia & Clareza Mental" data-en="Psychology & Mental Clarity">Psicologia & Clareza Mental</h3>
+            <p class="category-desc" data-pt="Desenvolvimento pessoal, responsabilidade e foco no essencial" data-en="Personal development, responsibility and focus on the essential">Desenvolvimento pessoal, responsabilidade e foco no essencial</p>
+          </div>
+          <span class="category-count" data-pt="2 mentores" data-en="2 mentors">2 mentores</span>
+        </div>
+        <div class="mentors-grid">
+
+          <!-- Jordan Peterson -->
+          <a class="mentor-card peterson" href="jordan-peterson.html">
+            <span class="card-fidelity">Fidelidade 88–93%</span>
+            <div class="card-avatar">
+              <img src="images/jordan-peterson.jpg" alt="Jordan Peterson" class="card-photo" onerror="this.style.display='none'">
+              JP
+            </div>
+            <span class="card-tier-badge" data-pt="Psicologia &amp; Mitologia" data-en="Psychology &amp; Mythology">Psicologia &amp; Mitologia</span>
+            <h3 class="card-name">Jordan Peterson</h3>
+            <p class="card-role" data-pt="Psicólogo Clínico · Autor 12 Regras para a Vida · Professor Emérito UofT" data-en="Clinical Psychologist · Author 12 Rules for Life · Professor Emeritus UofT">Psicólogo Clínico · Autor 12 Regras para a Vida · Professor Emérito UofT</p>
+            <blockquote class="card-quote" data-pt="&ldquo;Busque o que é significativo, não o que é expediente. A coisa que você mais quer evitar é, quase certamente, onde o ouro está. E quero dizer isso com bastante precisão.&rdquo;" data-en="&ldquo;Pursue what is meaningful, not what is expedient. The thing you most want to avoid is almost certainly where the gold is. And I mean that quite precisely.&rdquo;">
+              "Busque o que é significativo, não o que é expediente. A coisa que você mais quer evitar é, quase certamente, onde o ouro está."
+            </blockquote>
+            <div class="card-domains">
+              <span class="domain-tag" data-pt="Significado" data-en="Meaning">Significado</span>
+              <span class="domain-tag" data-pt="Responsabilidade" data-en="Responsibility">Responsabilidade</span>
+              <span class="domain-tag" data-pt="Mitologia" data-en="Mythology">Mitologia</span>
+              <span class="domain-tag" data-pt="Sombra" data-en="Shadow">Sombra</span>
+            </div>
+            <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
+          </a>
+
+          <!-- Greg McKeown -->
+          <a class="mentor-card mckeown" href="greg-mckeown.html">
+            <span class="card-fidelity">Fidelidade 88–93%</span>
+            <div class="card-avatar">
+              <img src="images/greg-mckeown.jpg" alt="Greg McKeown" class="card-photo" onerror="this.style.display='none'">
+              GM
+            </div>
+            <span class="card-tier-badge" data-pt="Essentialism &amp; Effortless" data-en="Essentialism &amp; Effortless">Essentialism &amp; Effortless</span>
+            <h3 class="card-name">Greg McKeown</h3>
+            <p class="card-role" data-pt="Autor Essentialism · Fundador This Is Effortless · Consultor Apple, Google, Microsoft" data-en="Author Essentialism · Founder This Is Effortless · Consultant Apple, Google, Microsoft">Autor Essentialism · Consultor Apple, Google, Microsoft · Stanford d.school</p>
+            <blockquote class="card-quote" data-pt="&ldquo;Se não for um SIM claro, é um NÃO. O mais alto ponto de contribuição não está em fazer mais — está em fazer apenas o essencial, excepcionalmente bem.&rdquo;" data-en="&ldquo;If it isn't a clear yes, it's a no. The highest point of contribution doesn't lie in doing more — it lies in doing only the essential, exceptionally well.&rdquo;">
+              "Se não for um SIM claro, é um NÃO. O mais alto ponto de contribuição não está em fazer mais — está em fazer apenas o essencial."
+            </blockquote>
+            <div class="card-domains">
+              <span class="domain-tag" data-pt="Essentialism" data-en="Essentialism">Essentialism</span>
+              <span class="domain-tag" data-pt="Foco" data-en="Focus">Foco</span>
+              <span class="domain-tag" data-pt="Decisão" data-en="Decision">Decisão</span>
+              <span class="domain-tag" data-pt="Clareza" data-en="Clarity">Clareza</span>
+            </div>
+            <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ── Categoria: Espiritualidade & Fé ── -->
+      <div class="mentor-category">
+        <div class="category-header">
+          <span class="category-icon">✨</span>
+          <div>
+            <h3 class="category-name" data-pt="Espiritualidade & Fé" data-en="Spirituality & Faith">Espiritualidade & Fé</h3>
+            <p class="category-desc" data-pt="Transformação interior, sentido e transcendência" data-en="Inner transformation, meaning and transcendence">Transformação interior, sentido e transcendência</p>
+          </div>
+          <span class="category-count" data-pt="2 mentores" data-en="2 mentors">2 mentores</span>
+        </div>
+        <div class="mentors-grid">
+
+          <!-- Richard Rohr -->
+          <a class="mentor-card rohr" href="richard-rohr.html">
+            <span class="card-fidelity">Fidelidade 85–90%</span>
+            <div class="card-avatar">
+              <img src="images/richard-rohr.jpg" alt="Richard Rohr" class="card-photo" onerror="this.style.display='none'">
+              RR
+            </div>
+            <span class="card-tier-badge" data-pt="Espiritualidade" data-en="Spirituality">Espiritualidade</span>
+            <h3 class="card-name">Richard Rohr</h3>
+            <p class="card-role" data-pt="Frade Franciscano · Místico · Guia Contemplativo" data-en="Franciscan Friar · Mystic · Contemplative Guide">Frade Franciscano · Místico · Guia Contemplativo</p>
+            <blockquote class="card-quote" data-pt="&ldquo;Não quero te dar mais informação. Quero te ajudar a transformar. E a transformação sempre vem pela ferida, pela queda.&rdquo;" data-en="&ldquo;I don't want to give you more information. I want to help you transform. And transformation always comes through the wound, through the falling.&rdquo;">
+              "Não quero te dar mais informação. Quero te ajudar a transformar. E a transformação sempre vem pela ferida, pela queda."
+            </blockquote>
+            <div class="card-domains">
+              <span class="domain-tag" data-pt="Contemplação" data-en="Contemplation">Contemplação</span>
+              <span class="domain-tag" data-pt="Verdadeiro Eu" data-en="True Self">Verdadeiro Eu</span>
+              <span class="domain-tag" data-pt="Mente Não-Dual" data-en="Non-dual Mind">Mente Não-Dual</span>
+              <span class="domain-tag" data-pt="Transformação" data-en="Transformation">Transformação</span>
+            </div>
+            <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
+          </a>
+
+          <!-- C.S. Lewis -->
+          <a class="mentor-card lewis" href="cs-lewis.html">
+            <span class="card-fidelity">Fidelidade 85–90%</span>
+            <div class="card-avatar">
+              <img src="images/cs-lewis.jpg" alt="C.S. Lewis" class="card-photo" onerror="this.style.display='none'">
+              CL
+            </div>
+            <span class="card-tier-badge" data-pt="Fé e Razão" data-en="Faith & Reason">Fé e Razão</span>
+            <h3 class="card-name">C.S. Lewis</h3>
+            <p class="card-role" data-pt="Acadêmico Oxford · Apologista · Escritor Cristão" data-en="Oxford Scholar · Apologist · Christian Writer">Acadêmico Oxford · Apologista · Escritor Cristão</p>
+            <blockquote class="card-quote" data-pt="&ldquo;A razão limpa o terreno. A imaginação planta a semente. Você precisa das duas — e seria um erro dividir o que Deus uniu.&rdquo;" data-en="&ldquo;Reason clears the ground. Imagination plants the seed. You need both — and it would be a mistake to divide what God has joined.&rdquo;">
+              "A razão limpa o terreno. A imaginação planta a semente. Você precisa das duas — e seria um erro dividir o que Deus uniu."
+            </blockquote>
+            <div class="card-domains">
+              <span class="domain-tag" data-pt="Apologética" data-en="Apologetics">Apologética</span>
+              <span class="domain-tag" data-pt="Sofrimento" data-en="Suffering">Sofrimento</span>
+              <span class="domain-tag" data-pt="Moralidade" data-en="Morality">Moralidade</span>
+              <span class="domain-tag" data-pt="Imaginação" data-en="Imagination">Imaginação</span>
+            </div>
+            <span class="card-cta" data-pt="Explorar mentor →" data-en="Explore mentor →">Explorar mentor →</span>
+          </a>
+
+        </div>
+      </div>
+
     </div>
   </section>
 
