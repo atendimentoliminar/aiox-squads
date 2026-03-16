@@ -7,8 +7,56 @@
       "destination": "/squads/mentors/showcase/index.html"
     },
     {
-      "source": "/:path((?!squads/).*)",
-      "destination": "/squads/mentors/showcase/:path"
+      "source": "/images/:path*",
+      "destination": "/squads/mentors/showcase/images/:path*"
+    },
+    {
+      "source": "/styles.css",
+      "destination": "/squads/mentors/showcase/styles.css"
+    },
+    {
+      "source": "/lang.js",
+      "destination": "/squads/mentors/showcase/lang.js"
+    },
+    {
+      "source": "/alex-hormozi",
+      "destination": "/squads/mentors/showcase/alex-hormozi.html"
+    },
+    {
+      "source": "/chris-voss",
+      "destination": "/squads/mentors/showcase/chris-voss.html"
+    },
+    {
+      "source": "/cs-lewis",
+      "destination": "/squads/mentors/showcase/cs-lewis.html"
+    },
+    {
+      "source": "/dhh",
+      "destination": "/squads/mentors/showcase/dhh.html"
+    },
+    {
+      "source": "/greg-mckeown",
+      "destination": "/squads/mentors/showcase/greg-mckeown.html"
+    },
+    {
+      "source": "/jordan-peterson",
+      "destination": "/squads/mentors/showcase/jordan-peterson.html"
+    },
+    {
+      "source": "/naval-ravikant",
+      "destination": "/squads/mentors/showcase/naval-ravikant.html"
+    },
+    {
+      "source": "/pieter-levels",
+      "destination": "/squads/mentors/showcase/pieter-levels.html"
+    },
+    {
+      "source": "/richard-rohr",
+      "destination": "/squads/mentors/showcase/richard-rohr.html"
+    },
+    {
+      "source": "/steve-jobs",
+      "destination": "/squads/mentors/showcase/steve-jobs.html"
     }
   ],
   "headers": [
