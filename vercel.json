@@ -4,13 +4,11 @@
   "rewrites": [
     {
       "source": "/",
-      "has": [{ "type": "host", "value": "mentors.onassessoriamkt.com.br" }],
       "destination": "/squads/mentors/showcase/index.html"
     },
     {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "mentors.onassessoriamkt.com.br" }],
-      "destination": "/squads/mentors/showcase/:path*"
+      "source": "/:path((?!squads/).*)",
+      "destination": "/squads/mentors/showcase/:path"
     }
   ],
   "headers": [
