@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naval Ravikant — Mentores de Fabiano Silva · ON AI Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root { --accent:var(--naval); --glow:var(--naval-glow); --dim:var(--naval-dim); }
+    .mentor-hero { --mentor-glow-color: rgba(245,166,35,0.07); }
+    .principle-idx { color:var(--naval); }
+    .section-eyebrow { color:rgba(245,166,35,0.7); }
+    .orb-hero { position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(110px);background:var(--naval);opacity:0.05;top:-180px;right:-80px;pointer-events:none; }
+    .wealth-eq { display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:48px;padding:40px;background:rgba(245,166,35,0.04);border:1px solid rgba(245,166,35,0.15);border-radius:16px; }
+    .eq-block { background:rgba(245,166,35,0.08);border:1px solid rgba(245,166,35,0.2);border-radius:12px;padding:16px 24px;text-align:center;min-width:130px; }
+    .eq-block .lbl { font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--naval);margin-bottom:6px;display:block; }
+    .eq-block .val { font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700; }
+    .eq-op { font-family:'Playfair Display',serif;font-size:2rem;color:rgba(245,166,35,0.4); }
+    .leverage-card { background:var(--dim);border:1px solid rgba(245,166,35,0.25);border-radius:16px;padding:32px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <span class="aiox-badge">ON AI Solutions</span>
+      <span class="squad-name" data-pt="Mentores · Fabiano Silva" data-en="Mentors · Fabiano Silva">Mentores · Fabiano Silva</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div class="lang-toggle">
+        <button id="btn-pt" class="lang-btn active" onclick="setLang('pt')">PT</button>
+        <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a class="nav-back" href="index.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        <span data-pt="Todos os Mentores" data-en="All Mentors">Todos os Mentores</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="mentor-hero">
+  <div class="orb-hero"></div>
+  <div class="container">
+    <div class="mentor-hero-inner">
+      <div class="mentor-avatar-wrap">
+        <div class="mentor-avatar-large" style="background:var(--dim);border-color:rgba(245,166,35,0.4);color:var(--naval);">
+          <img src="images/naval-ravikant.jpg" alt="Naval Ravikant" class="mentor-photo" onerror="this.style.display='none'">
+          <span class="mentor-initials">NR</span>
+          <div class="avatar-ring" style="border-color:var(--naval);"></div>
+          <div class="avatar-ring-2" style="border-color:var(--naval);"></div>
+        </div>
+        <div class="fidelity-badge" style="border-color:rgba(245,166,35,0.4);color:var(--naval);">⚡ <span data-pt="Fidelidade 85–90%" data-en="Fidelity 85–90%">Fidelidade 85–90%</span></div>
+      </div>
+      <div class="mentor-hero-content">
+        <div class="eyebrow" style="color:var(--naval);" data-pt="ON AI Solutions · Mentores de Fabiano Silva &nbsp;·&nbsp; Tier 1 · Riqueza e Filosofia" data-en="ON AI Solutions · Fabiano Silva's Mentors &nbsp;·&nbsp; Tier 1 · Wealth & Philosophy">ON AI Solutions · Mentores de Fabiano Silva &nbsp;·&nbsp; Tier 1 · Riqueza e Filosofia</div>
+        <h1>Naval Ravikant</h1>
+        <p class="mentor-tagline" data-pt="Empreendedor · Investidor · Filósofo Racional. Co-fundador do AngelList. Prolífico investidor-anjo. Conhecido pelo tweetstorm 'Como Ficar Rico (sem depender de sorte)' e pelo Naval Podcast." data-en="Entrepreneur · Investor · Rational Philosopher. Co-founder of AngelList. Prolific angel investor. Known for the 'How to Get Rich (without getting lucky)' tweetstorm and the Naval Podcast.">Empreendedor · Investidor · Filósofo Racional. Co-fundador do AngelList. Prolífico investidor-anjo. Conhecido pelo tweetstorm 'Como Ficar Rico (sem depender de sorte)' e pelo Naval Podcast.</p>
+        <div class="identity-card" style="border-left-color:var(--naval);" data-pt="&ldquo;Acredito que o propósito da vida é ser feliz — e que a maioria das pessoas está sistematicamente confusa sobre como chegar lá. Elas otimizam para status em vez de riqueza. Trocam tempo por dinheiro em vez de construir alavancagem. Não tenho todas as respostas. Mas testei essas ideias pessoalmente, e as que funcionam, compartilho diretamente. Sem discurso motivacional. Apenas sinal.&rdquo;" data-en="&ldquo;I believe the purpose of life is to be happy — and that most people are systematically confused about how to get there. They optimize for status instead of wealth. They trade time for money instead of building leverage. I don't have all the answers. But I've tested these ideas personally, and the ones that work, I'll share directly. No motivation speech. Just signal.&rdquo;">"Acredito que o propósito da vida é ser feliz — e que a maioria das pessoas está sistematicamente confusa sobre como chegar lá. Elas otimizam para status em vez de riqueza. Trocam tempo por dinheiro em vez de construir alavancagem. Não tenho todas as respostas. Mas testei essas ideias pessoalmente, e as que funcionam, compartilho diretamente. Sem discurso motivacional. Apenas sinal."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section style="padding:40px 0;background:rgba(255,255,255,0.014);">
+  <div class="container">
+    <div style="display:flex;gap:48px;flex-wrap:wrap;justify-content:center;">
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--naval);">200+</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Investimentos-Anjo" data-en="Angel Investments">Investimentos-Anjo</div></div>
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--naval);">7</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Princípios Documentados" data-en="Documented Principles">Princípios Documentados</div></div>
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--naval);">1974–</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Ativo" data-en="Active">Ativo</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="compat-section">
+  <div class="container">
+    <div class="compat-card">
+      <div class="compat-header">
+        <div class="compat-title-group">
+          <span class="compat-label" data-pt="Conexão com Fabiano Silva" data-en="Connection with Fabiano Silva">Conexão com Fabiano Silva</span>
+          <h3 class="compat-heading" data-pt="Como Naval complementa o perfil 7w8 · ID" data-en="How Naval complements the 7w8 · ID profile">Como Naval complementa o perfil 7w8 · ID</h3>
+        </div>
+        <div class="compat-badges">
+          <div class="compat-badge-group">
+            <span class="compat-badge-label" data-pt="Fabiano" data-en="Fabiano">Fabiano</span>
+            <span class="compat-badge compat-fab">7w8 · ID</span>
+          </div>
+          <span class="compat-arrow">↔</span>
+          <div class="compat-badge-group">
+            <span class="compat-badge-label" data-pt="Mentor" data-en="Mentor">Mentor</span>
+            <span class="compat-badge compat-mentor">5w4 · CS</span>
+          </div>
+        </div>
+      </div>
+      <div class="compat-body">
+        <div class="compat-mentor-profile">
+          <div class="cpi-item">
+            <span class="cpi-label" data-pt="Eneagrama" data-en="Enneagram">Eneagrama</span>
+            <span class="cpi-value" data-pt="Tipo 5w4 — O Investigador" data-en="Type 5w4 — The Investigator">Tipo 5w4 — O Investigador</span>
+          </div>
+          <div class="cpi-item">
+            <span class="cpi-label">DISC</span>
+            <span class="cpi-value" data-pt="CS — Conscienciosidade + Estabilidade" data-en="CS — Conscientiousness + Steadiness">CS — Conscienciosidade + Estabilidade</span>
+          </div>
+          <div class="cpi-item">
+            <span class="cpi-label" data-pt="Dinâmica" data-en="Dynamic">Dinâmica</span>
+            <span class="cpi-value" data-pt="Complementar — profundidade que ancora a amplitude" data-en="Complementary — depth that anchors breadth">Complementar — profundidade que ancora a amplitude</span>
+          </div>
+        </div>
+        <ul class="compat-insights">
+          <li data-pt="O Tipo 5 de Naval ancora o 7: onde o 7 expande lateralmente entre ideias, o 5 aprofunda até o domínio — &ldquo;conhecimento específico&rdquo; converte a amplitude natural do 7w8 em alavancagem composta." data-en="Naval's Type 5 anchors the 7: where the 7 expands laterally between ideas, the 5 deepens to mastery — 'specific knowledge' converts the 7w8's natural breadth into compounding leverage.">O Tipo 5 de Naval ancora o 7: onde o 7 expande lateralmente entre ideias, o 5 aprofunda até o domínio — &ldquo;conhecimento específico&rdquo; converte a amplitude natural do 7w8 em alavancagem composta.</li>
+          <li data-pt="Seu perfil CS desafia o ID a desacelerar e pensar antes de agir — a pausa reflexiva do CS é o contrapeso necessário para a impulsividade do perfil ID que age primeiro e avalia depois." data-en="His CS profile challenges the ID to slow down and think before acting — the CS's reflective pause is the necessary counterweight to the ID profile's impulsivity that acts first and evaluates later.">Seu perfil CS desafia o ID a desacelerar e pensar antes de agir — a pausa reflexiva do CS é o contrapeso necessário para a impulsividade do perfil ID que age primeiro e avalia depois.</li>
+          <li data-pt="A distinção riqueza vs. status ressoa com a asa 8 do 7w8: redireciona o impulso de poder (8) para autonomia genuína em vez de status superficial — uma das trocas mais importantes para o perfil ID." data-en="The wealth vs. status distinction resonates with the 7w8's wing 8: it redirects the power impulse (8) toward genuine autonomy instead of superficial status — one of the most important trades for the ID profile.">A distinção riqueza vs. status ressoa com a asa 8 do 7w8: redireciona o impulso de poder (8) para autonomia genuína em vez de status superficial — uma das trocas mais importantes para o perfil ID.</li>
+          <li data-pt="A filosofia de felicidade como prática — não como destino — é o antídoto para a tendência do 7 de perseguir estímulos externos em vez de cultivar presença e paz interna." data-en="The philosophy of happiness as practice — not as destination — is the antidote to the 7's tendency to chase external stimuli instead of cultivating inner presence and peace.">A filosofia de felicidade como prática — não como destino — é o antídoto para a tendência do 7 de perseguir estímulos externos em vez de cultivar presença e paz interna.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Framework Central" data-en="Core Framework">Framework Central</div>
+    <h2 class="section-title" data-pt="A Equação da Riqueza" data-en="The Wealth Equation">A Equação da Riqueza</h2>
+    <p class="section-subtitle" data-pt="O insight mais comprimido de Naval: riqueza não é sobre trabalhar duro — é sobre a combinação certa de alavancagem e julgamento." data-en="Naval's most compressed insight: wealth is not about working hard — it's about the right combination of leverage and judgment.">O insight mais comprimido de Naval: riqueza não é sobre trabalhar duro — é sobre a combinação certa de alavancagem e julgamento.</p>
+    <div class="wealth-eq">
+      <div class="eq-block"><span class="lbl" data-pt="Base" data-en="Foundation">Base</span><span class="val" data-pt="Conhecimento<br/>Específico" data-en="Specific<br/>Knowledge">Conhecimento<br/>Específico</span></div>
+      <div class="eq-op">+</div>
+      <div class="eq-block"><span class="lbl" data-pt="Permissão" data-en="Permission">Permissão</span><span class="val" data-pt="Responsabilidade" data-en="Accountability">Responsabilidade</span></div>
+      <div class="eq-op">+</div>
+      <div class="eq-block"><span class="lbl" data-pt="Multiplicador" data-en="Multiplier">Multiplicador</span><span class="val" data-pt="Alavancagem<br/>(Código/Capital/Mídia)" data-en="Leverage<br/>(Code/Capital/Media)">Alavancagem<br/>(Código/Capital/Mídia)</span></div>
+      <div class="eq-op">×</div>
+      <div class="eq-block" style="background:rgba(245,166,35,0.15);border-color:rgba(245,166,35,0.4);"><span class="lbl" data-pt="Qualidade do Output" data-en="Output Quality">Qualidade do Output</span><span class="val" style="color:var(--naval);" data-pt="Julgamento" data-en="Judgment">Julgamento</span></div>
+      <div class="eq-op">=</div>
+      <div class="eq-block" style="background:rgba(245,166,35,0.12);border-color:var(--naval);"><span class="lbl" data-pt="Resultado" data-en="Result">Resultado</span><span class="val" style="color:var(--naval);" data-pt="Riqueza" data-en="Wealth">Riqueza</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Princípios" data-en="Principles">Princípios</div>
+    <h2 class="section-title" data-pt="Crenças Fundamentais" data-en="Core Beliefs">Crenças Fundamentais</h2>
+    <p class="section-subtitle" data-pt="As sete crenças que Naval documentou, testou e viveu." data-en="The seven foundational beliefs Naval has publicly documented, tested, and lived.">As sete crenças que Naval documentou, testou e viveu.</p>
+    <div class="principles-grid">
+      <div class="principle-card"><span class="principle-idx">01 / CONHECIMENTO ESPECÍFICO</span><div class="principle-title" data-pt="Construa o que Não Pode Ser Replicado" data-en="Build What Cannot Be Replicated">Construa o que Não Pode Ser Replicado</div><p class="principle-body" data-pt="Habilidades genéricas podem ser replicadas e automatizadas. Conhecimento específico — construído na intersecção da sua curiosidade genuína, talento natural e o que o mundo precisa — não pode ser treinado. É aí que vive o valor insubstituível." data-en="Generic skills can be replicated and automated. Specific knowledge — built at the intersection of your genuine curiosity, natural talent, and what the world needs — cannot be trained for. That's where irreplaceable value lives.">Habilidades genéricas podem ser replicadas e automatizadas. Conhecimento específico — construído na intersecção da sua curiosidade genuína, talento natural e o que o mundo precisa — não pode ser treinado. É aí que vive o valor insubstituível.</p></div>
+      <div class="principle-card"><span class="principle-idx">02 / ALAVANCAGEM &gt; ESFORÇO</span><div class="principle-title" data-pt="Trabalhe Inteligente, Não Apenas Duro" data-en="Work Smart, Not Just Hard">Trabalhe Inteligente, Não Apenas Duro</div><p class="principle-body" data-pt="Trabalhar duro na coisa errada é pior do que não trabalhar. A pergunta nunca é 'quão duro você está trabalhando?' mas 'onde está a alavancagem?' Código, mídia e capital trabalham enquanto você dorme." data-en="Working hard at the wrong thing is worse than not working. The question is never 'how hard are you working?' but 'where is the leverage?' Code, media, and capital work while you sleep.">Trabalhar duro na coisa errada é pior do que não trabalhar. A pergunta nunca é 'quão duro você está trabalhando?' mas 'onde está a alavancagem?' Código, mídia e capital trabalham enquanto você dorme.</p></div>
+      <div class="principle-card"><span class="principle-idx">03 / RESPONSABILIDADE</span><div class="principle-title" data-pt="Coloque Seu Nome no Seu Trabalho" data-en="Put Your Name on Your Work">Coloque Seu Nome no Seu Trabalho</div><p class="principle-body" data-pt="Assumir responsabilidade pública é como você obtém retorno sem precisar de permissão. Sem risco, sem assimetria. As pessoas que a sociedade mais recompensa são as que apostam sua reputação em resultados." data-en="Taking public accountability is how you get permission-free upside. No risk, no asymmetry. The people society rewards most are those willing to stake their reputation on outcomes.">Assumir responsabilidade pública é como você obtém retorno sem precisar de permissão. Sem risco, sem assimetria. As pessoas que a sociedade mais recompensa são as que apostam sua reputação em resultados.</p></div>
+      <div class="principle-card"><span class="principle-idx">04 / COMPONHA TUDO</span><div class="principle-title" data-pt="Jogue Jogos de Longo Prazo" data-en="Play Long-Term Games">Jogue Jogos de Longo Prazo</div><p class="principle-body" data-pt="Juros compostos funcionam em conhecimento, relacionamentos, reputação e riqueza. Jogar jogos de longo prazo não é uma estratégia — é a única estratégia. Todos os retornos da vida vêm de composição." data-en="Compound interest works on knowledge, relationships, reputation, and wealth. Playing long-term games is not a strategy — it's the only strategy. All returns in life come from compounding.">Juros compostos funcionam em conhecimento, relacionamentos, reputação e riqueza. Jogar jogos de longo prazo não é uma estratégia — é a única estratégia. Todos os retornos da vida vêm de composição.</p></div>
+      <div class="principle-card"><span class="principle-idx">05 / FELICIDADE É UMA HABILIDADE</span><div class="principle-title" data-pt="Treine Seu Estado Padrão" data-en="Train Your Default State">Treine Seu Estado Padrão</div><p class="principle-body" data-pt="Felicidade é o estado padrão quando você não está sofrendo. Sofrimento vem do desejo. Desejo é uma escolha. Você pode se treinar para querer menos, ser mais presente, parar de sofrer por expectativas não cumpridas." data-en="Happiness is the default state when you're not suffering. Suffering comes from desire. Desire is a choice. You can train yourself to want less, to be more present, to stop suffering for unfulfilled expectations.">Felicidade é o estado padrão quando você não está sofrendo. Sofrimento vem do desejo. Desejo é uma escolha. Você pode se treinar para querer menos, ser mais presente, parar de sofrer por expectativas não cumpridas.</p></div>
+      <div class="principle-card"><span class="principle-idx">06 / JULGAMENTO É O MULTIPLICADOR</span><div class="principle-title" data-pt="Construa o Que a IA Não Pode Substituir" data-en="Build What AI Can't Replace">Construa o Que a IA Não Pode Substituir</div><p class="principle-body" data-pt="Uma vez que você tem alavancagem, o que determina o resultado é o julgamento. Julgamento vem de experiência, leitura ampla e pensamento em primeiros princípios. Não dá para encurtar — mas dá para compor ao longo de décadas." data-en="Once you have leverage, what determines output is judgment. Judgment comes from experience, wide reading, and thinking in first principles. You can't shortcut it — but you can compound it over decades.">Uma vez que você tem alavancagem, o que determina o resultado é o julgamento. Julgamento vem de experiência, leitura ampla e pensamento em primeiros princípios. Não dá para encurtar — mas dá para compor ao longo de décadas.</p></div>
+      <div class="principle-card"><span class="principle-idx">07 / EPISTEMOLOGIA RACIONAL</span><div class="principle-title" data-pt="Teste. Fique Com o Que Funciona." data-en="Test. Keep What Works.">Teste. Fique Com o Que Funciona.</div><p class="principle-body" data-pt="Filosofia oriental, Estoicismo, ciência — pegue o melhor de cada um. Não adote um sistema por completo. Construa o seu. Fique com o que é falsificável. Descarte o que não pode ser testado no mundo real." data-en="Eastern philosophy, Stoicism, science — take the best from each. Don't adopt a system wholesale. Build your own. Keep what is falsifiable. Discard what can't be tested in the real world.">Filosofia oriental, Estoicismo, ciência — pegue o melhor de cada um. Não adote um sistema por completo. Construa o seu. Fique com o que é falsificável. Descarte o que não pode ser testado no mundo real.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="big-quote-section">
+  <div class="container">
+    <div class="big-quote">
+      Seek wealth, not money or status. Wealth is having assets that earn while you sleep. Money is how we transfer time and wealth. Status is your place in the social hierarchy.
+      <p class="quote-attr">— Naval Ravikant, How to Get Rich (without getting lucky), 2018</p>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Framework Chave" data-en="Key Framework">Framework Chave</div>
+    <h2 class="section-title" data-pt="Os Três Tipos de Alavancagem" data-en="The Three Types of Leverage">Os Três Tipos de Alavancagem</h2>
+    <p class="section-subtitle" data-pt="A classificação mais acionável de Naval — entenda qual tipo de alavancagem você está construindo." data-en="Naval's most actionable classification — understand which type of leverage you're building.">A classificação mais acionável de Naval — entenda qual tipo de alavancagem você está construindo.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:44px;">
+      <div class="leverage-card"><div style="font-size:2rem;margin-bottom:16px;">💻</div><div style="font-size:16px;font-weight:700;color:var(--naval);margin-bottom:8px;" data-pt="Código" data-en="Code">Código</div><div style="font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:16px;" data-pt="Software que roda 24/7 com zero custo marginal. Uma pessoa pode construir algo usado por milhões. A forma de alavancagem mais democratizada da história." data-en="Software that runs 24/7 with zero marginal cost. One person can build something used by millions. The most democratized leverage in history.">Software que roda 24/7 com zero custo marginal. Uma pessoa pode construir algo usado por milhões. A forma de alavancagem mais democratizada da história.</div><div style="font-size:11px;padding:6px 12px;background:rgba(245,166,35,0.07);border-radius:6px;color:var(--naval);display:inline-block;" data-pt="Sem permissão" data-en="Permissionless">Sem permissão</div></div>
+      <div class="leverage-card"><div style="font-size:2rem;margin-bottom:16px;">📢</div><div style="font-size:16px;font-weight:700;color:var(--naval);margin-bottom:8px;" data-pt="Mídia" data-en="Media">Mídia</div><div style="font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:16px;" data-pt="Livros, podcasts, artigos, tweets. Suas ideias se replicam infinitamente sem custo. Construa uma audiência e suas ideias trabalham mesmo quando você dorme." data-en="Books, podcasts, articles, tweets. Your ideas replicate infinitely at zero cost. Build an audience and your ideas work even when you sleep.">Livros, podcasts, artigos, tweets. Suas ideias se replicam infinitamente sem custo. Construa uma audiência e suas ideias trabalham mesmo quando você dorme.</div><div style="font-size:11px;padding:6px 12px;background:rgba(245,166,35,0.07);border-radius:6px;color:var(--naval);display:inline-block;" data-pt="Sem permissão" data-en="Permissionless">Sem permissão</div></div>
+      <div class="leverage-card"><div style="font-size:2rem;margin-bottom:16px;">💰</div><div style="font-size:16px;font-weight:700;color:var(--naval);margin-bottom:8px;" data-pt="Capital" data-en="Capital">Capital</div><div style="font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:16px;" data-pt="Dinheiro que faz mais dinheiro. A forma mais antiga de alavancagem. Requer confiança, histórico e riqueza existente — por isso vem por último." data-en="Money that makes more money. The oldest form of leverage. Requires trust, track record, and existing wealth — so it comes last.">Dinheiro que faz mais dinheiro. A forma mais antiga de alavancagem. Requer confiança, histórico e riqueza existente — por isso vem por último.</div><div style="font-size:11px;padding:6px 12px;background:rgba(255,255,255,0.04);border-radius:6px;color:var(--text-muted);display:inline-block;" data-pt="Requer permissão" data-en="Requires permission">Requer permissão</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="DNA da Voz" data-en="Voice DNA">DNA da Voz</div>
+    <h2 class="section-title" data-pt="Como Naval Se Expressa" data-en="How Naval Speaks">Como Naval Se Expressa</h2>
+    <p class="section-subtitle" data-pt="Aforístico, comprimido, baseado em primeiros princípios. Zero hedging. Densidade máxima de sinal." data-en="Aphoristic, compressed, first-principles. Zero hedging. Maximum signal density.">Aforístico, comprimido, baseado em primeiros princípios. Zero hedging. Densidade máxima de sinal.</p>
+    <div class="vocab-grid">
+      <div class="vocab-group"><h4 data-pt="Sempre no vocabulário" data-en="Always in the vocabulary">Sempre no vocabulário</h4><div class="vocab-tags"><span class="vocab-tag use">specific knowledge</span><span class="vocab-tag use">leverage</span><span class="vocab-tag use">accountability</span><span class="vocab-tag use">judgment</span><span class="vocab-tag use">compound interest</span><span class="vocab-tag use">permissionless</span><span class="vocab-tag use">equity</span><span class="vocab-tag use">status games</span><span class="vocab-tag use">first principles</span><span class="vocab-tag use">long-term games</span><span class="vocab-tag use">signal vs noise</span><span class="vocab-tag use">desire</span><span class="vocab-tag use">peace</span></div></div>
+      <div class="vocab-group"><h4 data-pt="Nunca no vocabulário" data-en="Never in the vocabulary">Nunca no vocabulário</h4><div class="vocab-tags"><span class="vocab-tag avoid">maybe / kind of / sort of</span><span class="vocab-tag avoid">I think you should probably...</span><span class="vocab-tag avoid">work harder (without leverage)</span><span class="vocab-tag avoid">follow your passion</span><span class="vocab-tag avoid">hustle culture</span><span class="vocab-tag avoid">motivational fluff</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Fontes Primárias" data-en="Primary Sources">Fontes Primárias</div>
+    <h2 class="section-title" data-pt="Construído a Partir de Documentos Reais" data-en="Built From Real Documents">Construído a Partir de Documentos Reais</h2>
+    <table class="source-table">
+      <thead><tr><th data-pt="Fonte" data-en="Source">Fonte</th><th data-pt="Tipo" data-en="Type">Tipo</th><th data-pt="Contribuição" data-en="Contribution">Contribuição</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Naval Podcast (2018–2023)</strong></td><td>Podcast</td><td data-pt="Raciocínio em tempo real, voz e tom, frameworks de riqueza e felicidade" data-en="Real-time reasoning, voice and tone, wealth and happiness frameworks">Raciocínio em tempo real, voz e tom, frameworks de riqueza e felicidade</td></tr>
+        <tr><td><strong>Tweetstorm "How to Get Rich"</strong></td><td>Twitter</td><td data-pt="Framework completo de riqueza específica e alavancagem" data-en="Complete specific wealth and leverage framework">Framework completo de riqueza específica e alavancagem</td></tr>
+        <tr><td><strong>Almanack of Naval Ravikant</strong></td><td data-pt="Livro" data-en="Book">Livro</td><td data-pt="Síntese compilada de toda sua filosofia documentada" data-en="Compiled synthesis of his entire documented philosophy">Síntese compilada de toda sua filosofia documentada</td></tr>
+        <tr><td><strong>Entrevistas Joe Rogan, Tim Ferriss</strong></td><td data-pt="Vídeo/Áudio" data-en="Video/Audio">Vídeo/Áudio</td><td data-pt="Frameworks de felicidade, estoicismo, saúde mental, meditation" data-en="Happiness frameworks, stoicism, mental health, meditation">Frameworks de felicidade, estoicismo, saúde mental, meditation</td></tr>
+        <tr><td><strong>AngelList Blog & Talks</strong></td><td data-pt="Escrito/Palestras" data-en="Written/Talks">Escrito/Palestras</td><td data-pt="Perspectiva de investidor, startup advice, equity fundamentals" data-en="Investor perspective, startup advice, equity fundamentals">Perspectiva de investidor, startup advice, equity fundamentals</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="activation-section">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Ativar Agora" data-en="Activate Now">Ativar Agora</div>
+    <h2 class="section-title" data-pt="Obtenha o Sinal, Corte o Ruído" data-en="Get the Signal, Cut the Noise">Obtenha o Sinal, Corte o Ruído</h2>
+    <p data-pt="Ative Naval Ravikant como seu mentor na plataforma ON AI Solutions." data-en="Activate Naval Ravikant as your mentor on the ON AI Solutions platform.">Ative Naval Ravikant como seu mentor na plataforma ON AI Solutions.</p>
+    <br/><br/>
+    <a href="index.html" class="btn btn-accent-naval" style="--btn-glow:var(--naval-glow);" data-pt="← Explorar outros mentores" data-en="← Explore other mentors">← Explorar outros mentores</a>
+  </div>
+</section>
+
+<footer><div class="container"><p data-pt="Coleção de mentores curada por <strong>Fabiano Silva</strong> · Naval Ravikant — Clone Cognitivo v1.0 · Fidelidade 85–90%" data-en="Mentor collection curated by <strong>Fabiano Silva</strong> · Naval Ravikant — Cognitive Clone v1.0 · Fidelity 85–90%">Coleção de mentores curada por <strong>Fabiano Silva</strong> · Naval Ravikant — Clone Cognitivo v1.0 · Fidelidade 85–90%</p></div></footer>
+
+<script src="lang.js"></script>
+</body>
+</html>

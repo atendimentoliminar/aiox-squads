@@ -1,0 +1,38 @@
+name: mentors
+version: "1.0.0"
+title: "Mentors Squad — Elite Minds as Personal Mentors"
+description: >
+  Squad de mentores de elite baseados em mentes reais com frameworks documentados.
+  Cada agente é um clone cognitivo de alta fidelidade, pronto para orientação
+  estratégica, decisões de produto, liderança e crescimento pessoal.
+author: squad-creator-pro
+icon: "🧠"
+type: specialist
+entry_agent: steve-jobs
+
+independence: true
+independence_details: |
+  Completamente self-contained.
+  Sem dependências de banco de dados.
+  Funciona com qualquer contexto de projeto.
+
+agents:
+  - steve-jobs    # Technology Innovation, Product Design, Leadership — Tier 1
+  - richard-rohr  # Contemplative Spirituality, Non-Dual Thinking, Transformation — Tier 1
+  - naval-ravikant  # Wealth Creation, Leverage, Specific Knowledge, Happiness — Tier 1
+  - pieter-levels   # Indie Hacking, Bootstrapping, Building in Public, Solo Founding — Tier 1
+  - cs-lewis        # Christian Apologetics, Imagination & Reason, Meaning, Suffering — Tier 1
+  - reid-hoffman    # Blitzscaling, Network Intelligence, Career Strategy, Venture Capital — Tier 1
+  - chris-voss      # Negotiation, Tactical Empathy, FBI Hostage Negotiation, Influence — Tier 1
+  - alex-hormozi    # Offer Creation, Business Scaling, Lead Generation, Unit Economics — Tier 1
+  - jordan-peterson # Clinical Psychology, Mythology, Meaning & Responsibility — Tier 1
+  - dhh             # Software Craft, Calm Company, Bootstrapping, Shape Up — Tier 1
+  - greg-mckeown    # Essentialism, Focus, Prioritization, Effortless Execution — Tier 1
+
+tags:
+  - mentor
+  - elite-minds
+  - leadership
+  - product
+  - innovation
+  - mind-clone

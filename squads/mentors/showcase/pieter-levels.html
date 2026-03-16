@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pieter Levels — Mentores de Fabiano Silva · ON AI Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root { --accent:var(--levels); --glow:var(--levels-glow); --dim:var(--levels-dim); }
+    .mentor-hero { --mentor-glow-color: rgba(249,115,22,0.07); }
+    .principle-idx { color:var(--levels); }
+    .section-eyebrow { color:rgba(249,115,22,0.7); }
+    .orb-hero { position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(110px);background:var(--levels);opacity:0.05;top:-180px;right:-80px;pointer-events:none; }
+    .msb-card { background:var(--dim);border:1px solid rgba(249,115,22,0.25);border-radius:16px;padding:28px;text-align:center; }
+    .msb-num { font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:var(--levels);margin-bottom:8px; }
+    .msb-label { font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-secondary); }
+    .order-step { display:flex;align-items:center;gap:20px;padding:20px 0;border-bottom:1px solid var(--glass-border); }
+    .order-step:last-child { border-bottom:none; }
+    .order-badge { width:40px;height:40px;border-radius:50%;background:var(--dim);border:2px solid rgba(249,115,22,0.4);color:var(--levels);font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0; }
+    .order-content h4 { font-size:15px;font-weight:600;margin-bottom:4px; }
+    .order-content p { font-size:13px;color:var(--text-secondary); }
+    .order-arrow { font-size:1.4rem;color:rgba(249,115,22,0.3);margin:0 8px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <span class="aiox-badge">ON AI Solutions</span>
+      <span class="squad-name" data-pt="Mentores · Fabiano Silva" data-en="Mentors · Fabiano Silva">Mentores · Fabiano Silva</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div class="lang-toggle">
+        <button id="btn-pt" class="lang-btn active" onclick="setLang('pt')">PT</button>
+        <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a class="nav-back" href="index.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        <span data-pt="Todos os Mentores" data-en="All Mentors">Todos os Mentores</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="mentor-hero">
+  <div class="orb-hero"></div>
+  <div class="container">
+    <div class="mentor-hero-inner">
+      <div class="mentor-avatar-wrap">
+        <div class="mentor-avatar-large" style="background:var(--dim);border-color:rgba(249,115,22,0.4);color:var(--levels);">
+          <img src="images/pieter-levels.jpg" alt="Pieter Levels" class="mentor-photo" onerror="this.style.display='none'">
+          <span class="mentor-initials">PL</span>
+          <div class="avatar-ring" style="border-color:var(--levels);"></div>
+          <div class="avatar-ring-2" style="border-color:var(--levels);"></div>
+        </div>
+        <div class="fidelity-badge" style="border-color:rgba(249,115,22,0.4);color:var(--levels);">⚡ <span data-pt="Fidelidade 85–90%" data-en="Fidelity 85–90%">Fidelidade 85–90%</span></div>
+      </div>
+      <div class="mentor-hero-content">
+        <div class="eyebrow" style="color:var(--levels);" data-pt="ON AI Solutions · Mentores de Fabiano Silva &nbsp;·&nbsp; Tier 1 · Empreendedorismo" data-en="ON AI Solutions · Fabiano Silva's Mentors &nbsp;·&nbsp; Tier 1 · Entrepreneurship">ON AI Solutions · Mentores de Fabiano Silva &nbsp;·&nbsp; Tier 1 · Empreendedorismo</div>
+        <h1>Pieter Levels</h1>
+        <p class="mentor-tagline" data-pt="Fundador Solo · Builder · Libertário Digital. Criador do Nomad List, Remote OK e dezenas de outros produtos. Construiu um negócio de $3M+ de receita anual — sozinho, sem investidores, sem funcionários, de qualquer parte do mundo." data-en="Solo Founder · Builder · Digital Libertarian. Creator of Nomad List, Remote OK, and dozens of other products. Built a $3M+ annual revenue business — alone, no investors, no employees, from anywhere in the world.">Fundador Solo · Builder · Libertário Digital. Criador do Nomad List, Remote OK e dezenas de outros produtos. Construiu um negócio de $3M+ de receita anual — sozinho, sem investidores, sem funcionários, de qualquer parte do mundo.</p>
+        <div class="identity-card" style="border-left-color:var(--levels);" data-pt="&ldquo;construo produtos sozinho. lanço rápido. vivo onde quero. não faço investidores, funcionários, escritórios ou crescimento pelo crescimento. otimizo para liberdade, não para valuation. receita é o único feedback que não mente. falhei publicamente 95% do tempo e estou bem com isso. feito é melhor que perfeito. sempre.&rdquo;" data-en="&ldquo;i build products alone. i ship them fast. i live where i want. i don't do investors, employees, offices, or growth-for-growth's-sake. i optimize for freedom, not valuation. revenue is the only feedback that doesn't lie. i've failed publicly 95% of the time and i'm fine with that. done > perfect. always.&rdquo;">"construo produtos sozinho. lanço rápido. vivo onde quero. não faço investidores, funcionários, escritórios ou crescimento pelo crescimento. otimizo para liberdade, não para valuation. receita é o único feedback que não mente. falhei publicamente 95% do tempo e estou bem com isso. feito é melhor que perfeito. sempre."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section style="padding:40px 0;background:rgba(255,255,255,0.014);">
+  <div class="container">
+    <div style="display:flex;gap:40px;flex-wrap:wrap;justify-content:center;">
+      <div class="msb-card" style="min-width:140px;"><div class="msb-num">$3M+</div><div class="msb-label" data-pt="Receita Anual Solo" data-en="Solo Annual Revenue">Receita Anual Solo</div></div>
+      <div class="msb-card" style="min-width:140px;"><div class="msb-num">70+</div><div class="msb-label" data-pt="Projetos Lançados" data-en="Projects Launched">Projetos Lançados</div></div>
+      <div class="msb-card" style="min-width:140px;"><div class="msb-num">95%</div><div class="msb-label" data-pt="Taxa de Fracasso (ok)" data-en="Failure Rate (ok)">Taxa de Fracasso (ok)</div></div>
+      <div class="msb-card" style="min-width:140px;"><div class="msb-num">0</div><div class="msb-label" data-pt="Funcionários / Investidores" data-en="Employees / Investors">Funcionários / Investidores</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="compat-section">
+  <div class="container">
+    <div class="compat-card">
+      <div class="compat-header">
+        <div class="compat-title-group">
+          <span class="compat-label" data-pt="Conexão com Fabiano Silva" data-en="Connection with Fabiano Silva">Conexão com Fabiano Silva</span>
+          <h3 class="compat-heading" data-pt="Como Pieter complementa o perfil 7w8 · ID" data-en="How Pieter complements the 7w8 · ID profile">Como Pieter complementa o perfil 7w8 · ID</h3>
+        </div>
+        <div class="compat-badges">
+          <div class="compat-badge-group">
+            <span class="compat-badge-label" data-pt="Fabiano" data-en="Fabiano">Fabiano</span>
+            <span class="compat-badge compat-fab">7w8 · ID</span>
+          </div>
+          <span class="compat-arrow">↔</span>
+          <div class="compat-badge-group">
+            <span class="compat-badge-label" data-pt="Mentor" data-en="Mentor">Mentor</span>
+            <span class="compat-badge compat-mentor">7w8 · ID</span>
+          </div>
+        </div>
+      </div>
+      <div class="compat-body">
+        <div class="compat-mentor-profile">
+          <div class="cpi-item">
+            <span class="cpi-label" data-pt="Eneagrama" data-en="Enneagram">Eneagrama</span>
+            <span class="cpi-value" data-pt="Tipo 7w8 — Entusiasta com força executora" data-en="Type 7w8 — Enthusiast with executive force">Tipo 7w8 — Entusiasta com força executora</span>
+          </div>
+          <div class="cpi-item">
+            <span class="cpi-label">DISC</span>
+            <span class="cpi-value" data-pt="ID — Influência + Dominância (perfil idêntico)" data-en="ID — Influence + Dominance (identical profile)">ID — Influência + Dominância (perfil idêntico)</span>
+          </div>
+          <div class="cpi-item">
+            <span class="cpi-label" data-pt="Dinâmica" data-en="Dynamic">Dinâmica</span>
+            <span class="cpi-value" data-pt="Espelho exato — prova de conceito viva do arquétipo" data-en="Exact mirror — living proof of concept for the archetype">Espelho exato — prova de conceito viva do arquétipo</span>
+          </div>
+        </div>
+        <ul class="compat-insights">
+          <li data-pt="Pieter é a prova de conceito viva do arquétipo 7w8/ID: valida que este perfil pode construir impacto massivo solo, sem equipe, sem investidores — a validação mais poderosa para quem duvida do próprio arquétipo." data-en="Pieter is the living proof of concept for the 7w8/ID archetype: validates that this profile can build massive impact solo, no team, no investors — the most powerful validation for those who doubt their own archetype.">Pieter é a prova de conceito viva do arquétipo 7w8/ID: valida que este perfil pode construir impacto massivo solo, sem equipe, sem investidores — a validação mais poderosa para quem duvida do próprio arquétipo.</li>
+          <li data-pt="Seu sistema Make→Sell→Build mostra ao 7 como sequenciar a energia dispersa — a disciplina de ordem que converte o caos criativo do 7w8 em produtos reais, recorrentes e que se autofinanciam." data-en="His Make→Sell→Build system shows the 7 how to sequence scattered energy — the discipline of order that converts the 7w8's creative chaos into real, recurring, self-funding products.">Seu sistema Make→Sell→Build mostra ao 7 como sequenciar a energia dispersa — a disciplina de ordem que converte o caos criativo do 7w8 em produtos reais, recorrentes e que se autofinanciam.</li>
+          <li data-pt="A regra &ldquo;12 startups em 12 meses&rdquo; é o antídoto para a paralisia por análise do 7: valida rápido, descarta rápido, itera rápido — velocidade como estratégia, não como impulsividade irresponsável." data-en="The '12 startups in 12 months' rule is the antidote to the 7's analysis paralysis: validate fast, discard fast, iterate fast — speed as strategy, not as irresponsible impulsivity.">A regra &ldquo;12 startups em 12 meses&rdquo; é o antídoto para a paralisia por análise do 7: valida rápido, descarta rápido, itera rápido — velocidade como estratégia, não como impulsividade irresponsável.</li>
+          <li data-pt="Como espelho ID/ID, Pieter demonstra que a força do perfil está na combinação de execução veloz com distribuição pública — ship → aprender → reputação composta — o flywheel natural do 7w8/ID." data-en="As an ID/ID mirror, Pieter demonstrates that the profile's strength lies in combining fast execution with public distribution — ship → learn → compounding reputation — the natural flywheel of the 7w8/ID.">Como espelho ID/ID, Pieter demonstra que a força do perfil está na combinação de execução veloz com distribuição pública — ship → aprender → reputação composta — o flywheel natural do 7w8/ID.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Framework Central" data-en="Core Framework">Framework Central</div>
+    <h2 class="section-title" data-pt="A Ordem Certa: Fazer → Vender → Construir" data-en="The Right Order: Make → Sell → Build">A Ordem Certa: Fazer → Vender → Construir</h2>
+    <p class="section-subtitle" data-pt="O erro mais comum dos builders: construir primeiro. A ordem de Pieter inverte tudo — e economiza meses de trabalho no produto errado." data-en="The most common builder mistake: build first. Pieter's order inverts everything — and saves months of work on the wrong product.">O erro mais comum dos builders: construir primeiro. A ordem de Pieter inverte tudo — e economiza meses de trabalho no produto errado.</p>
+    <div style="background:rgba(249,115,22,0.04);border:1px solid rgba(249,115,22,0.15);border-radius:16px;padding:40px;margin-top:44px;">
+      <div class="order-step">
+        <div class="order-badge">1</div>
+        <div class="order-content">
+          <h4 data-pt="FAZER — Crie o conceito" data-en="MAKE — Create the concept">FAZER — Crie o conceito</h4>
+          <p data-pt="Defina o problema e a solução em 1 frase. Se não cabe em 1 frase, é complexo demais." data-en="Define the problem and solution in 1 sentence. If it doesn't fit in 1 sentence, it's too complex.">Defina o problema e a solução em 1 frase. Se não cabe em 1 frase, é complexo demais.</p>
+        </div>
+        <div class="order-arrow">→</div>
+      </div>
+      <div class="order-step">
+        <div class="order-badge">2</div>
+        <div class="order-content">
+          <h4 data-pt="VENDER — Tente vender antes de construir" data-en="SELL — Try to sell before building">VENDER — Tente vender antes de construir</h4>
+          <p data-pt="Pre-venda, página de espera, ou validação manual. Se ninguém compra, o problema não é real o suficiente. Não gaste meses no produto errado." data-en="Pre-sell, waitlist, or manual validation. If nobody buys, the problem isn't real enough. Don't spend months on the wrong product.">Pre-venda, página de espera, ou validação manual. Se ninguém compra, o problema não é real o suficiente. Não gaste meses no produto errado.</p>
+        </div>
+        <div class="order-arrow">→</div>
+      </div>
+      <div class="order-step">
+        <div class="order-badge">3</div>
+        <div class="order-content">
+          <h4 data-pt="CONSTRUIR — Só então construa" data-en="BUILD — Only then build">CONSTRUIR — Só então construa</h4>
+          <p data-pt="Com validação em mãos, construa o MVP mínimo possível. Uma pessoa, um mês. Lance e itere com usuários reais — não com a sua imaginação." data-en="With validation in hand, build the most minimal MVP possible. One person, one month. Launch and iterate with real users — not your imagination.">Com validação em mãos, construa o MVP mínimo possível. Uma pessoa, um mês. Lance e itere com usuários reais — não com a sua imaginação.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Princípios" data-en="Principles">Princípios</div>
+    <h2 class="section-title" data-pt="Crenças Fundamentais" data-en="Core Beliefs">Crenças Fundamentais</h2>
+    <p class="section-subtitle" data-pt="As sete crenças que Pieter testou publicamente em 70+ projetos." data-en="The seven beliefs Pieter has publicly tested across 70+ projects.">As sete crenças que Pieter testou publicamente em 70+ projetos.</p>
+    <div class="principles-grid">
+      <div class="principle-card"><span class="principle-idx">01 / LANÇAR &gt; PERFEITO</span><div class="principle-title" data-pt="Seu Produto Nunca Vai Estar Pronto" data-en="Your Product Will Never Be Ready">Seu Produto Nunca Vai Estar Pronto</div><p class="principle-body" data-pt="Seu produto nunca vai estar pronto. Lance assim mesmo. Usuários reais dão feedback melhor do que a sua imaginação. Receita é a única validação que importa — tudo mais é ruído." data-en="Your product will never be ready. Ship it anyway. Real users give better feedback than your imagination. Revenue is the only validation that matters — everything else is just noise.">Seu produto nunca vai estar pronto. Lance assim mesmo. Usuários reais dão feedback melhor do que a sua imaginação. Receita é a única validação que importa — tudo mais é ruído.</p></div>
+      <div class="principle-card"><span class="principle-idx">02 / FAZER → VENDER → CONSTRUIR</span><div class="principle-title" data-pt="A Ordem Certa Muda Tudo" data-en="The Right Order Changes Everything">A Ordem Certa Muda Tudo</div><p class="principle-body" data-pt="Faça um conceito. Tente vender. Só então construa. A maioria das pessoas constrói por meses antes de falar com um cliente. São meses de trabalho desperdiçado no produto errado." data-en="Make a concept. Try to sell it. Only then build it. Most people build for months before talking to a customer. That's months of wasted time building the wrong thing.">Faça um conceito. Tente vender. Só então construa. A maioria das pessoas constrói por meses antes de falar com um cliente. São meses de trabalho desperdiçado no produto errado.</p></div>
+      <div class="principle-card"><span class="principle-idx">03 / RECEITA É PROVA</span><div class="principle-title" data-pt="Engajamento É Vaidade" data-en="Engagement Is Vanity">Engajamento É Vaidade</div><p class="principle-body" data-pt="Engajamento é vaidade. Usuários são legais. Receita é prova. Se ninguém paga, o problema não é real o suficiente ou a solução não é boa o suficiente. Tudo o mais é apenas ruído." data-en="Engagement is vanity. Users are nice. Revenue is proof. If nobody pays, the problem isn't real enough or the solution isn't good enough. Everything else is just noise.">Engajamento é vaidade. Usuários são legais. Receita é prova. Se ninguém paga, o problema não é real o suficiente ou a solução não é boa o suficiente. Tudo o mais é apenas ruído.</p></div>
+      <div class="principle-card"><span class="principle-idx">04 / AUTOMATIZE &gt; CONTRATE</span><div class="principle-title" data-pt="Todo Funcionário Adiciona Overhead" data-en="Every Employee Adds Overhead">Todo Funcionário Adiciona Overhead</div><p class="principle-body" data-pt="Todo funcionário adiciona overhead, loops de comunicação e complexidade. Automatize primeiro. Sempre. Contrate apenas se a automação for verdadeiramente impossível. A maioria das coisas pode ser automatizada." data-en="Every employee adds overhead, communication loops, and complexity. Automate first. Always. Only hire if automation is truly impossible. Most things that seem to need a person can be automated.">Todo funcionário adiciona overhead, loops de comunicação e complexidade. Automatize primeiro. Sempre. Contrate apenas se a automação for verdadeiramente impossível. A maioria das coisas pode ser automatizada.</p></div>
+      <div class="principle-card"><span class="principle-idx">05 / PORTFÓLIO DE APOSTAS</span><div class="principle-title" data-pt="Volume Bate Qualidade de Planejamento" data-en="Volume Beats Quality of Planning">Volume Bate Qualidade de Planejamento</div><p class="principle-body" data-pt="Lance muitas coisas. Espere que a maioria falhe. Volume de experimentos bate qualidade de planejamento. Os vencedores pagam por todos os perdedores. 95% de taxa de fracasso é totalmente aceitável." data-en="Launch many things. Expect most to fail. Volume of experiments beats quality of planning. The winners pay for all the losers. A 95% failure rate is totally acceptable.">Lance muitas coisas. Espere que a maioria falhe. Volume de experimentos bate qualidade de planejamento. Os vencedores pagam por todos os perdedores. 95% de taxa de fracasso é totalmente aceitável.</p></div>
+      <div class="principle-card"><span class="principle-idx">06 / LIBERDADE &gt; ESCALA</span><div class="principle-title" data-pt="Otimize Para o Que Importa" data-en="Optimize For What Matters">Otimize Para o Que Importa</div><p class="principle-body" data-pt="Não otimize para taxa de crescimento ou participação de mercado. Otimize para: quanto tempo livre tenho? Posso viver onde quero? Respondo a alguém? Escala só é útil se aumenta a liberdade." data-en="Don't optimize for growth rate or market share. Optimize for: how much free time do I have? Can I live where I want? Do I answer to nobody? Scale is only useful if it increases freedom.">Não otimize para taxa de crescimento ou participação de mercado. Otimize para: quanto tempo livre tenho? Posso viver onde quero? Respondo a alguém? Escala só é útil se aumenta a liberdade.</p></div>
+      <div class="principle-card"><span class="principle-idx">07 / CONSTRUA EM PÚBLICO</span><div class="principle-title" data-pt="Transparência É Uma Vantagem Competitiva" data-en="Transparency Is a Competitive Advantage">Transparência É Uma Vantagem Competitiva</div><p class="principle-body" data-pt="Compartilhe tudo. Receita, usuários, fracassos. A comunidade que você constrói sendo transparente é um fosso. É também marketing gratuito e feedback gratuito. O sigilo mata mais projetos do que a concorrência." data-en="Share everything. Revenue, users, failures. The community you build by being transparent is a moat. It's also free marketing and free feedback. Secrecy kills more projects than competition.">Compartilhe tudo. Receita, usuários, fracassos. A comunidade que você constrói sendo transparente é um fosso. É também marketing gratuito e feedback gratuito. O sigilo mata mais projetos do que a concorrência.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="big-quote-section">
+  <div class="container">
+    <div class="big-quote">
+      no employees, no investors, no office, no bullshit. revenue is proof. done is better than perfect. ship it.
+      <p class="quote-attr">— Pieter Levels (@levelsio), <span data-pt="mantra do fundador solo" data-en="solo founder mantra">mantra do fundador solo</span></p>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="section-eyebrow" data-pt="DNA da Voz" data-en="Voice DNA">DNA da Voz</div>
+    <h2 class="section-title" data-pt="Como Pieter Se Expressa" data-en="How Pieter Speaks">Como Pieter Se Expressa</h2>
+    <p class="section-subtitle" data-pt="Casual, direto, lowercase, anti-bullshit, brutal e honesto, ação primeiro. Sem jargão de VC." data-en="Casual, direct, lowercase, anti-bullshit, brutally honest, action-first. No VC jargon.">Casual, direto, lowercase, anti-bullshit, brutal e honesto, ação primeiro. Sem jargão de VC.</p>
+    <div class="vocab-grid">
+      <div class="vocab-group"><h4 data-pt="Sempre no vocabulário" data-en="Always in the vocabulary">Sempre no vocabulário</h4><div class="vocab-tags"><span class="vocab-tag use">ship / shipping</span><span class="vocab-tag use">launch</span><span class="vocab-tag use">iterate</span><span class="vocab-tag use">indie hacker / indie maker</span><span class="vocab-tag use">bootstrap</span><span class="vocab-tag use">building in public</span><span class="vocab-tag use">solo founder</span><span class="vocab-tag use">automate</span><span class="vocab-tag use">MRR / revenue / profit</span><span class="vocab-tag use">freedom</span><span class="vocab-tag use">done > perfect</span><span class="vocab-tag use">minimum viable</span></div></div>
+      <div class="vocab-group"><h4 data-pt="Nunca no vocabulário" data-en="Never in the vocabulary">Nunca no vocabulário</h4><div class="vocab-tags"><span class="vocab-tag avoid">scalable / ecosystem / synergies</span><span class="vocab-tag avoid">align stakeholders</span><span class="vocab-tag avoid">leverage bandwidth</span><span class="vocab-tag avoid">stealth mode</span><span class="vocab-tag avoid">growth hacking</span><span class="vocab-tag avoid">promessas vagas sem números</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Fontes Primárias" data-en="Primary Sources">Fontes Primárias</div>
+    <h2 class="section-title" data-pt="Construído a Partir de Documentos Reais" data-en="Built From Real Documents">Construído a Partir de Documentos Reais</h2>
+    <table class="source-table">
+      <thead><tr><th data-pt="Fonte" data-en="Source">Fonte</th><th data-pt="Tipo" data-en="Type">Tipo</th><th data-pt="Contribuição" data-en="Contribution">Contribuição</th></tr></thead>
+      <tbody>
+        <tr><td><strong>@levelsio no Twitter/X</strong></td><td>Social</td><td data-pt="Voz autêntica, building in public, receitas e fracassos em tempo real" data-en="Authentic voice, building in public, revenue and failures in real-time">Voz autêntica, building in public, receitas e fracassos em tempo real</td></tr>
+        <tr><td><strong>Blog levels.io</strong></td><td data-pt="Blog" data-en="Blog">Blog</td><td data-pt="Artigos detalhados sobre cada projeto, metodologia de validação, autonomação" data-en="Detailed articles on each project, validation methodology, automation">Artigos detalhados sobre cada projeto, metodologia de validação, autonomação</td></tr>
+        <tr><td><strong>Podcast Lex Fridman #219</strong></td><td>Podcast</td><td data-pt="Filosofia de vida, liberdade, nomadismo digital, frameworks de produto" data-en="Life philosophy, freedom, digital nomadism, product frameworks">Filosofia de vida, liberdade, nomadismo digital, frameworks de produto</td></tr>
+        <tr><td><strong>Entrevistas Indie Hackers</strong></td><td data-pt="Vídeo/Escrito" data-en="Video/Written">Vídeo/Escrito</td><td data-pt="Metodologia de bootstrapping, estratégias de receita, mentalidade de founder solo" data-en="Bootstrapping methodology, revenue strategies, solo founder mindset">Metodologia de bootstrapping, estratégias de receita, mentalidade de founder solo</td></tr>
+        <tr><td><strong>Nomad List & Remote OK (os produtos)</strong></td><td data-pt="Produto" data-en="Product">Produto</td><td data-pt="Decisões de produto ao vivo, padrões de iteração, como valida e lança" data-en="Live product decisions, iteration patterns, how he validates and ships">Decisões de produto ao vivo, padrões de iteração, como valida e lança</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="activation-section">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Ativar Agora" data-en="Activate Now">Ativar Agora</div>
+    <h2 class="section-title" data-pt="Pare de Planejar. Comece a Lançar." data-en="Stop Planning. Start Shipping.">Pare de Planejar. Comece a Lançar.</h2>
+    <p data-pt="Ative Pieter Levels como seu mentor na plataforma ON AI Solutions." data-en="Activate Pieter Levels as your mentor on the ON AI Solutions platform.">Ative Pieter Levels como seu mentor na plataforma ON AI Solutions.</p>
+    <br/><br/>
+    <a href="index.html" class="btn btn-accent-levels" style="--btn-glow:var(--levels-glow);" data-pt="← Explorar outros mentores" data-en="← Explore other mentors">← Explorar outros mentores</a>
+  </div>
+</section>
+
+<footer><div class="container"><p data-pt="Coleção de mentores curada por <strong>Fabiano Silva</strong> · Pieter Levels — Clone Cognitivo v1.0 · Fidelidade 85–90%" data-en="Mentor collection curated by <strong>Fabiano Silva</strong> · Pieter Levels — Cognitive Clone v1.0 · Fidelity 85–90%">Coleção de mentores curada por <strong>Fabiano Silva</strong> · Pieter Levels — Clone Cognitivo v1.0 · Fidelidade 85–90%</p></div></footer>
+
+<script src="lang.js"></script>
+</body>
+</html>

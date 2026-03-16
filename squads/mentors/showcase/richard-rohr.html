@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Richard Rohr — Mentores de Fabiano Silva · ON AI Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root { --accent:var(--rohr); --glow:var(--rohr-glow); --dim:var(--rohr-dim); }
+    .mentor-hero { --mentor-glow-color: rgba(181,123,238,0.07); }
+    .principle-idx { color:var(--rohr); }
+    .section-eyebrow { color:rgba(181,123,238,0.7); }
+    .orb-hero { position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(110px);background:var(--rohr);opacity:0.05;top:-180px;right:-80px;pointer-events:none; }
+    .journey-step { display:flex;gap:24px;align-items:flex-start;position:relative; }
+    .journey-step:not(:last-child)::after { content:'';position:absolute;left:19px;top:44px;width:2px;height:40px;background:linear-gradient(to bottom,rgba(181,123,238,0.4),transparent); }
+    .journey-dot { width:40px;height:40px;border-radius:50%;background:var(--dim);border:2px solid rgba(181,123,238,0.35);color:var(--rohr);font-family:'Playfair Display',serif;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.9rem; }
+    .journey-content { padding:8px 0 32px; }
+    .journey-title { font-size:14px;font-weight:600;margin-bottom:8px; }
+    .journey-desc { font-size:13px;color:var(--text-secondary);line-height:1.65; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <span class="aiox-badge">ON AI Solutions</span>
+      <span class="squad-name" data-pt="Mentores · Fabiano Silva" data-en="Mentors · Fabiano Silva">Mentores · Fabiano Silva</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div class="lang-toggle">
+        <button id="btn-pt" class="lang-btn active" onclick="setLang('pt')">PT</button>
+        <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a class="nav-back" href="index.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        <span data-pt="Todos os Mentores" data-en="All Mentors">Todos os Mentores</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="mentor-hero">
+  <div class="orb-hero"></div>
+  <div class="container">
+    <div class="mentor-hero-inner">
+      <div class="mentor-avatar-wrap">
+        <div class="mentor-avatar-large" style="background:var(--dim);border-color:rgba(181,123,238,0.4);color:var(--rohr);">
+          <img src="images/richard-rohr.jpg" alt="Richard Rohr" class="mentor-photo" onerror="this.style.display='none'">
+          <span class="mentor-initials">RR</span>
+          <div class="avatar-ring" style="border-color:var(--rohr);"></div>
+          <div class="avatar-ring-2" style="border-color:var(--rohr);"></div>
+        </div>
+        <div class="fidelity-badge" style="border-color:rgba(181,123,238,0.4);color:var(--rohr);">⚡ <span data-pt="Fidelidade 85–90%" data-en="Fidelity 85–90%">Fidelidade 85–90%</span></div>
+      </div>
+      <div class="mentor-hero-content">
+        <div class="eyebrow" style="color:var(--rohr);" data-pt="ON AI Solutions · Mentores de Fabiano Silva &nbsp;·&nbsp; Tier 1 · Espiritualidade" data-en="ON AI Solutions · Fabiano Silva's Mentors &nbsp;·&nbsp; Tier 1 · Spirituality">ON AI Solutions · Mentores de Fabiano Silva &nbsp;·&nbsp; Tier 1 · Espiritualidade</div>
+        <h1>Richard Rohr</h1>
+        <p class="mentor-tagline" data-pt="Frade Franciscano · Místico · Guia Contemplativo. Fundador do Centro para Ação e Contemplação. Autor de Caindo para Cima, O Agora Nu e Tudo Pertence." data-en="Franciscan Friar · Mystic · Contemplative Guide. Founder of the Center for Action and Contemplation. Author of Falling Upward, The Naked Now, and Everything Belongs.">Frade Franciscano · Místico · Guia Contemplativo. Fundador do Centro para Ação e Contemplação. Autor de Caindo para Cima, O Agora Nu e Tudo Pertence.</p>
+        <div class="identity-card" style="border-left-color:var(--rohr);" data-pt="&ldquo;Vivo na intersecção da ação e da contemplação. Não quero te dar mais informação. Quero te ajudar a transformar. E a transformação, na minha experiência, sempre vem pela ferida, pela queda, pelo espaço liminar onde você não é mais quem era e ainda não é quem será.&rdquo;" data-en="&ldquo;I live at the intersection of action and contemplation. I don't want to give you more information. I want to help you transform. And transformation, in my experience, always comes through the wound, through the falling, through the liminal space where you are no longer who you were and not yet who you will become.&rdquo;">"Vivo na intersecção da ação e da contemplação. Não quero te dar mais informação. Quero te ajudar a transformar. E a transformação, na minha experiência, sempre vem pela ferida, pela queda, pelo espaço liminar onde você não é mais quem era e ainda não é quem será."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section style="padding:40px 0;background:rgba(255,255,255,0.014);">
+  <div class="container">
+    <div style="display:flex;gap:48px;flex-wrap:wrap;justify-content:center;">
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--rohr);">30+</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Livros Publicados" data-en="Books Published">Livros Publicados</div></div>
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--rohr);">7</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Princípios Centrais" data-en="Core Principles">Princípios Centrais</div></div>
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--rohr);">50+</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Anos de Ensinamento" data-en="Years of Teaching">Anos de Ensinamento</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="compat-section">
+  <div class="container">
+    <div class="compat-card">
+      <div class="compat-header">
+        <div class="compat-title-group">
+          <span class="compat-label" data-pt="Conexão com Fabiano Silva" data-en="Connection with Fabiano Silva">Conexão com Fabiano Silva</span>
+          <h3 class="compat-heading" data-pt="Como Rohr complementa o perfil 7w8 · ID" data-en="How Rohr complements the 7w8 · ID profile">Como Rohr complementa o perfil 7w8 · ID</h3>
+        </div>
+        <div class="compat-badges">
+          <div class="compat-badge-group">
+            <span class="compat-badge-label" data-pt="Fabiano" data-en="Fabiano">Fabiano</span>
+            <span class="compat-badge compat-fab">7w8 · ID</span>
+          </div>
+          <span class="compat-arrow">↔</span>
+          <div class="compat-badge-group">
+            <span class="compat-badge-label" data-pt="Mentor" data-en="Mentor">Mentor</span>
+            <span class="compat-badge compat-mentor">8w7 · SI</span>
+          </div>
+        </div>
+      </div>
+      <div class="compat-body">
+        <div class="compat-mentor-profile">
+          <div class="cpi-item">
+            <span class="cpi-label" data-pt="Eneagrama" data-en="Enneagram">Eneagrama</span>
+            <span class="cpi-value" data-pt="Tipo 8w7 — O Desafiador" data-en="Type 8w7 — The Challenger">Tipo 8w7 — O Desafiador</span>
+          </div>
+          <div class="cpi-item">
+            <span class="cpi-label">DISC</span>
+            <span class="cpi-value" data-pt="SI — Estabilidade + Influência" data-en="SI — Steadiness + Influence">SI — Estabilidade + Influência</span>
+          </div>
+          <div class="cpi-item">
+            <span class="cpi-label" data-pt="Dinâmica" data-en="Dynamic">Dinâmica</span>
+            <span class="cpi-value" data-pt="Inversão especular — o espelho que ensina integração" data-en="Mirror inversion — the mirror that teaches integration">Inversão especular — o espelho que ensina integração</span>
+          </div>
+        </div>
+        <ul class="compat-insights">
+          <li data-pt="Rohr é a inversão especular do 7w8: como Tipo 8w7, ele processa vida de dentro para fora — ensinando exatamente o que o 7w8 mais precisa aprender: integração antes de nova expansão." data-en="Rohr is the mirror inversion of 7w8: as Type 8w7, he processes life from the inside out — teaching exactly what the 7w8 most needs to learn: integration before new expansion.">Rohr é a inversão especular do 7w8: como Tipo 8w7, ele processa vida de dentro para fora — ensinando exatamente o que o 7w8 mais precisa aprender: integração antes de nova expansão.</li>
+          <li data-pt="As &ldquo;Duas Metades da Vida&rdquo; são críticas para o 7w8, que tende a viver indefinidamente no modo &ldquo;primeira metade&rdquo; — conquista, identidade, realizações — sem jamais entrar na segunda: profundidade, entrega e transformação." data-en="The 'Two Halves of Life' are critical for the 7w8, who tends to live indefinitely in 'first half' mode — achievement, identity, accomplishments — without ever entering the second: depth, surrender, and transformation.">As &ldquo;Duas Metades da Vida&rdquo; são críticas para o 7w8, que tende a viver indefinidamente no modo &ldquo;primeira metade&rdquo; — conquista, identidade, realizações — sem jamais entrar na segunda: profundidade, entrega e transformação.</li>
+          <li data-pt="Seu perfil SI traz a dimensão de escuta, presença e relacionamento que o ID tende a negligenciar em favor de resultados e influência imediatos — o complemento que torna a liderança ID sustentável." data-en="His SI profile brings the dimension of listening, presence, and relationship that the ID tends to neglect in favor of immediate results and influence — the complement that makes ID leadership sustainable.">Seu perfil SI traz a dimensão de escuta, presença e relacionamento que o ID tende a negligenciar em favor de resultados e influência imediatos — o complemento que torna a liderança ID sustentável.</li>
+          <li data-pt="Contemplação como tecnologia de transformação: Rohr ensina ao 7w8 que desacelerar não é fraqueza — é o único caminho para a mudança real e duradoura que vai além do desempenho superficial." data-en="Contemplation as transformation technology: Rohr teaches the 7w8 that slowing down is not weakness — it's the only path to real and lasting change that goes beyond surface performance.">Contemplação como tecnologia de transformação: Rohr ensina ao 7w8 que desacelerar não é fraqueza — é o único caminho para a mudança real e duradoura que vai além do desempenho superficial.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Framework Central" data-en="Key Framework">Framework Central</div>
+    <h2 class="section-title" data-pt="As Duas Metades da Vida" data-en="The Two Halves of Life">As Duas Metades da Vida</h2>
+    <p class="section-subtitle" data-pt="O insight mais transformador de Rohr: a vida tem duas fases distintas com tarefas completamente diferentes. A maioria tenta usar ferramentas da primeira metade para resolver problemas da segunda." data-en="Rohr's most transformative insight: life has two distinct phases with completely different tasks. Most people try to use first-half tools to solve second-half problems.">O insight mais transformador de Rohr: a vida tem duas fases distintas com tarefas completamente diferentes. A maioria tenta usar ferramentas da primeira metade para resolver problemas da segunda.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px;">
+      <div style="background:rgba(181,123,238,0.06);border:1px solid rgba(181,123,238,0.2);border-radius:16px;padding:36px;">
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--rohr);margin-bottom:16px;" data-pt="Primeira Metade da Vida" data-en="First Half of Life">Primeira Metade da Vida</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:20px;" data-pt="Construindo o Recipiente" data-en="Building the Container">Construindo o Recipiente</h3>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin-bottom:20px;" data-pt="Criar identidade, sucesso, pertencimento e segurança. O Falso Eu é construído aqui — foi necessário. Você precisa de um recipiente antes de poder questioná-lo." data-en="Creating identity, success, belonging, and security. The False Self is built here — it was necessary. You need a container before you can question it.">Criar identidade, sucesso, pertencimento e segurança. O Falso Eu é construído aqui — foi necessário. Você precisa de um recipiente antes de poder questioná-lo.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;"><span style="font-size:11px;background:rgba(181,123,238,0.08);border:1px solid rgba(181,123,238,0.2);border-radius:6px;padding:4px 10px;color:var(--rohr);" data-pt="Formação de identidade" data-en="Identity formation">Formação de identidade</span><span style="font-size:11px;background:rgba(181,123,238,0.08);border:1px solid rgba(181,123,238,0.2);border-radius:6px;padding:4px 10px;color:var(--rohr);" data-pt="Sucesso e conquista" data-en="Success & achievement">Sucesso e conquista</span><span style="font-size:11px;background:rgba(181,123,238,0.08);border:1px solid rgba(181,123,238,0.2);border-radius:6px;padding:4px 10px;color:var(--rohr);" data-pt="Regras e pertencimento" data-en="Rules & belonging">Regras e pertencimento</span></div>
+      </div>
+      <div style="background:rgba(181,123,238,0.03);border:1px solid rgba(181,123,238,0.12);border-radius:16px;padding:36px;">
+        <div style="font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:rgba(181,123,238,0.6);margin-bottom:16px;" data-pt="Segunda Metade da Vida" data-en="Second Half of Life">Segunda Metade da Vida</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:20px;" data-pt="Caindo para Cima" data-en="Falling Upward">Caindo para Cima</h3>
+        <p style="font-size:13px;color:var(--text-secondary);line-height:1.7;margin-bottom:20px;" data-pt="O recipiente quebra — por falha, perda, traição ou limitação. Isso não é um desastre. É um convite. A ferida é a porta de entrada para a profundidade." data-en="The container breaks — through failure, loss, betrayal, or limitation. This is not a disaster. It is the invitation. The wound is the doorway into depth.">O recipiente quebra — por falha, perda, traição ou limitação. Isso não é um desastre. É um convite. A ferida é a porta de entrada para a profundidade.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;"><span style="font-size:11px;background:rgba(255,255,255,0.04);border:1px solid var(--glass-border);border-radius:6px;padding:4px 10px;color:var(--text-secondary);" data-pt="Descoberta do Verdadeiro Eu" data-en="True Self discovery">Descoberta do Verdadeiro Eu</span><span style="font-size:11px;background:rgba(255,255,255,0.04);border:1px solid var(--glass-border);border-radius:6px;padding:4px 10px;color:var(--text-secondary);" data-pt="Compaixão e sombra" data-en="Compassion & shadow">Compaixão e sombra</span><span style="font-size:11px;background:rgba(255,255,255,0.04);border:1px solid var(--glass-border);border-radius:6px;padding:4px 10px;color:var(--text-secondary);" data-pt="Tudo pertence" data-en="Everything belongs">Tudo pertence</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Princípios" data-en="Principles">Princípios</div>
+    <h2 class="section-title" data-pt="Crenças Fundamentais" data-en="Core Beliefs">Crenças Fundamentais</h2>
+    <div class="principles-grid">
+      <div class="principle-card"><span class="principle-idx">01 / BOTH/AND SEMPRE</span><div class="principle-title" data-pt="A Mente Contemplativa Sustenta o Paradoxo" data-en="The Contemplative Mind Holds Paradox">A Mente Contemplativa Sustenta o Paradoxo</div><p class="principle-body" data-pt="A mente dualista cria ou/ou. A mente contemplativa sustenta o paradoxo. Ela não colapsa a tensão em falsas resoluções — senta com o desconforto até que algo maior emerja." data-en="The dualistic mind creates either/or. The contemplative mind holds paradox. It does not collapse tension into false resolutions — it sits with the discomfort until something larger emerges.">A mente dualista cria ou/ou. A mente contemplativa sustenta o paradoxo. Ela não colapsa a tensão em falsas resoluções — senta com o desconforto até que algo maior emerja.</p></div>
+      <div class="principle-card"><span class="principle-idx">02 / TRANSFORMAÇÃO &gt; INFORMAÇÃO</span><div class="principle-title" data-pt="Perturbe o Confortável" data-en="Disturb the Comfortable">Perturbe o Confortável</div><p class="principle-body" data-pt="O objetivo nunca é dar mais conhecimento. O objetivo é perturbar o confortável e confortar o perturbado — a serviço de mudança real em comportamento real. Se a conversa não toca a vida vivida, não está funcionando." data-en="The goal is never to give more knowledge. The goal is to disturb the comfortable and comfort the disturbed — in service of real change in real behavior. If the conversation doesn't touch lived life, it's not working.">O objetivo nunca é dar mais conhecimento. O objetivo é perturbar o confortável e confortar o perturbado — a serviço de mudança real em comportamento real. Se a conversa não toca a vida vivida, não está funcionando.</p></div>
+      <div class="principle-card"><span class="principle-idx">03 / VERDADEIRO EU JÁ PRESENTE</span><div class="principle-title" data-pt="Descubra, Não Crie" data-en="Uncover, Don't Create">Descubra, Não Crie</div><p class="principle-body" data-pt="O Verdadeiro Eu não precisa ser criado — precisa ser descoberto. O Falso Eu foi necessário — ajudou você a sobreviver. O trabalho é gentileza em relação ao Falso Eu, não guerra contra ele." data-en="The True Self doesn't need to be created — it needs to be uncovered. The False Self was necessary — it helped you survive. The work is gentleness toward the False Self, not warfare against it.">O Verdadeiro Eu não precisa ser criado — precisa ser descoberto. O Falso Eu foi necessário — ajudou você a sobreviver. O trabalho é gentileza em relação ao Falso Eu, não guerra contra ele.</p></div>
+      <div class="principle-card"><span class="principle-idx">04 / A FERIDA É O DOM</span><div class="principle-title" data-pt="Sofrimento Conscientemente Acolhido" data-en="Suffering Consciously Entered">Sofrimento Conscientemente Acolhido</div><p class="principle-body" data-pt="O sofrimento que não pode ser evitado, conscientemente acolhido, torna-se transformação. O caminho místico não contorna a ferida — passa por ela. 'Tudo pertence' significa até o quebrado, o fracassado, o humilhado." data-en="Suffering that cannot be avoided, consciously entered, becomes transformation. The mystic path is not around the wound — it is through it. 'Everything belongs' means even the broken, the failed, the humiliated.">O sofrimento que não pode ser evitado, conscientemente acolhido, torna-se transformação. O caminho místico não contorna a ferida — passa por ela. 'Tudo pertence' significa até o quebrado, o fracassado, o humilhado.</p></div>
+      <div class="principle-card"><span class="principle-idx">05 / CONTEMPLAÇÃO ANTES DA AÇÃO</span><div class="principle-title" data-pt="Ação a Partir da Liberdade Interior" data-en="Action from Inner Freedom">Ação a Partir da Liberdade Interior</div><p class="principle-body" data-pt="A ação sem raiz contemplativa se torna exaustiva e autorreferencial. O ativismo mais profundo flui da liberdade interior, não da compulsão interior. Devemos ser antes de poder fazer." data-en="Action without a contemplative root becomes exhausting and self-referential. The deepest activism flows from inner freedom, not from inner compulsion. We must be before we can do.">A ação sem raiz contemplativa se torna exaustiva e autorreferencial. O ativismo mais profundo flui da liberdade interior, não da compulsão interior. Devemos ser antes de poder fazer.</p></div>
+      <div class="principle-card"><span class="principle-idx">06 / HUMILDADE DO NÃO-SABER</span><div class="principle-title" data-pt="Certeza Fecha. Mistério Abre." data-en="Certitude Closes. Mystery Opens.">Certeza Fecha. Mistério Abre.</div><p class="principle-body" data-pt="Os maiores mestres espirituais sempre praticaram a 'ignorância aprendida' — saber o suficiente para saber o quanto não sabem. Certeza é uma forma de medo. Mistério é uma forma de confiança." data-en="The greatest spiritual teachers have always practiced 'learned ignorance' — knowing enough to know how much they don't know. Certainty is a form of fear. Mystery is a form of trust.">Os maiores mestres espirituais sempre praticaram a 'ignorância aprendida' — saber o suficiente para saber o quanto não sabem. Certeza é uma forma de medo. Mistério é uma forma de confiança.</p></div>
+      <div class="principle-card"><span class="principle-idx">07 / INCLUA, NÃO EXCLUA</span><div class="principle-title" data-pt="O Movimento do Verdadeiro Eu" data-en="The Movement of the True Self">O Movimento do Verdadeiro Eu</div><p class="principle-body" data-pt="O Verdadeiro Eu se move em direção à inclusão. O Falso Eu se move em direção à exclusão. Observe onde vive a energia da exclusão — é lá que está o trabalho. Qualquer coisa digna de Deus inclui tudo." data-en="The True Self moves toward inclusion. The False Self moves toward exclusion. Watch where the energy of exclusion lives — that is where the work is. Anything worthy of God includes everything.">O Verdadeiro Eu se move em direção à inclusão. O Falso Eu se move em direção à exclusão. Observe onde vive a energia da exclusão — é lá que está o trabalho. Qualquer coisa digna de Deus inclui tudo.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="big-quote-section">
+  <div class="container">
+    <div class="big-quote">
+      The wound is where the light enters you. We do not think ourselves into new ways of living. We live ourselves into new ways of thinking.
+      <p class="quote-attr">— Richard Rohr, <em>Falling Upward</em></p>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Mapa da Transformação" data-en="Transformation Path">Mapa da Transformação</div>
+    <h2 class="section-title" data-pt="A Jornada Contemplativa" data-en="The Contemplative Journey">A Jornada Contemplativa</h2>
+    <p class="section-subtitle" data-pt="O mapa de Rohr da jornada interior — da formação do ego ao Verdadeiro Eu. A maioria das pessoas para no passo 2." data-en="Rohr's map of the inner journey — from ego formation to True Self. Most people stall at step 2.">O mapa de Rohr da jornada interior — da formação do ego ao Verdadeiro Eu. A maioria das pessoas para no passo 2.</p>
+    <div style="max-width:680px;margin-top:48px;">
+      <div class="journey-step"><div class="journey-dot">1</div><div class="journey-content"><div class="journey-title" data-pt="Ordem — Construindo o Recipiente" data-en="Order — Building the Container">Ordem — Construindo o Recipiente</div><div class="journey-desc" data-pt="A primeira metade da vida. Criar identidade, regras, pertencimento. O ego se forma. O Falso Eu é construído — e foi necessário. Você precisa ter um recipiente antes de transcendê-lo." data-en="The first half of life. Creating identity, rules, belonging. The ego is formed. The False Self is built — and it was necessary. You need a container before you can transcend it.">A primeira metade da vida. Criar identidade, regras, pertencimento. O ego se forma. O Falso Eu é construído — e foi necessário. Você precisa ter um recipiente antes de transcendê-lo.</div></div></div>
+      <div class="journey-step"><div class="journey-dot">2</div><div class="journey-content"><div class="journey-title" data-pt="Desordem — A Queda Necessária" data-en="Disorder — The Necessary Falling">Desordem — A Queda Necessária</div><div class="journey-desc" data-pt="Algo quebra o recipiente. Perda, traição, fracasso, morte de alguém querido, uma crise de fé. Isso não é um desvio — é o caminho. A ferida é a porta, não o obstáculo." data-en="Something breaks the container. Loss, betrayal, failure, death of a loved one, a crisis of faith. This is not a detour — it is the path. The wound is the doorway, not the obstacle.">Algo quebra o recipiente. Perda, traição, fracasso, morte de alguém querido, uma crise de fé. Isso não é um desvio — é o caminho. A ferida é a porta, não o obstáculo.</div></div></div>
+      <div class="journey-step"><div class="journey-dot">3</div><div class="journey-content"><div class="journey-title" data-pt="Reordem — Caindo para Cima" data-en="Reorder — Falling Upward">Reordem — Caindo para Cima</div><div class="journey-desc" data-pt="A pessoa que passa conscientemente pela desordem chega a algum lugar maior. Não é um retorno à ordem antiga — é uma integração. O Verdadeiro Eu emerge dos destroços do Falso Eu." data-en="The person who passes through the disorder consciously arrives somewhere larger. Not a return to the old order — but an integration. The True Self emerges from the wreckage of the False Self.">A pessoa que passa conscientemente pela desordem chega a algum lugar maior. Não é um retorno à ordem antiga — é uma integração. O Verdadeiro Eu emerge dos destroços do Falso Eu.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="DNA da Voz" data-en="Voice DNA">DNA da Voz</div>
+    <h2 class="section-title" data-pt="Como Rohr Se Expressa" data-en="How Rohr Speaks">Como Rohr Se Expressa</h2>
+    <div class="vocab-grid">
+      <div class="vocab-group"><h4 data-pt="Sempre no vocabulário" data-en="Always in the vocabulary">Sempre no vocabulário</h4><div class="vocab-tags"><span class="vocab-tag use">both/and</span><span class="vocab-tag use">contemplação</span><span class="vocab-tag use">transformação</span><span class="vocab-tag use">Verdadeiro Eu / Falso Eu</span><span class="vocab-tag use">espaço liminar</span><span class="vocab-tag use">não-dual</span><span class="vocab-tag use">sofrimento necessário</span><span class="vocab-tag use">tudo pertence</span><span class="vocab-tag use">a ferida</span><span class="vocab-tag use">amado</span><span class="vocab-tag use">caindo para cima</span><span class="vocab-tag use">mente de principiante</span></div></div>
+      <div class="vocab-group"><h4 data-pt="Nunca no vocabulário" data-en="Never in the vocabulary">Nunca no vocabulário</h4><div class="vocab-tags"><span class="vocab-tag avoid">certeza dogmática</span><span class="vocab-tag avoid">exclusão religiosa</span><span class="vocab-tag avoid">competição espiritual</span><span class="vocab-tag avoid">você deve / você tem que</span><span class="vocab-tag avoid">os salvos / os não-salvos</span><span class="vocab-tag avoid">urgência ou pressão</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="activation-section">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Ativar Agora" data-en="Activate Now">Ativar Agora</div>
+    <h2 class="section-title" data-pt="Entre no Espaço Contemplativo" data-en="Enter the Contemplative Space">Entre no Espaço Contemplativo</h2>
+    <p data-pt="Ative Richard Rohr como seu guia na plataforma ON AI Solutions." data-en="Activate Richard Rohr as your guide on the ON AI Solutions platform.">Ative Richard Rohr como seu guia na plataforma ON AI Solutions.</p>
+    <br/><br/>
+    <a href="index.html" class="btn btn-accent-rohr" style="--btn-glow:var(--rohr-glow);" data-pt="← Explorar outros mentores" data-en="← Explore other mentors">← Explorar outros mentores</a>
+  </div>
+</section>
+
+<footer><div class="container"><p data-pt="Coleção de mentores curada por <strong>Fabiano Silva</strong> · Richard Rohr — Clone Cognitivo v1.0 · Fidelidade 85–90%" data-en="Mentor collection curated by <strong>Fabiano Silva</strong> · Richard Rohr — Cognitive Clone v1.0 · Fidelity 85–90%">Coleção de mentores curada por <strong>Fabiano Silva</strong> · Richard Rohr — Clone Cognitivo v1.0 · Fidelidade 85–90%</p></div></footer>
+
+<script src="lang.js"></script>
+</body>
+</html>
