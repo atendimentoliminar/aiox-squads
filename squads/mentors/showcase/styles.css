@@ -59,6 +59,10 @@
   --alan-glow:     rgba(56, 189, 248, 0.18);
   --alan-dim:      rgba(56, 189, 248, 0.08);
 
+  --elon:          #dc2626;
+  --elon-glow:     rgba(220, 38, 38, 0.18);
+  --elon-dim:      rgba(220, 38, 38, 0.08);
+
   --radius:        16px;
   --radius-sm:     10px;
   --transition:    0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -296,6 +300,7 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 .mentor-card.dhh      { --accent: var(--dhh);      --glow: var(--dhh-glow);      }
 .mentor-card.mckeown  { --accent: var(--mckeown);  --glow: var(--mckeown-glow);  }
 .mentor-card.alan     { --accent: var(--alan);     --glow: var(--alan-glow);     }
+.mentor-card.elon     { --accent: var(--elon);     --glow: var(--elon-glow);     }
 
 .card-avatar {
   width: 68px; height: 68px;

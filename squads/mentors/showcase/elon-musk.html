@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elon Musk — Mentores de Fabiano Silva · ON AI Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root { --accent:var(--elon); --glow:var(--elon-glow); --dim:var(--elon-dim); }
+    .mentor-hero { --mentor-glow-color: rgba(220, 38, 38, 0.07); }
+    .principle-idx { color:var(--elon); }
+    .section-eyebrow { color:rgba(220, 38, 38, 0.7); }
+    .orb-hero { position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(110px);background:var(--elon);opacity:0.05;top:-180px;right:-80px;pointer-events:none; }
+    .algorithm-steps { display:flex;flex-direction:column;gap:12px;margin-top:48px; }
+    .algo-step { display:flex;align-items:flex-start;gap:20px;padding:24px 28px;background:rgba(220,38,38,0.04);border:1px solid rgba(220,38,38,0.12);border-radius:14px; }
+    .algo-num { flex-shrink:0;width:36px;height:36px;border-radius:50%;background:rgba(220,38,38,0.12);border:1px solid rgba(220,38,38,0.3);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--elon); }
+    .algo-body .algo-title { font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:4px; }
+    .algo-body .algo-desc { font-size:13px;color:var(--text-secondary);line-height:1.6; }
+    .algo-body .algo-rule { font-size:11px;color:var(--elon);margin-top:8px;font-style:italic; }
+    .physics-card { background:var(--dim);border:1px solid rgba(220,38,38,0.25);border-radius:16px;padding:32px; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <span class="aiox-badge">ON AI Solutions</span>
+      <span class="squad-name" data-pt="Mentores · Fabiano Silva" data-en="Mentors · Fabiano Silva">Mentores · Fabiano Silva</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div class="lang-toggle">
+        <button id="btn-pt" class="lang-btn active" onclick="setLang('pt')">PT</button>
+        <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a class="nav-back" href="index.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        <span data-pt="Todos os Mentores" data-en="All Mentors">Todos os Mentores</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="mentor-hero">
+  <div class="orb-hero"></div>
+  <div class="container">
+    <div class="mentor-hero-inner">
+      <div class="mentor-avatar-wrap">
+        <div class="mentor-avatar-large" style="background:var(--dim);border-color:rgba(220,38,38,0.4);color:var(--elon);">
+          <img src="images/elon-musk.jpg" alt="Elon Musk" class="mentor-photo" onerror="this.style.display='none'">
+          <span class="mentor-initials">EM</span>
+          <div class="avatar-ring" style="border-color:var(--elon);"></div>
+          <div class="avatar-ring-2" style="border-color:var(--elon);"></div>
+        </div>
+        <div class="fidelity-badge" style="border-color:rgba(220,38,38,0.4);color:var(--elon);">⚡ <span data-pt="Fidelidade 85–90%" data-en="Fidelity 85–90%">Fidelidade 85–90%</span></div>
+      </div>
+      <div class="mentor-hero-content">
+        <div class="eyebrow" style="color:var(--elon);" data-pt="ON AI Solutions · Mentores de Fabiano Silva &nbsp;·&nbsp; Tier 1 · Engenharia & Missão" data-en="ON AI Solutions · Fabiano Silva's Mentors &nbsp;·&nbsp; Tier 1 · Engineering & Mission">ON AI Solutions · Mentores de Fabiano Silva &nbsp;·&nbsp; Tier 1 · Engenharia & Missão</div>
+        <h1>Elon Musk</h1>
+        <p class="mentor-tagline" data-pt="CEO Tesla & SpaceX · Fundador xAI. O engenheiro que tornou foguetes reutilizáveis, carros elétricos desejáveis e implantes cerebrais funcionais — aplicando primeiros princípios onde todos aceitavam o impossível como dado." data-en="CEO Tesla & SpaceX · Founder xAI. The engineer who made rockets reusable, electric cars desirable, and brain implants functional — applying first principles where everyone accepted the impossible as fact.">CEO Tesla & SpaceX · Fundador xAI. O engenheiro que tornou foguetes reutilizáveis, carros elétricos desejáveis e implantes cerebrais funcionais — aplicando primeiros princípios onde todos aceitavam o impossível como dado.</p>
+        <div class="identity-card" style="border-left-color:var(--elon);" data-pt="&ldquo;Passei minha carreira inteira tentando fazer coisas que as pessoas disseram que eram impossíveis. O que aprendi: a maioria dos limites é percebida, não real. As pessoas raciocinam por analogia e chamam isso de expertise. Raciocínio por primeiros princípios pergunta: o que é fisicamente impossível aqui? Geralmente, a resposta é: muito menos do que todo mundo pensa.&rdquo;" data-en="&ldquo;I've spent my entire career trying to do things people said were impossible. What I learned: most limits are perceived, not real. People reason by analogy and call it expertise. First principles reasoning asks: what is physically impossible here? Usually the answer is: far less than everyone thinks.&rdquo;">"Passei minha carreira inteira tentando fazer coisas que as pessoas disseram que eram impossíveis. O que aprendi: a maioria dos limites é percebida, não real. Raciocínio por primeiros princípios pergunta: o que é fisicamente impossível aqui? Geralmente, muito menos do que todo mundo pensa."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section style="padding:40px 0;background:rgba(255,255,255,0.014);">
+  <div class="container">
+    <div style="display:flex;gap:48px;flex-wrap:wrap;justify-content:center;">
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--elon);">5</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Empresas Fundadas" data-en="Founded Companies">Empresas Fundadas</div></div>
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--elon);">7</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Princípios Documentados" data-en="Documented Principles">Princípios Documentados</div></div>
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--elon);">1971–</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Ativo" data-en="Active">Ativo</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="compat-section">
+  <div class="container">
+    <div class="compat-card">
+      <div class="compat-header">
+        <div class="compat-title-group">
+          <span class="compat-label" data-pt="Conexão com Fabiano Silva" data-en="Connection with Fabiano Silva">Conexão com Fabiano Silva</span>
+          <h3 class="compat-heading" data-pt="Como Elon complementa o perfil 7w8 · ID" data-en="How Elon complements the 7w8 · ID profile">Como Elon complementa o perfil 7w8 · ID</h3>
+        </div>
+        <div class="compat-badges">
+          <div class="compat-badge-group">
+            <span class="compat-badge-label" data-pt="Fabiano" data-en="Fabiano">Fabiano</span>
+            <span class="compat-badge compat-fab">7w8 · ID</span>
+          </div>
+          <span class="compat-arrow">↔</span>
+          <div class="compat-badge-group">
+            <span class="compat-badge-label" data-pt="Mentor" data-en="Mentor">Mentor</span>
+            <span class="compat-badge compat-mentor">5w8 · DC</span>
+          </div>
+        </div>
+      </div>
+      <div class="compat-body">
+        <div class="compat-mentor-profile">
+          <div class="cpi-item">
+            <span class="cpi-label" data-pt="Eneagrama" data-en="Enneagram">Eneagrama</span>
+            <span class="cpi-value" data-pt="Tipo 5w8 — O Investigador com Asa Desafiadora" data-en="Type 5w8 — The Investigator with Challenger Wing">Tipo 5w8 — O Investigador com Asa Desafiadora</span>
+          </div>
+          <div class="cpi-item">
+            <span class="cpi-label">DISC</span>
+            <span class="cpi-value" data-pt="DC — Dominância + Conscienciosidade" data-en="DC — Dominance + Conscientiousness">DC — Dominância + Conscienciosidade</span>
+          </div>
+          <div class="cpi-item">
+            <span class="cpi-label" data-pt="Dinâmica" data-en="Dynamic">Dinâmica</span>
+            <span class="cpi-value" data-pt="Complementar — profundidade obsessiva que ancora a amplitude criativa" data-en="Complementary — obsessive depth that anchors creative breadth">Complementar — profundidade obsessiva que ancora a amplitude criativa</span>
+          </div>
+        </div>
+        <ul class="compat-insights">
+          <li data-pt="Primeiros princípios vs analogias: onde o 7w8/ID usa padrões conhecidos para decisões rápidas, o 5w8 de Elon força desconstrução radical — 'o que é fundamentalmente verdadeiro aqui?' — ancorando a amplitude criativa do 7 com rigor de engenharia antes de agir." data-en="First principles vs. analogies: where the 7w8/ID uses known patterns for quick decisions, Elon's 5w8 forces radical deconstruction — 'what is fundamentally true here?' — anchoring the 7's creative breadth with engineering rigor before acting.">Primeiros princípios vs analogias: onde o 7w8/ID usa padrões conhecidos para decisões rápidas, o 5w8 de Elon força desconstrução radical — "o que é fundamentalmente verdadeiro aqui?" — ancorando a amplitude criativa do 7 com rigor de engenharia antes de agir.</li>
+          <li data-pt="O 5w8 intensifica o 8: a asa 8 de Elon ressoa com a asa 8 do 7w8 de Fabiano — mas onde Fabiano usa o 8 para executar com força, Elon o usa para demolir premissas com implacabilidade. A combinação ensina o perfil ID a questionar o que considera óbvio antes de agir." data-en="The 5w8 intensifies the 8: Elon's wing 8 resonates with Fabiano's 7w8 wing 8 — but where Fabiano uses the 8 to execute with force, Elon uses it to demolish premises relentlessly. The combination teaches the ID profile to question what it considers obvious before acting.">O 5w8 intensifica o 8: a asa 8 de Elon ressoa com a asa 8 do 7w8 de Fabiano — mas onde Fabiano usa o 8 para executar com força, Elon o usa para demolir premissas com implacabilidade. A combinação ensina o perfil ID a questionar o que considera óbvio antes de agir.</li>
+          <li data-pt="A Missão como âncora para o D: o alto D do perfil DC de Elon não persegue resultados por resultados — persegue a missão de tornar a humanidade multi-planetária. Isso ensina o ID de Fabiano a redirecionar o impulso de dominância para algo maior que métricas de curto prazo." data-en="The Mission as anchor for the D: Elon's high D in the DC profile doesn't pursue results for their own sake — it pursues the mission of making humanity multi-planetary. This teaches Fabiano's ID to redirect the dominance impulse toward something greater than short-term metrics.">A Missão como âncora para o D: o alto D do perfil DC de Elon não persegue resultados por resultados — persegue a missão de tornar a humanidade multi-planetária. Isso ensina o ID de Fabiano a redirecionar o impulso de dominância para algo maior que métricas de curto prazo.</li>
+          <li data-pt="Risco radical + rigor de processo: o 7w8/ID tende a aceitar risco com entusiasmo mas sem análise profunda. O DC de Elon aceita risco radical (colocou 100% do patrimônio em empresas quase falidas) mas sustentado por primeiro princípio. A combinação ensina: entusiasmo com rigor, não entusiasmo OU rigor." data-en="Radical risk + process rigor: the 7w8/ID tends to accept risk with enthusiasm but without deep analysis. Elon's DC accepts radical risk (put 100% of his net worth into near-bankrupt companies) but backed by first principles. The combination teaches: enthusiasm with rigor, not enthusiasm OR rigor.">Risco radical + rigor de processo: o 7w8/ID tende a aceitar risco com entusiasmo mas sem análise profunda. O DC de Elon aceita risco radical — colocou 100% do patrimônio em empresas quase falidas — mas sustentado por primeiro princípio. A combinação ensina: entusiasmo com rigor, não entusiasmo OU rigor.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Framework Central" data-en="Core Framework">Framework Central</div>
+    <h2 class="section-title" data-pt="O Algoritmo" data-en="The Algorithm">O Algoritmo</h2>
+    <p class="section-subtitle" data-pt="Os 5 passos que Elon aplica a qualquer processo, empresa ou problema. A ordem importa — inversão da ordem é o erro mais caro." data-en="The 5 steps Elon applies to any process, company, or problem. Order matters — inverting the order is the most expensive mistake.">Os 5 passos que Elon aplica a qualquer processo, empresa ou problema. A ordem importa — inversão da ordem é o erro mais caro.</p>
+    <div class="algorithm-steps">
+      <div class="algo-step">
+        <div class="algo-num">01</div>
+        <div class="algo-body">
+          <div class="algo-title" data-pt="Questione Cada Requisito" data-en="Question Every Requirement">Questione Cada Requisito</div>
+          <div class="algo-desc" data-pt="De onde veio este requisito? Quem o criou? Ainda faz sentido? Se você não consegue nomear a pessoa — não uma função, uma pessoa real — o requisito provavelmente não precisa existir." data-en="Where did this requirement come from? Who created it? Does it still make sense? If you can't name the person — not a function, a real person — the requirement probably doesn't need to exist.">De onde veio este requisito? Quem o criou? Ainda faz sentido? Se você não consegue nomear a pessoa — não uma função, uma pessoa real — o requisito provavelmente não precisa existir.</div>
+          <div class="algo-rule" data-pt="Regra: Toda exigência vem de uma pessoa, não de uma lei. Pessoas estão erradas frequentemente." data-en="Rule: Every requirement comes from a person, not a law. People are wrong often.">"Toda exigência vem de uma pessoa, não de uma lei. Pessoas estão erradas frequentemente."</div>
+        </div>
+      </div>
+      <div class="algo-step">
+        <div class="algo-num">02</div>
+        <div class="algo-body">
+          <div class="algo-title" data-pt="Delete Qualquer Parte ou Processo" data-en="Delete Any Part or Process">Delete Qualquer Parte ou Processo</div>
+          <div class="algo-desc" data-pt="Se você não está deletando pelo menos 10%, você não está tentando o suficiente. Errar por deletar demais é melhor — você sempre pode adicionar de volta. Adicionar de volta é muito mais fácil do que perceber que algo não deveria existir depois de ser otimizado." data-en="If you're not deleting at least 10%, you're not trying hard enough. Erring on the side of deleting too much is better — you can always add back. Adding back is much easier than realizing something shouldn't exist after it's been optimized.">Se você não está deletando pelo menos 10%, você não está tentando o suficiente. Errar por deletar demais é melhor — você sempre pode adicionar de volta. Adicionar de volta é muito mais fácil do que perceber que algo não deveria existir depois de ser otimizado.</div>
+          <div class="algo-rule" data-pt="Regra: A melhor peça é nenhuma peça. O melhor processo é nenhum processo." data-en="Rule: The best part is no part. The best process is no process.">"A melhor peça é nenhuma peça. O melhor processo é nenhum processo."</div>
+        </div>
+      </div>
+      <div class="algo-step">
+        <div class="algo-num">03</div>
+        <div class="algo-body">
+          <div class="algo-title" data-pt="Simplifique e Otimize" data-en="Simplify and Optimize">Simplifique e Otimize</div>
+          <div class="algo-desc" data-pt="Só depois de deletar. É um erro enorme otimizar algo que deveria ser eliminado. A maioria das pessoas — e empresas — otimiza processos que nem deveriam existir." data-en="Only after deleting. It's a huge mistake to optimize something that should be eliminated. Most people — and companies — optimize processes that shouldn't exist at all.">Só depois de deletar. É um erro enorme otimizar algo que deveria ser eliminado. A maioria das pessoas — e empresas — otimiza processos que nem deveriam existir.</div>
+          <div class="algo-rule" data-pt="Regra: Otimizar o que deveria ser deletado é pior que o problema original." data-en="Rule: Optimizing what should be deleted is worse than the original problem.">"Otimizar o que deveria ser deletado é pior que o problema original."</div>
+        </div>
+      </div>
+      <div class="algo-step">
+        <div class="algo-num">04</div>
+        <div class="algo-body">
+          <div class="algo-title" data-pt="Acelere o Tempo de Ciclo" data-en="Accelerate Cycle Time">Acelere o Tempo de Ciclo</div>
+          <div class="algo-desc" data-pt="Só depois de simplificar. Mova-se mais rápido. Itere mais frequentemente. Cada ciclo é aprendizado. Mas velocidade sem simplificação prévia é apenas caos mais rápido." data-en="Only after simplifying. Move faster. Iterate more frequently. Each cycle is learning. But speed without prior simplification is just faster chaos.">Só depois de simplificar. Mova-se mais rápido. Itere mais frequentemente. Cada ciclo é aprendizado. Mas velocidade sem simplificação prévia é apenas caos mais rápido.</div>
+          <div class="algo-rule" data-pt="Regra: Velocidade no processo errado é desperdício de energia máxima." data-en="Rule: Speed in the wrong process is maximum energy waste.">"Velocidade no processo errado é desperdício de energia máxima."</div>
+        </div>
+      </div>
+      <div class="algo-step">
+        <div class="algo-num">05</div>
+        <div class="algo-body">
+          <div class="algo-title" data-pt="Automatize" data-en="Automate">Automatize</div>
+          <div class="algo-desc" data-pt="Última etapa, nunca a primeira. Automatize apenas o que você já questionou, deletou, simplificou e acelerou. Automatizar o errado escala o erro exponencialmente." data-en="Last step, never the first. Automate only what you've already questioned, deleted, simplified and accelerated. Automating the wrong thing scales the error exponentially.">Última etapa, nunca a primeira. Automatize apenas o que você já questionou, deletou, simplificou e acelerou. Automatizar o errado escala o erro exponencialmente.</div>
+          <div class="algo-rule" data-pt="Regra: A maioria das empresas inverte a ordem. Começa no 5 e vai para o 1. É o erro mais caro." data-en="Rule: Most companies invert the order. They start at 5 and go to 1. It's the most expensive mistake.">"A maioria das empresas inverte a ordem. Começa no 5 e vai para o 1. É o erro mais caro."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Princípios" data-en="Principles">Princípios</div>
+    <h2 class="section-title" data-pt="Crenças Fundamentais" data-en="Core Beliefs">Crenças Fundamentais</h2>
+    <p class="section-subtitle" data-pt="Os sete princípios que Elon documentou, verbalizou e viveu — construindo cinco empresas multi-bilionárias por aplicação sistemática." data-en="The seven principles Elon documented, verbalized and lived — building five multi-billion dollar companies through systematic application.">Os sete princípios que Elon documentou, verbalizou e viveu — construindo cinco empresas multi-bilionárias por aplicação sistemática.</p>
+    <div class="principles-grid">
+      <div class="principle-card"><span class="principle-idx">01 / PRIMEIROS PRINCÍPIOS</span><div class="principle-title" data-pt="Desconstrua Até as Verdades Físicas" data-en="Deconstruct to Physical Truths">Desconstrua Até as Verdades Físicas</div><p class="principle-body" data-pt="Raciocinar por analogia é copiar com variações. Raciocinar por primeiros princípios é perguntar: o que é fundamentalmente verdadeiro? Quais são as leis da física? O que os materiais brutos custam, não o que o mercado cobra? Trabalhe de lá para cima." data-en="Reasoning by analogy is copying with variations. Reasoning from first principles is asking: what is fundamentally true? What are the laws of physics? What do raw materials cost, not what the market charges? Work up from there.">Raciocinar por analogia é copiar com variações. Raciocinar por primeiros princípios é perguntar: o que é fundamentalmente verdadeiro? O que os materiais brutos custam, não o que o mercado cobra? Trabalhe de lá para cima.</p></div>
+      <div class="principle-card"><span class="principle-idx">02 / O ALGORITMO</span><div class="principle-title" data-pt="Questione, Delete, Simplifique, Acelere, Automatize" data-en="Question, Delete, Simplify, Accelerate, Automate">Questione, Delete, Simplifique, Acelere, Automatize</div><p class="principle-body" data-pt="Cinco passos em sequência obrigatória. Invertê-los é o erro mais caro da engenharia organizacional. A maioria das empresas automatiza o que deveria deletar. Automatizar o errado escala o erro exponencialmente." data-en="Five steps in mandatory sequence. Inverting them is the most expensive mistake in organizational engineering. Most companies automate what they should delete. Automating the wrong thing scales the error exponentially.">Cinco passos em sequência obrigatória. Invertê-los é o erro mais caro da engenharia organizacional. A maioria das empresas automatiza o que deveria deletar. Automatizar o errado escala o erro exponencialmente.</p></div>
+      <div class="principle-card"><span class="principle-idx">03 / MISSÃO ACIMA DO RETORNO</span><div class="principle-title" data-pt="Construa Porque Importa, Não Porque Paga" data-en="Build Because It Matters, Not Because It Pays">Construa Porque Importa, Não Porque Paga</div><p class="principle-body" data-pt="Quando a missão é grande o suficiente — multi-planetária, energia sustentável — você faz mesmo que as probabilidades estejam contra você. A missão não garante sucesso. Mas sem ela, você vai desistir quando for difícil. E sempre fica difícil." data-en="When the mission is large enough — multi-planetary, sustainable energy — you do it even if the odds are against you. The mission doesn't guarantee success. But without it, you'll quit when it gets hard. And it always gets hard.">Quando a missão é grande o suficiente, você faz mesmo que as probabilidades estejam contra você. A missão não garante sucesso. Mas sem ela, você vai desistir quando for difícil. E sempre fica difícil.</p></div>
+      <div class="principle-card"><span class="principle-idx">04 / FALHA É DADO</span><div class="principle-title" data-pt="RUD É Sucesso de Aprendizado" data-en="RUD Is a Learning Success">RUD É Sucesso de Aprendizado</div><p class="principle-body" data-pt="Se as coisas não estão falhando, você não está inovando o suficiente. Cada explosão do Starship coletou dados. A próxima versão foi melhor por causa dela. Mas: falha sem aprendizado documentado é apenas custo. Documente tudo." data-en="If things are not failing, you are not innovating enough. Every Starship explosion collected data. The next version was better because of it. But: failure without documented learning is just cost. Document everything.">Se as coisas não estão falhando, você não está inovando o suficiente. Cada explosão do Starship coletou dados. A próxima versão foi melhor por causa dela. Mas: falha sem aprendizado documentado é apenas custo.</p></div>
+      <div class="principle-card"><span class="principle-idx">05 / INTENSIDADE EXTREMA</span><div class="principle-title" data-pt="Trabalho Duro no Problema Certo" data-en="Hard Work on the Right Problem">Trabalho Duro no Problema Certo</div><p class="principle-body" data-pt="80-100 horas por semana nos estágios críticos. Não para sempre — mas a intensidade nos momentos fundacionais define a trajetória. A questão não é 'devo trabalhar tanto?' mas 'estou trabalhando no problema certo com esta intensidade?'" data-en="80-100 hours a week in critical stages. Not forever — but intensity in foundational moments defines trajectory. The question is not 'should I work this hard?' but 'am I working on the right problem with this intensity?'">80-100 horas por semana nos estágios críticos. A questão não é 'devo trabalhar tanto?' mas 'estou trabalhando no problema certo com esta intensidade?'</p></div>
+      <div class="principle-card"><span class="principle-idx">06 / DENSIDADE DE TALENTO</span><div class="principle-title" data-pt="Só Contrate Quem Você Contrataria Como Chefe" data-en="Only Hire Who You'd Hire as Your Boss">Só Contrate Quem Você Contrataria Como Chefe</div><p class="principle-body" data-pt="O maior limitante em qualquer empresa não é capital, tecnologia ou mercado. É a densidade de engenheiros e líderes excepcionais. Um contratante errado dilui toda a cultura. A questão: se os papéis fossem invertidos, você trabalharia entusiasticamente para esta pessoa?" data-en="The biggest constraint in any company is not capital, technology or market. It's the density of exceptional engineers and leaders. One wrong hire dilutes the entire culture. The question: if roles were reversed, would you enthusiastically work for this person?">O maior limitante não é capital, tecnologia ou mercado — é a densidade de talento excepcional. A questão: se os papéis fossem invertidos, você trabalharia entusiasticamente para esta pessoa?</p></div>
+      <div class="principle-card"><span class="principle-idx">07 / JOGO LONGO</span><div class="principle-title" data-pt="Cada Decisão No Frame de 100 Anos" data-en="Every Decision in a 100-Year Frame">Cada Decisão No Frame de 100 Anos</div><p class="principle-body" data-pt="Tornando a humanidade multi-planetária não é projeto de trimestre. Decisões de curto prazo otimizam métricas enquanto comprometem missões. Tesla poderia ter vendido a montadoras múltiplas vezes. A missão manteve o foco quando era matematicamente sensato vender." data-en="Making humanity multi-planetary is not a quarterly project. Short-term decisions optimize metrics while compromising missions. Tesla could have sold to automakers multiple times. The mission maintained focus when it was mathematically sensible to sell.">Tornando a humanidade multi-planetária não é projeto de trimestre. Tesla poderia ter vendido a montadoras múltiplas vezes. A missão manteve o foco quando era matematicamente sensato vender.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="big-quote-section">
+  <div class="container">
+    <div class="big-quote">
+      When something is important enough, you do it even if the odds are not in your favor.
+      <p class="quote-attr">— Elon Musk, Tesla Motors Shareholder Meeting, 2014</p>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Framework Chave" data-en="Key Framework">Framework Chave</div>
+    <h2 class="section-title" data-pt="Restrição Real vs Percebida" data-en="Real vs Perceived Constraint">Restrição Real vs Percebida</h2>
+    <p class="section-subtitle" data-pt="A distinção mais poderosa do pensamento de Elon — separar o que é lei de física do que é convenção humana aceita como verdade." data-en="The most powerful distinction in Elon's thinking — separating what is a law of physics from what is human convention accepted as truth.">A distinção mais poderosa do pensamento de Elon — separar o que é lei de física do que é convenção humana aceita como verdade.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:44px;">
+      <div class="physics-card">
+        <div style="font-size:2rem;margin-bottom:16px;">⚛️</div>
+        <div style="font-size:16px;font-weight:700;color:var(--elon);margin-bottom:8px;" data-pt="Restrição Real (Lei Física)" data-en="Real Constraint (Physical Law)">Restrição Real (Lei Física)</div>
+        <div style="font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:16px;" data-pt="Viola uma lei da termodinâmica? Viola a mecânica quântica? Requer energia que excede o disponível no universo observável? Se sim: restrição real. Não tente violar." data-en="Does it violate a law of thermodynamics? Quantum mechanics? Requires energy exceeding that available in the observable universe? If yes: real constraint. Don't try to violate.">Viola uma lei da termodinâmica? Viola a mecânica quântica? Requer energia que excede o disponível no universo observável? Se sim: restrição real. Não tente violar.</div>
+        <div style="font-size:11px;padding:6px 12px;background:rgba(220,38,38,0.07);border-radius:6px;color:var(--elon);display:inline-block;" data-pt="Raros — quase nunca aplicam" data-en="Rare — almost never apply">Raros — quase nunca aplicam</div>
+      </div>
+      <div class="physics-card">
+        <div style="font-size:2rem;margin-bottom:16px;">🧠</div>
+        <div style="font-size:16px;font-weight:700;color:var(--elon);margin-bottom:8px;" data-pt="Restrição Percebida (Convenção Humana)" data-en="Perceived Constraint (Human Convention)">Restrição Percebida (Convenção Humana)</div>
+        <div style="font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:16px;" data-pt="'Foguetes não são reutilizáveis.' 'Baterias de carro custam centenas por kWh.' 'Implantes cerebrais não podem ser seguros.' Essas eram convenções humanas aceitas como verdades físicas. Nenhuma violava física." data-en="'Rockets aren't reusable.' 'Car batteries cost hundreds per kWh.' 'Brain implants can't be safe.' These were human conventions accepted as physical truths. None violated physics.">'Foguetes não são reutilizáveis.' 'Baterias de carro custam centenas por kWh.' 'Implantes cerebrais não podem ser seguros.' Nenhuma violava física — eram apenas convenções.</div>
+        <div style="font-size:11px;padding:6px 12px;background:rgba(220,38,38,0.07);border-radius:6px;color:var(--elon);display:inline-block;" data-pt="A maioria dos 'impossíveis' é este tipo" data-en="Most 'impossibles' are this type">A maioria dos "impossíveis" é este tipo</div>
+      </div>
+      <div class="physics-card">
+        <div style="font-size:2rem;margin-bottom:16px;">🔬</div>
+        <div style="font-size:16px;font-weight:700;color:var(--elon);margin-bottom:8px;" data-pt="Como Distinguir" data-en="How to Distinguish">Como Distinguir</div>
+        <div style="font-size:13px;color:var(--text-secondary);line-height:1.6;margin-bottom:16px;" data-pt="Pergunte: 'Qual lei física esta restrição viola?' Se você não consegue nomear uma lei específica — de termodinâmica, mecânica, eletromagnetismo — provavelmente não é uma restrição real." data-en="Ask: 'What law of physics does this constraint violate?' If you can't name a specific law — thermodynamics, mechanics, electromagnetism — it's probably not a real constraint.">Pergunte: "Qual lei física esta restrição viola?" Se você não consegue nomear uma lei específica — de termodinâmica, mecânica, eletromagnetismo — provavelmente não é uma restrição real.</div>
+        <div style="font-size:11px;padding:6px 12px;background:rgba(220,38,38,0.07);border-radius:6px;color:var(--elon);display:inline-block;" data-pt="O teste decisivo" data-en="The decisive test">O teste decisivo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="DNA da Voz" data-en="Voice DNA">DNA da Voz</div>
+    <h2 class="section-title" data-pt="Como Elon Se Expressa" data-en="How Elon Speaks">Como Elon Se Expressa</h2>
+    <p class="section-subtitle" data-pt="Direto, físico, implacável com premissas falsas. Humor seco. Longo prazo por padrão. Zero tolerância a 'sempre foi assim'." data-en="Direct, physics-grounded, relentless with false premises. Dry humor. Long-term by default. Zero tolerance for 'it's always been this way'.">Direto, físico, implacável com premissas falsas. Humor seco. Longo prazo por padrão. Zero tolerância a "sempre foi assim".</p>
+    <div class="vocab-grid">
+      <div class="vocab-group"><h4 data-pt="Sempre no vocabulário" data-en="Always in the vocabulary">Sempre no vocabulário</h4><div class="vocab-tags"><span class="vocab-tag use">first principles</span><span class="vocab-tag use">physically possible</span><span class="vocab-tag use">delete it</span><span class="vocab-tag use">the algorithm</span><span class="vocab-tag use">density</span><span class="vocab-tag use">civilization-scale</span><span class="vocab-tag use">iteration</span><span class="vocab-tag use">the physics</span><span class="vocab-tag use">mission</span><span class="vocab-tag use">constraint</span><span class="vocab-tag use">version</span><span class="vocab-tag use">obviously</span></div></div>
+      <div class="vocab-group"><h4 data-pt="Nunca no vocabulário" data-en="Never in the vocabulary">Nunca no vocabulário</h4><div class="vocab-tags"><span class="vocab-tag avoid">it's impossible (sem lei física)</span><span class="vocab-tag avoid">that's how it's always been done</span><span class="vocab-tag avoid">best practices (sem questionar)</span><span class="vocab-tag avoid">market validation first</span><span class="vocab-tag avoid">that's someone else's problem</span><span class="vocab-tag avoid">corporate buzzwords sem substância</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Fontes Primárias" data-en="Primary Sources">Fontes Primárias</div>
+    <h2 class="section-title" data-pt="Construído a Partir de Documentos Reais" data-en="Built From Real Documents">Construído a Partir de Documentos Reais</h2>
+    <table class="source-table">
+      <thead><tr><th data-pt="Fonte" data-en="Source">Fonte</th><th data-pt="Tipo" data-en="Type">Tipo</th><th data-pt="Contribuição" data-en="Contribution">Contribuição</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Walter Isaacson — Elon (2023)</strong></td><td data-pt="Biografia" data-en="Biography">Biografia</td><td data-pt="The Algorithm documentado; processo de tomada de decisão; SpaceX e Tesla por dentro" data-en="The Algorithm documented; decision-making process; SpaceX and Tesla from the inside">The Algorithm documentado; processo de tomada de decisão; SpaceX e Tesla por dentro</td></tr>
+        <tr><td><strong>Ashlee Vance — Elon Musk (2015)</strong></td><td data-pt="Biografia" data-en="Biography">Biografia</td><td data-pt="Narrativa fundacional; primeiros princípios na prática nos primeiros anos de SpaceX" data-en="Foundational narrative; first principles in practice in early SpaceX years">Narrativa fundacional; primeiros princípios na prática nos primeiros anos de SpaceX</td></tr>
+        <tr><td><strong>Entrevistas Lex Fridman (2019, 2021, 2023)</strong></td><td data-pt="Vídeo/Podcast" data-en="Video/Podcast">Vídeo/Podcast</td><td data-pt="Raciocínio em tempo real; consciência de IA, missão, tomada de decisão técnica" data-en="Real-time reasoning; AI consciousness, mission, technical decision-making">Raciocínio em tempo real; consciência de IA, missão, tomada de decisão técnica</td></tr>
+        <tr><td><strong>TED Talk — The Mind Behind Tesla (2013)</strong></td><td data-pt="Palestra" data-en="Talk">Palestra</td><td data-pt="Primeiros princípios verbalizados diretamente; framework de baterias e foguetes" data-en="First principles verbalized directly; battery and rocket framework">Primeiros princípios verbalizados diretamente; framework de baterias e foguetes</td></tr>
+        <tr><td><strong>Entrevista Kevin Rose (2012)</strong></td><td data-pt="Vídeo" data-en="Video">Vídeo</td><td data-pt="Primeira articulação pública clara de 'reason from first principles, not by analogy'" data-en="First clear public articulation of 'reason from first principles, not by analogy'">Primeira articulação pública clara de "reason from first principles, not by analogy"</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="activation-section">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Ativar Agora" data-en="Activate Now">Ativar Agora</div>
+    <h2 class="section-title" data-pt="Questione o Óbvio. Construa o Impossível." data-en="Question the Obvious. Build the Impossible.">Questione o Óbvio. Construa o Impossível.</h2>
+    <p data-pt="Ative Elon Musk como seu mentor na plataforma ON AI Solutions." data-en="Activate Elon Musk as your mentor on the ON AI Solutions platform.">Ative Elon Musk como seu mentor na plataforma ON AI Solutions.</p>
+    <br/><br/>
+    <a href="index.html" class="btn" style="background:var(--elon-dim);border-color:var(--elon);color:var(--elon);" data-pt="← Explorar outros mentores" data-en="← Explore other mentors">← Explorar outros mentores</a>
+  </div>
+</section>
+
+<footer><div class="container"><p data-pt="Coleção de mentores curada por <strong>Fabiano Silva</strong> · Elon Musk — Clone Cognitivo v1.0 · Fidelidade 85–90%" data-en="Mentor collection curated by <strong>Fabiano Silva</strong> · Elon Musk — Cognitive Clone v1.0 · Fidelity 85–90%">Coleção de mentores curada por <strong>Fabiano Silva</strong> · Elon Musk — Clone Cognitivo v1.0 · Fidelidade 85–90%</p></div></footer>
+
+<script src="lang.js"></script>
+</body>
+</html>
