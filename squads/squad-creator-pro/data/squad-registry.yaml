@@ -680,6 +680,25 @@ squads:
       - "Memory cleanup task"
     example_use: "Personal utilities and memory management"
 
+  agro-hr-executive:
+    path: "squads/agro-hr-executive/"
+    version: "1.0.0"
+    domain: "agro_people_strategy"
+    purpose: "Design executive postgraduate modules on strategic HR for agribusiness"
+    keywords: [agribusiness, agro, hr, strategic-hr, executive-education, succession, workforce-planning, family-business, governance, change]
+    agents: 7
+    tasks: 3
+    workflows: 1
+    templates: 3
+    checklists: 1
+    data_files: 1
+    agent_names: [agro-hr-chief, ulrich-capability-architect, boudreau-workforce-strategist, cappelli-talent-economist, kotter-change-conductor, charan-pipeline-builder, davis-family-enterprise-advisor]
+    highlights:
+      - "Combines strategic HR with executive classroom design"
+      - "Focus on agribusiness labor realities, succession, and governance"
+      - "Structured around six documented management frameworks"
+    example_use: "Design a 4-session postgraduate module on strategic HR for agribusiness executives"
+
 # ============================================================================
 # DOMAIN INDEX (for quick lookup)
 # ============================================================================
@@ -756,6 +775,9 @@ domain_index:
   hr: "hr"
   talent: "hr"
   recruitment: "hr"
+  agribusiness: "agro-hr-executive"
+  agro: "agro-hr-executive"
+  succession: "agro-hr-executive"
 
   # Business Ops
   legal: "legal"

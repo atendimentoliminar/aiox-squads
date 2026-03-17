@@ -1,0 +1,32 @@
+metadata:
+  session_id: "S1"
+  session_title: "RH estrategico como capacidade organizacional no agro"
+  duration_minutes: 180
+
+opening_hook:
+  business_tension: "A empresa cresce em area, receita e complexidade, mas a qualidade de lideranca e execucao varia dramaticamente entre unidades."
+  prompt: "Se duas unidades operam no mesmo mercado e com ativos parecidos, por que uma entrega consistencia e a outra vive apagando incendio?"
+
+framework_focus:
+  primary_agent: "ulrich-capability-architect"
+  supporting_agents:
+    - "boudreau-workforce-strategist"
+    - "kotter-change-conductor"
+  executive_lens: "Capacidades organizacionais que transformam estrategia em execucao"
+
+slide_outline:
+  - "Abertura: por que RH estrategico importa no agronegocio agora"
+  - "De RH funcional para capacidade organizacional"
+  - "Quais capacidades diferenciam uma operacao agro resiliente"
+  - "Mapa de papeis e liderancas que sustentam essas capacidades"
+  - "Mini-caso: expansao com inconsistencias entre unidades"
+  - "Fechamento: diagnostico executivo de capacidades"
+
+activity:
+  type: "DIAGNOSTIC"
+  instructions: "Em grupos, listar 5 capacidades criticas para uma empresa do agro e apontar onde elas dependem de lideranca, talento e disciplina de execucao."
+  output: "Mapa de capacidades com lacunas prioritarias"
+
+transfer_close:
+  boardroom_question: "Quais capacidades organizacionais hoje dependem demais de individuos heroicos em vez de sistema?"
+  first_move: "Escolher uma capacidade critica e definir lideres, rituais e indicadores que a sustentam"

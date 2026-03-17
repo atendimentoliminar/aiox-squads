@@ -1,0 +1,34 @@
+metadata:
+  case_id: "case-m4-001"
+  title: "Cooperativa Campo Forte: muita iniciativa, pouco foco"
+  context: "Cooperativa agro com nova diretoria e pressao por profissionalizacao"
+
+setting:
+  company_profile: "Estrutura com areas de apoio crescendo, varios projetos de RH e baixa percepcao de impacto pelos executivos."
+  strategic_context: "Necessidade de priorizar produtividade, sucessao de lideres e retencao de tecnicos-chave."
+  people_context: "Muitos indicadores disponiveis, mas sem clareza de quais sustentam decisao executiva."
+
+core_tension:
+  strategic_people_problem: "Agenda de pessoas dispersa, sem foco executivo."
+  execution_problem: "Projetos competem entre si e morrem por falta de patrocinio."
+  governance_problem: "Nao existe foro claro para priorizar e acompanhar a agenda."
+
+decision_options:
+  - option: "Manter o portfolio atual e melhorar comunicacao"
+    upside: "Baixa ruptura imediata"
+    downside: "Preserva dispersao e baixo impacto"
+  - option: "Reduzir agenda para 3 prioridades com indicadores e sponsor"
+    upside: "Gera foco e accountability"
+    downside: "Exige dizer nao para varias frentes"
+  - option: "Criar grande programa de transformacao de RH"
+    upside: "Sinaliza ambicao"
+    downside: "Risco alto de complexidade e baixa adocao"
+
+facilitation:
+  discussion_questions:
+    - "Quais tres frentes merecem atencao executiva real?"
+    - "Que indicadores ajudam a decidir, nao apenas monitorar?"
+    - "Que sequencia 30-60-90 reduz risco e aumenta adocao?"
+  expected_insights:
+    - "Foco e sequencia vencem volume de iniciativas"
+    - "Indicador executivo precisa mover decisao, nao decorar dashboard"

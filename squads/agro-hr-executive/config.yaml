@@ -1,0 +1,144 @@
+# Agro Strategic HR Executive Squad Configuration
+# Version: 1.0.0
+# Created: 2026-03-17
+
+squad:
+  name: agro-hr-executive
+  icon: "🌾"
+  title: "Agro Strategic HR Executive Squad"
+  version: "1.0.0"
+  status: "production"
+  description: "Designs executive postgraduate modules on strategic human resources for agribusiness, combining strategic HR, succession, change, and family-enterprise governance with executive-classroom deliverables."
+
+  domain: "strategic human resources for agribusiness"
+  keywords:
+    - agribusiness
+    - agro
+    - strategic-hr
+    - executive-education
+    - succession
+    - leadership-pipeline
+    - family-business
+    - workforce-planning
+    - organizational-change
+
+  target_user: "Postgraduate faculty, program coordinators, and executive educators serving agribusiness leaders"
+
+  use_cases:
+    - "Design a 2-4 session executive module on strategic HR in agribusiness"
+    - "Create slide-ready session outlines and instructor notes"
+    - "Build agribusiness cases, debates, and applied activities"
+    - "Connect HR strategy to labor seasonality, succession, and governance"
+    - "Validate executive-level relevance, sequencing, and transfer to practice"
+
+  audience_profile:
+    primary: "Agribusiness executives in postgraduate education"
+    constraints:
+      - "Needs business relevance over HR theory for its own sake"
+      - "Requires direct application to farms, agroindustries, cooperatives, and family businesses"
+      - "Prefers synthesis, frameworks, and decision tools over academic abstraction"
+
+  architecture:
+    layers:
+      permanent: "Strategic HR + executive-teaching deliverable system"
+      variable: "Agribusiness-specific cases, labor realities, and company context"
+    tiers:
+      tier_0:
+        name: "Strategic Foundations"
+        agents:
+          - ulrich-capability-architect
+          - boudreau-workforce-strategist
+          - cappelli-talent-economist
+      tier_1:
+        name: "Transformation and Leadership"
+        agents:
+          - kotter-change-conductor
+          - charan-pipeline-builder
+          - davis-family-enterprise-advisor
+      orchestrator:
+        agents:
+          - agro-hr-chief
+
+  paths:
+    agents: "agents/"
+    tasks: "tasks/"
+    templates: "templates/"
+    checklists: "checklists/"
+    workflows: "workflows/"
+    data: "data/"
+    docs: "docs/"
+
+  model_routing:
+    opus:
+      - "module architecture"
+      - "multi-session executive sequencing"
+      - "conflicting strategic tradeoffs"
+    sonnet:
+      - "session planning"
+      - "slide outline generation"
+      - "case and activity design"
+      - "documentation"
+    haiku:
+      - "quality checklist passes"
+      - "format normalization"
+      - "template filling"
+
+  dependencies:
+    external_squads:
+      - education
+    mcps: []
+    scripts: []
+
+commands:
+  create-module:
+    trigger: "*create-module {theme}"
+    agent: agro-hr-chief
+    description: "Design a 2-4 session executive module for agribusiness"
+
+  build-session-plan:
+    trigger: "*build-session-plan {session}"
+    agent: agro-hr-chief
+    description: "Generate slide-ready session flow with timing and discussion prompts"
+
+  create-case-lab:
+    trigger: "*create-case-lab {topic}"
+    agent: agro-hr-chief
+    description: "Create agribusiness case, debate, and applied activity"
+
+  validate-module:
+    trigger: "*validate-module"
+    agent: agro-hr-chief
+    description: "Run the executive module quality gate"
+
+settings:
+  activation:
+    greeting: >
+      Agro Strategic HR Executive Squad active. Share the class theme, number of sessions,
+      and teaching constraints to start the executive module pipeline.
+    quick_commands:
+      - "*create-module {theme} - Full module design"
+      - "*build-session-plan {session} - Session structure"
+      - "*create-case-lab {topic} - Applied agro activity"
+      - "*validate-module - Quality gate"
+
+  quality_gates:
+    - phase: 0
+      gate: "Strategic business problem clear and relevant to agribusiness executives?"
+      veto: "Block until business context, executive audience, and teaching objective are explicit"
+    - phase: 1
+      gate: "At least 4 complementary frameworks selected with non-overlapping roles?"
+      veto: "Block until framework stack is coherent"
+    - phase: 2
+      gate: "Each session contains decision tools, cases, and transfer prompts?"
+      checkpoint: "executive-module-quality-check.md"
+    - phase: 3
+      gate: "Module is slide-ready, case-backed, and executive-relevant?"
+      veto: "Return to architecture or session design"
+
+metadata:
+  agents: 7
+  tasks: 3
+  workflows: 1
+  checklists: 1
+  templates: 3
+  data_files: 1

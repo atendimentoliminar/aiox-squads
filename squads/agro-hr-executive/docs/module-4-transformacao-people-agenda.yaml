@@ -1,0 +1,48 @@
+metadata:
+  module_id: "M4"
+  module_name: "Transformacao da Agenda de Pessoas no Agro"
+  audience: "Executivos do agronegocio"
+  version: "1.0.0"
+  session_count: 4
+
+thesis:
+  core_argument: "A agenda de pessoas no agro so se torna estrategica quando ganha prioridades claras, indicadores executivos e uma sequencia disciplinada de implementacao."
+  business_problem: "A maioria das empresas tenta mudar tudo ao mesmo tempo e termina com iniciativas difusas, pouca adocao e baixo impacto executivo."
+  why_now: "Sem foco, dados e ritmo de implementacao, a agenda de pessoas nao compete por atencao com operacao, comercial e financeiro."
+
+learning_outcomes:
+  - "Priorizar a agenda de pessoas por impacto estrategico"
+  - "Definir indicadores executivos de capacidade, talento e sucessao"
+  - "Construir roadmap 30-60-90 dias para transformacao"
+
+framework_stack:
+  - agent: "ulrich-capability-architect"
+    role: "Definir prioridades por capacidade organizacional"
+  - agent: "boudreau-workforce-strategist"
+    role: "Orientar indicadores de papeis criticos e decisao de investimento"
+  - agent: "kotter-change-conductor"
+    role: "Sequenciar a transformacao e proteger adocao"
+  - agent: "cappelli-talent-economist"
+    role: "Ajustar prioridades a escassez e incerteza"
+
+session_sequence:
+  - session_id: "M4-S1"
+    title: "Quais prioridades entram na agenda executiva"
+    objective: "Separar temas estrategicos de ruido operacional"
+    key_case: "Agenda de RH inflada e sem foco executivo"
+  - session_id: "M4-S2"
+    title: "People analytics para decisao executiva"
+    objective: "Definir poucos indicadores que realmente movem decisao"
+    key_case: "Empresa com muito dado e pouca clareza de acao"
+  - session_id: "M4-S3"
+    title: "Roadmap 30-60-90 da agenda de pessoas"
+    objective: "Traduzir prioridades em frentes de implementacao"
+    key_case: "Nova diretoria de RH com mandato de transformacao"
+  - session_id: "M4-S4"
+    title: "Capstone: plano executivo para empresa real"
+    objective: "Consolidar diagnostico, escolhas e roteiro de execucao"
+    key_case: "Aplicacao em empresa trazida pelos participantes"
+
+final_transfer:
+  executive_action_matrix: "Painel executivo com prioridades, indicadores e roadmap de implementacao"
+  first_30_days_question: "Quais tres prioridades de pessoas merecem assento real na agenda executiva agora?"

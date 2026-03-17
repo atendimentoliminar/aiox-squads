@@ -1,0 +1,48 @@
+metadata:
+  module_id: "M2"
+  module_name: "Lideranca, Performance e Cultura de Execucao"
+  audience: "Executivos do agronegocio"
+  version: "1.0.0"
+  session_count: 4
+
+thesis:
+  core_argument: "No agro, lideranca e cultura so criam vantagem quando se traduzem em rituais de execucao, accountability e capacidade de mobilizar pessoas em ambientes de pressao."
+  business_problem: "Muitas empresas do agro crescem sem consolidar lideres capazes de sustentar padrao de performance entre unidades, equipes e ciclos operacionais."
+  why_now: "A profissionalizacao do setor exige menos dependencia de comando informal e mais disciplina gerencial distribuida."
+
+learning_outcomes:
+  - "Diagnosticar falhas de lideranca e cultura que degradam execucao"
+  - "Desenhar rituais de performance e accountability para lideres"
+  - "Conduzir mudancas de comportamento e gestao sem perder velocidade operacional"
+
+framework_stack:
+  - agent: "ulrich-capability-architect"
+    role: "Conectar cultura e lideranca a capacidades organizacionais"
+  - agent: "kotter-change-conductor"
+    role: "Estruturar adocao e coalizao para mudancas de comportamento"
+  - agent: "charan-pipeline-builder"
+    role: "Qualificar lideranca por passagem e prontidao"
+  - agent: "boudreau-workforce-strategist"
+    role: "Definir onde a lideranca gera maior impacto economico"
+
+session_sequence:
+  - session_id: "M2-S1"
+    title: "Lideranca como alavanca de execucao"
+    objective: "Separar lideranca simbolica de lideranca que move resultado"
+    key_case: "Unidades com a mesma estrategia, mas resultados opostos"
+  - session_id: "M2-S2"
+    title: "Performance management sem burocracia"
+    objective: "Desenhar rituais simples de accountability e feedback"
+    key_case: "Supervisores excelentes tecnicamente e fracos gerencialmente"
+  - session_id: "M2-S3"
+    title: "Cultura, disciplina e comportamento em ambientes de pressao"
+    objective: "Ler cultura como sistema de incentivos, exemplos e rituais"
+    key_case: "Crescimento rapido sem consolidacao de comportamento de lideranca"
+  - session_id: "M2-S4"
+    title: "Mudanca de people model e adocao"
+    objective: "Executar mudancas de people model com coalizao e quick wins"
+    key_case: "Tentativa frustrada de implantar novo modelo de gestao"
+
+final_transfer:
+  executive_action_matrix: "Checklist de rituais gerenciais, indicadores de lideranca e plano de adocao"
+  first_30_days_question: "Qual ritual de lideranca, se redesenhado agora, mais aumenta a consistencia de execucao?"

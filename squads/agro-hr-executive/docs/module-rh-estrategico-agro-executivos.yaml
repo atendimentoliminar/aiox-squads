@@ -1,0 +1,52 @@
+metadata:
+  module_id: "agro-hr-exec-001"
+  module_name: "Gestao Estrategica de Recursos Humanos no Agronegocio"
+  audience: "Executivos do agronegocio em curso de pos-graduacao"
+  version: "1.0.0"
+  session_count: 4
+
+thesis:
+  core_argument: "No agronegocio, RH estrategico e uma alavanca de capacidade organizacional, resiliencia operacional, sucessao e governanca, nao apenas uma funcao de suporte."
+  business_problem: "Empresas do agro enfrentam escassez de mao de obra qualificada, lideranca irregular entre unidades, sazonalidade operacional e riscos de sucessao em negocios familiares."
+  why_now: "A combinacao de pressao por eficiencia, profissionalizacao, consolidacao setorial e mudancas geracionais exige uma agenda de pessoas com impacto estrategico."
+
+learning_outcomes:
+  - "Diagnosticar RH como fonte de capacidade organizacional no agronegocio"
+  - "Tomar decisoes de workforce planning e investimento em talentos sob incerteza"
+  - "Estruturar pipeline de lideranca, sucessao e governanca para negocios agro"
+
+framework_stack:
+  - agent: "ulrich-capability-architect"
+    role: "Abrir o modulo com RH como construtor de capacidade organizacional"
+  - agent: "boudreau-workforce-strategist"
+    role: "Segmentar papeis criticos e orientar decisoes de talentos por impacto"
+  - agent: "cappelli-talent-economist"
+    role: "Tratar dilemas de desenvolver, contratar ou acessar talento sob volatilidade"
+  - agent: "kotter-change-conductor"
+    role: "Viabilizar a execucao e a adocao das mudancas de modelo de pessoas"
+  - agent: "charan-pipeline-builder"
+    role: "Construir pipeline de lideranca e mapa de sucessao"
+  - agent: "davis-family-enterprise-advisor"
+    role: "Integrar propriedade, familia e gestao em discussoes de governanca e sucessao"
+
+session_sequence:
+  - session_id: "S1"
+    title: "RH estrategico como capacidade organizacional no agro"
+    objective: "Reposicionar RH de area de suporte para arquitetura de capacidade, lideranca e execucao"
+    key_case: "Grupo agroindustrial expandindo sem consistencia de lideranca entre unidades"
+  - session_id: "S2"
+    title: "Workforce planning e talento sob sazonalidade e escassez"
+    objective: "Tomar decisoes sobre papeis criticos, segmentacao de talento e oferta-demanda de competencias"
+    key_case: "Operacao com gargalos recorrentes na safra e rotatividade em funcoes-chave"
+  - session_id: "S3"
+    title: "Pipeline de lideranca, sucessao e profissionalizacao"
+    objective: "Desenhar passagens de lideranca, bench executivo e criterios de prontidao"
+    key_case: "Empresa familiar com sucessores potenciais, mas sem trilha clara de transicao"
+  - session_id: "S4"
+    title: "Governanca familiar e mudanca organizacional"
+    objective: "Integrar governanca, alinhamento entre socios e execucao de mudancas em pessoas"
+    key_case: "Conflito entre familia proprietaria e gestores profissionais sobre centralizacao e meritocracia"
+
+final_transfer:
+  executive_action_matrix: "Matriz 30-60-90 dias com decisoes sobre capacidade, papeis criticos, pipeline e governanca"
+  first_30_days_question: "Qual decisao de pessoas, se tomada nos proximos 30 dias, mais aumenta a resiliencia estrategica do negocio?"

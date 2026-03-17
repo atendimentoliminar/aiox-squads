@@ -1,0 +1,32 @@
+metadata:
+  discipline_id: "agro-hr-discipline-001"
+  discipline_name: "Gestao Estrategica de Recursos Humanos no Agronegocio"
+  audience: "Executivos do agronegocio em pos-graduacao"
+  version: "1.0.0"
+  module_count: 4
+
+positioning:
+  promise: "Transformar RH em agenda estrategica de capacidade, execucao, sucessao e governanca no agronegocio."
+  target_outcome: "Ao fim da disciplina, o executivo consegue diagnosticar prioridades de pessoas e converter isso em decisoes de negocio."
+
+modules:
+  - module_id: "M1"
+    title: "RH estrategico como capacidade organizacional"
+    focus: "Fundamentos estrategicos, capacidades e workforce planning"
+  - module_id: "M2"
+    title: "Lideranca, performance e cultura de execucao"
+    focus: "Gestao de lideranca, accountability, mudanca e disciplina de performance"
+  - module_id: "M3"
+    title: "Sucessao, governanca e empresa familiar no agro"
+    focus: "Pipeline de lideranca, sucessao executiva e governanca familia-propriedade-gestao"
+  - module_id: "M4"
+    title: "Transformacao da agenda de pessoas no agro"
+    focus: "Roadmap de transformacao, people analytics executivo e implementacao 30-60-90"
+
+final_delivery:
+  capstone: "Plano executivo de transformacao da agenda de pessoas para uma empresa real do agro"
+  expected_outputs:
+    - "Mapa de capacidades organizacionais"
+    - "Matriz de papeis criticos"
+    - "Mapa de sucessao e governanca"
+    - "Roadmap 30-60-90 dias"

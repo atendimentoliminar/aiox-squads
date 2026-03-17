@@ -1,0 +1,48 @@
+metadata:
+  module_id: "M3"
+  module_name: "Sucessao, Governanca e Empresa Familiar no Agro"
+  audience: "Executivos do agronegocio"
+  version: "1.0.0"
+  session_count: 4
+
+thesis:
+  core_argument: "No agro, sucessao bem-sucedida depende menos de nomear herdeiros e mais de combinar pipeline de lideranca, governanca clara e legitimidade entre familia, propriedade e gestao."
+  business_problem: "Empresas familiares do agro convivem com ambiguidades de papel, baixa clareza de criterios e risco de rupturas na transicao geracional."
+  why_now: "A pressao por profissionalizacao e crescimento amplifica o custo de sucessoes mal desenhadas."
+
+learning_outcomes:
+  - "Mapear riscos de sucessao e passagens de lideranca"
+  - "Aplicar o modelo dos tres circulos a conflitos do agro familiar"
+  - "Definir governanca minima para sustentar profissionalizacao"
+
+framework_stack:
+  - agent: "charan-pipeline-builder"
+    role: "Mapear passagens e prontidao de lideres"
+  - agent: "davis-family-enterprise-advisor"
+    role: "Separar familia, propriedade e gestao"
+  - agent: "kotter-change-conductor"
+    role: "Conduzir transicoes sensiveis com legitimidade"
+  - agent: "ulrich-capability-architect"
+    role: "Ligar sucessao a continuidade de capacidades"
+
+session_sequence:
+  - session_id: "M3-S1"
+    title: "Onde a sucessao quebra"
+    objective: "Identificar passagens criticas de lideranca e riscos de continuidade"
+    key_case: "Dependencia excessiva do fundador em decisoes-chave"
+  - session_id: "M3-S2"
+    title: "Familia, propriedade e gestao"
+    objective: "Aplicar o modelo dos tres circulos a conflitos reais"
+    key_case: "Familia controladora dividida sobre papel dos herdeiros"
+  - session_id: "M3-S3"
+    title: "Profissionalizacao com legitimidade"
+    objective: "Criar criterios e foruns para nomeacoes e desenvolvimento"
+    key_case: "Executivos profissionais com baixa autonomia politica"
+  - session_id: "M3-S4"
+    title: "Arquitetura de sucessao para o agro"
+    objective: "Montar mapa de sucessao, governanca e transicao"
+    key_case: "Transicao de comando em grupo agroindustrial"
+
+final_transfer:
+  executive_action_matrix: "Mapa de sucessao com criterios, foruns de governanca e riscos"
+  first_30_days_question: "Qual posicao-chave hoje representa o maior risco de continuidade do negocio?"

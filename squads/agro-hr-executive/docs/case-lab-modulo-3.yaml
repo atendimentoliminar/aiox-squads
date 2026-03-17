@@ -1,0 +1,34 @@
+metadata:
+  case_id: "case-m3-001"
+  title: "Fazendas Horizonte: sucessao sem criterio"
+  context: "Grupo familiar com 3 negocios agro complementares"
+
+setting:
+  company_profile: "Negocio liderado ha 28 anos pelo fundador, com filhos em diferentes niveis de envolvimento."
+  strategic_context: "Empresa crescendo em complexidade e precisando profissionalizar decisoes."
+  people_context: "Existe talento interno, mas sem mapa claro de prontidao ou criterios de sucessao."
+
+core_tension:
+  strategic_people_problem: "Nao ha clareza sobre quem sucede o que, nem em que prazo."
+  execution_problem: "Decisoes seguem excessivamente concentradas no fundador."
+  governance_problem: "Familia mistura legitimidade afetiva com legitimidade gerencial."
+
+decision_options:
+  - option: "Nomear um sucessor familiar de imediato"
+    upside: "Acalma a discussao politica no curto prazo"
+    downside: "Pode gerar sucessao fraca e baixa legitimidade"
+  - option: "Construir governanca e trilha de prontidao antes da transicao"
+    upside: "Aumenta robustez e legitimidade"
+    downside: "Demanda tempo e disciplina"
+  - option: "Trazer executivo externo para liderar a transicao"
+    upside: "Acelera profissionalizacao"
+    downside: "Pode gerar rejeicao familiar se governanca estiver fragil"
+
+facilitation:
+  discussion_questions:
+    - "Qual passagem de lideranca ainda nao foi vencida?"
+    - "Que criterios faltam para diferenciar potencial de prontidao?"
+    - "Que foruns de governanca sao minimos antes de discutir nomes?"
+  expected_insights:
+    - "Sucessao sem governanca reforca conflito"
+    - "Pipeline de lideranca precisa preceder nomeacao"

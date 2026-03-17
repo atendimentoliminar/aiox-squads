@@ -1,0 +1,52 @@
+metadata:
+  module_id: "{MODULE_ID}"
+  module_name: "{MODULE_NAME}"
+  audience: "Agribusiness executives"
+  version: "1.0.0"
+  session_count: 4
+
+thesis:
+  core_argument: "{CORE_ARGUMENT}"
+  business_problem: "{BUSINESS_PROBLEM}"
+  why_now: "{WHY_NOW}"
+
+learning_outcomes:
+  - "{OUTCOME_1}"
+  - "{OUTCOME_2}"
+  - "{OUTCOME_3}"
+
+framework_stack:
+  - agent: "ulrich-capability-architect"
+    role: "{ROLE_IN_MODULE}"
+  - agent: "boudreau-workforce-strategist"
+    role: "{ROLE_IN_MODULE}"
+  - agent: "cappelli-talent-economist"
+    role: "{ROLE_IN_MODULE}"
+  - agent: "kotter-change-conductor"
+    role: "{ROLE_IN_MODULE}"
+  - agent: "charan-pipeline-builder"
+    role: "{ROLE_IN_MODULE}"
+  - agent: "davis-family-enterprise-advisor"
+    role: "{ROLE_IN_MODULE}"
+
+session_sequence:
+  - session_id: "S1"
+    title: "{TITLE}"
+    objective: "{OBJECTIVE}"
+    key_case: "{CASE}"
+  - session_id: "S2"
+    title: "{TITLE}"
+    objective: "{OBJECTIVE}"
+    key_case: "{CASE}"
+  - session_id: "S3"
+    title: "{TITLE}"
+    objective: "{OBJECTIVE}"
+    key_case: "{CASE}"
+  - session_id: "S4"
+    title: "{TITLE}"
+    objective: "{OBJECTIVE}"
+    key_case: "{CASE}"
+
+final_transfer:
+  executive_action_matrix: "{ACTION_MATRIX}"
+  first_30_days_question: "{QUESTION}"

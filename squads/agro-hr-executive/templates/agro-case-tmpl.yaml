@@ -1,0 +1,34 @@
+metadata:
+  case_id: "{CASE_ID}"
+  title: "{CASE_TITLE}"
+  context: "{COMPANY_TYPE}"
+
+setting:
+  company_profile: "{PROFILE}"
+  strategic_context: "{STRATEGIC_CONTEXT}"
+  people_context: "{PEOPLE_CONTEXT}"
+
+core_tension:
+  strategic_people_problem: "{PROBLEM}"
+  execution_problem: "{EXECUTION_PROBLEM}"
+  governance_problem: "{GOVERNANCE_PROBLEM}"
+
+decision_options:
+  - option: "{OPTION_1}"
+    upside: "{UPSIDE}"
+    downside: "{DOWNSIDE}"
+  - option: "{OPTION_2}"
+    upside: "{UPSIDE}"
+    downside: "{DOWNSIDE}"
+  - option: "{OPTION_3}"
+    upside: "{UPSIDE}"
+    downside: "{DOWNSIDE}"
+
+facilitation:
+  discussion_questions:
+    - "{QUESTION_1}"
+    - "{QUESTION_2}"
+    - "{QUESTION_3}"
+  expected_insights:
+    - "{INSIGHT_1}"
+    - "{INSIGHT_2}"

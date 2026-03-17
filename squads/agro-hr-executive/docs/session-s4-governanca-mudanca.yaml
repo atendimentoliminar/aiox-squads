@@ -1,0 +1,32 @@
+metadata:
+  session_id: "S4"
+  session_title: "Governanca familiar e mudanca organizacional"
+  duration_minutes: 180
+
+opening_hook:
+  business_tension: "A empresa quer meritocracia, novos rituais de gestao e maior autonomia executiva, mas a familia controladora reage quando perde controle informal."
+  prompt: "Quando um problema de pessoas e, na verdade, um problema de governanca e mudanca?"
+
+framework_focus:
+  primary_agent: "davis-family-enterprise-advisor"
+  supporting_agents:
+    - "kotter-change-conductor"
+    - "charan-pipeline-builder"
+  executive_lens: "Separar familia, propriedade e gestao e executar mudancas com coalizao e legitimidade"
+
+slide_outline:
+  - "Modelo dos tres circulos: familia, propriedade e gestao"
+  - "Onde conflitos de governanca aparecem como problema de RH"
+  - "Kotter: urgencia, coalizao e quick wins"
+  - "Mudancas de people model em ambientes familiares"
+  - "Caso integrador: governanca, sucessao e adocao"
+  - "Matriz 30-60-90 dias"
+
+activity:
+  type: "DEBATE"
+  instructions: "Debater tres caminhos para profissionalizacao: centralizar, hibridizar ou delegar com governanca reforcada. Escolher um e defender tradeoffs."
+  output: "Tese de mudanca com coalizao, quick wins e riscos politicos"
+
+transfer_close:
+  boardroom_question: "Qual mudanca de pessoas depende menos de tecnica e mais de legitimidade politica e governanca?"
+  first_move: "Montar uma coalizao de 4 a 6 lideres para patrocinar a primeira mudanca de people model"

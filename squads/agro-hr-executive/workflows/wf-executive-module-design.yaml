@@ -1,0 +1,64 @@
+workflow:
+  id: wf-executive-module-design
+  name: "Executive Module Design Pipeline"
+  version: "1.0.0"
+  squad: agro-hr-executive
+  description: "Builds a 2-4 session postgraduate module on strategic HR for agribusiness executives"
+  orchestrator: agro-hr-chief
+  estimated_duration: "60-120 minutes"
+
+  metadata:
+    author: "AIOS"
+    created: "2026-03-17"
+    tags: [agribusiness, hr, executive-education, strategy]
+
+phases:
+  - id: phase_0_diagnose
+    name: "Strategic Problem Framing"
+    agents:
+      - ulrich-capability-architect
+      - boudreau-workforce-strategist
+    outputs:
+      - "strategic brief"
+      - "executive audience framing"
+      - "priority people problems"
+    checkpoint:
+      gate: "Problem statement tied to agribusiness realities and executive decisions?"
+
+  - id: phase_1_architecture
+    name: "Framework Stack and Session Thesis"
+    agents:
+      - ulrich-capability-architect
+      - cappelli-talent-economist
+      - charan-pipeline-builder
+      - davis-family-enterprise-advisor
+    outputs:
+      - "module architecture"
+      - "session sequence"
+      - "framework role map"
+    checkpoint:
+      gate: "Frameworks complementary, non-redundant, and aligned to the thesis?"
+
+  - id: phase_2_design
+    name: "Session Plans and Applied Activities"
+    agents:
+      - kotter-change-conductor
+      - charan-pipeline-builder
+      - davis-family-enterprise-advisor
+    outputs:
+      - "session plans"
+      - "slide outline"
+      - "agro case lab"
+    checkpoint:
+      gate: "Each session includes hook, framework, case, activity, and transfer prompt?"
+
+  - id: phase_3_validate
+    name: "Executive Readiness Validation"
+    agents:
+      - agro-hr-chief
+      - ulrich-capability-architect
+      - boudreau-workforce-strategist
+    outputs:
+      - "validated module package"
+    checkpoint:
+      gate: "Module ready for a postgraduate executive classroom?"

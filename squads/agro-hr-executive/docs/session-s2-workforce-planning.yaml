@@ -1,0 +1,32 @@
+metadata:
+  session_id: "S2"
+  session_title: "Workforce planning e talento sob sazonalidade e escassez"
+  duration_minutes: 180
+
+opening_hook:
+  business_tension: "A cada safra o negocio entra em corrida por gente certa para os lugares errados, em cima da hora e a custos crescentes."
+  prompt: "Todas as funcoes merecem o mesmo nivel de investimento em talento?"
+
+framework_focus:
+  primary_agent: "boudreau-workforce-strategist"
+  supporting_agents:
+    - "cappelli-talent-economist"
+    - "ulrich-capability-architect"
+  executive_lens: "Segmentacao de papeis criticos e decisoes de talento por impacto economico"
+
+slide_outline:
+  - "Papeis criticos versus papeis de escala: onde talento muda resultado"
+  - "Talentship e logica de investimento diferenciado"
+  - "Build, buy, borrow: como decidir sob incerteza"
+  - "Volatilidade, sazonalidade e planejamento mais curto"
+  - "Caso de safra: gargalos, turnover e custo de vacancia"
+  - "Matriz executiva de decisoes de talento"
+
+activity:
+  type: "MATRIX"
+  instructions: "Classificar 8 funcoes de uma operacao agro entre papeis criticos, de escala e de suporte, e decidir onde investir em desenvolvimento, contratacao ou parceria."
+  output: "Matriz de papeis criticos com estrategia de abastecimento de talento"
+
+transfer_close:
+  boardroom_question: "Onde estamos investindo demais em funcoes pouco estrategicas e de menos nas que travam resultado?"
+  first_move: "Mapear 10 papeis e redefinir a estrategia de talento dos 3 mais criticos"

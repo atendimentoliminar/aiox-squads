@@ -1,0 +1,32 @@
+metadata:
+  session_id: "{SESSION_ID}"
+  session_title: "{SESSION_TITLE}"
+  duration_minutes: 180
+
+opening_hook:
+  business_tension: "{BUSINESS_TENSION}"
+  prompt: "{OPENING_PROMPT}"
+
+framework_focus:
+  primary_agent: "{PRIMARY_AGENT}"
+  supporting_agents:
+    - "{AGENT_1}"
+    - "{AGENT_2}"
+  executive_lens: "{LENS}"
+
+slide_outline:
+  - "{SLIDE_1}"
+  - "{SLIDE_2}"
+  - "{SLIDE_3}"
+  - "{SLIDE_4}"
+  - "{SLIDE_5}"
+  - "{SLIDE_6}"
+
+activity:
+  type: "{DEBATE|CASE|MATRIX|DIAGNOSTIC}"
+  instructions: "{INSTRUCTIONS}"
+  output: "{EXPECTED_OUTPUT}"
+
+transfer_close:
+  boardroom_question: "{QUESTION}"
+  first_move: "{FIRST_MOVE}"

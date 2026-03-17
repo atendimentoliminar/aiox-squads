@@ -1,0 +1,32 @@
+metadata:
+  session_id: "S3"
+  session_title: "Pipeline de lideranca, sucessao e profissionalizacao"
+  duration_minutes: 180
+
+opening_hook:
+  business_tension: "A empresa tem nomes promissores, mas nao sabe quem esta pronto para liderar operacoes, unidades ou o negocio como um todo."
+  prompt: "Ter sucessores no radar e o mesmo que ter sucessao pronta?"
+
+framework_focus:
+  primary_agent: "charan-pipeline-builder"
+  supporting_agents:
+    - "davis-family-enterprise-advisor"
+    - "boudreau-workforce-strategist"
+  executive_lens: "Passagens de lideranca e prontidao real para sucessao"
+
+slide_outline:
+  - "As passagens da Leadership Pipeline"
+  - "Erro comum: confundir potencial com prontidao"
+  - "Bench review e criterios de readiness"
+  - "Profissionalizacao em empresas familiares do agro"
+  - "Caso de sucessao: herdeiros, executivos e legitimidade"
+  - "Plano executivo de sucessao"
+
+activity:
+  type: "CASE"
+  instructions: "Analisar o caso de uma empresa familiar com tres candidatos a sucessao e decidir quem pode assumir agora, quem precisa de trilha e quais guardrails de governanca sao necessarios."
+  output: "Mapa de sucessao com prontidao, riscos e proximos passos"
+
+transfer_close:
+  boardroom_question: "Qual passagem de lideranca esta mais fragil hoje no seu negocio?"
+  first_move: "Realizar um bench review simples com 5 posicoes-chave e 2 nomes por posicao"

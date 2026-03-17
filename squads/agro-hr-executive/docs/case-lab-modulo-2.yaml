@@ -1,0 +1,34 @@
+metadata:
+  case_id: "case-m2-001"
+  title: "Agrovale Operacoes: lideranca desigual e cultura de urgencia"
+  context: "Empresa agroindustrial com 6 unidades operacionais"
+
+setting:
+  company_profile: "Companhia em crescimento, com forte dependencia de supervisores tecnicos promovidos recentemente."
+  strategic_context: "Margens pressionadas, maior exigencia por previsibilidade e seguranca operacional."
+  people_context: "Cada unidade opera com estilo proprio, com baixa consistencia de rituais de lideranca."
+
+core_tension:
+  strategic_people_problem: "Nao ha padrao de lideranca nem cultura gerencial entre unidades."
+  execution_problem: "Indicadores variam por disciplina de gestao, nao apenas por contexto tecnico."
+  governance_problem: "Diretoria cobra resultado, mas nao define claramente expectativas de lideranca."
+
+decision_options:
+  - option: "Treinar todos os gestores rapidamente"
+    upside: "Sinaliza mobilizacao imediata"
+    downside: "Baixa sustentacao sem rituais e cobranca"
+  - option: "Definir rituais gerenciais e accountability comum"
+    upside: "Gera padrao de execucao replicavel"
+    downside: "Exige disciplina da alta lideranca"
+  - option: "Trocar gestores mais fracos"
+    upside: "Acelera resposta em casos extremos"
+    downside: "Ataca sintoma sem redesenhar o sistema"
+
+facilitation:
+  discussion_questions:
+    - "O problema principal e de competencia individual ou de sistema gerencial?"
+    - "Que rituais minimos deveriam existir em todas as unidades?"
+    - "Como medir se a lideranca esta melhorando?"
+  expected_insights:
+    - "Cultura de execucao depende de ritual, criterio e exemplo"
+    - "Nao adianta treinar sem redesenhar o sistema gerencial"

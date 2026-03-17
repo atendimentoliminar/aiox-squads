@@ -1,0 +1,34 @@
+metadata:
+  case_id: "case-001"
+  title: "Grupo Santa Vitoria: crescer, profissionalizar e suceder"
+  context: "Grupo agroindustrial familiar"
+
+setting:
+  company_profile: "Grupo com operacoes em graos, armazenagem e insumos, 4 unidades, 1.800 colaboradores e comando historicamente concentrado na familia fundadora."
+  strategic_context: "Expansao acelerada nos ultimos 5 anos, pressao por eficiencia, maior dependencia de lideres locais e risco crescente de inconsistencias operacionais."
+  people_context: "Alta variacao de qualidade entre gestores, dificuldades de atrair perfis tecnicos para regioes remotas e tensao entre executivos profissionais e familiares."
+
+core_tension:
+  strategic_people_problem: "A empresa nao consegue transformar crescimento em capacidade organizacional consistente."
+  execution_problem: "Na safra, funcoes-chave ficam descobertas ou ocupadas por lideres sem prontidao."
+  governance_problem: "A familia quer manter influencia direta sobre nomeacoes, mas cobra meritocracia e profissionalizacao."
+
+decision_options:
+  - option: "Reforcar controle familiar e centralizar nomeacoes estrategicas"
+    upside: "Maior controle politico e velocidade em decisoes sensiveis"
+    downside: "Reduz legitimidade meritocratica e trava desenvolvimento de lideranca profissional"
+  - option: "Criar modelo hibrido com comite de pessoas e criterios formais de sucessao"
+    upside: "Equilibra governanca familiar com profissionalizacao"
+    downside: "Exige disciplina, transparencia e maturidade politica"
+  - option: "Delegar mais autonomia para executivos com metas e governance guardrails"
+    upside: "Acelera profissionalizacao e responsabilizacao"
+    downside: "Pode gerar resistencia familiar e risco de desalinhamento inicial"
+
+facilitation:
+  discussion_questions:
+    - "Quais capacidades organizacionais o grupo mais precisa fortalecer para sustentar a expansao?"
+    - "Quais sao os papeis realmente criticos na safra e na governanca do grupo?"
+    - "Que desenho de sucessao preserva legitimidade, performance e continuidade?"
+  expected_insights:
+    - "Sem distinguir familia, propriedade e gestao, o conflito volta como problema de pessoas"
+    - "Nao existe sucessao robusta sem pipeline de lideranca, criterios de prontidao e governanca clara"
