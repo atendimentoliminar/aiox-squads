@@ -50,6 +50,38 @@ Ao concluir a leitura e aplicação dos módulos, o docente terá:
 - 4 casos aplicados ao agronegócio
 - uma entrega final orientada a plano executivo de transformação
 
+## Roteiros de Slides
+
+- Índice dos roteiros: [slides-README.md](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/slides-README.md)
+- Módulo 1: [slides-modulo-1-rh-estrategico.md](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/slides-modulo-1-rh-estrategico.md)
+- Módulo 2: [slides-modulo-2-lideranca-performance-cultura.md](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/slides-modulo-2-lideranca-performance-cultura.md)
+- Módulo 3: [slides-modulo-3-sucessao-governanca.md](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/slides-modulo-3-sucessao-governanca.md)
+- Módulo 4: [slides-modulo-4-transformacao.md](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/slides-modulo-4-transformacao.md)
+
+## Fala do Professor
+
+- Índice das falas: [fala-README.md](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/fala-README.md)
+- Módulo 1: [fala-modulo-1-rh-estrategico.md](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/fala-modulo-1-rh-estrategico.md)
+- Módulo 2: [fala-modulo-2-lideranca-performance-cultura.md](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/fala-modulo-2-lideranca-performance-cultura.md)
+- Módulo 3: [fala-modulo-3-sucessao-governanca.md](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/fala-modulo-3-sucessao-governanca.md)
+- Módulo 4: [fala-modulo-4-transformacao.md](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/fala-modulo-4-transformacao.md)
+
+## Apoio de Aula
+
+- Handout do professor: [handout-professor.md](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/handout-professor.md)
+- Material do aluno: [material-aluno.md](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/material-aluno.md)
+
+## Pagina HTML
+
+- Pagina principal: [index.html](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/site/index.html)
+- Estilos: [styles.css](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/site/styles.css)
+- Instrucoes das imagens: [assets/README.md](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/site/assets/README.md)
+- Professor: [professor.html](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/site/professor.html)
+- Disciplina: [disciplina.html](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/site/disciplina.html)
+- Hub dos modulos: [modulos.html](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/site/modulos.html)
+- Materiais: [materiais.html](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/site/materiais.html)
+- Biblioteca de fontes: [fontes.html](/Users/fabianosilva/aiox-project/squads/aiox-squads/squads/agro-hr-executive/docs/site/fontes.html)
+
 ## Observação
 
 Os arquivos `.md` servem como leitura guiada.
