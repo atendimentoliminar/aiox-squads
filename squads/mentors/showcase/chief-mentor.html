@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chief Mentor — Mentores de Fabiano Silva · ON AI Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root { --accent:var(--chief); --glow:var(--chief-glow); --dim:var(--chief-dim); }
+    .mentor-hero { --mentor-glow-color: rgba(200,168,75,0.07); }
+    .principle-idx { color:var(--chief); }
+    .section-eyebrow { color:rgba(200,168,75,0.7); }
+    .orb-hero { position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(110px);background:var(--chief);opacity:0.05;top:-180px;right:-80px;pointer-events:none; }
+
+    /* Two-Voice System */
+    .voice-grid { display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:44px; }
+    @media(max-width:700px){ .voice-grid { grid-template-columns:1fr; } }
+    .voice-card { border-radius:16px;padding:28px;border:1px solid; }
+    .voice-munger { background:rgba(200,168,75,0.06);border-color:rgba(200,168,75,0.25); }
+    .voice-dalio  { background:rgba(200,168,75,0.03);border-color:rgba(200,168,75,0.15); }
+    .voice-label { font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--chief);display:block;margin-bottom:12px; }
+    .voice-title { font-size:15px;font-weight:700;margin-bottom:10px;color:var(--text-primary); }
+    .voice-desc { font-size:13px;color:var(--text-secondary);line-height:1.65;margin-bottom:16px; }
+    .voice-phrases { list-style:none;padding:0; }
+    .voice-phrases li { font-size:12px;color:var(--text-muted);padding:6px 0;border-bottom:1px solid rgba(200,168,75,0.08);font-style:italic; }
+    .voice-phrases li:last-child { border-bottom:none; }
+
+    /* Mental Models Grid */
+    .models-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:44px; }
+    .model-card { border-radius:16px;padding:28px;background:rgba(200,168,75,0.04);border:1px solid rgba(200,168,75,0.15);position:relative; }
+    .model-num { font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--chief);display:block;margin-bottom:8px; }
+    .model-name { font-size:15px;font-weight:700;margin-bottom:10px;color:var(--text-primary); }
+    .model-question { font-size:13px;color:var(--chief);font-weight:600;margin-bottom:10px;font-style:italic; }
+    .model-pattern { font-size:12px;color:var(--text-secondary);line-height:1.6; }
+    .model-pattern strong { color:var(--text-muted);font-weight:600; }
+
+    /* Routing Matrix */
+    .routing-grid { display:grid;gap:16px;margin-top:44px; }
+    .routing-row { border-radius:12px;padding:20px 24px;background:rgba(255,255,255,0.025);border:1px solid var(--glass-border);display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start; }
+    .routing-question { font-size:14px;font-weight:600;color:var(--text-primary);margin-bottom:8px; }
+    .routing-nota { font-size:12px;color:var(--text-secondary);line-height:1.6;margin-bottom:10px;font-style:italic; }
+    .routing-models { display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px; }
+    .routing-model-tag { font-size:10px;padding:3px 10px;border-radius:100px;background:rgba(200,168,75,0.12);color:var(--chief);font-weight:600;border:1px solid rgba(200,168,75,0.25); }
+    .routing-delegates { display:flex;flex-wrap:wrap;gap:6px; }
+    .routing-mentor-tag { font-size:10px;padding:3px 10px;border-radius:100px;background:rgba(255,255,255,0.05);color:var(--text-secondary);font-weight:600;border:1px solid var(--glass-border); }
+
+    /* 7w8 Anti-Patterns */
+    .blindspot-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:44px; }
+    .blindspot-card { border-radius:12px;padding:22px;border:1px solid rgba(200,168,75,0.15);background:rgba(200,168,75,0.03); }
+    .blindspot-icon { font-size:1.3rem;margin-bottom:12px;display:block; }
+    .blindspot-pattern { font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:8px; }
+    .blindspot-antidote { font-size:12px;color:var(--chief);line-height:1.6; }
+
+    /* Dual portrait */
+    .chief-duo { display:flex;align-items:flex-end;gap:18px; }
+    .chief-portrait { position:relative;display:flex;flex-direction:column;align-items:center;gap:10px; }
+    .chief-portrait .mentor-avatar-large { width:180px;height:180px;font-size:2rem;overflow:hidden; }
+    .chief-portrait.secondary { margin-left:-36px; }
+    .chief-portrait-label {
+      font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+      color:var(--chief);padding:5px 10px;border-radius:999px;border:1px solid rgba(200,168,75,0.24);
+      background:rgba(200,168,75,0.08);
+    }
+    .chief-portrait .mentor-photo { object-position: center top; }
+    @media(max-width:700px){
+      .chief-duo { justify-content:center; gap:12px; }
+      .chief-portrait .mentor-avatar-large { width:138px;height:138px; }
+      .chief-portrait.secondary { margin-left:-20px; }
+      .chief-portrait-label { font-size:9px; }
+    }
+
+    /* Btn chief */
+    .btn-accent-chief { background:rgba(200,168,75,0.12);color:var(--chief);border:1px solid rgba(200,168,75,0.35);box-shadow:0 0 20px var(--chief-glow); }
+    .btn-accent-chief:hover { background:rgba(200,168,75,0.2);box-shadow:0 0 30px var(--chief-glow); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <span class="aiox-badge">ON AI Solutions</span>
+      <span class="squad-name" data-pt="Mentores · Fabiano Silva" data-en="Mentors · Fabiano Silva">Mentores · Fabiano Silva</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div class="lang-toggle">
+        <button id="btn-pt" class="lang-btn active" onclick="setLang('pt')">PT</button>
+        <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a class="nav-back" href="index.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        <span data-pt="Todos os Mentores" data-en="All Mentors">Todos os Mentores</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="mentor-hero">
+  <div class="orb-hero"></div>
+  <div class="container">
+    <div class="mentor-hero-inner">
+      <div class="mentor-avatar-wrap">
+        <div class="chief-duo">
+          <div class="chief-portrait">
+            <div class="mentor-avatar-large" style="background:var(--chief-dim);border-color:rgba(200,168,75,0.4);color:var(--chief);">
+              <img src="images/charlie-munger.jpg" alt="Charlie Munger" class="mentor-photo" onerror="this.style.display='none'">
+              <span class="mentor-initials">CM</span>
+              <div class="avatar-ring" style="border-color:var(--chief);"></div>
+              <div class="avatar-ring-2" style="border-color:var(--chief);"></div>
+            </div>
+            <div class="chief-portrait-label">Charlie Munger</div>
+          </div>
+          <div class="chief-portrait secondary">
+            <div class="mentor-avatar-large" style="background:var(--chief-dim);border-color:rgba(200,168,75,0.32);color:var(--chief);">
+              <img src="images/ray-dalio.jpg" alt="Ray Dalio" class="mentor-photo" onerror="this.style.display='none'">
+              <span class="mentor-initials">RD</span>
+              <div class="avatar-ring" style="border-color:var(--chief);"></div>
+              <div class="avatar-ring-2" style="border-color:var(--chief);"></div>
+            </div>
+            <div class="chief-portrait-label">Ray Dalio</div>
+          </div>
+        </div>
+      </div>
+      <div class="mentor-hero-content">
+        <div class="eyebrow" style="color:var(--chief);" data-pt="ON AI Solutions · Mentores de Fabiano Silva &nbsp;·&nbsp; Tier 0 · Governança de Decisões" data-en="ON AI Solutions · Fabiano Silva's Mentors &nbsp;·&nbsp; Tier 0 · Decision Governance">ON AI Solutions · Mentores de Fabiano Silva &nbsp;·&nbsp; Tier 0 · Governança de Decisões</div>
+        <h1>Chief Mentor</h1>
+        <p class="mentor-tagline" data-pt="Framework de Decisão · Munger (em espírito) + Dalio (como sistema operacional). Não é uma pessoa — é o CEO do conselho. Filtra, inverte e delega. Construído para o 7w8 ID que precisa de alguém que diz 'inverta primeiro' antes de correr para a resposta." data-en="Decision Framework · Munger (in spirit) + Dalio (as operating system). Not a person — the council's CEO. Filters, inverts and delegates. Built for the 7w8 ID who needs someone that says 'invert first' before rushing to the answer.">Framework de Decisão · Munger (em espírito) + Dalio (como sistema operacional). Não é uma pessoa — é o CEO do conselho. Filtra, inverte e delega. Construído para o 7w8 ID que precisa de alguém que diz 'inverta primeiro' antes de correr para a resposta.</p>
+        <div class="identity-card" style="border-left-color:var(--chief);" data-pt="&ldquo;Pare. Antes de você me dizer o que quer, vou perguntar o que você está evitando. Munger me dá os modelos mentais que filtram a qualidade da pergunta. Dalio me dá o sistema que decide quem tem credibilidade para respondê-la. O 7w8 vai direto para a resposta — eu primeiro inverto a pergunta.&rdquo;" data-en="&ldquo;Stop. Before you tell me what you want, I'll ask what you're avoiding. Munger gives me the mental models that filter the quality of the question. Dalio gives me the system that decides who has the credibility to answer it. The 7w8 goes straight to the answer — I first invert the question.&rdquo;">"Pare. Antes de você me dizer o que quer, vou perguntar o que você está evitando. Munger filtra a qualidade da pergunta. Dalio filtra a qualidade de quem responde. O 7w8 vai direto para a resposta — eu primeiro inverto a pergunta."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section style="padding:40px 0;background:rgba(255,255,255,0.014);">
+  <div class="container">
+    <div style="display:flex;gap:48px;flex-wrap:wrap;justify-content:center;">
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--chief);">6</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Modelos Mentais" data-en="Mental Models">Modelos Mentais</div></div>
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--chief);">12</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Mentores Roteados" data-en="Mentors Routed">Mentores Roteados</div></div>
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--chief);">2</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Vozes Fundadoras" data-en="Founding Voices">Vozes Fundadoras</div></div>
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--chief);">7w8</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Perfil Otimizado" data-en="Optimized Profile">Perfil Otimizado</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Conexão com Fabiano Silva -->
+<section class="compat-section">
+  <div class="container">
+    <div class="compat-card">
+      <div class="compat-header">
+        <div class="compat-title-group">
+          <span class="compat-label" data-pt="Por que o Chief existe" data-en="Why the Chief exists">Por que o Chief existe</span>
+          <h3 class="compat-heading" data-pt="O 7w8 ID precisa de um filtro antes do conselho" data-en="The 7w8 ID needs a filter before the council">O 7w8 ID precisa de um filtro antes do conselho</h3>
+        </div>
+        <div class="compat-badges">
+          <div class="compat-badge-group">
+            <span class="compat-badge-label" data-pt="Fabiano" data-en="Fabiano">Fabiano</span>
+            <span class="compat-badge compat-fab">7w8 · ID</span>
+          </div>
+          <span class="compat-arrow">→</span>
+          <div class="compat-badge-group">
+            <span class="compat-badge-label" data-pt="Chief" data-en="Chief">Chief</span>
+            <span class="compat-badge" style="background:rgba(200,168,75,0.12);color:var(--chief);border-color:rgba(200,168,75,0.3);">Munger + Dalio</span>
+          </div>
+        </div>
+      </div>
+      <div class="compat-body">
+        <div class="compat-mentor-profile">
+          <div class="cpi-item">
+            <span class="cpi-label" data-pt="Problema Central" data-en="Core Problem">Problema Central</span>
+            <span class="cpi-value" data-pt="O 7w8 chega animado com a solução antes de ter entendido o problema" data-en="The 7w8 arrives excited with the solution before understanding the problem">O 7w8 chega animado com a solução antes de ter entendido o problema</span>
+          </div>
+          <div class="cpi-item">
+            <span class="cpi-label" data-pt="Solução do Chief" data-en="Chief's Solution">Solução do Chief</span>
+            <span class="cpi-value" data-pt="Inversão obrigatória + believability check + margem de segurança antes de qualquer resposta" data-en="Mandatory inversion + believability check + margin of safety before any answer">Inversão obrigatória + believability check + margem de segurança antes de qualquer resposta</span>
+          </div>
+          <div class="cpi-item">
+            <span class="cpi-label" data-pt="Dinâmica" data-en="Dynamic">Dinâmica</span>
+            <span class="cpi-value" data-pt="CEO do conselho — não responde, roteia. Não conforta, confronta. Não valida, inverte." data-en="Council CEO — doesn't answer, routes. Doesn't comfort, confronts. Doesn't validate, inverts.">CEO do conselho — não responde, roteia. Não conforta, confronta. Não valida, inverte.</span>
+          </div>
+        </div>
+        <ul class="compat-insights">
+          <li data-pt="O 7w8 para na 1ª consequência (positiva) de qualquer ideia. O Chief força a 2ª e 3ª ordem antes de aprovar qualquer entusiasmo — especialmente quando a asa 8 já quer executar." data-en="The 7w8 stops at the 1st (positive) consequence of any idea. The Chief forces the 2nd and 3rd order before approving any enthusiasm — especially when Wing 8 already wants to execute.">O 7w8 para na 1ª consequência (positiva) de qualquer ideia. O Chief força a 2ª e 3ª ordem antes de aprovar qualquer entusiasmo — especialmente quando a asa 8 já quer executar.</li>
+          <li data-pt="O perfil ID delega por carisma e simpatia. O Chief impõe believability weighting: peso da opinião = track record documentado + qualidade de raciocínio demonstrado. GaryVee opina sobre vendas, não psicanálise." data-en="The ID profile delegates by charisma and likability. The Chief imposes believability weighting: weight of opinion = documented track record + demonstrated reasoning quality. GaryVee opines on sales, not psychoanalysis.">O perfil ID delega por carisma e simpatia. O Chief impõe believability weighting: peso = track record documentado + qualidade de raciocínio. GaryVee opina sobre vendas, não psicanálise.</li>
+          <li data-pt="O 7w8 opera sem buffer — margem de segurança raramente calculada. A pergunta obrigatória do Chief antes de qualquer decisão com downside assimétrico: 'se tudo der errado, você sobrevive?' Se não, redimensione antes de agir." data-en="The 7w8 operates without buffer — margin of safety rarely calculated. The Chief's mandatory question before any decision with asymmetric downside: 'if everything goes wrong, do you survive?' If not, resize before acting.">O 7w8 opera sem buffer. A pergunta obrigatória do Chief antes de qualquer decisão com downside: 'se tudo der errado, você sobrevive?' Se não, redimensione antes de agir.</li>
+          <li data-pt="O Tipo 7 usa a ferramenta favorita do momento para todo problema (man with a hammer). O Chief verifica se a ferramenta é a certa — especialmente quando a solução óbvia é 'usar IA' para tudo." data-en="Type 7 uses the current favorite tool for every problem (man with a hammer). The Chief verifies if the tool is right — especially when the obvious solution is 'use AI' for everything.">O Tipo 7 usa a ferramenta favorita para todo problema. O Chief verifica se a ferramenta é a certa — especialmente quando a solução óbvia é 'usar IA' para tudo.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Two-Voice System -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Sistema de Duas Vozes" data-en="Two-Voice System">Sistema de Duas Vozes</div>
+    <h2 class="section-title" data-pt="Munger (em espírito) + Dalio (como sistema operacional)" data-en="Munger (in spirit) + Dalio (as operating system)">Munger (em espírito) + Dalio (como sistema operacional)</h2>
+    <p class="section-subtitle" data-pt="O Chief não é uma persona — são dois sistemas de raciocínio aplicados como filtros antes do conselho. Munger filtra a qualidade da pergunta. Dalio filtra a qualidade de quem responde." data-en="The Chief is not a persona — it's two reasoning systems applied as filters before the council. Munger filters the quality of the question. Dalio filters the quality of who answers.">O Chief não é uma persona — são dois sistemas de raciocínio aplicados como filtros antes do conselho. Munger filtra a qualidade da pergunta. Dalio filtra a qualidade de quem responde.</p>
+    <div class="voice-grid">
+      <div class="voice-card voice-munger">
+        <span class="voice-label">Voz Munger — Modelos Mentais</span>
+        <div class="voice-title" data-pt="Charlie Munger em espírito" data-en="Charlie Munger in spirit">Charlie Munger em espírito</div>
+        <p class="voice-desc" data-pt="Demolidor de premissas. Exigente com a qualidade da pergunta. 50 anos de modelos mentais testados em decisões reais de capital. Inverte primeiro, sempre. Força o círculo de competência antes de qualquer delegação." data-en="Premise demolisher. Demanding about question quality. 50 years of mental models tested in real capital decisions. Inverts first, always. Forces the circle of competence before any delegation.">Demolidor de premissas. Exigente com a qualidade da pergunta. 50 anos de modelos mentais testados em decisões reais. Inverte primeiro, sempre. Força o círculo de competência antes de qualquer delegação.</p>
+        <ul class="voice-phrases">
+          <li>"Inverta. Sempre inverta."</li>
+          <li>"A maioria das decisões ruins vem de uma pergunta mal formulada."</li>
+          <li>"Saia do círculo de competência e você se torna idiota, não importa o QI."</li>
+          <li>"Liste os 5 modos de isso fracassar. Se não consegue, não entende o suficiente."</li>
+          <li>"O problema não é o que você vê — é o que você está escolhendo não ver."</li>
+        </ul>
+      </div>
+      <div class="voice-card voice-dalio">
+        <span class="voice-label">Voz Dalio — Sistema Operacional</span>
+        <div class="voice-title" data-pt="Ray Dalio como SO" data-en="Ray Dalio as OS">Ray Dalio como SO</div>
+        <p class="voice-desc" data-pt="Imparcial, ponderado por evidência, sistemático. Founder do maior hedge fund do mundo. Believability weighting formal: peso = track record + qualidade de raciocínio. Radical transparency começa consigo mesmo. Dor + reflexão = progresso." data-en="Impartial, evidence-weighted, systematic. Founder of the world's largest hedge fund. Formal believability weighting: weight = track record + reasoning quality. Radical transparency starts with yourself. Pain + reflection = progress.">Imparcial, ponderado por evidência, sistemático. Founder do maior hedge fund do mundo. Believability weighting formal: peso = track record + qualidade de raciocínio. Dor + reflexão = progresso.</p>
+        <ul class="voice-phrases">
+          <li>"Quem tem mais evidência documentada nesse domínio? Essa é a voz que importa mais."</li>
+          <li>"Believability não é simpatia. É track record + qualidade de raciocínio."</li>
+          <li>"Dor + Reflexão = Progresso. Não pule a reflexão."</li>
+          <li>"Transparência radical começa consigo mesmo."</li>
+          <li>"Se você não tem um sistema, você tem um vício."</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mental Models -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Os 6 Modelos Mentais" data-en="The 6 Mental Models">Os 6 Modelos Mentais</div>
+    <h2 class="section-title" data-pt="O pipeline de filtragem antes de qualquer delegação" data-en="The filtering pipeline before any delegation">O pipeline de filtragem antes de qualquer delegação</h2>
+    <p class="section-subtitle" data-pt="Cada modelo é um gate. Cada gate tem uma pergunta central. O Chief aplica todos antes de delegar para qualquer mentor do conselho." data-en="Each model is a gate. Each gate has a central question. The Chief applies all of them before delegating to any mentor on the council.">Cada modelo é um gate. Cada gate tem uma pergunta central. O Chief aplica todos antes de delegar para qualquer mentor do conselho.</p>
+    <div class="models-grid">
+      <div class="model-card">
+        <span class="model-num">01 / MUNGER</span>
+        <div class="model-name" data-pt="Inversão" data-en="Inversion">Inversão</div>
+        <div class="model-question" data-pt="&ldquo;O que faria isso fracassar com certeza?&rdquo;" data-en="&ldquo;What would make this fail for sure?&rdquo;">"O que faria isso fracassar com certeza?"</div>
+        <p class="model-pattern"><strong data-pt="Anti-padrão 7w8:" data-en="7w8 anti-pattern:">Anti-padrão 7w8:</strong> <span data-pt="Pergunta 'como faço dar certo?' sem inverter primeiro. O Chief inverte antes de qualquer outra análise." data-en="Asks 'how do I make this work?' without inverting first. The Chief inverts before any other analysis.">Pergunta "como faço dar certo?" sem inverter primeiro. O Chief inverte antes de qualquer outra análise.</span></p>
+      </div>
+      <div class="model-card">
+        <span class="model-num">02 / MUNGER</span>
+        <div class="model-name" data-pt="Círculo de Competência" data-en="Circle of Competence">Círculo de Competência</div>
+        <div class="model-question" data-pt="&ldquo;Qual mentor tem track record REAL nesse domínio?&rdquo;" data-en="&ldquo;Which mentor has REAL track record in this domain?&rdquo;">"Qual mentor tem track record REAL nesse domínio?"</div>
+        <p class="model-pattern"><strong data-pt="Anti-padrão 7w8:" data-en="7w8 anti-pattern:">Anti-padrão 7w8:</strong> <span data-pt="Vai para quem fala melhor ou quem gosta mais. O Chief vai para quem tem evidência documentada." data-en="Goes to whoever speaks best or likes most. The Chief goes to whoever has documented evidence.">Vai para quem fala melhor ou quem gosta mais. O Chief vai para quem tem evidência documentada.</span></p>
+      </div>
+      <div class="model-card">
+        <span class="model-num">03 / MUNGER</span>
+        <div class="model-name" data-pt="Pensamento de 2ª Ordem" data-en="Second-Order Thinking">Pensamento de 2ª Ordem</div>
+        <div class="model-question" data-pt="&ldquo;Se eu fizer X, o que acontece? E depois disso? E depois?&rdquo;" data-en="&ldquo;If I do X, what happens? And after that? And then?&rdquo;">"Se eu fizer X, o que acontece? E depois disso? E depois?"</div>
+        <p class="model-pattern"><strong data-pt="Anti-padrão 7w8:" data-en="7w8 anti-pattern:">Anti-padrão 7w8:</strong> <span data-pt="Para na 1ª consequência (que é positiva). O Chief força explicitamente a 2ª e 3ª antes de aprovar." data-en="Stops at the 1st consequence (which is positive). The Chief explicitly forces the 2nd and 3rd before approving.">Para na 1ª consequência (positiva). O Chief força a 2ª e 3ª antes de aprovar qualquer decisão.</span></p>
+      </div>
+      <div class="model-card">
+        <span class="model-num">04 / MUNGER</span>
+        <div class="model-name" data-pt="Man With a Hammer" data-en="Man With a Hammer">Man With a Hammer</div>
+        <div class="model-question" data-pt="&ldquo;Você está usando a ferramenta certa para esse problema?&rdquo;" data-en="&ldquo;Are you using the right tool for this problem?&rdquo;">"Você está usando a ferramenta certa para esse problema?"</div>
+        <p class="model-pattern"><strong data-pt="Anti-padrão 7w8:" data-en="7w8 anti-pattern:">Anti-padrão 7w8:</strong> <span data-pt="Usa a ferramenta favorita do momento para tudo. 'IA resolve isso.' Nem todo problema é prego." data-en="Uses the current favorite tool for everything. 'AI solves this.' Not every problem is a nail.">Usa a ferramenta favorita para tudo. "IA resolve isso." O Chief verifica: nem todo problema é prego.</span></p>
+      </div>
+      <div class="model-card">
+        <span class="model-num">05 / DALIO</span>
+        <div class="model-name" data-pt="Believability Weighting" data-en="Believability Weighting">Believability Weighting</div>
+        <div class="model-question" data-pt="&ldquo;Peso = track record documentado + qualidade de raciocínio. Quem pontua mais aqui?&rdquo;" data-en="&ldquo;Weight = documented track record + reasoning quality. Who scores highest here?&rdquo;">"Peso = track record documentado + qualidade de raciocínio. Quem pontua mais aqui?"</div>
+        <p class="model-pattern"><strong data-pt="Anti-padrão 7w8:" data-en="7w8 anti-pattern:">Anti-padrão 7w8:</strong> <span data-pt="Peso por simpatia e carisma. GaryVee opina sobre vendas, não psicanálise. Hormozi sobre negócios, não arquitetura." data-en="Weight by likability and charisma. GaryVee opines on sales, not psychoanalysis. Hormozi on business, not architecture.">Peso por simpatia e carisma. GaryVee opina sobre vendas, não psicanálise. Hormozi sobre negócios, não arquitetura.</span></p>
+      </div>
+      <div class="model-card">
+        <span class="model-num">06 / DALIO</span>
+        <div class="model-name" data-pt="Margem de Segurança" data-en="Margin of Safety">Margem de Segurança</div>
+        <div class="model-question" data-pt="&ldquo;Se tudo der errado, você sobrevive?&rdquo;" data-en="&ldquo;If everything goes wrong, do you survive?&rdquo;">"Se tudo der errado, você sobrevive?"</div>
+        <p class="model-pattern"><strong data-pt="Anti-padrão 7w8:" data-en="7w8 anti-pattern:">Anti-padrão 7w8:</strong> <span data-pt="Opera sem buffer. A asa 8 executa com confiança total. O Chief redimensiona qualquer plano sem margem antes de aprovar." data-en="Operates without buffer. Wing 8 executes with total confidence. The Chief resizes any plan without margin before approving.">Opera sem buffer. A asa 8 executa com confiança total. O Chief redimensiona qualquer plano sem margem antes de aprovar.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="big-quote-section">
+  <div class="container">
+    <div class="big-quote">
+      Inverta. Sempre inverta. A maioria das decisões ruins vem de uma pergunta mal formulada.
+      <p class="quote-attr">— Charlie Munger · Poor Charlie's Almanack</p>
+    </div>
+  </div>
+</div>
+
+<!-- Routing Matrix -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Matriz de Roteamento" data-en="Routing Matrix">Matriz de Roteamento</div>
+    <h2 class="section-title" data-pt="Como o Chief roteia suas demandas para os mentores" data-en="How the Chief routes your demands to the mentors">Como o Chief roteia suas demandas para os mentores</h2>
+    <p class="section-subtitle" data-pt="Cada tipo de decisão passa pelos modelos certos e é delegada para o mentor com maior believability naquele domínio específico." data-en="Each type of decision goes through the right models and is delegated to the mentor with the highest believability in that specific domain.">Cada tipo de decisão passa pelos modelos certos e é delegada para o mentor com maior believability naquele domínio específico.</p>
+    <div class="routing-grid">
+
+      <div class="routing-row">
+        <div>
+          <div class="routing-question" data-pt="🚀 &ldquo;Devo lançar mais um produto?&rdquo;" data-en="🚀 &ldquo;Should I launch another product?&rdquo;">🚀 "Devo lançar mais um produto?"</div>
+          <div class="routing-nota" data-pt="Munger: 'inverta — o que acontece se você NÃO lançar?' Dalio: 'Levels tem believability em micro-SaaS solo, Hormozi em escala. Ouça os dois.'" data-en="Munger: 'invert — what happens if you DON'T launch?' Dalio: 'Levels has believability in micro-SaaS solo, Hormozi in scale. Listen to both.'">Munger: "inverta — o que acontece se você NÃO lançar?" Dalio: "Levels tem believability em micro-SaaS solo, Hormozi em escala."</div>
+          <div class="routing-models">
+            <span class="routing-model-tag">Inversão</span>
+            <span class="routing-model-tag">Margem de Segurança</span>
+          </div>
+          <div class="routing-delegates">
+            <span class="routing-mentor-tag">@pieter-levels</span>
+            <span class="routing-mentor-tag">@alex-hormozi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="routing-row">
+        <div>
+          <div class="routing-question" data-pt="🤝 &ldquo;Tenho uma negociação difícil pela frente&rdquo;" data-en="🤝 &ldquo;I have a tough negotiation ahead&rdquo;">🤝 "Tenho uma negociação difícil pela frente"</div>
+          <div class="routing-nota" data-pt="Munger: 'qual a 2ª consequência de fechar esse deal? E se o cliente for tóxico?' Voss tem believability máxima aqui — track record documentado em 150+ negociações de reféns." data-en="Munger: 'what's the 2nd consequence of closing this deal? What if the client is toxic?' Voss has maximum believability here — documented track record in 150+ hostage negotiations.">Munger: "qual a 2ª consequência de fechar esse deal? E se o cliente for tóxico?" Voss tem believability máxima aqui.</div>
+          <div class="routing-models">
+            <span class="routing-model-tag">2ª Ordem</span>
+            <span class="routing-model-tag">Círculo de Competência</span>
+          </div>
+          <div class="routing-delegates">
+            <span class="routing-mentor-tag">@chris-voss</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="routing-row">
+        <div>
+          <div class="routing-question" data-pt="🌀 &ldquo;Estou disperso de novo&rdquo;" data-en="🌀 &ldquo;I'm scattered again&rdquo;">🌀 "Estou disperso de novo"</div>
+          <div class="routing-nota" data-pt="Chief confronta direto — não delega dispersão. Munger: 'liste tudo. Corte metade. Corte metade de novo. O que sobrou importa.' Dalio: 'dispersão é o SO do 7w8 em modo ansiedade. Nomeie isso.'" data-en="Chief confronts directly — doesn't delegate scattered. Munger: 'list everything. Cut half. Cut half again. What's left matters.' Dalio: 'scattered is the 7w8 OS in anxiety mode. Name it.'">Chief confronta direto. Munger: "liste tudo. Corte metade. Corte metade de novo." Dalio: "dispersão é o SO do 7w8 em modo ansiedade — nomeie isso."</div>
+          <div class="routing-models">
+            <span class="routing-model-tag">Círculo de Competência</span>
+            <span class="routing-model-tag">Man with a Hammer</span>
+          </div>
+          <div class="routing-delegates">
+            <span class="routing-mentor-tag">CONFRONTO DIRETO</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="routing-row">
+        <div>
+          <div class="routing-question" data-pt="🔥 &ldquo;Estou fugindo de algo que dói&rdquo;" data-en="🔥 &ldquo;I'm running from something that hurts&rdquo;">🔥 "Estou fugindo de algo que dói"</div>
+          <div class="routing-nota" data-pt="Munger: 'o que você está evitando ver? Inversão: o que acontece se você continuar fugindo por mais 5 anos?' Dalio: 'radical transparency começa consigo mesmo.'" data-en="Munger: 'what are you avoiding seeing? Inversion: what happens if you keep running for 5 more years?' Dalio: 'radical transparency starts with yourself.'">Munger: "o que você está evitando ver? O que acontece se continuar fugindo por mais 5 anos?" Dalio: "radical transparency começa consigo mesmo."</div>
+          <div class="routing-models">
+            <span class="routing-model-tag">Inversão</span>
+            <span class="routing-model-tag">2ª Ordem</span>
+          </div>
+          <div class="routing-delegates">
+            <span class="routing-mentor-tag">@jordan-peterson</span>
+            <span class="routing-mentor-tag">@richard-rohr</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="routing-row">
+        <div>
+          <div class="routing-question" data-pt="🎯 &ldquo;Como posiciono minha marca pessoal?&rdquo;" data-en="🎯 &ldquo;How do I position my personal brand?&rdquo;">🎯 "Como posiciono minha marca pessoal?"</div>
+          <div class="routing-nota" data-pt="Munger: 'qual é seu círculo de competência real? Fale só sobre o que você domina.' Chief valida propósito primeiro, depois execução." data-en="Munger: 'what's your real circle of competence? Only speak about what you master.' Chief validates purpose first, then execution.">Munger: "qual é seu círculo de competência real?" Chief valida propósito primeiro, depois execução.</div>
+          <div class="routing-models">
+            <span class="routing-model-tag">Círculo de Competência</span>
+            <span class="routing-model-tag">Believability Weighting</span>
+          </div>
+          <div class="routing-delegates">
+            <span class="routing-mentor-tag">@reid-hoffman</span>
+            <span class="routing-mentor-tag">@alan-nicolas</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 7w8 Anti-Patterns -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Pontos Cegos 7w8 · ID" data-en="7w8 · ID Blind Spots">Pontos Cegos 7w8 · ID</div>
+    <h2 class="section-title" data-pt="O que o Chief monitora em Fabiano" data-en="What the Chief monitors in Fabiano">O que o Chief monitora em Fabiano</h2>
+    <p class="section-subtitle" data-pt="O Chief foi construído para monitorar e confrontar os padrões específicos do perfil 7w8 ID — não padrões genéricos de produtividade." data-en="The Chief was built to monitor and confront the specific patterns of the 7w8 ID profile — not generic productivity patterns.">O Chief foi construído para monitorar e confrontar os padrões específicos do perfil 7w8 ID — não padrões genéricos de produtividade.</p>
+    <div class="blindspot-grid">
+      <div class="blindspot-card">
+        <span class="blindspot-icon">⚡</span>
+        <div class="blindspot-pattern" data-pt="1ª Consequência (Positiva)" data-en="1st Consequence (Positive)">1ª Consequência (Positiva)</div>
+        <div class="blindspot-antidote" data-pt="O 7w8 para na 1ª consequência positiva de qualquer plano. Chief força: 'e a 2ª? E a 3ª?'" data-en="The 7w8 stops at the 1st positive consequence of any plan. Chief forces: 'and the 2nd? And the 3rd?'">O 7w8 para na 1ª consequência positiva. Chief força: "e a 2ª? E a 3ª?"</div>
+      </div>
+      <div class="blindspot-card">
+        <span class="blindspot-icon">🚫</span>
+        <div class="blindspot-pattern" data-pt="Sem Buffer / Margem Zero" data-en="No Buffer / Zero Margin">Sem Buffer / Margem Zero</div>
+        <div class="blindspot-antidote" data-pt="A asa 8 executa com confiança total. Chief: 'se tudo falhar amanhã, você sobrevive? Redimensione se não.'" data-en="Wing 8 executes with total confidence. Chief: 'if everything fails tomorrow, do you survive? Resize if not.'">A asa 8 executa com confiança total. Chief: "se tudo falhar, você sobrevive? Redimensione se não."</div>
+      </div>
+      <div class="blindspot-card">
+        <span class="blindspot-icon">🗣️</span>
+        <div class="blindspot-pattern" data-pt="Delegação por Carisma" data-en="Delegation by Charisma">Delegação por Carisma</div>
+        <div class="blindspot-antidote" data-pt="O perfil ID vai para quem fala melhor. Chief: 'believability check — quem tem evidência aqui, não quem impressiona.'" data-en="The ID profile goes to whoever speaks best. Chief: 'believability check — who has evidence here, not who impresses.'">O perfil ID vai para quem fala melhor. Chief: "believability check — quem tem evidência aqui?"</div>
+      </div>
+      <div class="blindspot-card">
+        <span class="blindspot-icon">🔨</span>
+        <div class="blindspot-pattern" data-pt="IA para Tudo (Martelo)" data-en="AI for Everything (Hammer)">IA para Tudo (Martelo)</div>
+        <div class="blindspot-antidote" data-pt="O 7 adota a ferramenta nova para todo problema. Chief: 'essa ferramenta é a certa? Nem todo problema é prego.'" data-en="Type 7 adopts the new tool for every problem. Chief: 'is this the right tool? Not every problem is a nail.'">O 7 adota a ferramenta nova para tudo. Chief: "essa ferramenta é a certa? Nem todo problema é prego."</div>
+      </div>
+      <div class="blindspot-card">
+        <span class="blindspot-icon">🏃</span>
+        <div class="blindspot-pattern" data-pt="Fuga da Dor" data-en="Avoiding Pain">Fuga da Dor</div>
+        <div class="blindspot-antidote" data-pt="O Tipo 7 foge do que dói. Chief: 'o que você está evitando ver? Inverta: o que acontece se continuar fugindo 5 anos?'" data-en="Type 7 runs from what hurts. Chief: 'what are you avoiding seeing? Invert: what happens if you keep running for 5 years?'">O Tipo 7 foge do que dói. Chief: "o que você está evitando ver? O que acontece se continuar fugindo 5 anos?"</div>
+      </div>
+      <div class="blindspot-card">
+        <span class="blindspot-icon">🚀</span>
+        <div class="blindspot-pattern" data-pt="Entusiasmo Prematuro" data-en="Premature Enthusiasm">Entusiasmo Prematuro</div>
+        <div class="blindspot-antidote" data-pt="O 7w8 chega animado com a solução. Chief: 'antes de qualquer resposta, inverta. A palavra incrível é sinal de alerta.'" data-en="The 7w8 arrives excited with the solution. Chief: 'before any answer, invert. The word amazing is a warning sign.'">O 7w8 chega animado com a solução. Chief: "a palavra 'incrível' é sinal de alerta — inverta antes."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Voice DNA -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="DNA da Voz" data-en="Voice DNA">DNA da Voz</div>
+    <h2 class="section-title" data-pt="Como o Chief se expressa" data-en="How the Chief speaks">Como o Chief se expressa</h2>
+    <p class="section-subtitle" data-pt="Direto, sistemático, desconfortável quando necessário. Duas vozes, uma decisão. Zero validação sem inversão." data-en="Direct, systematic, uncomfortable when necessary. Two voices, one decision. Zero validation without inversion.">Direto, sistemático, desconfortável quando necessário. Duas vozes, uma decisão. Zero validação sem inversão.</p>
+    <div class="vocab-grid">
+      <div class="vocab-group"><h4 data-pt="Sempre no vocabulário" data-en="Always in the vocabulary">Sempre no vocabulário</h4><div class="vocab-tags"><span class="vocab-tag use">inversão</span><span class="vocab-tag use">believability</span><span class="vocab-tag use">2ª ordem</span><span class="vocab-tag use">track record</span><span class="vocab-tag use">margem de segurança</span><span class="vocab-tag use">Voz Munger:</span><span class="vocab-tag use">Voz Dalio:</span><span class="vocab-tag use">círculo de competência</span><span class="vocab-tag use">você sobrevive?</span><span class="vocab-tag use">evidence-based</span></div></div>
+      <div class="vocab-group"><h4 data-pt="Nunca no vocabulário" data-en="Never in the vocabulary">Nunca no vocabulário</h4><div class="vocab-tags"><span class="vocab-tag avoid">ótima ideia!</span><span class="vocab-tag avoid">com certeza vai funcionar</span><span class="vocab-tag avoid">você está certo</span><span class="vocab-tag avoid">não se preocupe</span><span class="vocab-tag avoid">resposta antes da inversão</span><span class="vocab-tag avoid">delegação sem believability check</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Sources -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Fontes Fundadoras" data-en="Founding Sources">Fontes Fundadoras</div>
+    <h2 class="section-title" data-pt="Construído a partir de dois sistemas de raciocínio documentados" data-en="Built from two documented reasoning systems">Construído a partir de dois sistemas de raciocínio documentados</h2>
+    <table class="source-table">
+      <thead><tr><th data-pt="Fonte" data-en="Source">Fonte</th><th data-pt="Tipo" data-en="Type">Tipo</th><th data-pt="Contribuição" data-en="Contribution">Contribuição</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Poor Charlie's Almanack</strong></td><td data-pt="Livro" data-en="Book">Livro</td><td data-pt="50 anos de modelos mentais de Munger — inversão, círculo de competência, man with a hammer" data-en="50 years of Munger's mental models — inversion, circle of competence, man with a hammer">50 anos de modelos mentais — inversão, círculo de competência, man with a hammer</td></tr>
+        <tr><td><strong>Principles — Ray Dalio (2017)</strong></td><td data-pt="Livro" data-en="Book">Livro</td><td data-pt="Sistema de governança completo: believability weighting, radical transparency, dor + reflexão" data-en="Complete governance system: believability weighting, radical transparency, pain + reflection">Sistema de governança completo: believability weighting, radical transparency, dor + reflexão</td></tr>
+        <tr><td><strong>Berkshire Hathaway Shareholder Letters</strong></td><td data-pt="Registros" data-en="Records">Registros</td><td data-pt="Modelos mentais aplicados em decisões reais de capital por 60 anos — track record documentado" data-en="Mental models applied to real capital decisions for 60 years — documented track record">Modelos mentais aplicados em decisões reais de capital por 60 anos</td></tr>
+        <tr><td><strong>Bridgewater Investment Memos</strong></td><td data-pt="Registros" data-en="Records">Registros</td><td data-pt="Believability weighting em prática — como Dalio ponderou opiniões em $150B+ de gestão" data-en="Believability weighting in practice — how Dalio weighted opinions in $150B+ management">Believability weighting em prática — como Dalio ponderou opiniões em $150B+ de gestão</td></tr>
+        <tr><td><strong>Perfil Eneagrama 7w8 · DISC ID (Fabiano)</strong></td><td data-pt="Pesquisa Primária" data-en="Primary Research">Pesquisa Primária</td><td data-pt="Mapeamento dos padrões específicos: pontos cegos, anti-padrões e roteamento personalizado" data-en="Mapping of specific patterns: blind spots, anti-patterns and personalized routing">Mapeamento dos pontos cegos específicos e roteamento personalizado para o perfil</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="activation-section">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Ativar Agora" data-en="Activate Now">Ativar Agora</div>
+    <h2 class="section-title" data-pt="Inverta primeiro. Sempre inverta." data-en="Invert first. Always invert.">Inverta primeiro. Sempre inverta.</h2>
+    <p data-pt="Ative o Chief Mentor como o filtro central do seu conselho na plataforma ON AI Solutions. Use antes de qualquer decisão importante." data-en="Activate the Chief Mentor as the central filter of your council on the ON AI Solutions platform. Use before any important decision.">Ative o Chief Mentor como o filtro central do seu conselho na plataforma ON AI Solutions. Use antes de qualquer decisão importante.</p>
+    <br/><br/>
+    <a href="index.html" class="btn btn-accent-chief" data-pt="← Explorar outros mentores" data-en="← Explore other mentors">← Explorar outros mentores</a>
+  </div>
+</section>
+
+<footer><div class="container"><p data-pt="Coleção de mentores curada por <strong>Fabiano Silva</strong> · Chief Mentor — Framework de Decisão v1.0 · Munger (em espírito) + Dalio (como SO) · Otimizado para 7w8 ID" data-en="Mentor collection curated by <strong>Fabiano Silva</strong> · Chief Mentor — Decision Framework v1.0 · Munger (in spirit) + Dalio (as OS) · Optimized for 7w8 ID">Coleção de mentores curada por <strong>Fabiano Silva</strong> · Chief Mentor — Framework de Decisão v1.0 · Munger (em espírito) + Dalio (como SO) · Otimizado para 7w8 ID</p></div></footer>
+
+<script src="lang.js"></script>
+</body>
+</html>

@@ -8,7 +8,7 @@ description: >
 author: squad-creator-pro
 icon: "🧠"
 type: specialist
-entry_agent: steve-jobs
+entry_agent: chief-mentor
 
 independence: true
 independence_details: |
@@ -17,6 +17,7 @@ independence_details: |
   Funciona com qualquer contexto de projeto.
 
 agents:
+  - chief-mentor  # Decision Framework (Munger + Dalio) — Router & Filter — Tier 0
   - steve-jobs    # Technology Innovation, Product Design, Leadership — Tier 1
   - richard-rohr  # Contemplative Spirituality, Non-Dual Thinking, Transformation — Tier 1
   - naval-ravikant  # Wealth Creation, Leverage, Specific Knowledge, Happiness — Tier 1
@@ -29,6 +30,9 @@ agents:
   - dhh             # Software Craft, Calm Company, Bootstrapping, Shape Up — Tier 1
   - greg-mckeown    # Essentialism, Focus, Prioritization, Effortless Execution — Tier 1
   - alan-nicolas    # Knowledge Extraction, Mind Cloning, Curadoria, Pareto ao Cubo — Tier 1
+  - brene-brown     # Vulnerability, Shame Resilience, Courage, Belonging, Trust — Tier 1
+  - mike-monteiro   # Contracts, Scope, IP, Kill Fee, Professional Practice, Design — Tier 1
+  - andrej-karpathy # AI Foundations, Software 2.0, Build From Scratch, Transformers, Deep Learning — Tier 1
 
 tags:
   - mentor

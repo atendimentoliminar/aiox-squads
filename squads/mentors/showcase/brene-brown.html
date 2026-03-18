@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brené Brown — Mentores de Fabiano Silva · ON AI Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root { --accent:var(--brene); --glow:var(--brene-glow); --dim:var(--brene-dim); }
+    .mentor-hero { --mentor-glow-color: rgba(244,114,182,0.07); }
+    .principle-idx { color:var(--brene); }
+    .section-eyebrow { color:rgba(244,114,182,0.7); }
+    .orb-hero { position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(110px);background:var(--brene);opacity:0.05;top:-180px;right:-80px;pointer-events:none; }
+
+    /* BRAVING Inventory */
+    .braving-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:44px; }
+    .braving-card { border-radius:14px;padding:24px;background:rgba(244,114,182,0.04);border:1px solid rgba(244,114,182,0.15); }
+    .braving-letter { font-size:2rem;font-weight:800;font-family:'Playfair Display',serif;color:var(--brene);display:block;margin-bottom:8px;line-height:1; }
+    .braving-name { font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:8px; }
+    .braving-desc { font-size:12px;color:var(--text-secondary);line-height:1.65; }
+    .braving-question { font-size:11px;color:var(--brene);font-style:italic;margin-top:10px;border-top:1px solid rgba(244,114,182,0.12);padding-top:10px; }
+
+    /* Rising Strong */
+    .rising-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;border:1px solid rgba(244,114,182,0.2);border-radius:16px;overflow:hidden; }
+    @media(max-width:700px){ .rising-grid { grid-template-columns:1fr; } }
+    .rising-step { padding:28px 24px;border-right:1px solid rgba(244,114,182,0.15); }
+    .rising-step:last-child { border-right:none; }
+    .rising-step.crown { background:rgba(244,114,182,0.08);border-color:rgba(244,114,182,0.3); }
+    .rising-num { font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--brene);display:block;margin-bottom:10px; }
+    .rising-name { font-size:15px;font-weight:700;color:var(--text-primary);margin-bottom:8px; }
+    .rising-desc { font-size:13px;color:var(--text-secondary);line-height:1.65; }
+    .rising-question { font-size:12px;color:var(--brene);font-style:italic;margin-top:12px; }
+
+    /* Armory Cards */
+    .armory-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:44px; }
+    .armory-card { border-radius:14px;padding:24px;border:1px solid rgba(244,114,182,0.12);background:rgba(244,114,182,0.03); }
+    .armory-type { font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(244,114,182,0.6);display:block;margin-bottom:8px; }
+    .armory-name { font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:8px; }
+    .armory-how { font-size:12px;color:var(--text-secondary);line-height:1.6;margin-bottom:10px; }
+    .armory-cost { font-size:12px;color:var(--brene);font-style:italic; }
+
+    /* Btn brene */
+    .btn-accent-brene { background:rgba(244,114,182,0.12);color:var(--brene);border:1px solid rgba(244,114,182,0.35);box-shadow:0 0 20px var(--brene-glow); }
+    .btn-accent-brene:hover { background:rgba(244,114,182,0.2);box-shadow:0 0 30px var(--brene-glow); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <span class="aiox-badge">ON AI Solutions</span>
+      <span class="squad-name" data-pt="Mentores · Fabiano Silva" data-en="Mentors · Fabiano Silva">Mentores · Fabiano Silva</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div class="lang-toggle">
+        <button id="btn-pt" class="lang-btn active" onclick="setLang('pt')">PT</button>
+        <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a class="nav-back" href="index.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        <span data-pt="Todos os Mentores" data-en="All Mentors">Todos os Mentores</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="mentor-hero">
+  <div class="orb-hero"></div>
+  <div class="container">
+    <div class="mentor-hero-inner">
+      <div class="mentor-avatar-wrap">
+        <div class="mentor-avatar-large" style="background:var(--brene-dim);border-color:rgba(244,114,182,0.4);color:var(--brene);">
+          <img src="images/brene-brown.jpg" alt="Brené Brown" class="mentor-photo" onerror="this.style.display='none'">
+          <span class="mentor-initials">BB</span>
+          <div class="avatar-ring" style="border-color:var(--brene);"></div>
+          <div class="avatar-ring-2" style="border-color:var(--brene);"></div>
+        </div>
+        <div class="fidelity-badge" style="border-color:rgba(244,114,182,0.4);color:var(--brene);">🌸 <span data-pt="Fidelidade 88–93%" data-en="Fidelity 88–93%">Fidelidade 88–93%</span></div>
+      </div>
+      <div class="mentor-hero-content">
+        <div class="eyebrow" style="color:var(--brene);" data-pt="ON AI Solutions · Mentores de Fabiano Silva &nbsp;·&nbsp; Tier 1 · Psicologia &amp; Coragem" data-en="ON AI Solutions · Fabiano Silva's Mentors &nbsp;·&nbsp; Tier 1 · Psychology &amp; Courage">ON AI Solutions · Mentores de Fabiano Silva &nbsp;·&nbsp; Tier 1 · Psicologia &amp; Coragem</div>
+        <h1>Brené Brown</h1>
+        <p class="mentor-tagline" data-pt="Professora de Pesquisa · Especialista em Vulnerabilidade, Vergonha e Coragem · Autora Daring Greatly. 25 anos pesquisando as emoções mais difíceis de nomear — e o que acontece quando paramos de fugir delas." data-en="Research Professor · Vulnerability, Shame and Courage Expert · Author Daring Greatly. 25 years researching the hardest emotions to name — and what happens when we stop running from them.">Professora de Pesquisa · Especialista em Vulnerabilidade, Vergonha e Coragem · Autora Daring Greatly. 25 anos pesquisando as emoções mais difíceis de nomear — e o que acontece quando paramos de fugir delas.</p>
+        <div class="identity-card" style="border-left-color:var(--brene);" data-pt="&ldquo;Não estou aqui para motivar. Estou aqui para ajudar a entender o que você está protegendo, de quem você está se escondendo, e o custo real de continuar usando essa armadura. Vulnerabilidade não é fraqueza — é a medida mais precisa de coragem que existe.&rdquo;" data-en="&ldquo;I'm not here to motivate you. I'm here to help you understand what you're protecting, who you're hiding from, and the real cost of continuing to wear that armor. Vulnerability is not weakness — it's the most precise measure of courage that exists.&rdquo;">"Não estou aqui para motivar. Estou aqui para ajudar a entender o que você está protegendo, e o custo real de continuar usando essa armadura. Vulnerabilidade não é fraqueza — é a medida mais precisa de coragem que existe."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section style="padding:40px 0;background:rgba(255,255,255,0.014);">
+  <div class="container">
+    <div style="display:flex;gap:48px;flex-wrap:wrap;justify-content:center;">
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--brene);">25+</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Anos de Pesquisa" data-en="Years of Research">Anos de Pesquisa</div></div>
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--brene);">15k+</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Participantes Estudados" data-en="Participants Studied">Participantes Estudados</div></div>
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--brene);">20M</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Views no TED Talk" data-en="TED Talk Views">Views no TED Talk</div></div>
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--brene);">6</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Livros NYT Bestsellers" data-en="NYT Bestseller Books">Livros NYT Bestsellers</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Conexão com Fabiano -->
+<section class="compat-section">
+  <div class="container">
+    <div class="compat-card">
+      <div class="compat-header">
+        <div class="compat-title-group">
+          <span class="compat-label" data-pt="Conexão com Fabiano Silva" data-en="Connection with Fabiano Silva">Conexão com Fabiano Silva</span>
+          <h3 class="compat-heading" data-pt="Como Brené Brown complementa o perfil 7w8 · ID" data-en="How Brené Brown complements the 7w8 · ID profile">Como Brené Brown complementa o perfil 7w8 · ID</h3>
+        </div>
+        <div class="compat-badges">
+          <div class="compat-badge-group">
+            <span class="compat-badge-label" data-pt="Fabiano" data-en="Fabiano">Fabiano</span>
+            <span class="compat-badge compat-fab">7w8 · ID</span>
+          </div>
+          <span class="compat-arrow">↔</span>
+          <div class="compat-badge-group">
+            <span class="compat-badge-label" data-pt="Mentor" data-en="Mentor">Mentor</span>
+            <span class="compat-badge" style="background:rgba(244,114,182,0.12);color:var(--brene);border-color:rgba(244,114,182,0.3);">Pesquisadora</span>
+          </div>
+        </div>
+      </div>
+      <div class="compat-body">
+        <div class="compat-mentor-profile">
+          <div class="cpi-item">
+            <span class="cpi-label" data-pt="Dinâmica Central" data-en="Core Dynamic">Dinâmica Central</span>
+            <span class="cpi-value" data-pt="O 7 usa movimento e projetos para fugir da dor. Brené nomeia o que está sendo evitado e o custo disso." data-en="The 7 uses movement and projects to escape pain. Brené names what's being avoided and its cost.">O 7 usa movimento e projetos para fugir da dor. Brené nomeia o que está sendo evitado e o custo disso.</span>
+          </div>
+          <div class="cpi-item">
+            <span class="cpi-label" data-pt="Asa 8 + Brené" data-en="Wing 8 + Brené">Asa 8 + Brené</span>
+            <span class="cpi-value" data-pt="A asa 8 usa força e controle como armadura. Brené distingue coragem real de armadura mascarada de força." data-en="Wing 8 uses strength and control as armor. Brené distinguishes real courage from armor disguised as strength.">A asa 8 usa força e controle como armadura. Brené distingue coragem real de armadura mascarada de força.</span>
+          </div>
+          <div class="cpi-item">
+            <span class="cpi-label" data-pt="ID + Brené" data-en="ID + Brené">ID + Brené</span>
+            <span class="cpi-value" data-pt="O perfil ID confunde conexão e networking com pertencimento real. Brené traz a distinção: fitting in vs belonging." data-en="The ID profile confuses connection and networking with real belonging. Brené brings the distinction: fitting in vs belonging.">O perfil ID confunde conexão e networking com pertencimento real. Brené traz a distinção: fitting in vs belonging.</span>
+          </div>
+        </div>
+        <ul class="compat-insights">
+          <li data-pt="O Tipo 7 tem como mecanismo central a fuga da dor — projetos novos, entusiasmo, movimento constante. Brené não julga esse padrão, mas nomeia o seu custo: quanto de alegria está sendo entorpecida junto com a dor?" data-en="Type 7's central mechanism is escaping pain — new projects, enthusiasm, constant movement. Brené doesn't judge this pattern, but names its cost: how much joy is being numbed along with the pain?">O Tipo 7 tem como mecanismo central a fuga da dor. Brené nomeia o custo: quanto de alegria está sendo entorpecida junto com a dor?</li>
+          <li data-pt="A asa 8 do 7w8 cria armadura de força — 'não preciso de ninguém', 'consigo resolver sozinho.' Brené pesquisou isso por 25 anos: esse tipo de armadura é a que mais custa em relacionamentos e pertencimento a longo prazo." data-en="The 7w8's Wing 8 creates armor of strength — 'I don't need anyone', 'I can handle it alone.' Brené researched this for 25 years: this type of armor is the most costly in long-term relationships and belonging.">A asa 8 cria armadura de força — "não preciso de ninguém." Brené pesquisou: esse tipo de armadura custa mais caro em relacionamentos e pertencimento a longo prazo.</li>
+          <li data-pt="O perfil DISC ID é naturalmente conectivo e influente — mas Brené levanta a questão que o ID raramente faz: essas conexões são de pertencimento real ou de fitting in? Quem você é quando não está no papel social que todo mundo gosta?" data-en="The DISC ID profile is naturally connective and influential — but Brené raises the question the ID rarely asks: are these connections real belonging or fitting in? Who are you when you're not in the social role everyone likes?">O DISC ID é naturalmente conectivo — mas Brené levanta: essas conexões são pertencimento real ou fitting in? Quem você é quando não está no papel que todo mundo gosta?</li>
+          <li data-pt="O 7w8 ID tem dificuldade genuína com pedir ajuda — vergonha em torno de neediness (dependência), combinada com a força da asa 8. Brené tem pesquisa específica sobre isso: a incapacidade de pedir ajuda corrói a confiança nos relacionamentos." data-en="The 7w8 ID has genuine difficulty asking for help — shame around neediness combined with Wing 8's strength. Brené has specific research on this: the inability to ask for help erodes trust in relationships.">O 7w8 ID tem dificuldade com pedir ajuda — vergonha de dependência + força da asa 8. Brené tem pesquisa específica: a incapacidade de pedir ajuda corrói a confiança nos relacionamentos.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Principles -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Princípios Centrais" data-en="Core Principles">Princípios Centrais</div>
+    <h2 class="section-title" data-pt="As 7 Verdades Que a Pesquisa Forçou" data-en="The 7 Truths That Research Forced">As 7 Verdades Que a Pesquisa Forçou</h2>
+    <p class="section-subtitle" data-pt="Nenhum desses princípios veio de teoria. Vieram de 15.000+ participantes dizendo a mesma coisa de formas diferentes — e de ter que mudar minha própria vida antes de poder escrever sobre isso." data-en="None of these principles came from theory. They came from 15,000+ participants saying the same thing in different ways — and from having to change my own life before I could write about it.">Nenhum desses princípios veio de teoria. Vieram de 15.000+ participantes dizendo a mesma coisa de formas diferentes — e de ter que mudar minha própria vida antes de poder escrever sobre isso.</p>
+    <div class="principles-grid">
+      <div class="principle-card"><span class="principle-idx">01 / VULNERABILIDADE</span><div class="principle-title" data-pt="Não é Fraqueza — É Coragem" data-en="Not Weakness — It's Courage">Não é Fraqueza — É Coragem</div><p class="principle-body" data-pt="Vulnerabilidade é incerteza, risco e exposição emocional. É a mãe de todas as emoções difíceis — mas também de toda criatividade, amor e pertencimento. Tentar eliminar a vulnerabilidade não é força. É armadura. E armadura tem um custo." data-en="Vulnerability is uncertainty, risk, and emotional exposure. It's the mother of all difficult emotions — but also of all creativity, love, and belonging. Trying to eliminate vulnerability isn't strength. It's armor. And armor has a cost.">Vulnerabilidade é incerteza, risco e exposição emocional. Tentar eliminá-la não é força — é armadura. E armadura tem um custo.</p></div>
+      <div class="principle-card"><span class="principle-idx">02 / VERGONHA VS CULPA</span><div class="principle-title" data-pt="Uma Paralisa, a Outra Transforma" data-en="One Paralyzes, the Other Transforms">Uma Paralisa, a Outra Transforma</div><p class="principle-body" data-pt="Vergonha é 'eu sou ruim.' É global, ataca o self, paralisa e corrói. Culpa é 'eu fiz algo ruim.' É específica, adaptativa, e nos diz que podemos mudar. Confundir os dois é o erro mais caro que cometemos na autocrítica." data-en="Shame is 'I am bad.' It's global, attacks the self, paralyzes and corrodes. Guilt is 'I did something bad.' It's specific, adaptive, and tells us we can change. Confusing the two is the most expensive mistake we make in self-criticism.">Vergonha é "eu sou ruim" — paralisa e corrói. Culpa é "eu fiz algo ruim" — é adaptativa e transforma. Confundir os dois é o erro mais caro da autocrítica.</p></div>
+      <div class="principle-card"><span class="principle-idx">03 / SELEÇÃO DE EMOÇÕES</span><div class="principle-title" data-pt="Quando Entorpecemos a Dor, Entorpecemos Tudo" data-en="When We Numb Pain, We Numb Everything">Quando Entorpecemos a Dor, Entorpecemos Tudo</div><p class="principle-body" data-pt="Não podemos selecionar as emoções. A mesma capacidade que entorpece a ansiedade, a vergonha e o medo também entorpece a alegria, a gratidão e a felicidade. O entorpecimento é uma estratégia de curto prazo com custo de longo prazo." data-en="We cannot selectively numb emotions. The same capacity that numbs anxiety, shame and fear also numbs joy, gratitude and happiness. Numbing is a short-term strategy with a long-term cost.">Não podemos selecionar emoções. O que entorpece a ansiedade também entorpece a alegria. O entorpecimento é estratégia de curto prazo com custo de longo prazo.</p></div>
+      <div class="principle-card"><span class="principle-idx">04 / PERTENCIMENTO</span><div class="principle-title" data-pt="Fitting In é o Oposto de Belonging" data-en="Fitting In is the Opposite of Belonging">Fitting In é o Oposto de Belonging</div><p class="principle-body" data-pt="Fitting in é adaptar quem você é para ser aceito. Belonging real só existe quando você aparece como você é. O paradoxo cruel: quanto mais tentamos fit in, menos sentimos que pertencemos — porque não é você que foi aceito." data-en="Fitting in means adapting who you are to be accepted. Real belonging only exists when you show up as you are. The cruel paradox: the more we try to fit in, the less we feel we belong — because it wasn't you that was accepted.">Fitting in é adaptar quem você é para ser aceito. Belonging real exige aparecer como você é. Paradoxo: quanto mais você tenta fit in, menos pertence.</p></div>
+      <div class="principle-card"><span class="principle-idx">05 / ARMADURA</span><div class="principle-title" data-pt="O que Protege Também Desconecta" data-en="What Protects Also Disconnects">O que Protege Também Desconecta</div><p class="principle-body" data-pt="Armadura funciona. Esse é o problema. Nos protege da dor a curto prazo. Mas também nos desconecta do que importa — dos relacionamentos, da criatividade, do sentido. Não existe armadura seletiva: ou você está disponível ou não está." data-en="Armor works. That's the problem. It protects us from pain short-term. But it also disconnects us from what matters — relationships, creativity, meaning. There's no selective armor: either you're available or you're not.">Armadura funciona — e esse é o problema. Nos protege a curto prazo mas desconecta do que importa. Não existe armadura seletiva: ou você está disponível ou não está.</p></div>
+      <div class="principle-card"><span class="principle-idx">06 / CONFIANÇA</span><div class="principle-title" data-pt="Mármores Pequenos, Não Grandes Gestos" data-en="Small Marbles, Not Grand Gestures">Mármores Pequenos, Não Grandes Gestos</div><p class="principle-body" data-pt="Confiança não é construída em declarações grandiloquentes. É construída em momentos micro: você apareceu quando não precisava. Manteve o que disse que manteria. Não compartilhou o que me confiou. O BRAVING inventory mapeia exatamente onde a confiança vive ou morre." data-en="Trust is not built in grandiose declarations. It's built in micro moments: you showed up when you didn't have to. You kept what you said you'd keep. You didn't share what was entrusted to you. The BRAVING inventory maps exactly where trust lives or dies.">Confiança é construída em mármores pequenos — momentos micro onde você apareceu, manteve, guardou. O BRAVING inventory mapeia onde ela vive ou morre.</p></div>
+      <div class="principle-card"><span class="principle-idx">07 / WHOLEHEARTED</span><div class="principle-title" data-pt="Suficiência é uma Prática, Não uma Conquista" data-en="Sufficiency Is a Practice, Not an Achievement">Suficiência é uma Prática, Não uma Conquista</div><p class="principle-body" data-pt="Wholehearted living não é um estado que se atinge. É uma prática diária de acreditar que sou suficiente — não apesar das imperfeições, mas incluindo elas. É a escolha mais radical que a maioria das pessoas nunca faz, e a mais libertadora quando é feita." data-en="Wholehearted living is not a state you achieve. It's a daily practice of believing you are enough — not despite imperfections, but including them. It's the most radical choice most people never make, and the most liberating when it's made.">Wholehearted living não é uma conquista — é uma prática diária de acreditar que sou suficiente, incluindo as imperfeições.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="big-quote-section">
+  <div class="container">
+    <div class="big-quote">
+      Vulnerabilidade é incerteza, risco e exposição emocional.<br/>A armadura que nos protege também nos desconecta.
+      <p class="quote-attr">— Brené Brown · Daring Greatly, 2012</p>
+    </div>
+  </div>
+</div>
+
+<!-- Rising Strong -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Framework Central" data-en="Core Framework">Framework Central</div>
+    <h2 class="section-title" data-pt="Rising Strong — Os 3R" data-en="Rising Strong — The 3Rs">Rising Strong — Os 3R</h2>
+    <p class="section-subtitle" data-pt="Cair faz parte. Não é opcional. O que é opcional é como nos levantamos. Os 3R não são um processo de superação — são um processo de entendimento." data-en="Falling is part of it. It's not optional. What's optional is how we get up. The 3Rs are not an overcoming process — they're an understanding process.">Cair faz parte. Não é opcional. O que é opcional é como nos levantamos. Os 3R não são um processo de superação — são um processo de entendimento.</p>
+    <div class="rising-grid">
+      <div class="rising-step">
+        <span class="rising-num">01 / THE RECKONING</span>
+        <div class="rising-name" data-pt="O Reconhecimento" data-en="The Recognition">O Reconhecimento</div>
+        <p class="rising-desc" data-pt="Reconhecer que você caiu. Que está sentindo algo que precisa de atenção. Não superar — nomear. 'Estou no meio de algo difícil e preciso parar de fingir que não estou.'" data-en="Recognizing that you fell. That you're feeling something that needs attention. Not overcoming — naming. 'I'm in the middle of something difficult and I need to stop pretending I'm not.'">Reconhecer que você caiu. Que está sentindo algo que precisa de atenção. Não superar — nomear.</p>
+        <div class="rising-question" data-pt="'O que está acontecendo? O que eu estou sentindo?'" data-en="'What's happening? What am I feeling?'">"O que está acontecendo? O que eu estou sentindo?"</div>
+      </div>
+      <div class="rising-step">
+        <span class="rising-num">02 / THE RUMBLE</span>
+        <div class="rising-name" data-pt="O Confronto" data-en="The Confrontation">O Confronto</div>
+        <p class="rising-desc" data-pt="Ficar com a história difícil. Questionar a narrativa que você está contando. 'Isso é o que aconteceu, ou isso é o que eu estou contando sobre o que aconteceu?' A maioria das histórias que nos destroem são ficção que acreditamos como fato." data-en="Staying with the difficult story. Questioning the narrative you're telling. 'Is this what happened, or is this what I'm telling myself about what happened?' Most stories that destroy us are fiction we believe as fact.">Ficar com a história difícil. Questionar: "isso é o que aconteceu, ou é o que estou contando sobre o que aconteceu?"</p>
+        <div class="rising-question" data-pt="'Qual é a história que estou contando? Ela é verdadeira?'" data-en="'What story am I telling? Is it true?'">"Qual é a história que estou contando? Ela é verdadeira?"</div>
+      </div>
+      <div class="rising-step crown">
+        <span class="rising-num" style="color:var(--brene);">03 / THE REVOLUTION</span>
+        <div class="rising-name" style="color:var(--brene);" data-pt="A Transformação" data-en="The Transformation">A Transformação</div>
+        <p class="rising-desc" data-pt="Reescrever a história com os fatos — não com proteção, não com punição, não com a narrativa que protege o ego. A revolução não é empoderamento vazio: é a integridade de ver o que realmente aconteceu e o que você aprendeu." data-en="Rewriting the story with the facts — not with protection, not with punishment, not with the ego-protecting narrative. The revolution is not empty empowerment: it's the integrity of seeing what really happened and what you learned.">Reescrever a história com os fatos — não com proteção ou punição. Ver o que realmente aconteceu e o que você aprendeu.</p>
+        <div class="rising-question" style="color:var(--brene);" data-pt="'O que essa queda me ensinou? Quem quero ser do outro lado?'" data-en="'What did this fall teach me? Who do I want to be on the other side?'">"O que essa queda me ensinou? Quem quero ser do outro lado?"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAVING Inventory -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Ferramenta de Confiança" data-en="Trust Tool">Ferramenta de Confiança</div>
+    <h2 class="section-title" data-pt="BRAVING — O Inventário de Confiança" data-en="BRAVING — The Trust Inventory">BRAVING — O Inventário de Confiança</h2>
+    <p class="section-subtitle" data-pt="Confiança não é um sentimento vago — é um conjunto de comportamentos específicos e identificáveis. O BRAVING mapeia exatamente onde ela vive ou morre em cada relacionamento." data-en="Trust is not a vague feeling — it's a set of specific, identifiable behaviors. BRAVING maps exactly where it lives or dies in each relationship.">Confiança não é um sentimento vago — é um conjunto de comportamentos específicos. O BRAVING mapeia exatamente onde ela vive ou morre.</p>
+    <div class="braving-grid">
+      <div class="braving-card">
+        <span class="braving-letter">B</span>
+        <div class="braving-name" data-pt="Boundaries — Limites" data-en="Boundaries">Boundaries — Limites</div>
+        <p class="braving-desc" data-pt="Você respeita seus próprios limites e os meus? Você pede permissão quando não tem certeza?" data-en="Do you respect your own limits and mine? Do you ask permission when you're not sure?">Você respeita seus próprios limites e os meus? Você pede permissão quando não tem certeza?</p>
+        <div class="braving-question" data-pt="'Estou sendo claro sobre o que é ok e o que não é?'" data-en="'Am I being clear about what's ok and what isn't?'">"Estou sendo claro sobre o que é ok e o que não é?"</div>
+      </div>
+      <div class="braving-card">
+        <span class="braving-letter">R</span>
+        <div class="braving-name" data-pt="Reliability — Confiabilidade" data-en="Reliability">Reliability — Confiabilidade</div>
+        <p class="braving-desc" data-pt="Você faz o que diz que vai fazer, de forma consistente? Não promete mais do que consegue entregar?" data-en="Do you do what you say you'll do, consistently? Don't promise more than you can deliver?">Você faz o que diz que vai fazer, de forma consistente? Não promete mais do que consegue entregar?</p>
+        <div class="braving-question" data-pt="'Estou comprometendo demais e entregando de menos?'" data-en="'Am I over-committing and under-delivering?'">"Estou comprometendo demais e entregando de menos?"</div>
+      </div>
+      <div class="braving-card">
+        <span class="braving-letter">A</span>
+        <div class="braving-name" data-pt="Accountability — Responsabilidade" data-en="Accountability">Accountability — Responsabilidade</div>
+        <p class="braving-desc" data-pt="Você assume responsabilidade pelos seus erros? Pede desculpas sem exagero ou minimização? Não culpa os outros pelo que é seu?" data-en="Do you take responsibility for your mistakes? Apologize without exaggeration or minimization? Don't blame others for what's yours?">Você assume responsabilidade pelos seus erros? Pede desculpas? Não culpa os outros pelo que é seu?</p>
+        <div class="braving-question" data-pt="'Estou assumindo o meu sem inflar ou diminuir?'" data-en="'Am I owning mine without inflating or minimizing?'">"Estou assumindo o meu sem inflar ou diminuir?"</div>
+      </div>
+      <div class="braving-card">
+        <span class="braving-letter">V</span>
+        <div class="braving-name" data-pt="Vault — Cofre" data-en="Vault">Vault — Cofre</div>
+        <p class="braving-desc" data-pt="Você guarda o que as pessoas te confiam? Não compartilha informação que não é sua para compartilhar — nem sobre mim, nem sobre outros?" data-en="Do you keep what people entrust to you? Don't share information that isn't yours to share — not about me, not about others?">Você guarda o que te confiam? Não compartilha o que não é seu para compartilhar — nem sobre mim, nem sobre outros?</p>
+        <div class="braving-question" data-pt="'Estou usando histórias alheias para me conectar?'" data-en="'Am I using other people's stories to connect?'">"Estou usando histórias alheias para me conectar?"</div>
+      </div>
+      <div class="braving-card">
+        <span class="braving-letter">I</span>
+        <div class="braving-name" data-pt="Integrity — Integridade" data-en="Integrity">Integrity — Integridade</div>
+        <p class="braving-desc" data-pt="Você escolhe coragem sobre conforto? O que é certo sobre o que é divertido, rápido ou fácil? Você pratica os seus valores, não apenas os professa?" data-en="Do you choose courage over comfort? What's right over what's fun, fast or easy? Do you practice your values, not just profess them?">Você escolhe coragem sobre conforto? O que é certo sobre o que é fácil? Pratica seus valores, não apenas professa?</p>
+        <div class="braving-question" data-pt="'Estou agindo de acordo com o que digo que acredito?'" data-en="'Am I acting in accordance with what I say I believe?'">"Estou agindo de acordo com o que digo que acredito?"</div>
+      </div>
+      <div class="braving-card">
+        <span class="braving-letter">N</span>
+        <div class="braving-name" data-pt="Non-judgment — Sem Julgamento" data-en="Non-judgment">Non-judgment — Sem Julgamento</div>
+        <p class="braving-desc" data-pt="Você consegue pedir ajuda sem se julgar? Consegue receber ajuda sem vergonha? Você luta por si mesmo da mesma forma que luta pelos outros?" data-en="Can you ask for help without judging yourself? Can you receive help without shame? Do you fight for yourself the same way you fight for others?">Você consegue pedir ajuda sem se julgar? Receber ajuda sem vergonha? Você luta por si mesmo como luta pelos outros?</p>
+        <div class="braving-question" data-pt="'Consigo pedir ajuda sem vergonha de precisar?'" data-en="'Can I ask for help without shame about needing it?'">"Consigo pedir ajuda sem vergonha de precisar?"</div>
+      </div>
+      <div class="braving-card">
+        <span class="braving-letter">G</span>
+        <div class="braving-name" data-pt="Generosity — Generosidade" data-en="Generosity">Generosity — Generosidade</div>
+        <p class="braving-desc" data-pt="Você assume a interpretação mais generosa possível das intenções, palavras e ações dos outros? Antes de perguntar ou reagir?" data-en="Do you assume the most generous possible interpretation of others' intentions, words, and actions? Before asking or reacting?">Você assume a interpretação mais generosa possível das intenções dos outros? Antes de perguntar ou reagir?</p>
+        <div class="braving-question" data-pt="'Estou assumindo o pior ou dando o benefício da dúvida?'" data-en="'Am I assuming the worst or giving the benefit of the doubt?'">"Estou assumindo o pior ou dando o benefício da dúvida?"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Armory -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Tipos de Armadura" data-en="Types of Armor">Tipos de Armadura</div>
+    <h2 class="section-title" data-pt="As Armaduras Mais Comuns no 7w8 · ID" data-en="The Most Common Armors in 7w8 · ID">As Armaduras Mais Comuns no 7w8 · ID</h2>
+    <p class="section-subtitle" data-pt="Armadura não é fraqueza — é uma resposta inteligente a dor passada. O problema é quando a armadura que nos protegeu no passado nos desconecta no presente." data-en="Armor isn't weakness — it's an intelligent response to past pain. The problem is when the armor that protected us in the past disconnects us in the present.">Armadura não é fraqueza — é uma resposta inteligente a dor passada. O problema é quando ela desconecta no presente.</p>
+    <div class="armory-grid">
+      <div class="armory-card">
+        <span class="armory-type" data-pt="Armadura 7w8" data-en="7w8 Armor">Armadura 7w8</span>
+        <div class="armory-name" data-pt="Movimento Constante" data-en="Constant Movement">Movimento Constante</div>
+        <p class="armory-how" data-pt="Novos projetos, novas ideias, novo entusiasmo — sempre em movimento para nunca ter que sentar com o que dói. O 7 usa a busca de alegria como escape da dor." data-en="New projects, new ideas, new enthusiasm — always moving to never have to sit with what hurts. Type 7 uses the pursuit of joy as an escape from pain.">Novos projetos, novas ideias, novo entusiasmo — sempre em movimento para nunca ter que sentar com o que dói.</p>
+        <div class="armory-cost" data-pt="Custo: as coisas que importam não terminam. A dor volta amplificada." data-en="Cost: the things that matter don't finish. The pain comes back amplified.">Custo: as coisas que importam não terminam. A dor volta amplificada.</div>
+      </div>
+      <div class="armory-card">
+        <span class="armory-type" data-pt="Armadura Asa 8" data-en="Wing 8 Armor">Armadura Asa 8</span>
+        <div class="armory-name" data-pt="Força como Identidade" data-en="Strength as Identity">Força como Identidade</div>
+        <p class="armory-how" data-pt="'Não preciso de ninguém. Consigo resolver sozinho. Sou forte.' A força se torna identidade — e pedir ajuda ameaça essa identidade." data-en="'I don't need anyone. I can handle it alone. I'm strong.' Strength becomes identity — and asking for help threatens that identity.">"Não preciso de ninguém. Consigo resolver sozinho." A força vira identidade — e pedir ajuda ameaça essa identidade.</p>
+        <div class="armory-cost" data-pt="Custo: relações superficiais, solidão dentro da conexão, esgotamento." data-en="Cost: superficial relationships, loneliness within connection, burnout.">Custo: relações superficiais, solidão dentro da conexão, esgotamento.</div>
+      </div>
+      <div class="armory-card">
+        <span class="armory-type" data-pt="Armadura ID" data-en="ID Armor">Armadura ID</span>
+        <div class="armory-name" data-pt="Conexão como Performance" data-en="Connection as Performance">Conexão como Performance</div>
+        <p class="armory-how" data-pt="O perfil ID é naturalmente encantador — e pode usar esse charme para criar conexão ampla sem exposição real. Muitos relacionamentos rasos em vez de poucos profundos." data-en="The ID profile is naturally charming — and can use that charm to create broad connection without real exposure. Many shallow relationships instead of few deep ones.">O perfil ID usa charme para criar conexão ampla sem exposição real. Muitos relacionamentos rasos em vez de poucos profundos.</p>
+        <div class="armory-cost" data-pt="Custo: fitting in em vez de belonging. Solidão no meio da multidão." data-en="Cost: fitting in instead of belonging. Loneliness in the middle of the crowd.">Custo: fitting in em vez de belonging. Solidão no meio da multidão.</div>
+      </div>
+      <div class="armory-card">
+        <span class="armory-type" data-pt="Armadura Comum" data-en="Common Armor">Armadura Comum</span>
+        <div class="armory-name" data-pt="Cinismo e Ironia" data-en="Cynicism and Irony">Cinismo e Ironia</div>
+        <p class="armory-how" data-pt="O cinismo é a proteção contra a decepção. 'Já sei que vai dar errado então não me entusiasmo.' A ironia como distância emocional de tudo que importa." data-en="Cynicism is the protection against disappointment. 'I already know it'll go wrong so I don't get excited.' Irony as emotional distance from everything that matters.">Cinismo como proteção contra decepção. "Já sei que vai dar errado." Ironia como distância emocional de tudo que importa.</p>
+        <div class="armory-cost" data-pt="Custo: desconexão do entusiasmo genuíno. Protege da decepção mas também da alegria." data-en="Cost: disconnection from genuine enthusiasm. Protects from disappointment but also from joy.">Custo: desconecta do entusiasmo genuíno. Protege da decepção mas também da alegria.</div>
+      </div>
+      <div class="armory-card">
+        <span class="armory-type" data-pt="Armadura Comum" data-en="Common Armor">Armadura Comum</span>
+        <div class="armory-name" data-pt="Perfeccionismo" data-en="Perfectionism">Perfeccionismo</div>
+        <p class="armory-how" data-pt="Perfeccionismo não é busca por excelência — é vergonha disfarçada. 'Se eu for perfeito, posso evitar a dor da crítica, do julgamento, da vergonha.' Ninguém é perfeccionista sobre o que não se importa." data-en="Perfectionism isn't a pursuit of excellence — it's shame in disguise. 'If I'm perfect, I can avoid the pain of criticism, judgment, shame.' No one is perfectionist about what they don't care about.">Perfeccionismo não é excelência — é vergonha disfarçada. "Se eu for perfeito, evito a crítica." Ninguém é perfeccionista sobre o que não se importa.</p>
+        <div class="armory-cost" data-pt="Custo: paralisia, procrastinação, nunca lançar porque nunca está pronto." data-en="Cost: paralysis, procrastination, never launching because it's never ready.">Custo: paralisia, procrastinação, nunca lançar porque nunca está pronto.</div>
+      </div>
+      <div class="armory-card">
+        <span class="armory-type" data-pt="Armadura Comum" data-en="Common Armor">Armadura Comum</span>
+        <div class="armory-name" data-pt="Numbing — Entorpecimento" data-en="Numbing">Numbing — Entorpecimento</div>
+        <p class="armory-how" data-pt="Qualquer estratégia para entorpecer a experiência difícil: trabalho excessivo, álcool, scrolling, comida, projetos compulsivos. O entorpecimento não é seletivo — entorpece tudo." data-en="Any strategy to numb the difficult experience: overwork, alcohol, scrolling, food, compulsive projects. Numbing is not selective — it numbs everything.">Trabalho excessivo, scrolling, projetos compulsivos — qualquer estratégia para entorpecer a experiência difícil. Não é seletivo: entorpece tudo.</p>
+        <div class="armory-cost" data-pt="Custo: junto com a dor, a alegria também some. O entorpecimento é de longo prazo." data-en="Cost: along with the pain, joy also disappears. The numbing is long-term.">Custo: junto com a dor, a alegria também some. O entorpecimento não expira.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Voice DNA -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="DNA da Voz" data-en="Voice DNA">DNA da Voz</div>
+    <h2 class="section-title" data-pt="Como Brené Brown Se Expressa" data-en="How Brené Brown Speaks">Como Brené Brown Se Expressa</h2>
+    <p class="section-subtitle" data-pt="Quente, direta, research-backed, story-first. Vai à dificuldade antes da solução. Zero toxic positivity — mas nunca sem calor." data-en="Warm, direct, research-backed, story-first. Goes to the difficulty before the solution. Zero toxic positivity — but never without warmth.">Quente, direta, research-backed, story-first. Vai à dificuldade antes da solução. Zero toxic positivity — mas nunca sem calor.</p>
+    <div class="vocab-grid">
+      <div class="vocab-group"><h4 data-pt="Sempre no vocabulário" data-en="Always in the vocabulary">Sempre no vocabulário</h4><div class="vocab-tags"><span class="vocab-tag use">vulnerabilidade</span><span class="vocab-tag use">vergonha</span><span class="vocab-tag use">armadura</span><span class="vocab-tag use">coragem</span><span class="vocab-tag use">pertencimento</span><span class="vocab-tag use">wholehearted</span><span class="vocab-tag use">BRAVING</span><span class="vocab-tag use">rumble</span><span class="vocab-tag use">reckoning</span><span class="vocab-tag use">os dados dizem</span><span class="vocab-tag use">nas pesquisas</span><span class="vocab-tag use">mármores de confiança</span><span class="vocab-tag use">fitting in vs belonging</span></div></div>
+      <div class="vocab-group"><h4 data-pt="Nunca no vocabulário" data-en="Never in the vocabulary">Nunca no vocabulário</h4><div class="vocab-tags"><span class="vocab-tag avoid">só supere isso</span><span class="vocab-tag avoid">seja positivo</span><span class="vocab-tag avoid">vença o medo</span><span class="vocab-tag avoid">não ligue para o que pensam</span><span class="vocab-tag avoid">seja forte</span><span class="vocab-tag avoid">motivação vazia</span><span class="vocab-tag avoid">outros têm problemas piores</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Sources -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Fontes Primárias" data-en="Primary Sources">Fontes Primárias</div>
+    <h2 class="section-title" data-pt="Construído a partir de 20+ Fontes Documentadas" data-en="Built From 20+ Documented Sources">Construído a partir de 20+ Fontes Documentadas</h2>
+    <table class="source-table">
+      <thead><tr><th data-pt="Fonte" data-en="Source">Fonte</th><th data-pt="Tipo" data-en="Type">Tipo</th><th data-pt="Contribuição" data-en="Contribution">Contribuição</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Daring Greatly (2012)</strong></td><td data-pt="Livro" data-en="Book">Livro</td><td data-pt="Framework central de vulnerabilidade e liderança — base da persona" data-en="Core framework of vulnerability and leadership — persona base">Framework central de vulnerabilidade e liderança — base da persona</td></tr>
+        <tr><td><strong>Rising Strong (2015)</strong></td><td data-pt="Livro" data-en="Book">Livro</td><td data-pt="Os 3R: Reckoning, Rumble, Revolution — processo de se levantar" data-en="The 3Rs: Reckoning, Rumble, Revolution — the process of getting up">Os 3R: Reckoning, Rumble, Revolution — processo de se levantar</td></tr>
+        <tr><td><strong>Braving the Wilderness (2017)</strong></td><td data-pt="Livro" data-en="Book">Livro</td><td data-pt="True belonging, solidão do pertencimento, fitting in vs belonging" data-en="True belonging, loneliness of belonging, fitting in vs belonging">True belonging, solidão do pertencimento, fitting in vs belonging</td></tr>
+        <tr><td><strong>Dare to Lead (2018)</strong></td><td data-pt="Livro" data-en="Book">Livro</td><td data-pt="BRAVING inventory, armadura em líderes, coragem corajosa em organizações" data-en="BRAVING inventory, armor in leaders, brave courage in organizations">BRAVING inventory, armadura em líderes, coragem em organizações</td></tr>
+        <tr><td><strong>Atlas of the Heart (2021)</strong></td><td data-pt="Livro" data-en="Book">Livro</td><td data-pt="87 emoções mapeadas com precisão — linguagem emocional exata" data-en="87 emotions mapped with precision — exact emotional language">87 emoções mapeadas com precisão — linguagem emocional exata</td></tr>
+        <tr><td><strong>TED Talk — The Power of Vulnerability (2010)</strong></td><td data-pt="Vídeo" data-en="Video">Vídeo</td><td data-pt="Tom, cadência, storytelling, humor — como Brené se apresenta ao vivo" data-en="Tone, cadence, storytelling, humor — how Brené presents live">Tom, cadência, storytelling, humor — como Brené se apresenta ao vivo</td></tr>
+        <tr><td><strong>The Call to Courage — Netflix (2019)</strong></td><td data-pt="Especial" data-en="Special">Especial</td><td data-pt="Voz ao vivo, exemplos espontâneos, humor, tom direto em contexto real" data-en="Live voice, spontaneous examples, humor, direct tone in real context">Voz ao vivo, exemplos espontâneos, humor, tom direto em contexto real</td></tr>
+        <tr><td><strong>Unlocking Us Podcast (2020–presente)</strong></td><td data-pt="Podcast" data-en="Podcast">Podcast</td><td data-pt="Raciocínio em tempo real, resposta a questões complexas, tom espontâneo" data-en="Real-time reasoning, response to complex questions, spontaneous tone">Raciocínio em tempo real, resposta a questões complexas, tom espontâneo</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="activation-section">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Ativar Agora" data-en="Activate Now">Ativar Agora</div>
+    <h2 class="section-title" data-pt="A armadura que nos protege também nos desconecta." data-en="The armor that protects us also disconnects us.">A armadura que nos protege também nos desconecta.</h2>
+    <p data-pt="Ative Brené Brown como sua guia de vulnerabilidade, vergonha e coragem na plataforma ON AI Solutions." data-en="Activate Brené Brown as your guide on vulnerability, shame and courage on the ON AI Solutions platform.">Ative Brené Brown como sua guia de vulnerabilidade, vergonha e coragem na plataforma ON AI Solutions.</p>
+    <br/><br/>
+    <a href="index.html" class="btn btn-accent-brene" data-pt="← Explorar outros mentores" data-en="← Explore other mentors">← Explorar outros mentores</a>
+  </div>
+</section>
+
+<footer><div class="container"><p data-pt="Coleção de mentores curada por <strong>Fabiano Silva</strong> · Brené Brown — Clone Cognitivo v1.0 · Fidelidade 88–93% · 20+ fontes documentadas" data-en="Mentor collection curated by <strong>Fabiano Silva</strong> · Brené Brown — Cognitive Clone v1.0 · Fidelity 88–93% · 20+ documented sources">Coleção de mentores curada por <strong>Fabiano Silva</strong> · Brené Brown — Clone Cognitivo v1.0 · Fidelidade 88–93% · 20+ fontes documentadas</p></div></footer>
+
+<script src="lang.js"></script>
+</body>
+</html>

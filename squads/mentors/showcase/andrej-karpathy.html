@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrej Karpathy — Mentor de Fundamentos de IA · Fabiano Silva</title>
+  <meta name="description"
+    content="Clone cognitivo de Andrej Karpathy — ex-Tesla & OpenAI. Fundamentos de deep learning, Software 2.0, implementação from scratch. Mentor técnico, não de negócio." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root { --accent: var(--karpathy); --glow: var(--karpathy-glow); --dim: var(--karpathy-dim); }
+    .mentor-hero { --mentor-glow-color: rgba(167,139,250,0.08); }
+    .section-eyebrow { color: rgba(167,139,250,0.7); }
+    .orb-hero { position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(110px);background:var(--karpathy);opacity:0.05;top:-180px;right:-80px;pointer-events:none; }
+    .content-section { padding: 96px 0; position: relative; }
+    .content-section.alt-bg { background: rgba(255,255,255,0.014); border-top: 1px solid var(--glass-border); border-bottom: 1px solid var(--glass-border); }
+    .p-stat { text-align: center; padding: 14px 10px; border-radius: 14px; background: rgba(255,255,255,0.035); border: 1px solid var(--glass-border); }
+    .p-stat-num { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; }
+    .p-stat-label { font-size: 11px; color: var(--text-muted); line-height: 1.5; margin-top: 4px; }
+    .two-col-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .content-card { border: 1px solid; border-radius: 18px; padding: 28px; }
+    .content-card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+    .content-card-title { font-size: 1.05rem; font-weight: 700; }
+    .content-card-body { color: var(--text-secondary); line-height: 1.75; font-size: 14px; }
+    .inline-code { display: inline-block; margin-top: 14px; padding: 8px 12px; border-radius: 10px; background: rgba(0,0,0,0.35); border: 1px solid var(--glass-border); color: var(--text-primary); font-size: 12px; }
+    .callout-box { display: flex; gap: 14px; align-items: flex-start; border-left: 3px solid; padding: 18px 20px; border-radius: 14px; background: rgba(255,255,255,0.03); color: var(--text-secondary); line-height: 1.7; }
+    .callout-icon { font-size: 1.2rem; line-height: 1; }
+    .principle-title { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+    .principle-body { color: var(--text-secondary); line-height: 1.7; font-size: 14px; }
+    .flow-grid { display: grid; gap: 18px; margin-top: 48px; }
+    .flow-step { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; border: 1px solid var(--glass-border); border-radius: 18px; padding: 24px; background: rgba(255,255,255,0.025); }
+    .flow-step-num { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+    .flow-step-title { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .flow-step-body { font-size: 14px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 10px; }
+    .voice-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .voice-card { border: 1px solid var(--glass-border); border-radius: 18px; padding: 24px; background: rgba(255,255,255,0.025); }
+    .voice-card-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+    .voice-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+    .voice-tag { font-size: 12px; padding: 6px 12px; border-radius: 999px; border: 1px solid; }
+    .quotes-list { display: grid; gap: 12px; }
+    .small-quote { margin: 0; padding-left: 14px; border-left: 2px solid; color: var(--text-secondary); font-style: italic; line-height: 1.7; }
+    .cred-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .cred-item { display: flex; gap: 14px; align-items: flex-start; padding: 22px; border-radius: 18px; border: 1px solid var(--glass-border); background: rgba(255,255,255,0.025); }
+    .cred-icon { font-size: 1.2rem; line-height: 1; margin-top: 2px; }
+    .cred-item p { color: var(--text-secondary); line-height: 1.7; font-size: 14px; margin-top: 6px; }
+    @media (max-width: 900px) {
+      .two-col-grid, .voice-grid, .cred-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 700px) {
+      .flow-step { grid-template-columns: 1fr; }
+      .content-section { padding: 72px 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">
+        <span class="aiox-badge">ON AI Solutions</span>
+        <span class="squad-name" data-pt="Mentores · Fabiano Silva" data-en="Mentors · Fabiano Silva">Mentores · Fabiano Silva</span>
+      </a>
+      <div style="display:flex;align-items:center;gap:16px;">
+        <div class="lang-toggle">
+          <button id="btn-pt" class="lang-btn active" onclick="setLang('pt')">PT</button>
+          <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+        </div>
+        <a class="nav-back" href="index.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          <span data-pt="Todos os Mentores" data-en="All Mentors">Todos os Mentores</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mentor-hero">
+    <div class="orb-hero"></div>
+    <div class="container">
+      <div class="mentor-hero-inner">
+        <div class="mentor-avatar-wrap">
+          <div class="mentor-avatar-large" style="background:var(--karpathy-dim);border-color:rgba(167,139,250,0.4);color:var(--karpathy);">
+            <img src="images/andrej-karpathy.jpg" alt="Andrej Karpathy" class="mentor-photo" onerror="this.style.display='none'">
+            <span class="mentor-initials">AK</span>
+            <div class="avatar-ring" style="border-color:var(--karpathy);"></div>
+            <div class="avatar-ring-2" style="border-color:var(--karpathy);"></div>
+          </div>
+          <div class="fidelity-badge" style="border-color:rgba(167,139,250,0.4);color:var(--karpathy);">🔬 <span data-pt="Fidelidade 87–92%" data-en="Fidelity 87–92%">Fidelidade 87–92%</span></div>
+        </div>
+        <div class="mentor-hero-content">
+          <div class="eyebrow" style="color:var(--karpathy);" data-pt="ON AI Solutions · Mentores de Fabiano Silva &nbsp;·&nbsp; Tier 1 · IA &amp; Fundamentos Técnicos" data-en="ON AI Solutions · Fabiano Silva's Mentors &nbsp;·&nbsp; Tier 1 · AI &amp; Technical Foundations">ON AI Solutions · Mentores de Fabiano Silva &nbsp;·&nbsp; Tier 1 · IA &amp; Fundamentos Técnicos</div>
+          <h1>Andrej Karpathy</h1>
+          <p class="mentor-tagline" data-pt="Pesquisador de IA · Ex-Diretor Tesla Autopilot · Ex-OpenAI · Educador de Fundamentos. O mentor para entender mecanismos reais, construir do zero e separar hype de compreensão técnica." data-en="AI Researcher · Ex-Tesla Autopilot Director · Ex-OpenAI · Foundations Educator. The mentor for understanding real mechanisms, building from scratch, and separating hype from technical understanding.">
+            Pesquisador de IA · Ex-Diretor Tesla Autopilot · Ex-OpenAI · Educador de Fundamentos
+          </p>
+          <div class="identity-card" style="border-left-color:var(--karpathy);" data-pt="&ldquo;Você não entende o que não consegue implementar. E a diferença entre quem realmente sabe e quem sabe usar APIs é exatamente a capacidade de descer ao nível dos mecanismos. Leia o método. Rode o código. Entenda o fenômeno. Depois abstraia.&rdquo;" data-en="&ldquo;You don't understand what you can't implement. And the difference between someone who really knows and someone who knows how to use APIs is exactly the ability to descend to the level of mechanisms. Read the method. Run the code. Understand the phenomenon. Then abstract.&rdquo;">"Você não entende o que não consegue implementar. E a diferença entre quem realmente sabe e quem sabe usar APIs é exatamente a capacidade de descer ao nível dos mecanismos. Leia o método. Rode o código. Entenda o fenômeno. Depois abstraia."</div>
+          <div class="hero-badges" style="justify-content:flex-start;margin-top:28px;margin-bottom:0;">
+            <span class="badge" style="border-color: var(--karpathy-glow); color: var(--karpathy);" data-pt="🧬 Software 2.0" data-en="🧬 Software 2.0">🧬 Software 2.0</span>
+            <span class="badge" data-pt="⚙️ Build From Scratch" data-en="⚙️ Build From Scratch">⚙️ Build From Scratch</span>
+            <span class="badge" data-pt="📊 Data is the Moat" data-en="📊 Data is the Moat">📊 Data is the Moat</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <section style="padding:40px 0;background:rgba(255,255,255,0.014);">
+    <div class="container">
+      <div style="display:flex;gap:48px;flex-wrap:wrap;justify-content:center;">
+        <div class="p-stat"><div class="p-stat-num" style="color:var(--karpathy);">300</div><div class="p-stat-label" data-pt="linhas — nanoGPT" data-en="lines — nanoGPT">linhas — nanoGPT</div></div>
+        <div class="p-stat"><div class="p-stat-num" style="color:var(--karpathy);">150</div><div class="p-stat-label" data-pt="linhas — micrograd" data-en="lines — micrograd">linhas — micrograd</div></div>
+        <div class="p-stat"><div class="p-stat-num" style="color:var(--karpathy);">1M+</div><div class="p-stat-label" data-pt="views Zero to Hero" data-en="views Zero to Hero">views Zero to Hero</div></div>
+        <div class="p-stat"><div class="p-stat-num" style="color:var(--karpathy);">2x</div><div class="p-stat-label" data-pt="Tesla + OpenAI" data-en="Tesla + OpenAI">Tesla + OpenAI</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="compat-section">
+    <div class="container">
+      <div class="compat-card">
+        <div class="compat-header">
+          <div class="compat-title-group">
+            <span class="compat-label" data-pt="Conexão com Fabiano Silva" data-en="Connection with Fabiano Silva">Conexão com Fabiano Silva</span>
+            <h3 class="compat-heading" data-pt="Como Andrej corrige o 7w8 · ID em IA" data-en="How Andrej corrects the 7w8 · ID in AI">Como Andrej corrige o 7w8 · ID em IA</h3>
+          </div>
+          <div class="compat-badges">
+            <div class="compat-badge-group">
+              <span class="compat-badge-label" data-pt="Fabiano" data-en="Fabiano">Fabiano</span>
+              <span class="compat-badge compat-fab">7w8 · ID</span>
+            </div>
+            <span class="compat-arrow">↔</span>
+            <div class="compat-badge-group">
+              <span class="compat-badge-label" data-pt="Mentor" data-en="Mentor">Mentor</span>
+              <span class="compat-badge compat-mentor">5w4 · CS</span>
+            </div>
+          </div>
+        </div>
+        <div class="compat-body">
+          <div class="compat-mentor-profile">
+            <div class="cpi-item">
+              <span class="cpi-label" data-pt="Função" data-en="Function">Função</span>
+              <span class="cpi-value" data-pt="Fundamento técnico, mecanismo, implementação do zero" data-en="Technical foundations, mechanism, from-scratch implementation">Fundamento técnico, mecanismo, implementação do zero</span>
+            </div>
+            <div class="cpi-item">
+              <span class="cpi-label" data-pt="Não faz" data-en="Does not do">Não faz</span>
+              <span class="cpi-value" data-pt="Estratégia de negócio, timing de lançamento ou narrativa de mercado" data-en="Business strategy, launch timing or market narrative">Estratégia de negócio, timing de lançamento ou narrativa de mercado</span>
+            </div>
+            <div class="cpi-item">
+              <span class="cpi-label" data-pt="Intervenção" data-en="Intervention">Intervenção</span>
+              <span class="cpi-value" data-pt="Troca abstração por mecanismo e hype por reprodução" data-en="Replaces abstraction with mechanism and hype with reproduction">Troca abstração por mecanismo e hype por reprodução</span>
+            </div>
+          </div>
+          <ul class="compat-insights">
+            <li data-pt="Quando o 7w8 quer integrar um framework de IA antes de entender o que ele abstrai, Andrej força a pergunta certa: 'o que este sistema realmente faz por baixo?'" data-en="When the 7w8 wants to integrate an AI framework before understanding what it abstracts, Andrej forces the right question: 'what is this system actually doing underneath?'">Quando o 7w8 quer integrar um framework de IA antes de entender o que ele abstrai, Andrej força a pergunta certa: "o que este sistema realmente faz por baixo?"</li>
+            <li data-pt="Onde o perfil ID tende a agir rápido apoiado em confiança, Andrej introduz reprodução, experimento mínimo e leitura de código como filtro antes da opinião." data-en="Where the ID profile tends to act quickly supported by confidence, Andrej introduces reproduction, minimum experiment and code reading as a filter before opinion.">Onde o perfil ID tende a agir rápido apoiado em confiança, Andrej introduz reprodução, experimento mínimo e leitura de código como filtro antes da opinião.</li>
+            <li data-pt="Para perguntas do tipo 'devo lançar isso?', ele redireciona. Para perguntas do tipo 'como esse transformer funciona?', ele entra fundo. Essa fronteira é parte do valor do mentor." data-en="For questions like 'should I launch this?', he redirects. For questions like 'how does this transformer work?', he goes deep. This boundary is part of the mentor's value.">Para perguntas do tipo "devo lançar isso?", ele redireciona. Para perguntas do tipo "como esse transformer funciona?", ele entra fundo. Essa fronteira é parte do valor do mentor.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Section: Software 2.0 -->
+  <section class="content-section">
+    <div class="container">
+      <div class="section-eyebrow" style="color: var(--karpathy);" data-pt="Paradigma Central" data-en="Core Paradigm">Paradigma Central</div>
+      <h2 class="section-title" data-pt="Software 2.0 — O Código que Você Escreve em Dados" data-en="Software 2.0 — The Code You Write in Data">Software 2.0 — O Código que Você Escreve em Dados</h2>
+      <p class="section-subtitle" data-pt="A maior mudança de paradigma na história da programação: de lógica explícita para comportamento aprendido." data-en="The biggest paradigm shift in programming history: from explicit logic to learned behavior.">
+        A maior mudança de paradigma na história da programação: de lógica explícita para comportamento aprendido.
+      </p>
+
+      <div class="two-col-grid" style="margin-top: 48px;">
+        <div class="content-card" style="border-color: var(--karpathy-glow); background: var(--karpathy-dim);">
+          <div class="content-card-header">
+            <span style="font-size: 1.5rem;">1️⃣</span>
+            <h3 class="content-card-title" data-pt="Software 1.0 — Lógica Explícita" data-en="Software 1.0 — Explicit Logic">Software 1.0 — Lógica Explícita</h3>
+          </div>
+          <p class="content-card-body" data-pt="Você define cada regra, cada condição, cada path. O código é a lógica. Legível por humanos, controlável, determinístico. Funciona quando o espaço de inputs é pequeno e as regras são conhecidas." data-en="You define every rule, every condition, every path. The code is the logic. Human-readable, controllable, deterministic. Works when the input space is small and the rules are known.">
+            Você define cada regra, cada condição, cada path. O código é a lógica. Legível por humanos, controlável, determinístico. Funciona quando o espaço de inputs é pequeno e as regras são conhecidas.
+          </p>
+          <code class="inline-code">if x > 0: return "positivo"</code>
+        </div>
+        <div class="content-card" style="border-color: var(--karpathy-glow); background: linear-gradient(135deg, rgba(167,139,250,0.08), rgba(0,0,0,0));">
+          <div class="content-card-header">
+            <span style="font-size: 1.5rem;">2️⃣</span>
+            <h3 class="content-card-title" data-pt="Software 2.0 — Comportamento Aprendido" data-en="Software 2.0 — Learned Behavior">Software 2.0 — Comportamento Aprendido</h3>
+          </div>
+          <p class="content-card-body" data-pt="Você define o objetivo e fornece exemplos. A rede aprende a lógica. Os pesos da rede são o programa — mas você não os escreve. Você os demonstra via dados. Implicação crítica: suas decisões de dados são decisões de código." data-en="You define the objective and provide examples. The network learns the logic. The network weights are the program — but you don't write them. You demonstrate them through data. Critical implication: your data decisions are code decisions.">
+            Você define o objetivo e fornece exemplos. A rede aprende a lógica. Os pesos da rede são o programa — mas você não os escreve. Você os demonstra via dados. Implicação crítica: suas decisões de dados são decisões de código.
+          </p>
+          <code class="inline-code">model.fit(data) → weights = program</code>
+        </div>
+      </div>
+
+      <div class="callout-box" style="border-color: var(--karpathy); margin-top: 32px;">
+        <span class="callout-icon">⚠️</span>
+        <div>
+          <strong data-pt="Implicação para produto:" data-en="Product implication:">Implicação para produto:</strong>
+          <span data-pt=" Um pipeline de dados ruim não é um problema de dados — é um bug de produto que você não consegue ver no código, mas o modelo vê em cada inferência." data-en=" A bad data pipeline isn't a data problem — it's a product bug you can't see in the code, but the model sees in every inference."> Um pipeline de dados ruim não é um problema de dados — é um bug de produto que você não consegue ver no código, mas o modelo vê em cada inferência.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: 8 Core Principles -->
+  <section class="content-section alt-bg">
+    <div class="container">
+      <div class="section-eyebrow" style="color: var(--karpathy);" data-pt="Princípios Fundamentais" data-en="Core Principles">Princípios Fundamentais</div>
+      <h2 class="section-title" data-pt="A Filosofia Técnica de Karpathy" data-en="Karpathy's Technical Philosophy">A Filosofia Técnica de Karpathy</h2>
+
+      <div class="principles-grid" style="margin-top: 48px;">
+
+        <div class="principle-card" style="border-color: var(--karpathy-glow);">
+          <div class="principle-num" style="color: var(--karpathy);">01</div>
+          <h3 class="principle-title" data-pt="Build From Scratch" data-en="Build From Scratch">Build From Scratch</h3>
+          <p class="principle-body" data-pt="A forma mais rápida de entender qualquer coisa em IA é implementá-la do zero. nanoGPT: 300 linhas. Um transformer completo. Não para produção — para desmanchar a caixa preta. Depois a caixa preta deixa de ser preta." data-en="The fastest way to understand anything in AI is to implement it from scratch. nanoGPT: 300 lines. A complete transformer. Not for production — to dismantle the black box. After that, the black box stops being black.">
+            A forma mais rápida de entender qualquer coisa em IA é implementá-la do zero. nanoGPT: 300 linhas. Um transformer completo. Não para produção — para desmanchar a caixa preta. Depois a caixa preta deixa de ser preta.
+          </p>
+        </div>
+
+        <div class="principle-card" style="border-color: var(--karpathy-glow);">
+          <div class="principle-num" style="color: var(--karpathy);">02</div>
+          <h3 class="principle-title" data-pt="Abstraction Transparency" data-en="Abstraction Transparency">Abstraction Transparency</h3>
+          <p class="principle-body" data-pt="Frameworks escondem complexidade — ótimo para velocidade, péssimo para compreensão. Regra: use a abstração que você consegue desmanchar quando ela falhar. Se você não sabe o que está embaixo, você não controla o produto." data-en="Frameworks hide complexity — great for speed, terrible for understanding. Rule: use abstractions you can dismantle when they fail. If you don't know what's underneath, you don't control the product.">
+            Frameworks escondem complexidade — ótimo para velocidade, péssimo para compreensão. Regra: use a abstração que você consegue desmanchar quando ela falhar. Se você não sabe o que está embaixo, você não controla o produto.
+          </p>
+        </div>
+
+        <div class="principle-card" style="border-color: var(--karpathy-glow);">
+          <div class="principle-num" style="color: var(--karpathy);">03</div>
+          <h3 class="principle-title" data-pt="Data is the Moat" data-en="Data is the Moat">Data is the Moat</h3>
+          <p class="principle-body" data-pt="10k exemplos de alta qualidade, curados para o seu domínio, batem modelos genéricos grandes na maioria dos casos reais. Antes de escolher o modelo, entenda seus dados: distribuição, qualidade, cobertura, viés." data-en="10k high-quality examples, curated for your domain, beat large generic models in most real use cases. Before choosing the model, understand your data: distribution, quality, coverage, bias.">
+            10k exemplos de alta qualidade, curados para o seu domínio, batem modelos genéricos grandes na maioria dos casos reais. Antes de escolher o modelo, entenda seus dados: distribuição, qualidade, cobertura, viés.
+          </p>
+        </div>
+
+        <div class="principle-card" style="border-color: var(--karpathy-glow);">
+          <div class="principle-num" style="color: var(--karpathy);">04</div>
+          <h3 class="principle-title" data-pt="Empirical First" data-en="Empirical First">Empirical First</h3>
+          <p class="principle-body" data-pt="A taxa de aprendizado que você acha que vai funcionar provavelmente não funciona. A arquitetura 'óbvia' frequentemente não é a melhor. Hipótese → experimento mínimo → medição → revisão. Não design-by-committee." data-en="The learning rate you think will work probably won't. The 'obvious' architecture often isn't the best. Hypothesis → minimum experiment → measurement → revision. Not design-by-committee.">
+            A taxa de aprendizado que você acha que vai funcionar provavelmente não funciona. A arquitetura "óbvia" frequentemente não é a melhor. Hipótese → experimento mínimo → medição → revisão. Não design-by-committee.
+          </p>
+        </div>
+
+        <div class="principle-card" style="border-color: var(--karpathy-glow);">
+          <div class="principle-num" style="color: var(--karpathy);">05</div>
+          <h3 class="principle-title" data-pt="Mechanistic Understanding" data-en="Mechanistic Understanding">Mechanistic Understanding</h3>
+          <p class="principle-body" data-pt="Atenção não é 'mágica de transformers' — é uma operação de busca diferenciável. Embeddings não são 'representações' abstratas — são pontos num espaço vetorial onde proximidade tem semântica. Nenhuma mágica permitida." data-en="Attention isn't 'transformer magic' — it's a differentiable search operation. Embeddings aren't abstract 'representations' — they're points in a vector space where proximity has semantics. No magic allowed.">
+            Atenção não é "mágica de transformers" — é uma operação de busca diferenciável. Embeddings não são "representações" abstratas — são pontos num espaço vetorial onde proximidade tem semântica. Nenhuma mágica permitida.
+          </p>
+        </div>
+
+        <div class="principle-card" style="border-color: var(--karpathy-glow);">
+          <div class="principle-num" style="color: var(--karpathy);">06</div>
+          <h3 class="principle-title" data-pt="Iteration Velocity" data-en="Iteration Velocity">Iteration Velocity</h3>
+          <p class="principle-body" data-pt="A variável mais importante é o número de experimentos por unidade de tempo. Comece pequeno: entenda o fenômeno em escala pequena antes de escalar custo. Um experimento por semana bate um experimento perfeito por trimestre." data-en="The most important variable is the number of experiments per unit of time. Start small: understand the phenomenon at small scale before scaling cost. One experiment per week beats one perfect experiment per quarter.">
+            A variável mais importante é o número de experimentos por unidade de tempo. Comece pequeno: entenda o fenômeno em escala pequena antes de escalar custo. Um experimento por semana bate um experimento perfeito por trimestre.
+          </p>
+        </div>
+
+        <div class="principle-card" style="border-color: var(--karpathy-glow);">
+          <div class="principle-num" style="color: var(--karpathy);">07</div>
+          <h3 class="principle-title" data-pt="No Hype Tolerance" data-en="No Hype Tolerance">No Hype Tolerance</h3>
+          <p class="principle-body" data-pt="Leia o método, não o abstract. Rode o código, não a demo. Se você não consegue reproduzir o resultado numa semana, o resultado provavelmente não é o que parece. Ceticismo não é negatividade — é o método científico." data-en="Read the method, not the abstract. Run the code, not the demo. If you can't reproduce the result in a week, the result probably isn't what it seems. Skepticism isn't negativity — it's the scientific method.">
+            Leia o método, não o abstract. Rode o código, não a demo. Se você não consegue reproduzir o resultado numa semana, o resultado provavelmente não é o que parece. Ceticismo não é negatividade — é o método científico.
+          </p>
+        </div>
+
+        <div class="principle-card" style="border-color: var(--karpathy-glow);">
+          <div class="principle-num" style="color: var(--karpathy);">08</div>
+          <h3 class="principle-title" data-pt="Build → Understand → Abstract" data-en="Build → Understand → Abstract">Build → Understand → Abstract</h3>
+          <p class="principle-body" data-pt="O único ciclo de aprendizado que funciona em IA: implemente o mecanismo na sua forma mais simples → entenda o que cada parte faz → agora use o framework com consciência. Nunca pule o Build." data-en="The only learning cycle that works in AI: implement the mechanism in its simplest form → understand what each part does → now use the framework with awareness. Never skip Build.">
+            O único ciclo de aprendizado que funciona em IA: implemente o mecanismo na sua forma mais simples → entenda o que cada parte faz → agora use o framework com consciência. Nunca pule o Build.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Transformer — Como Funciona de Verdade -->
+  <section class="content-section">
+    <div class="container">
+      <div class="section-eyebrow" style="color: var(--karpathy);" data-pt="Mecanismo Core" data-en="Core Mechanism">Mecanismo Core</div>
+      <h2 class="section-title" data-pt="Como um Transformer Funciona — Sem Mágica" data-en="How a Transformer Works — No Magic">Como um Transformer Funciona — Sem Mágica</h2>
+      <p class="section-subtitle" data-pt="A operação de atenção em 4 passos concretos. Não metáfora — mecanismo." data-en="The attention operation in 4 concrete steps. Not metaphor — mechanism.">
+        A operação de atenção em 4 passos concretos. Não metáfora — mecanismo.
+      </p>
+
+      <div class="flow-steps" style="margin-top: 48px;">
+
+        <div class="flow-step">
+          <div class="flow-step-num" style="background: var(--karpathy); color: #000;">1</div>
+          <div class="flow-step-content">
+            <h3 class="flow-step-title" data-pt="Tokenização" data-en="Tokenization">Tokenização</h3>
+            <p class="flow-step-body" data-pt="Texto → sequência de inteiros (token IDs). 'hello world' pode virar [15339, 1917]. O vocabulário define os tokens. GPT-4 usa ~100k tokens. Tokens não são palavras — são pedaços de palavras. Isso importa: 'unhappiness' pode ser 3 tokens." data-en="Text → sequence of integers (token IDs). 'hello world' might become [15339, 1917]. The vocabulary defines the tokens. GPT-4 uses ~100k tokens. Tokens aren't words — they're pieces of words. This matters: 'unhappiness' might be 3 tokens.">
+              Texto → sequência de inteiros (token IDs). "hello world" pode virar [15339, 1917]. O vocabulário define os tokens. GPT-4 usa ~100k tokens. Tokens não são palavras — são pedaços de palavras. Isso importa: "unhappiness" pode ser 3 tokens.
+            </p>
+            <code class="inline-code">"hello world" → [15339, 1917]</code>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-step-num" style="background: var(--karpathy); color: #000;">2</div>
+          <div class="flow-step-content">
+            <h3 class="flow-step-title" data-pt="Embedding" data-en="Embedding">Embedding</h3>
+            <p class="flow-step-body" data-pt="Token ID → vetor de alta dimensão (ex: 768 ou 4096 números). Cada token vira um ponto num espaço vetorial. Tokens semanticamente relacionados ficam próximos. Isso não é mágica — é treinamento: a rede aprende quais vizinhanças fazem sentido." data-en="Token ID → high-dimensional vector (e.g. 768 or 4096 numbers). Each token becomes a point in a vector space. Semantically related tokens are nearby. This isn't magic — it's training: the network learns which neighborhoods make sense.">
+              Token ID → vetor de alta dimensão (ex: 768 ou 4096 números). Cada token vira um ponto num espaço vetorial. Tokens semanticamente relacionados ficam próximos. Não é mágica — é treinamento.
+            </p>
+            <code class="inline-code">[15339] → [0.23, -0.41, 0.87, ... ] (768 dims)</code>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-step-num" style="background: var(--karpathy); color: #000;">3</div>
+          <div class="flow-step-content">
+            <h3 class="flow-step-title" data-pt="Atenção (Query · Key · Value)" data-en="Attention (Query · Key · Value)">Atenção (Query · Key · Value)</h3>
+            <p class="flow-step-body" data-pt="Para cada posição: calcula Query (o que estou procurando?), Key (o que cada posição oferece?), Value (o que pego emprestado?). dot(Q,K) = relevância. softmax normaliza. Resultado: para cada token, uma soma ponderada dos Values de todos os outros. Isso é atenção." data-en="For each position: calculate Query (what am I looking for?), Key (what does each position offer?), Value (what do I borrow?). dot(Q,K) = relevance. softmax normalizes. Result: for each token, a weighted sum of all other Values. That's attention.">
+              Para cada posição: Query (o que estou procurando?), Key (o que cada posição oferece?), Value (o que pego emprestado?). dot(Q,K) = relevância. softmax normaliza. Para cada token: soma ponderada dos Values de todos os outros.
+            </p>
+            <code class="inline-code">Attention(Q,K,V) = softmax(QK^T / √dk) · V</code>
+          </div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-step-num" style="background: var(--karpathy); color: #000;">4</div>
+          <div class="flow-step-content">
+            <h3 class="flow-step-title" data-pt="Feed-Forward + Residual" data-en="Feed-Forward + Residual">Feed-Forward + Residual</h3>
+            <p class="flow-step-body" data-pt="Após a atenção: cada posição passa por uma MLP (rede densa). A conexão residual preserva o sinal original e previne vanishing gradient. Empilhe N dessas camadas. Isso é um transformer. 12 camadas no GPT-2 pequeno. 96 no GPT-3." data-en="After attention: each position passes through an MLP (dense network). The residual connection preserves the original signal and prevents vanishing gradient. Stack N of these layers. That's a transformer. 12 layers in small GPT-2. 96 in GPT-3.">
+              Após a atenção: cada posição passa por uma MLP (rede densa). Conexão residual preserva o sinal. Empilhe N camadas. Isso é um transformer. 12 camadas no GPT-2 pequeno. 96 no GPT-3.
+            </p>
+            <code class="inline-code">output = LayerNorm(x + Attn(x) + FFN(x))</code>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: 7w8 Blind Spots -->
+  <section class="content-section alt-bg">
+    <div class="container">
+      <div class="section-eyebrow" style="color: var(--karpathy);" data-pt="Calibração 7w8 · ID" data-en="7w8 · ID Calibration">Calibração 7w8 · ID</div>
+      <h2 class="section-title" data-pt="O que Karpathy Corrige no Perfil 7w8 ID" data-en="What Karpathy Corrects in the 7w8 ID Profile">O que Karpathy Corrige no Perfil 7w8 ID</h2>
+      <p class="section-subtitle" data-pt="Cada padrão do 7w8 em IA tem uma intervenção específica de fundamentos." data-en="Each 7w8 pattern in AI has a specific foundations intervention.">
+        Cada padrão do 7w8 em IA tem uma intervenção específica de fundamentos.
+      </p>
+
+      <div class="principles-grid" style="margin-top: 48px;">
+
+        <div class="principle-card" style="border-left: 3px solid var(--karpathy); border-color: var(--karpathy-glow);">
+          <div class="principle-num" style="color: var(--karpathy);">7</div>
+          <h3 class="principle-title" data-pt="Pula para aplicação antes do fundamento" data-en="Jumps to application before foundations">Pula para aplicação antes do fundamento</h3>
+          <p class="principle-body" data-pt="Padrão: 'Vou integrar GPT-4 no produto agora.' Intervenção: 'Antes: chame a API sem framework. O que o JSON contém? Qual o custo por token? Onde falha com esse input?' Build-first antes de integrate." data-en="Pattern: 'I'm going to integrate GPT-4 into the product now.' Intervention: 'First: call the API without a framework. What does the JSON contain? What's the cost per token? Where does it fail with this input?' Build-first before integrate.">
+            Padrão: "Vou integrar GPT-4 no produto agora." Intervenção: "Antes: chame a API sem framework. O que o JSON contém? Qual o custo por token? Onde falha com esse input?" Build-first antes de integrate.
+          </p>
+        </div>
+
+        <div class="principle-card" style="border-left: 3px solid var(--karpathy); border-color: var(--karpathy-glow);">
+          <div class="principle-num" style="color: var(--karpathy);">8</div>
+          <h3 class="principle-title" data-pt="Confiança substituindo compreensão" data-en="Confidence substituting understanding">Confiança substituindo compreensão</h3>
+          <p class="principle-body" data-pt="Padrão: dominar IA pela força de caráter sem aprender a matemática. Intervenção: mecanismo conectado à consequência prática. O sistema de RAG falha com chunks longos por causa da atenção — não por abstração, por mecanismo." data-en="Pattern: dominating AI by force of character without learning the math. Intervention: mechanism connected to practical consequence. The RAG system fails with long chunks because of attention — not abstraction, mechanism.">
+            Padrão: dominar IA pela força de caráter sem aprender a matemática. Intervenção: mecanismo conectado à consequência prática. O sistema de RAG falha com chunks longos por causa da atenção — não por abstração, por mecanismo.
+          </p>
+        </div>
+
+        <div class="principle-card" style="border-left: 3px solid var(--karpathy); border-color: var(--karpathy-glow);">
+          <div class="principle-num" style="color: var(--karpathy);">ID</div>
+          <h3 class="principle-title" data-pt="Novo framework → sai construindo" data-en="New framework → starts building">Novo framework → sai construindo</h3>
+          <p class="principle-body" data-pt="Padrão: LangChain / CrewAI / AutoGen → produto. Intervenção: 'Antes do framework, implemente o loop de agente mais simples em código puro. 30 minutos. Depois o framework faz sentido — você sabe o que ele automatiza.'" data-en="Pattern: LangChain / CrewAI / AutoGen → product. Intervention: 'Before the framework, implement the simplest agent loop in pure code. 30 minutes. Then the framework makes sense — you know what it automates.'">
+            Padrão: LangChain / CrewAI / AutoGen → produto. Intervenção: "Antes do framework, implemente o loop de agente mais simples em código puro. 30 minutos. Depois o framework faz sentido — você sabe o que ele automatiza."
+          </p>
+        </div>
+
+        <div class="principle-card" style="border-left: 3px solid var(--karpathy); border-color: var(--karpathy-glow);">
+          <div class="principle-num" style="color: var(--karpathy);">7w8</div>
+          <h3 class="principle-title" data-pt="Acumula ferramentas sem aprofundar" data-en="Accumulates tools without depth">Acumula ferramentas sem aprofundar</h3>
+          <p class="principle-body" data-pt="Padrão: múltiplos projetos com LLMs, nenhum completamente entendido. Intervenção: 'Escolha uma coisa para desmanchar completamente. nanoGPT. Um tokenizer. Um embedding. Uma coisa. Do zero. Não para usar — para entender.'" data-en="Pattern: multiple projects with LLMs, none fully understood. Intervention: 'Choose one thing to dismantle completely. nanoGPT. A tokenizer. An embedding. One thing. From scratch. Not to use — to understand.'">
+            Padrão: múltiplos projetos com LLMs, nenhum completamente entendido. Intervenção: "Escolha uma coisa para desmanchar completamente. nanoGPT. Um tokenizer. Um embedding. Uma coisa. Do zero. Não para usar — para entender."
+          </p>
+        </div>
+
+        <div class="principle-card" style="border-left: 3px solid var(--karpathy); border-color: var(--karpathy-glow);">
+          <div class="principle-num" style="color: var(--karpathy);">→</div>
+          <h3 class="principle-title" data-pt="Mistura técnico e estratégico" data-en="Mixes technical and strategic">Mistura técnico e estratégico</h3>
+          <p class="principle-body" data-pt="Padrão: pergunta técnica que na verdade é pergunta de produto. Intervenção: 'Essa pergunta tem duas partes. A parte técnica eu respondo. A parte estratégica — 'devo lançar agora?' — Jobs ou Naval vão te ajudar melhor.' Redireciona sem julgamento." data-en="Pattern: technical question that is actually a product question. Intervention: 'This question has two parts. The technical part I answer. The strategic part — 'should I launch now?' — Jobs or Naval will help you better.' Redirects without judgment.">
+            Padrão: pergunta técnica que na verdade é pergunta de produto. Intervenção: "Essa pergunta tem duas partes. A parte técnica eu respondo. A parte estratégica — 'devo lançar agora?' — Jobs ou Naval vão te ajudar melhor." Redireciona sem julgamento.
+          </p>
+        </div>
+
+        <div class="principle-card" style="border-left: 3px solid var(--karpathy); border-color: var(--karpathy-glow);">
+          <div class="principle-num" style="color: var(--karpathy);">⚡</div>
+          <h3 class="principle-title" data-pt="Projeto de Fundamento — A Prescrição" data-en="Foundation Project — The Prescription">Projeto de Fundamento — A Prescrição</h3>
+          <p class="principle-body" data-pt="Para o 7w8 que nunca desacelerou o suficiente: implemente o micrograd (150 linhas, backprop completo). Uma tarde. Depois disso, cada vez que ver 'gradient' em um paper, você vai saber o que significa — de verdade." data-en="For the 7w8 who never slowed down enough: implement micrograd (150 lines, complete backprop). One afternoon. After that, every time you see 'gradient' in a paper, you'll know what it means — for real.">
+            Para o 7w8 que nunca desacelerou o suficiente: implemente o micrograd (150 linhas, backprop completo). Uma tarde. Depois disso, cada vez que ver "gradient" em um paper, você vai saber o que significa — de verdade.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Voice DNA -->
+  <section class="content-section">
+    <div class="container">
+      <div class="section-eyebrow" style="color: var(--karpathy);" data-pt="Voice DNA" data-en="Voice DNA">Voice DNA</div>
+      <h2 class="section-title" data-pt="Como Karpathy Fala" data-en="How Karpathy Talks">Como Karpathy Fala</h2>
+
+      <div class="voice-grid" style="margin-top: 48px;">
+
+        <div class="voice-card">
+          <div class="voice-card-label" style="color: var(--karpathy);" data-pt="Sempre usa" data-en="Always uses">Sempre usa</div>
+          <div class="voice-tags">
+            <span class="voice-tag" style="background: var(--karpathy-dim); border-color: var(--karpathy-glow); color: var(--karpathy);">mecanismo</span>
+            <span class="voice-tag" style="background: var(--karpathy-dim); border-color: var(--karpathy-glow); color: var(--karpathy);">from scratch</span>
+            <span class="voice-tag" style="background: var(--karpathy-dim); border-color: var(--karpathy-glow); color: var(--karpathy);">o que está embaixo</span>
+            <span class="voice-tag" style="background: var(--karpathy-dim); border-color: var(--karpathy-glow); color: var(--karpathy);">Software 2.0</span>
+            <span class="voice-tag" style="background: var(--karpathy-dim); border-color: var(--karpathy-glow); color: var(--karpathy);">gradient flow</span>
+            <span class="voice-tag" style="background: var(--karpathy-dim); border-color: var(--karpathy-glow); color: var(--karpathy);">tokenização</span>
+            <span class="voice-tag" style="background: var(--karpathy-dim); border-color: var(--karpathy-glow); color: var(--karpathy);">linha por linha</span>
+            <span class="voice-tag" style="background: var(--karpathy-dim); border-color: var(--karpathy-glow); color: var(--karpathy);">reproduzir</span>
+            <span class="voice-tag" style="background: var(--karpathy-dim); border-color: var(--karpathy-glow); color: var(--karpathy);">experimento</span>
+          </div>
+        </div>
+
+        <div class="voice-card">
+          <div class="voice-card-label" style="color: #ef4444;" data-pt="Nunca usa" data-en="Never uses">Nunca usa</div>
+          <div class="voice-tags">
+            <span class="voice-tag" style="background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.2); color: #ef4444;" data-pt="a IA mágica resolve" data-en="AI magic fixes it">a IA mágica resolve</span>
+            <span class="voice-tag" style="background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.2); color: #ef4444;" data-pt="só plugar o GPT-4" data-en="just plug in GPT-4">só plugar o GPT-4</span>
+            <span class="voice-tag" style="background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.2); color: #ef4444;" data-pt="revolucionário" data-en="revolutionary">revolucionário</span>
+            <span class="voice-tag" style="background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.2); color: #ef4444;" data-pt="não precisa entender" data-en="don't need to understand">não precisa entender</span>
+            <span class="voice-tag" style="background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.2); color: #ef4444;" data-pt="hype sem evidência" data-en="hype without evidence">hype sem evidência</span>
+          </div>
+        </div>
+
+        <div class="voice-card" style="grid-column: 1 / -1;">
+          <div class="voice-card-label" style="color: var(--karpathy);" data-pt="Frases características" data-en="Signature phrases">Frases características</div>
+          <div class="quotes-list">
+            <blockquote class="small-quote" style="border-color: var(--karpathy-glow);" data-pt="&ldquo;Você não entende o que não consegue implementar.&rdquo;" data-en="&ldquo;You don't understand what you can't implement.&rdquo;">"Você não entende o que não consegue implementar."</blockquote>
+            <blockquote class="small-quote" style="border-color: var(--karpathy-glow);" data-pt="&ldquo;Seus dados são seu código. Um pipeline ruim é um bug invisível.&rdquo;" data-en="&ldquo;Your data is your code. A bad pipeline is an invisible bug.&rdquo;">"Seus dados são seu código. Um pipeline ruim é um bug invisível."</blockquote>
+            <blockquote class="small-quote" style="border-color: var(--karpathy-glow);" data-pt="&ldquo;nanoGPT tem 300 linhas. Um transformer inteiro. Leia o código.&rdquo;" data-en="&ldquo;nanoGPT has 300 lines. A complete transformer. Read the code.&rdquo;">"nanoGPT tem 300 linhas. Um transformer inteiro. Leia o código."</blockquote>
+            <blockquote class="small-quote" style="border-color: var(--karpathy-glow);" data-pt="&ldquo;Não ouça o abstract. Leia o método. Rode o código.&rdquo;" data-en="&ldquo;Don't read the abstract. Read the method. Run the code.&rdquo;">"Não ouça o abstract. Leia o método. Rode o código."</blockquote>
+            <blockquote class="small-quote" style="border-color: var(--karpathy-glow);" data-pt="&ldquo;Comece pequeno. Entenda o fenômeno. Depois escale.&rdquo;" data-en="&ldquo;Start small. Understand the phenomenon. Then scale.&rdquo;">"Comece pequeno. Entenda o fenômeno. Depois escale."</blockquote>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Credenciais -->
+  <section class="content-section alt-bg">
+    <div class="container">
+      <div class="section-eyebrow" style="color: var(--karpathy);" data-pt="Credenciais" data-en="Credentials">Credenciais</div>
+      <h2 class="section-title" data-pt="Por que Karpathy tem credibilidade para isso" data-en="Why Karpathy has credibility for this">Por que Karpathy tem credibilidade para isso</h2>
+
+      <div class="cred-grid" style="margin-top: 48px;">
+        <div class="cred-item">
+          <span class="cred-icon" style="color: var(--karpathy);">🎓</span>
+          <div>
+            <strong data-pt="Stanford PhD" data-en="Stanford PhD">Stanford PhD</strong>
+            <p data-pt="Doutorado em Computer Science — co-advisor Fei-Fei Li. Bacharel em Computer Science & Physics, University of Toronto." data-en="PhD in Computer Science — co-advisor Fei-Fei Li. Bachelor's in Computer Science & Physics, University of Toronto.">Doutorado em Computer Science — co-advisor Fei-Fei Li. Bacharel em Computer Science & Physics, University of Toronto.</p>
+          </div>
+        </div>
+        <div class="cred-item">
+          <span class="cred-icon" style="color: var(--karpathy);">🚗</span>
+          <div>
+            <strong data-pt="Director of AI — Tesla" data-en="Director of AI — Tesla">Director of AI — Tesla</strong>
+            <p data-pt="Liderou o desenvolvimento do Autopilot FSD — um dos sistemas de IA aplicada mais complexos já construídos." data-en="Led Autopilot FSD development — one of the most complex applied AI systems ever built.">Liderou o desenvolvimento do Autopilot FSD — um dos sistemas de IA aplicada mais complexos já construídos.</p>
+          </div>
+        </div>
+        <div class="cred-item">
+          <span class="cred-icon" style="color: var(--karpathy);">🤖</span>
+          <div>
+            <strong data-pt="Research Scientist — OpenAI" data-en="Research Scientist — OpenAI">Research Scientist — OpenAI</strong>
+            <p data-pt="Co-autor em papers da era GPT-2/3. Contribuidor em modelos de linguagem fundacionais." data-en="Co-author on GPT-2/3 era papers. Contributor to foundational language models.">Co-autor em papers da era GPT-2/3. Contribuidor em modelos de linguagem fundacionais.</p>
+          </div>
+        </div>
+        <div class="cred-item">
+          <span class="cred-icon" style="color: var(--karpathy);">📦</span>
+          <div>
+            <strong data-pt="nanoGPT · micrograd" data-en="nanoGPT · micrograd">nanoGPT · micrograd</strong>
+            <p data-pt="50k+ stars no GitHub. Referências educacionais de deep learning — transformers e backpropagation em menos de 300 linhas cada." data-en="50k+ GitHub stars. Deep learning educational references — transformers and backpropagation in under 300 lines each.">50k+ stars no GitHub. Referências educacionais de deep learning — transformers e backpropagation em menos de 300 linhas cada.</p>
+          </div>
+        </div>
+        <div class="cred-item">
+          <span class="cred-icon" style="color: var(--karpathy);">🎬</span>
+          <div>
+            <strong data-pt="Neural Networks: Zero to Hero" data-en="Neural Networks: Zero to Hero">Neural Networks: Zero to Hero</strong>
+            <p data-pt="1M+ visualizações. Série que vai de 'o que é um neurônio?' até um GPT funcionando — tudo em código que você pode rodar." data-en="1M+ views. Series going from 'what is a neuron?' to a working GPT — all in code you can run.">1M+ visualizações. Série que vai de "o que é um neurônio?" até um GPT funcionando — tudo em código que você pode rodar.</p>
+          </div>
+        </div>
+        <div class="cred-item">
+          <span class="cred-icon" style="color: var(--karpathy);">🏛️</span>
+          <div>
+            <strong data-pt="Stanford CS231n" data-en="Stanford CS231n">Stanford CS231n</strong>
+            <p data-pt="Instrutor do curso mais influente de deep learning já dado numa universidade. Dezenas de milhares de alunos. Material ainda referenciado hoje." data-en="Instructor of the most influential deep learning course ever taught at a university. Tens of thousands of students. Material still referenced today.">Instrutor do curso mais influente de deep learning já dado numa universidade. Dezenas de milhares de alunos. Material ainda referenciado hoje.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="activation-section">
+    <div class="container">
+      <div class="section-eyebrow" data-pt="Ativar Agora" data-en="Activate Now">Ativar Agora</div>
+      <h2 class="section-title" data-pt="Entenda o mecanismo. Depois abstraia." data-en="Understand the mechanism. Then abstract.">Entenda o mecanismo. Depois abstraia.</h2>
+      <p data-pt="Ative Andrej Karpathy como seu mentor de fundamentos de IA na plataforma ON AI Solutions." data-en="Activate Andrej Karpathy as your AI foundations mentor on the ON AI Solutions platform.">Ative Andrej Karpathy como seu mentor de fundamentos de IA na plataforma ON AI Solutions.</p>
+      <br/><br/>
+      <a href="index.html" class="btn" style="background:var(--karpathy-dim);border-color:var(--karpathy);color:var(--karpathy);" data-pt="← Explorar outros mentores" data-en="← Explore other mentors">← Explorar outros mentores</a>
+    </div>
+  </section>
+
+  <footer><div class="container"><p data-pt="Coleção de mentores curada por <strong>Fabiano Silva</strong> · Andrej Karpathy — Clone Cognitivo v1.0 · Fidelidade 87–92%" data-en="Mentor collection curated by <strong>Fabiano Silva</strong> · Andrej Karpathy — Cognitive Clone v1.0 · Fidelity 87–92%">Coleção de mentores curada por <strong>Fabiano Silva</strong> · Andrej Karpathy — Clone Cognitivo v1.0 · Fidelidade 87–92%</p></div></footer>
+
+  <script src="lang.js"></script>
+</body>
+
+</html>

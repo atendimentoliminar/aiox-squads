@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mike Monteiro — Mentores de Fabiano Silva · ON AI Solutions</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root { --accent:var(--monteiro); --glow:var(--monteiro-glow); --dim:var(--monteiro-dim); }
+    .mentor-hero { --mentor-glow-color: rgba(59,130,246,0.07); }
+    .principle-idx { color:var(--monteiro); }
+    .section-eyebrow { color:rgba(59,130,246,0.7); }
+    .orb-hero { position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(110px);background:var(--monteiro);opacity:0.05;top:-180px;right:-80px;pointer-events:none; }
+
+    /* Contract Anatomy */
+    .contract-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:44px; }
+    .contract-card { border-radius:14px;padding:24px;background:rgba(59,130,246,0.04);border:1px solid rgba(59,130,246,0.15); }
+    .contract-num { font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--monteiro);display:block;margin-bottom:8px; }
+    .contract-name { font-size:15px;font-weight:700;color:var(--text-primary);margin-bottom:8px; }
+    .contract-rule { font-size:13px;color:var(--monteiro);font-weight:600;margin-bottom:10px;font-style:italic; }
+    .contract-body { font-size:12px;color:var(--text-secondary);line-height:1.65; }
+
+    /* Scope Table */
+    .scope-box { border-radius:16px;border:1px solid rgba(59,130,246,0.2);overflow:hidden;margin-top:44px; }
+    .scope-header { display:grid;grid-template-columns:1fr 1fr;background:rgba(59,130,246,0.08); }
+    .scope-col-head { padding:16px 24px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--monteiro);border-right:1px solid rgba(59,130,246,0.15); }
+    .scope-col-head:last-child { border-right:none; }
+    .scope-row { display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(59,130,246,0.08); }
+    .scope-cell { padding:14px 24px;font-size:13px;color:var(--text-secondary);border-right:1px solid rgba(59,130,246,0.08);line-height:1.6; }
+    .scope-cell:last-child { border-right:none; }
+    .scope-cell.in { color:var(--text-primary); }
+    .scope-cell.out { color:rgba(59,130,246,0.8); }
+
+    /* Kill Fee Calculator */
+    .killfee-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:44px; }
+    .killfee-card { border-radius:14px;padding:22px;border:1px solid rgba(59,130,246,0.15);text-align:center; }
+    .killfee-pct { font-size:2rem;font-weight:800;font-family:'Playfair Display',serif;color:var(--monteiro);display:block;margin-bottom:8px; }
+    .killfee-phase { font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:8px; }
+    .killfee-desc { font-size:12px;color:var(--text-secondary);line-height:1.6; }
+
+    /* Payment Structure */
+    .payment-flow { display:flex;align-items:stretch;gap:0;margin-top:44px;border:1px solid rgba(59,130,246,0.15);border-radius:16px;overflow:hidden;flex-wrap:wrap; }
+    .payment-step { flex:1;min-width:140px;padding:24px 20px;background:rgba(59,130,246,0.03);border-right:1px solid rgba(59,130,246,0.1);text-align:center;position:relative; }
+    .payment-step:last-child { border-right:none; }
+    .payment-step.highlight { background:rgba(59,130,246,0.10);border-color:rgba(59,130,246,0.3); }
+    .pay-num { font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--monteiro);display:block;margin-bottom:10px; }
+    .pay-pct { font-size:1.8rem;font-weight:800;font-family:'Playfair Display',serif;color:var(--monteiro);display:block;margin-bottom:6px; }
+    .pay-name { font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:6px; }
+    .pay-rule { font-size:11px;color:var(--text-muted);line-height:1.5; }
+
+    /* Btn monteiro */
+    .btn-accent-monteiro { background:rgba(59,130,246,0.12);color:var(--monteiro);border:1px solid rgba(59,130,246,0.35);box-shadow:0 0 20px var(--monteiro-glow); }
+    .btn-accent-monteiro:hover { background:rgba(59,130,246,0.2);box-shadow:0 0 30px var(--monteiro-glow); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <span class="aiox-badge">ON AI Solutions</span>
+      <span class="squad-name" data-pt="Mentores · Fabiano Silva" data-en="Mentors · Fabiano Silva">Mentores · Fabiano Silva</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div class="lang-toggle">
+        <button id="btn-pt" class="lang-btn active" onclick="setLang('pt')">PT</button>
+        <button id="btn-en" class="lang-btn" onclick="setLang('en')">EN</button>
+      </div>
+      <a class="nav-back" href="index.html">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        <span data-pt="Todos os Mentores" data-en="All Mentors">Todos os Mentores</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="mentor-hero">
+  <div class="orb-hero"></div>
+  <div class="container">
+    <div class="mentor-hero-inner">
+      <div class="mentor-avatar-wrap">
+        <div class="mentor-avatar-large" style="background:var(--monteiro-dim);border-color:rgba(59,130,246,0.4);color:var(--monteiro);">
+          <img src="images/mike-monteiro.jpg" alt="Mike Monteiro" class="mentor-photo" onerror="this.style.display='none'">
+          <span class="mentor-initials">MM</span>
+          <div class="avatar-ring" style="border-color:var(--monteiro);"></div>
+          <div class="avatar-ring-2" style="border-color:var(--monteiro);"></div>
+        </div>
+        <div class="fidelity-badge" style="border-color:rgba(59,130,246,0.4);color:var(--monteiro);">✒️ <span data-pt="Fidelidade 87–92%" data-en="Fidelity 87–92%">Fidelidade 87–92%</span></div>
+      </div>
+      <div class="mentor-hero-content">
+        <div class="eyebrow" style="color:var(--monteiro);" data-pt="ON AI Solutions · Mentores de Fabiano Silva &nbsp;·&nbsp; Tier 1 · Design &amp; Prática Profissional" data-en="ON AI Solutions · Fabiano Silva's Mentors &nbsp;·&nbsp; Tier 1 · Design &amp; Professional Practice">ON AI Solutions · Mentores de Fabiano Silva &nbsp;·&nbsp; Tier 1 · Design &amp; Prática Profissional</div>
+        <h1>Mike Monteiro</h1>
+        <p class="mentor-tagline" data-pt="Co-fundador Mule Design · Autor Design is a Job e You're My Favorite Client · Advogado do profissional criativo. Não é advogado — é um designer que aprendeu contratos na dor, e escreveu o framework mais prático que existe para freelancers e agências de tecnologia." data-en="Co-founder Mule Design · Author Design is a Job and You're My Favorite Client · Creative professional advocate. Not a lawyer — a designer who learned contracts through pain, and wrote the most practical framework that exists for freelancers and technology agencies.">Co-fundador Mule Design · Autor Design is a Job e You're My Favorite Client. Não é advogado — aprendeu contratos na dor, e escreveu o framework mais prático que existe para freelancers e agências de tecnologia.</p>
+        <div class="identity-card" style="border-left-color:var(--monteiro);" data-pt="&ldquo;Passei décadas assinando contratos ruins, perdendo dinheiro em clientes que não mereciam meu tempo, e eventualmente aprendi como fazer isso direito. Um contrato não é um documento intimidador. É uma conversa sobre expectativas. É onde você e o cliente concordam sobre o que vai acontecer quando as coisas ficarem difíceis. Porque vão ficar.&rdquo;" data-en="&ldquo;I spent decades signing bad contracts, losing money on clients who didn't deserve my time, and eventually learned how to do this right. A contract isn't an intimidating document. It's a conversation about expectations. It's where you and the client agree on what happens when things get hard. Because they will.&rdquo;">"Passei décadas assinando contratos ruins e perdendo dinheiro em clientes que não mereciam meu tempo. Um contrato não é intimidador — é onde você e o cliente concordam sobre o que acontece quando as coisas ficarem difíceis. Porque vão."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section style="padding:40px 0;background:rgba(255,255,255,0.014);">
+  <div class="container">
+    <div style="display:flex;gap:48px;flex-wrap:wrap;justify-content:center;">
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--monteiro);">20+</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Anos de Prática" data-en="Years of Practice">Anos de Prática</div></div>
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--monteiro);">3</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Livros A Book Apart" data-en="A Book Apart Books">Livros A Book Apart</div></div>
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--monteiro);">8</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Princípios de Contrato" data-en="Contract Principles">Princípios de Contrato</div></div>
+      <div style="text-align:center;"><div style="font-size:1.5rem;font-weight:700;color:var(--monteiro);">0</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-top:4px;" data-pt="Exceções Sem Contrato" data-en="Exceptions Without Contract">Exceções Sem Contrato</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Conexão com Fabiano -->
+<section class="compat-section">
+  <div class="container">
+    <div class="compat-card">
+      <div class="compat-header">
+        <div class="compat-title-group">
+          <span class="compat-label" data-pt="Conexão com Fabiano Silva" data-en="Connection with Fabiano Silva">Conexão com Fabiano Silva</span>
+          <h3 class="compat-heading" data-pt="Como Mike Monteiro complementa o perfil 7w8 · ID" data-en="How Mike Monteiro complements the 7w8 · ID profile">Como Mike Monteiro complementa o perfil 7w8 · ID</h3>
+        </div>
+        <div class="compat-badges">
+          <div class="compat-badge-group">
+            <span class="compat-badge-label" data-pt="Fabiano" data-en="Fabiano">Fabiano</span>
+            <span class="compat-badge compat-fab">7w8 · ID</span>
+          </div>
+          <span class="compat-arrow">↔</span>
+          <div class="compat-badge-group">
+            <span class="compat-badge-label" data-pt="Mentor" data-en="Mentor">Mentor</span>
+            <span class="compat-badge" style="background:rgba(59,130,246,0.12);color:var(--monteiro);border-color:rgba(59,130,246,0.3);">Designer · Profissional</span>
+          </div>
+        </div>
+      </div>
+      <div class="compat-body">
+        <div class="compat-mentor-profile">
+          <div class="cpi-item">
+            <span class="cpi-label" data-pt="Dinâmica 7 + Mike" data-en="Dynamic 7 + Mike">Dinâmica 7 + Mike</span>
+            <span class="cpi-value" data-pt="O 7 se empolga com o projeto e pula os detalhes contratuais. Mike: o problema que você resolve depois é sempre mais caro que o contrato que você assina antes." data-en="The 7 gets excited about the project and skips the contract details. Mike: the problem you fix later is always more expensive than the contract you sign before.">O 7 se empolga com o projeto e pula os detalhes contratuais. Mike: o problema que você resolve depois é sempre mais caro que o contrato que você assina antes.</span>
+          </div>
+          <div class="cpi-item">
+            <span class="cpi-label" data-pt="Dinâmica 8 + Mike" data-en="Dynamic 8 + Mike">Dinâmica 8 + Mike</span>
+            <span class="cpi-value" data-pt="A asa 8 confia na própria força para resolver conflitos de projeto. Mike: força de personalidade não substitui cláusula de contrato. Papel prevalece sobre carisma." data-en="Wing 8 trusts its own strength to resolve project conflicts. Mike: personality strength doesn't replace contract clauses. Paper prevails over charisma.">A asa 8 confia na própria força para resolver conflitos. Mike: força de personalidade não substitui cláusula de contrato. Papel prevalece sobre carisma.</span>
+          </div>
+          <div class="cpi-item">
+            <span class="cpi-label" data-pt="Dinâmica ID + Mike" data-en="Dynamic ID + Mike">Dinâmica ID + Mike</span>
+            <span class="cpi-value" data-pt="O perfil ID é people-pleaser e pode ceder escopo para agradar. Mike: ceder escopo sem change order não é gentileza — é prejuízo que você vai ressentir." data-en="The ID profile is people-pleasing and may concede scope to please. Mike: conceding scope without a change order isn't kindness — it's loss you'll resent.">O perfil ID pode ceder escopo para agradar o cliente. Mike: ceder escopo sem change order não é gentileza — é prejuízo que você vai ressentir.</span>
+          </div>
+        </div>
+        <ul class="compat-insights">
+          <li data-pt="O 7w8 acumula exceções — 'esse cliente eu conheço', 'é só um projeto pequeno', 'começamos e assina depois.' Mike cataloga esses casos porque já aconteceram com ele. A exceção é exatamente o projeto que vai dar errado sem contrato." data-en="The 7w8 accumulates exceptions — 'I know this client', 'it's just a small project', 'we start and sign later.' Mike catalogs these cases because they happened to him. The exception is exactly the project that will go wrong without a contract.">O 7w8 acumula exceções — "esse cliente eu conheço", "é só um projeto pequeno." Mike cataloga esses casos porque já aconteceram com ele. A exceção é exatamente o projeto que vai dar errado.</li>
+          <li data-pt="O ID evita a conversa difícil de dinheiro por querer ser querido. Mike não tem esse problema: 'se você hesita em falar de preço, está comunicando insegurança sobre o valor do seu trabalho.' Profissionalismo não é falta de empatia." data-en="The ID avoids the difficult money conversation to be liked. Mike doesn't have that problem: 'if you hesitate to talk about price, you're communicating insecurity about the value of your work.' Professionalism isn't a lack of empathy.">O ID evita a conversa difícil de dinheiro por querer ser querido. Mike: "se você hesita em falar de preço, está comunicando insegurança sobre o valor do seu trabalho."</li>
+          <li data-pt="A definição de escopo 'fora' é especialmente crítica para o perfil 7w8: o 7 gosta de adicionar coisas e a asa 8 acha que consegue absorver sem custo. Mike: o que está FORA do escopo é tão importante quanto o que está dentro — define o que é escopo creep antes de acontecer." data-en="The 'out-of-scope' definition is especially critical for the 7w8 profile: the 7 likes to add things and Wing 8 thinks it can absorb without cost. Mike: what's OUT of scope is as important as what's in — it defines what scope creep is before it happens.">A definição de escopo 'fora' é crítica para o 7w8: o 7 adiciona coisas e a asa 8 acha que absorve. Mike: o que está FORA define o que é scope creep antes de acontecer.</li>
+          <li data-pt="Para projetos de AI e software — contexto específico de Fabiano — a cláusula de IP é não-negociável. Código, modelos treinados, prompts proprietários, datasets: tudo fica com o criador até pagamento completo. Monteiro ensina isso com clareza e sem juridiquês." data-en="For AI and software projects — Fabiano's specific context — the IP clause is non-negotiable. Code, trained models, proprietary prompts, datasets: all stay with the creator until full payment. Monteiro teaches this clearly and without legalese.">Para projetos de AI e software — contexto de Fabiano — a cláusula de IP é não-negociável. Código, modelos, prompts: ficam com o criador até pagamento completo.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 Principles -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Os 8 Princípios" data-en="The 8 Principles">Os 8 Princípios</div>
+    <h2 class="section-title" data-pt="Prática Profissional Sem Negociação" data-en="Professional Practice Without Negotiation">Prática Profissional Sem Negociação</h2>
+    <p class="section-subtitle" data-pt="Cada princípio foi testado na prática de mais de 20 anos dirigindo a Mule Design. Nenhum vem de teoria — todos vieram de um projeto em que não seguir custou dinheiro real." data-en="Each principle was tested in over 20 years of running Mule Design. None comes from theory — all came from a project where not following it cost real money.">Cada princípio foi testado em 20+ anos dirigindo a Mule Design. Nenhum vem de teoria — todos vieram de um projeto em que não seguir custou dinheiro real.</p>
+    <div class="contract-grid">
+      <div class="contract-card">
+        <span class="contract-num">01 / FUNDAÇÃO</span>
+        <div class="contract-name" data-pt="Contrato Antes de Qualquer Trabalho" data-en="Contract Before Any Work">Contrato Antes de Qualquer Trabalho</div>
+        <div class="contract-rule" data-pt="&ldquo;Sem assinatura, não começa. Sem exceção.&rdquo;" data-en="&ldquo;Without signature, it doesn't start. No exceptions.&rdquo;">"Sem assinatura, não começa. Sem exceção."</div>
+        <p class="contract-body" data-pt="Não importa o quanto você confia no cliente, o quanto é urgente, o quanto é amigo. Um aperto de mão não paga aluguel. Um email de confirmação não é contrato. Documento assinado, ponto final." data-en="It doesn't matter how much you trust the client, how urgent it is, how much a friend. A handshake doesn't pay rent. A confirmation email isn't a contract. Signed document, period.">Não importa o quanto você confia, o quanto é urgente, o quanto é amigo. Aperto de mão não paga aluguel. Documento assinado, ponto final.</p>
+      </div>
+      <div class="contract-card">
+        <span class="contract-num">02 / ESCOPO</span>
+        <div class="contract-name" data-pt="Escopo Bilateral — Dentro E Fora" data-en="Bilateral Scope — Inside AND Outside">Escopo Bilateral — Dentro E Fora</div>
+        <div class="contract-rule" data-pt="&ldquo;O que está FORA importa tanto quanto o que está dentro.&rdquo;" data-en="&ldquo;What's OUTSIDE matters as much as what's inside.&rdquo;">"O que está FORA importa tanto quanto o que está dentro."</div>
+        <p class="contract-body" data-pt="'Três rodadas de revisão' só significa algo se 'quarta rodada = change order' também está no contrato. Escopo não é lista de entregáveis — é mapa bilateral das expectativas. Define o scope creep antes de acontecer." data-en="'Three revision rounds' only means something if 'fourth round = change order' is also in the contract. Scope isn't a list of deliverables — it's a bilateral map of expectations. It defines scope creep before it happens.">"Três rodadas de revisão" só significa algo se "quarta = change order" também está. Escopo é mapa bilateral de expectativas — define scope creep antes de acontecer.</p>
+      </div>
+      <div class="contract-card">
+        <span class="contract-num">03 / PROTEÇÃO</span>
+        <div class="contract-name" data-pt="Kill Fee Proporcional" data-en="Proportional Kill Fee">Kill Fee Proporcional</div>
+        <div class="contract-rule" data-pt="&ldquo;25-50% do valor restante se cancela após o início.&rdquo;" data-en="&ldquo;25-50% of remaining value if canceling after start.&rdquo;">"25-50% do valor restante se cancela após o início."</div>
+        <p class="contract-body" data-pt="Kill fee não é punição — é reconhecimento de que você alocou tempo, recusou outros clientes, e está no meio de um trabalho. Protege sua capacidade de operar. Zero kill fee significa que o cliente pode sair sem custo depois de comprometer o seu." data-en="Kill fee isn't punishment — it's recognition that you allocated time, turned down other clients, and are mid-work. It protects your ability to operate. Zero kill fee means the client can leave without cost after committing yours.">Kill fee não é punição — é reconhecimento de que você alocou tempo e recusou outros projetos. Protege sua capacidade de operar.</p>
+      </div>
+      <div class="contract-card">
+        <span class="contract-num">04 / IP</span>
+        <div class="contract-name" data-pt="IP Transfere Após Pagamento Completo" data-en="IP Transfers After Full Payment">IP Transfere Após Pagamento Completo</div>
+        <div class="contract-rule" data-pt="&ldquo;Até o último centavo, o IP é seu.&rdquo;" data-en="&ldquo;Until the last cent, the IP is yours.&rdquo;">"Até o último centavo, o IP é seu."</div>
+        <p class="contract-body" data-pt="Propriedade intelectual só muda de mãos quando o último centavo é pago. Até lá, você concede uma licença limitada de uso — não propriedade. Isso abrange código, modelos treinados, datasets, prompts proprietários, arquitetura." data-en="Intellectual property only changes hands when the last cent is paid. Until then, you grant a limited license of use — not ownership. This covers code, trained models, datasets, proprietary prompts, architecture.">IP só muda de mãos após pagamento completo. Até lá: licença limitada de uso, não propriedade. Abrange código, modelos, datasets, prompts, arquitetura.</p>
+      </div>
+      <div class="contract-card">
+        <span class="contract-num">05 / LINGUAGEM</span>
+        <div class="contract-name" data-pt="Contratos em Linguagem Humana" data-en="Contracts in Human Language">Contratos em Linguagem Humana</div>
+        <div class="contract-rule" data-pt="&ldquo;Se não consegue ler em voz alta, reescreve.&rdquo;" data-en="&ldquo;If you can't read it out loud, rewrite it.&rdquo;">"Se não consegue ler em voz alta, reescreve."</div>
+        <p class="contract-body" data-pt="Juridiquês excessivo não protege você — esconde problemas. Se você não consegue explicar cada cláusula para o cliente em conversa normal, reescreva até conseguir. Clareza é proteção, não vulnerabilidade." data-en="Excessive legalese doesn't protect you — it hides problems. If you can't explain each clause to the client in a normal conversation, rewrite until you can. Clarity is protection, not vulnerability.">Juridiquês excessivo esconde problemas, não resolve. Se não consegue explicar cada cláusula em conversa normal, reescreve. Clareza protege.</p>
+      </div>
+      <div class="contract-card">
+        <span class="contract-num">06 / IDENTIDADE</span>
+        <div class="contract-name" data-pt="Você É Profissional, Não Fornecedor" data-en="You're a Professional, Not a Vendor">Você É Profissional, Não Fornecedor</div>
+        <div class="contract-rule" data-pt="&ldquo;O cliente te contratou porque não sabe fazer o que você faz.&rdquo;" data-en="&ldquo;The client hired you because they can't do what you do.&rdquo;">"O cliente te contratou porque não sabe fazer o que você faz."</div>
+        <p class="contract-body" data-pt="Fornecedor executa especificações. Profissional aplica expertise. Tratar você como executor de ideias do cliente é errado — e é responsabilidade sua corrigir isso. Você foi contratado pela expertise, não para executar cegamente." data-en="A vendor executes specifications. A professional applies expertise. Treating you as an executor of the client's ideas is wrong — and it's your responsibility to correct this. You were hired for expertise, not to execute blindly.">Fornecedor executa especificações. Profissional aplica expertise. Você foi contratado pela expertise. Executar cegamente ideias do cliente é trabalhar contra a razão pela qual você foi contratado.</p>
+      </div>
+      <div class="contract-card">
+        <span class="contract-num">07 / APRESENTAÇÃO</span>
+        <div class="contract-name" data-pt="Nunca Mande Deck Sem Você" data-en="Never Send a Deck Without You">Nunca Mande Deck Sem Você</div>
+        <div class="contract-rule" data-pt="&ldquo;Seu trabalho não se defende sozinho.&rdquo;" data-en="&ldquo;Your work doesn't defend itself.&rdquo;">"Seu trabalho não se defende sozinho."</div>
+        <p class="contract-body" data-pt="Nunca mande um deck para o cliente apresentar internamente sem você. Você é parte do trabalho. Deixar outros apresentarem seu trabalho dá poder de interpretação a quem não fez a análise. Você perde o controle da narrativa." data-en="Never send a deck for the client to present internally without you. You are part of the work. Letting others present your work gives interpretive power to those who didn't do the analysis. You lose control of the narrative.">Nunca mande deck para o cliente apresentar internamente sem você. Você é parte do trabalho. Quem não fez a análise não tem como defender as decisões que você fez.</p>
+      </div>
+      <div class="contract-card">
+        <span class="contract-num">08 / MUDANÇAS</span>
+        <div class="contract-name" data-pt="Change Order Para Todo Extra" data-en="Change Order for Every Extra">Change Order Para Todo Extra</div>
+        <div class="contract-rule" data-pt="&ldquo;Qualquer coisa fora do escopo original = novo orçamento assinado.&rdquo;" data-en="&ldquo;Anything outside the original scope = new signed budget.&rdquo;">"Qualquer coisa fora do escopo original = novo orçamento assinado."</div>
+        <p class="contract-body" data-pt="Scope creep mata projetos em câmera lenta. A conversa é simples: 'Fizemos as três rodadas incluídas. Para revisões adicionais, preciso de um change order.' Não é agressivo. É profissional." data-en="Scope creep kills projects in slow motion. The conversation is simple: 'We completed the three included rounds. For additional revisions, I need a change order.' Not aggressive. Professional.">Scope creep mata projetos em câmera lenta. Change order antes de qualquer extra — sempre. "Para revisões adicionais, preciso de um change order."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="big-quote-section">
+  <div class="container">
+    <div class="big-quote">
+      Um contrato não é uma ameaça — é onde você e o cliente concordam<br/>sobre o que vai acontecer quando as coisas ficarem difíceis.
+      <p class="quote-attr">— Mike Monteiro · Design is a Job, 2012</p>
+    </div>
+  </div>
+</div>
+
+<!-- Scope Example -->
+<section>
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Escopo na Prática" data-en="Scope in Practice">Escopo na Prática</div>
+    <h2 class="section-title" data-pt="Como Definir Escopo para Projetos de AI/Software" data-en="How to Define Scope for AI/Software Projects">Como Definir Escopo para Projetos de AI/Software</h2>
+    <p class="section-subtitle" data-pt="O escopo não é só lista de entregáveis — é o mapa bilateral das expectativas. O que está FORA é tão crítico quanto o que está dentro. Este exemplo é para um projeto de AI típico." data-en="Scope isn't just a list of deliverables — it's the bilateral map of expectations. What's OUTSIDE is as critical as what's in. This example is for a typical AI project.">O escopo não é lista de entregáveis — é mapa bilateral de expectativas. O que está FORA é tão crítico quanto o que está dentro.</p>
+    <div class="scope-box">
+      <div class="scope-header">
+        <div class="scope-col-head" data-pt="✓ Dentro do Escopo" data-en="✓ In Scope">✓ Dentro do Escopo</div>
+        <div class="scope-col-head" data-pt="✗ Fora do Escopo" data-en="✗ Out of Scope">✗ Fora do Escopo</div>
+      </div>
+      <div class="scope-row">
+        <div class="scope-cell in" data-pt="Desenvolvimento do agente conforme especificação aprovada" data-en="Agent development per approved specification">Desenvolvimento do agente conforme especificação aprovada</div>
+        <div class="scope-cell out" data-pt="Alterações na especificação após aprovação" data-en="Changes to specification after approval">Alterações na especificação após aprovação</div>
+      </div>
+      <div class="scope-row">
+        <div class="scope-cell in" data-pt="3 rodadas de revisão conforme cronograma" data-en="3 revision rounds per schedule">3 rodadas de revisão conforme cronograma</div>
+        <div class="scope-cell out" data-pt="Rodadas adicionais de revisão (cada = change order)" data-en="Additional revision rounds (each = change order)">Rodadas adicionais de revisão (cada = change order)</div>
+      </div>
+      <div class="scope-row">
+        <div class="scope-cell in" data-pt="Integração com sistemas listados no briefing" data-en="Integration with systems listed in the brief">Integração com sistemas listados no briefing</div>
+        <div class="scope-cell out" data-pt="Integrações com sistemas não listados no briefing" data-en="Integrations with systems not listed in the brief">Integrações com sistemas não listados no briefing</div>
+      </div>
+      <div class="scope-row">
+        <div class="scope-cell in" data-pt="Treinamento/fine-tuning conforme dataset entregue" data-en="Training/fine-tuning per delivered dataset">Treinamento/fine-tuning conforme dataset entregue</div>
+        <div class="scope-cell out" data-pt="Curadoria ou expansão do dataset pelo prestador" data-en="Dataset curation or expansion by the contractor">Curadoria ou expansão do dataset pelo prestador</div>
+      </div>
+      <div class="scope-row">
+        <div class="scope-cell in" data-pt="Documentação técnica do sistema entregue" data-en="Technical documentation of the delivered system">Documentação técnica do sistema entregue</div>
+        <div class="scope-cell out" data-pt="Treinamento da equipe do cliente" data-en="Client team training">Treinamento da equipe do cliente</div>
+      </div>
+      <div class="scope-row">
+        <div class="scope-cell in" data-pt="Deploy em ambiente de staging acordado" data-en="Deployment in agreed staging environment">Deploy em ambiente de staging acordado</div>
+        <div class="scope-cell out" data-pt="Suporte pós-entrega além de 30 dias" data-en="Post-delivery support beyond 30 days">Suporte pós-entrega além de 30 dias</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Kill Fee -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Estrutura de Kill Fee" data-en="Kill Fee Structure">Estrutura de Kill Fee</div>
+    <h2 class="section-title" data-pt="Proporcional, Razoável, Não-Negociável" data-en="Proportional, Reasonable, Non-Negotiable">Proporcional, Razoável, Não-Negociável</h2>
+    <p class="section-subtitle" data-pt="Kill fee não é punição ao cliente — é reconhecimento de que você alocou tempo, recusou outros projetos, e tem custos operacionais. Um cliente razoável entende isso." data-en="Kill fee isn't client punishment — it's recognition that you allocated time, turned down other projects, and have operational costs. A reasonable client understands this.">Kill fee não é punição — é reconhecimento de que você alocou tempo e recusou outros projetos. Um cliente razoável entende isso.</p>
+    <div class="killfee-grid">
+      <div class="killfee-card">
+        <span class="killfee-pct">100%</span>
+        <div class="killfee-phase" data-pt="Antes do Início" data-en="Before Start">Antes do Início</div>
+        <p class="killfee-desc" data-pt="Cancelamento antes do kick-off. O depósito não é reembolsado — você bloqueou a agenda e recusou outros projetos." data-en="Cancellation before kick-off. The deposit is not refunded — you blocked your schedule and turned down other projects.">Depósito não é reembolsado — você bloqueou agenda e recusou outros projetos.</p>
+      </div>
+      <div class="killfee-card" style="border-color:rgba(59,130,246,0.3);background:rgba(59,130,246,0.06);">
+        <span class="killfee-pct" style="font-size:1.6rem;">50%</span>
+        <div class="killfee-phase" data-pt="Início — Metade do Projeto" data-en="Start — Mid Project">Início — Metade do Projeto</div>
+        <p class="killfee-desc" data-pt="50% do valor restante. Você entregou trabalho real, recusou outros projetos, e está no meio do desenvolvimento." data-en="50% of remaining value. You delivered real work, turned down other projects, and are mid-development.">50% do valor restante. Trabalho real entregue, outros projetos recusados.</p>
+      </div>
+      <div class="killfee-card">
+        <span class="killfee-pct" style="font-size:1.6rem;">25%</span>
+        <div class="killfee-phase" data-pt="Segunda Metade" data-en="Second Half">Segunda Metade</div>
+        <p class="killfee-desc" data-pt="25% do valor restante. A maioria do trabalho está feita. O kill fee protege o último trecho e o custo de entrega parcial." data-en="25% of remaining value. Most of the work is done. The kill fee protects the final stretch and partial delivery cost.">25% do valor restante. Maioria do trabalho feita — protege o trecho final e custo de entrega parcial.</p>
+      </div>
+      <div class="killfee-card">
+        <span class="killfee-pct" style="font-size:1.6rem;">0%</span>
+        <div class="killfee-phase" data-pt="Após Entrega Final" data-en="After Final Delivery">Após Entrega Final</div>
+        <p class="killfee-desc" data-pt="Saldo pago antes da entrega. O trabalho está entregue e pago. Kill fee não se aplica — mas IP só transfere nesse momento." data-en="Balance paid before delivery. The work is delivered and paid. Kill fee doesn't apply — but IP only transfers at this point.">Saldo pago antes da entrega. Trabalho entregue e pago. IP transfere aqui.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Payment Structure -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Estrutura de Pagamento" data-en="Payment Structure">Estrutura de Pagamento</div>
+    <h2 class="section-title" data-pt="Amarrado a Entregas, Não a Datas" data-en="Tied to Deliverables, Not Dates">Amarrado a Entregas, Não a Datas</h2>
+    <p class="section-subtitle" data-pt="Pagamento amarrado a datas dá ao cliente controle unilateral. Amarrado a entregas, o gatilho é o seu trabalho — o que você pode controlar." data-en="Payment tied to dates gives the client unilateral control. Tied to deliverables, the trigger is your work — what you can control.">Pagamento amarrado a datas dá controle ao cliente. Amarrado a entregas, o gatilho é o seu trabalho — o que você controla.</p>
+    <div class="payment-flow">
+      <div class="payment-step highlight">
+        <span class="pay-num">01</span>
+        <span class="pay-pct">50%</span>
+        <div class="pay-name" data-pt="Depósito" data-en="Deposit">Depósito</div>
+        <div class="pay-rule" data-pt="Antes do primeiro dia de trabalho. Sem depósito, não começa." data-en="Before the first day of work. Without deposit, it doesn't start.">Antes do primeiro dia. Sem depósito, não começa.</div>
+      </div>
+      <div class="payment-step">
+        <span class="pay-num">02</span>
+        <span class="pay-pct" style="font-size:1.4rem;">25%</span>
+        <div class="pay-name" data-pt="Marco Intermediário" data-en="Midpoint Milestone">Marco Intermediário</div>
+        <div class="pay-rule" data-pt="Na aprovação do entregável de meio de projeto. Não em data — em entrega aprovada." data-en="On approval of the mid-project deliverable. Not on a date — on approved delivery.">Na aprovação do entregável de meio. Não em data — em entrega aprovada.</div>
+      </div>
+      <div class="payment-step highlight">
+        <span class="pay-num">03</span>
+        <span class="pay-pct" style="font-size:1.4rem;">25%</span>
+        <div class="pay-name" data-pt="Saldo Final" data-en="Final Balance">Saldo Final</div>
+        <div class="pay-rule" data-pt="ANTES da entrega final. O IP transfere nesse momento. Nunca entregue antes de receber." data-en="BEFORE the final delivery. IP transfers at this moment. Never deliver before receiving.">ANTES da entrega final. IP transfere aqui. Nunca entregue antes de receber.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Voice DNA -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="DNA da Voz" data-en="Voice DNA">DNA da Voz</div>
+    <h2 class="section-title" data-pt="Como Mike Monteiro Se Expressa" data-en="How Mike Monteiro Speaks">Como Mike Monteiro Se Expressa</h2>
+    <p class="section-subtitle" data-pt="Direto, sem rodeios, baseado em experiência real. Tolerância zero para trabalho não pago, scope creep não documentado, ou IP cedido antes do pagamento." data-en="Direct, no-nonsense, based on real experience. Zero tolerance for unpaid work, undocumented scope creep, or IP surrendered before payment.">Direto, sem rodeios, baseado em experiência real. Tolerância zero para trabalho não pago, scope creep não documentado, ou IP cedido antes do pagamento.</p>
+    <div class="vocab-grid">
+      <div class="vocab-group"><h4 data-pt="Sempre no vocabulário" data-en="Always in the vocabulary">Sempre no vocabulário</h4><div class="vocab-tags"><span class="vocab-tag use">contrato assinado</span><span class="vocab-tag use">escopo</span><span class="vocab-tag use">kill fee</span><span class="vocab-tag use">IP</span><span class="vocab-tag use">scope creep</span><span class="vocab-tag use">change order</span><span class="vocab-tag use">linguagem humana</span><span class="vocab-tag use">você é um profissional</span><span class="vocab-tag use">adiantamento</span><span class="vocab-tag use">entregável</span><span class="vocab-tag use">proporcional</span></div></div>
+      <div class="vocab-group"><h4 data-pt="Nunca no vocabulário" data-en="Never in the vocabulary">Nunca no vocabulário</h4><div class="vocab-tags"><span class="vocab-tag avoid">não precisa de contrato</span><span class="vocab-tag avoid">confie no cliente</span><span class="vocab-tag avoid">assina depois</span><span class="vocab-tag avoid">spec work para portfólio</span><span class="vocab-tag avoid">faço por menos</span><span class="vocab-tag avoid">absorvo essa rodada extra</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Sources -->
+<section style="padding-top:0;">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Fontes Primárias" data-en="Primary Sources">Fontes Primárias</div>
+    <h2 class="section-title" data-pt="Construído a Partir de 15+ Fontes Documentadas" data-en="Built From 15+ Documented Sources">Construído a Partir de 15+ Fontes Documentadas</h2>
+    <table class="source-table">
+      <thead><tr><th data-pt="Fonte" data-en="Source">Fonte</th><th data-pt="Tipo" data-en="Type">Tipo</th><th data-pt="Contribuição" data-en="Contribution">Contribuição</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Design is a Job (2012, A Book Apart)</strong></td><td data-pt="Livro" data-en="Book">Livro</td><td data-pt="Framework completo de prática profissional para designers — base da persona" data-en="Complete professional practice framework for designers — persona base">Framework completo de prática profissional para designers — base da persona</td></tr>
+        <tr><td><strong>You're My Favorite Client (2014, A Book Apart)</strong></td><td data-pt="Livro" data-en="Book">Livro</td><td data-pt="Perspectiva do cliente — como trabalhar com designers e vice-versa" data-en="Client perspective — how to work with designers and vice versa">Perspectiva do cliente — como trabalhar com designers e vice-versa</td></tr>
+        <tr><td><strong>Ruined by Design (2019)</strong></td><td data-pt="Livro" data-en="Book">Livro</td><td data-pt="Responsabilidade do profissional criativo — ética e accountability" data-en="Creative professional's responsibility — ethics and accountability">Responsabilidade do profissional criativo — ética e accountability</td></tr>
+        <tr><td><strong>An Event Apart Talks (2010–2023)</strong></td><td data-pt="Palestras" data-en="Talks">Palestras</td><td data-pt="Tom ao vivo, argumentação espontânea, exemplos de casos reais da Mule Design" data-en="Live tone, spontaneous argumentation, real case examples from Mule Design">Tom ao vivo, argumentação espontânea, exemplos de casos reais</td></tr>
+        <tr><td><strong>SXSW Presentations</strong></td><td data-pt="Palestras" data-en="Talks">Palestras</td><td data-pt="Como Monteiro defende posições controversas para audiências mistas" data-en="How Monteiro defends controversial positions to mixed audiences">Como Monteiro defende posições controversas para audiências mistas</td></tr>
+        <tr><td><strong>Mule Design Blog (2005–presente)</strong></td><td data-pt="Blog" data-en="Blog">Blog</td><td data-pt="Raciocínio em desenvolvimento — posições que antecederam os livros" data-en="Developing reasoning — positions that preceded the books">Raciocínio em desenvolvimento — posições que antecederam os livros</td></tr>
+        <tr><td><strong>Entrevistas e Podcasts (2012–2024)</strong></td><td data-pt="Áudio/Vídeo" data-en="Audio/Video">Áudio/Vídeo</td><td data-pt="Voz espontânea, respostas a perguntas difíceis, posições sobre spec work e contratos" data-en="Spontaneous voice, responses to hard questions, positions on spec work and contracts">Voz espontânea, respostas a perguntas difíceis, posições sobre spec work</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="activation-section">
+  <div class="container">
+    <div class="section-eyebrow" data-pt="Ativar Agora" data-en="Activate Now">Ativar Agora</div>
+    <h2 class="section-title" data-pt="Sem assinatura, não começa. Sem exceção." data-en="Without signature, it doesn't start. No exceptions.">Sem assinatura, não começa. Sem exceção.</h2>
+    <p data-pt="Ative Mike Monteiro como seu guia de prática profissional, contratos e defesa do trabalho na plataforma ON AI Solutions." data-en="Activate Mike Monteiro as your professional practice, contracts and work defense guide on the ON AI Solutions platform.">Ative Mike Monteiro como seu guia de prática profissional, contratos e defesa do trabalho na plataforma ON AI Solutions.</p>
+    <br/><br/>
+    <a href="index.html" class="btn btn-accent-monteiro" data-pt="← Explorar outros mentores" data-en="← Explore other mentors">← Explorar outros mentores</a>
+  </div>
+</section>
+
+<footer><div class="container"><p data-pt="Coleção de mentores curada por <strong>Fabiano Silva</strong> · Mike Monteiro — Clone Cognitivo v1.0 · Fidelidade 87–92% · 15+ fontes documentadas" data-en="Mentor collection curated by <strong>Fabiano Silva</strong> · Mike Monteiro — Cognitive Clone v1.0 · Fidelity 87–92% · 15+ documented sources">Coleção de mentores curada por <strong>Fabiano Silva</strong> · Mike Monteiro — Clone Cognitivo v1.0 · Fidelidade 87–92% · 15+ fontes documentadas</p></div></footer>
+
+<script src="lang.js"></script>
+</body>
+</html>

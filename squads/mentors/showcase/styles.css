@@ -63,6 +63,22 @@
   --elon-glow:     rgba(220, 38, 38, 0.18);
   --elon-dim:      rgba(220, 38, 38, 0.08);
 
+  --chief:         #c8a84b;
+  --chief-glow:    rgba(200, 168, 75, 0.18);
+  --chief-dim:     rgba(200, 168, 75, 0.08);
+
+  --brene:         #f472b6;
+  --brene-glow:    rgba(244, 114, 182, 0.18);
+  --brene-dim:     rgba(244, 114, 182, 0.08);
+
+  --monteiro:      #3b82f6;
+  --monteiro-glow: rgba(59, 130, 246, 0.18);
+  --monteiro-dim:  rgba(59, 130, 246, 0.08);
+
+  --karpathy:      #a78bfa;
+  --karpathy-glow: rgba(167, 139, 250, 0.18);
+  --karpathy-dim:  rgba(167, 139, 250, 0.08);
+
   --radius:        16px;
   --radius-sm:     10px;
   --transition:    0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -254,6 +270,10 @@ section { padding: 100px 0; position: relative; z-index: 1; }
   gap: 24px;
 }
 
+.mentors-grid-two-up {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .mentor-card {
   background: var(--bg-card);
   border: 1px solid var(--glass-border);
@@ -301,6 +321,11 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 .mentor-card.mckeown  { --accent: var(--mckeown);  --glow: var(--mckeown-glow);  }
 .mentor-card.alan     { --accent: var(--alan);     --glow: var(--alan-glow);     }
 .mentor-card.elon     { --accent: var(--elon);     --glow: var(--elon-glow);     }
+.mentor-card.brene    { --accent: var(--brene);    --glow: var(--brene-glow);    }
+.mentor-card.monteiro  { --accent: var(--monteiro);  --glow: var(--monteiro-glow);  }
+.mentor-card.karpathy  { --accent: var(--karpathy);  --glow: var(--karpathy-glow);  }
+.mentor-card.munger    { --accent: var(--chief);     --glow: var(--chief-glow);     }
+.mentor-card.dalio     { --accent: var(--chief);     --glow: var(--chief-glow);     }
 
 .card-avatar {
   width: 68px; height: 68px;
@@ -317,6 +342,8 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 .rohr   .card-avatar { background: var(--rohr-dim);   border-color: rgba(181,123,238,0.35); color: var(--rohr); }
 .lewis  .card-avatar { background: var(--lewis-dim);  border-color: rgba(16,185,129,0.35);  color: var(--lewis); }
 .levels .card-avatar { background: var(--levels-dim); border-color: rgba(249,115,22,0.35);  color: var(--levels); }
+.munger .card-avatar,
+.dalio  .card-avatar { background: var(--chief-dim); border-color: rgba(200,168,75,0.35); color: var(--chief); }
 
 .card-tier-badge {
   font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
@@ -329,6 +356,8 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 .rohr   .card-tier-badge { color: var(--rohr);   border-color: rgba(181,123,238,0.3); background: var(--rohr-dim); }
 .lewis  .card-tier-badge { color: var(--lewis);  border-color: rgba(16,185,129,0.3);  background: var(--lewis-dim); }
 .levels .card-tier-badge { color: var(--levels); border-color: rgba(249,115,22,0.3);  background: var(--levels-dim); }
+.munger .card-tier-badge,
+.dalio  .card-tier-badge { color: var(--chief); border-color: rgba(200,168,75,0.3); background: var(--chief-dim); }
 
 .card-name { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; margin-bottom: 6px; }
 .card-role { font-size: 13px; color: var(--text-secondary); margin-bottom: 20px; }
@@ -342,6 +371,8 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 .rohr   .card-quote { border-color: rgba(181,123,238,0.35); }
 .lewis  .card-quote { border-color: rgba(16,185,129,0.35); }
 .levels .card-quote { border-color: rgba(249,115,22,0.35); }
+.munger .card-quote,
+.dalio  .card-quote { border-color: rgba(200,168,75,0.35); }
 
 .card-domains { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 28px; }
 .domain-tag {
@@ -359,6 +390,8 @@ section { padding: 100px 0; position: relative; z-index: 1; }
 .rohr   .card-cta { color: var(--rohr); }
 .lewis  .card-cta { color: var(--lewis); }
 .levels .card-cta { color: var(--levels); }
+.munger .card-cta,
+.dalio  .card-cta { color: var(--chief); }
 
 /* ── Language Toggle ── */
 .lang-toggle {
@@ -786,6 +819,7 @@ footer strong { color: var(--text-secondary); }
 }
 @media (max-width: 700px) {
   .mentors-grid { grid-template-columns: 1fr; }
+  .mentors-grid-two-up { grid-template-columns: 1fr; }
   .vocab-grid { grid-template-columns: 1fr; }
   .hero-stats { gap: 28px; }
   .hero h1 { font-size: 2.8rem; }

@@ -22,6 +22,13 @@ Descreva o que você está construindo, a decisão que está tomando, ou o probl
 
 Use `@squad-chief *clone-mind {nome}` para clonar uma nova mente e depois `*create-agent --from-mind {slug} --role mentor`.
 
+## Showcase Rules
+
+- Todo mentor presente em `squads/mentors/showcase/index.html` deve ter foto local em `squads/mentors/showcase/images/{slug}.jpg`.
+- A home e a página individual do mentor devem reutilizar o mesmo asset local de foto.
+- Em categorias do showcase com exatamente 4 cards e necessidade de leitura mais equilibrada, aplicar `mentors-grid mentors-grid-two-up` para forçar layout 2x2 no desktop e 1 coluna no mobile.
+- O padrão visual dos cards da home deve ser preservado: `card-avatar` com `card-photo` e fallback por iniciais.
+
 ---
 
 *Gerado por squad-creator-pro | wf-clone-mind v2.1.0*
